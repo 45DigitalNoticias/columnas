@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expedientes — 45 Digital Noticias</title>
+<meta name="description" content="Expedientes de 45 Digital Noticias: investigaciones largas con su propio tablero interactivo.">
+<!-- Open Graph / redes (al publicar, reemplazar TUDOMINIO por la URL real) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="45 Digital Noticias">
+<meta property="og:locale" content="es_MX">
+<meta property="og:title" content="Expedientes — 45 Digital Noticias">
+<meta property="og:description" content="Investigaciones largas con tablero interactivo: Brotes 2026, Cementerio de la Transparencia y seguridad municipal en Morelos.">
+<meta property="og:image" content="https://45digitalnoticias.github.io/columnas/og-home.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Expedientes — 45 Digital Noticias">
+<meta name="twitter:description" content="Investigaciones largas con tablero interactivo.">
+<meta name="twitter:image" content="https://45digitalnoticias.github.io/columnas/og-home.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="logo-45.png" alt="45 Digital Noticias">
+      <span class="name" style="display:none">45 DIGITAL <b>NOTICIAS</b></span>
+    </a>
+    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav" id="nav">
+      <a href="index.html">Columnas</a>
+      <a href="expedientes.html">Expedientes</a>
+      <a href="acerca.html">Acerca</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== ENCABEZADO DE SECCIÓN ===== -->
+<section class="section page-hero" style="background-image:url('fondo-expedientes.svg')">
+  <div class="wrap">
+    <div class="article-head" style="max-width:48rem;margin-bottom:8px;">
+      <div class="eyebrow">
+        <span class="kicker">Investigaciones</span>
+        <span class="line"></span>
+      </div>
+      <h1 style="font-family:var(--display);font-weight:600;font-size:clamp(2rem,5vw,3.2rem);line-height:1.05;letter-spacing:-.02em;margin:0 0 16px;">Expedientes</h1>
+      <p class="dek" style="font-size:clamp(1.05rem,2vw,1.25rem);color:var(--ink-soft);">Las columnas leen el día. Los expedientes arman el caso: investigaciones largas, con su propio tablero interactivo y sus fuentes a la vista.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXPEDIENTES ===== -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="cards">
+
+      <a class="card reveal" href="https://45digitalnoticias.github.io/Expediente-Hantavirus/" target="_blank" rel="noopener">
+        <div class="card-img"><img src="thumb-brotes.jpg" alt="Vista del Expediente Brotes 2026"></div>
+        <div class="card-body">
+          <span class="date">Salud · Geopolítica</span>
+          <h3>Expediente Brotes 2026</h3>
+          <p>Hantavirus y ébola como corredor del Mundial 2026: el mapa, los actores y la doctrina del shock. Tablero interactivo.</p>
+          <span class="more">Abrir expediente →</span>
+        </div>
+      </a>
+
+      <a class="card reveal" href="https://45digitalnoticias.github.io/cementerio-transparencia/" target="_blank" rel="noopener">
+        <div class="card-img"><img src="thumb-cementerio.jpg" alt="Vista del Cementerio de la Transparencia"></div>
+        <div class="card-body">
+          <span class="date">Morelos · Transparencia</span>
+          <h3>El Cementerio de la Transparencia</h3>
+          <p>El desmantelamiento del IMIPE y la auditoría de los sitios oficiales caídos del gobierno de Morelos. Tablero interactivo.</p>
+          <span class="more">Abrir expediente →</span>
+        </div>
+      </a>
+
+      <a class="card reveal" href="#">
+        <div class="card-img"><img src="thumb-morelos.jpg" alt="Vista del dashboard de seguridad de Morelos"></div>
+        <div class="card-body">
+          <span class="date">Morelos · Seguridad</span>
+          <h3>Morelos: seguridad municipal</h3>
+          <p>Hub de datos de violencia y desapariciones por municipio (SESNSP / RNPDNO): rankings, series y fichas de Cuautla, Cuernavaca, Ayala, Jiutepec y más. Tablero interactivo.</p>
+          <span class="more">Próximamente en línea</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="sig">45 Digital Noticias.</span>
+    <span class="small">Columnas · expedientes · lectura sistémica · © 2026</span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  const mt = document.querySelector('.menu-toggle');
+  const nav = document.getElementById('nav');
+  if (mt && nav) mt.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    mt.setAttribute('aria-expanded', open);
+  });
+</script>
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "PEGAR_TOKEN_CLOUDFLARE"}'></script>
+<!-- End Cloudflare Web Analytics -->
+</body>
+</html>

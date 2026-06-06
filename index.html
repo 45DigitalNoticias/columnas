@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>45 Digital Noticias — Columnas</title>
+<meta name="description" content="Columnas de 45 Digital Noticias. Lecturas sistémicas que conjuntan lo que en apariencia no tiene relación.">
+<!-- Open Graph / redes (al publicar, reemplazar TUDOMINIO por la URL real) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="45 Digital Noticias">
+<meta property="og:locale" content="es_MX">
+<meta property="og:title" content="45 Digital Noticias — Columnas">
+<meta property="og:description" content="Lecturas que conjuntan lo que en apariencia no tiene relación. Vista cenital sobre el poder.">
+<meta property="og:image" content="https://45digitalnoticias.github.io/columnas/og-home.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="45 Digital Noticias — Columnas">
+<meta name="twitter:description" content="Lecturas que conjuntan lo que en apariencia no tiene relación.">
+<meta name="twitter:image" content="https://45digitalnoticias.github.io/columnas/og-home.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="logo-45.png" alt="45 Digital Noticias">
+      <span class="name" style="display:none">45 DIGITAL <b>NOTICIAS</b></span>
+    </a>
+    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav" id="nav">
+      <a href="index.html">Columnas</a>
+      <a href="expedientes.html">Expedientes</a>
+      <a href="acerca.html">Acerca</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== HERO / DESTACADA ===== -->
+<section class="hero">
+  <img class="hero-bg" src="fondo.svg" alt="" aria-hidden="true">
+  <!-- motivo vantage: ojo de Dios / atalaya -->
+  <svg class="vantage" viewBox="0 0 400 400" fill="none" aria-hidden="true">
+    <circle cx="200" cy="200" r="190" stroke="#cca15a" stroke-width=".8" opacity=".35"/>
+    <circle cx="200" cy="200" r="140" stroke="#cca15a" stroke-width=".8" opacity=".5"/>
+    <circle cx="200" cy="200" r="90" stroke="#cca15a" stroke-width=".8" opacity=".7"/>
+    <circle cx="200" cy="200" r="40" stroke="#cca15a" stroke-width="1"/>
+    <circle cx="200" cy="200" r="6" fill="#ecc77f"/>
+    <path d="M200 10v380M10 200h380" stroke="#cca15a" stroke-width=".6" opacity=".3"/>
+    <circle cx="200" cy="60" r="3" fill="#cca15a" opacity=".8"/>
+    <circle cx="320" cy="280" r="2.5" fill="#cca15a" opacity=".7"/>
+    <circle cx="110" cy="300" r="2" fill="#cca15a" opacity=".6"/>
+  </svg>
+
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">
+          <span class="kicker">Columna destacada</span>
+          <span class="line"></span>
+        </div>
+        <h1>El rey de ratas</h1>
+        <p class="dek">El poder en turno no es una pirámide con un jefe. Es un nudo de colas: nadie manda del todo, y nadie puede zafarse sin desgarrarse.</p>
+        <div class="meta-row">
+          <span>5 min de lectura</span>
+        </div>
+        <a class="btn" href="el-rey-de-ratas.html">Leer la columna →</a>
+      </div>
+      <aside class="hero-aside">
+        <p><b style="color:var(--amber)">45 Digital Noticias.</b></p>
+        <p>Lecturas que conjuntan lo que en apariencia no tiene relación. No periodismo de nota: vista cenital sobre el poder.</p>
+        <p>Programa 9–10 a.m. · columnas para quien quiera ahondar.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ÍNDICE DE COLUMNAS ===== -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Últimas columnas</h2>
+      <a href="#">Ver todas →</a>
+    </div>
+
+    <div class="cards">
+      <!-- PLANTILLA · por cada columna: data-date (ISO, fecha de publicación) + imagen + href + categoría + título + gancho.
+           El script ordena por data-date (más reciente primero) y muestra solo las CAP más nuevas. -->
+      <a class="card reveal" data-date="2026-06-10" href="el-rey-de-ratas.html">
+        <div class="card-img"><img src="rey-de-ratas.svg" alt=""></div>
+        <div class="card-body">
+          <span class="date">Poder</span>
+          <h3>El rey de ratas</h3>
+          <p>El poder en turno como un nudo de colas: nadie puede zafarse sin desgarrarse.</p>
+          <span class="more">Leer →</span>
+        </div>
+      </a>
+
+      <a class="card reveal" data-date="2026-06-01" href="#">
+        <div class="card-img"><img src="fondo.svg" alt=""></div>
+        <div class="card-body">
+          <span class="date">Instituciones</span>
+          <h3>El silencio como método</h3>
+          <p>Cuando un sitio oficial se cae sin ruido, no es falla técnica: es una decisión.</p>
+          <span class="more">Próximamente</span>
+        </div>
+      </a>
+
+      <a class="card reveal" data-date="2026-05-29" href="#">
+        <div class="card-img"><img src="fondo.svg" alt=""></div>
+        <div class="card-body">
+          <span class="date">Sistémica</span>
+          <h3>Cerrar el círculo</h3>
+          <p>Lo que vuelve no es la crisis, sino quien la administra.</p>
+          <span class="more">Próximamente</span>
+        </div>
+      </a>
+
+      <a class="card reveal" data-date="2026-05-21" href="#">
+        <div class="card-img"><img src="fondo.svg" alt=""></div>
+        <div class="card-body">
+          <span class="date">Morelos</span>
+          <h3>Cobran por existir</h3>
+          <p>El cerco político del oriente, leído como una sola pieza.</p>
+          <span class="more">Próximamente</span>
+        </div>
+      </a>
+
+      <a class="card reveal" data-date="2026-04-29" href="#">
+        <div class="card-img"><img src="fondo.svg" alt=""></div>
+        <div class="card-body">
+          <span class="date">Geopolítica</span>
+          <h3>Petróleo, defensa y tu pensión</h3>
+          <p>Tres cosas que parecen no tocarse y que, vistas desde arriba, son la misma mesa.</p>
+          <span class="more">Próximamente</span>
+        </div>
+      </a>
+
+      <a class="card reveal" data-date="2026-04-28" href="sabios-solo-cuando-aplauden.html">
+        <div class="card-img"><img src="sabios.svg" alt=""></div>
+        <div class="card-body">
+          <span class="date">Democracia</span>
+          <h3>Sabios solo cuando aplauden</h3>
+          <p>La consulta como rito: se vota para que no se note que ya votaron por ti.</p>
+          <span class="more">Leer →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FRANJA ETHOS ===== -->
+<section class="ethos">
+  <div class="wrap">
+    <blockquote><span class="amber">Conjuntar</span> lo que el día deja suelto.</blockquote>
+    <p class="note">Cada columna toma piezas que parecen no tener relación y las lee desde la altura: quién gana, quién paga, qué se mueve detrás. Opinión fundada, fuentes citadas, lo verificable separado de la lectura. El lector siempre puede cotejar.</p>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="sig">45 Digital Noticias.</span>
+    <span class="small">Columnas · lectura sistémica · © 2026 — Todos los textos cotejados contra fuente.</span>
+  </div>
+</footer>
+
+<script>
+  // ordenar columnas por fecha de publicación (más reciente primero) y limitar al tope
+  (function () {
+    const CAP = 9; // máximo de columnas visibles en el mosaico de portada
+    const grid = document.querySelector('.cards');
+    if (grid) {
+      Array.from(grid.querySelectorAll('.card'))
+        .sort((a, b) => (b.dataset.date || '').localeCompare(a.dataset.date || ''))
+        .forEach((c, i) => { grid.appendChild(c); c.style.display = i < CAP ? '' : 'none'; });
+    }
+  })();
+
+  // reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // menú móvil
+  const mt = document.querySelector('.menu-toggle');
+  const nav = document.getElementById('nav');
+  if (mt && nav) mt.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    mt.setAttribute('aria-expanded', open);
+  });
+</script>
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "PEGAR_TOKEN_CLOUDFLARE"}'></script>
+<!-- End Cloudflare Web Analytics -->
+</body>
+</html>

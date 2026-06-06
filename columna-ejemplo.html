@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El recibo lo firma el Estado — 45 Digital Noticias</title>
+<meta name="description" content="Columna de opinión — 45 Digital Noticias. Lectura sistémica.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <circle cx="20" cy="20" r="18" stroke="#cca15a" stroke-width="1.4"/>
+        <circle cx="20" cy="20" r="11" stroke="#cca15a" stroke-width="1" opacity=".6"/>
+        <circle cx="20" cy="20" r="4" fill="#cca15a"/>
+        <path d="M20 0v6M20 34v6M0 20h6M34 20h6" stroke="#cca15a" stroke-width="1.2"/>
+      </svg>
+      <span class="name">45 DIGITAL <b>NOTICIAS</b></span>
+    </a>
+    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav" id="nav">
+      <a href="index.html">Columnas</a>
+      <a href="#">Expedientes</a>
+      <a href="#">Acerca</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== ARTÍCULO ===== -->
+<article class="article">
+  <div class="wrap">
+
+    <header class="article-head">
+      <div class="eyebrow">
+        <span class="kicker">Columna de opinión</span>
+        <span class="line"></span>
+      </div>
+      <h1>El recibo lo firma el Estado</h1>
+      <p class="dek">Cuando el dinero público paga la obra y la renta se queda en lo privado, la jugada no se ve de frente. Se lee desde arriba.</p>
+      <div class="article-meta">
+        <span><b>Pieza vinculada al programa del:</b> 6 de junio de 2026</span>
+        <span><b>Concepto eje:</b> capitalismo del desastre (Klein, 2007)</span>
+        <span><b>Lectura:</b> 7 min</span>
+      </div>
+    </header>
+
+    <!-- ===== CUERPO · [MACHOTE: reemplazar con el texto real de la columna] ===== -->
+    <div class="prose">
+      <p>Hay jugadas que no se entienden de frente. De frente se ve una obra, una firma, un corte de listón. Desde arriba se ve otra cosa: quién puso el dinero, quién se quedó con la renta, y quién firmó el recibo. Esta columna va de eso —de mirar la mesa completa, no la silla que nos tocó.</p>
+
+      <p>El texto que sigue es un <em>machote</em>: marca el ritmo, la tipografía y la jerarquía de una columna real. Aquí irían tres a cinco minutos de lectura, en prosa escrita, con citas atribuidas en línea —<a href="#">según el informe X</a>— y lo verificable separado de la lectura. El dato lleva su fuente; la interpretación lleva su "a mi juicio".</p>
+
+      <p class="pull">El público pagó la chamba. El privado se quedó con la renta. El Estado firmó el recibo.</p>
+
+      <h2>La pieza que nadie conecta</h2>
+      <p>Aquí entra la lectura sistémica: dos hechos que en el periódico aparecen en secciones distintas y que, puestos uno junto al otro, cuentan una sola historia. No hace falta adivinar nada —basta seguir el dinero y leer con lógica lo que la narrativa oficial prefiere dejar suelto.</p>
+
+      <p>Y conviene ir por partes, porque la prisa es justo lo que la jugada necesita. Cuando algo se aprueba rápido, en bloque y sin ruido, la velocidad no es eficiencia: es método.</p>
+
+      <h2>Lo que queda</h2>
+      <p>El saldo, sin maquillaje, dice una sola cosa: lo que vuelve no es la crisis, es quien la administra. Y eso se sostiene solo si nadie lo recuerda. Por eso se escribe —para que quede.</p>
+    </div>
+
+    <!-- ===== FUENTES (obligatorio en la columna) ===== -->
+    <section class="fuentes">
+      <h2>Fuentes y referencias citadas</h2>
+      <ol>
+        <li>Klein, Naomi (2007). <em>La doctrina del shock</em>. Paidós. ISBN 978-84-493-2041-4.</li>
+        <li>[Documento oficial / boletín] — <a href="#">enlace consultable</a> (consultado 06-jun-2026).</li>
+        <li>[Cobertura de medio trusted] — <a href="#">enlace consultable</a>.</li>
+      </ol>
+    </section>
+
+    <p class="signoff">SRVO</p>
+
+    <a class="back" href="index.html">← Volver a las columnas</a>
+  </div>
+</article>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="sig">45 Digital Noticias.</span>
+    <span class="small">Columnas · lectura sistémica · © 2026 — Todos los textos cotejados contra fuente.</span>
+  </div>
+</footer>
+
+<script>
+  // menú móvil
+  const mt = document.querySelector('.menu-toggle');
+  const nav = document.getElementById('nav');
+  if (mt && nav) mt.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    mt.setAttribute('aria-expanded', open);
+  });
+</script>
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "PEGAR_TOKEN_CLOUDFLARE"}'></script>
+<!-- End Cloudflare Web Analytics -->
+</body>
+</html>

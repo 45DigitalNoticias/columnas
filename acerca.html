@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acerca — 45 Digital Noticias</title>
+<meta name="description" content="Qué es 45 Digital Noticias: lecturas sistémicas que conjuntan lo que en apariencia no tiene relación. Opinión fundada, fuentes a la vista.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="45 Digital Noticias">
+<meta property="og:locale" content="es_MX">
+<meta property="og:title" content="Acerca — 45 Digital Noticias">
+<meta property="og:description" content="Lecturas que conjuntan lo que en apariencia no tiene relación. Vista cenital sobre el poder.">
+<meta property="og:image" content="https://45digitalnoticias.github.io/columnas/og-home.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://45digitalnoticias.github.io/columnas/og-home.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="logo-45.png" alt="45 Digital Noticias">
+      <span class="name" style="display:none">45 DIGITAL <b>NOTICIAS</b></span>
+    </a>
+    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav" id="nav">
+      <a href="index.html">Columnas</a>
+      <a href="expedientes.html">Expedientes</a>
+      <a href="acerca.html">Acerca</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article page-hero" style="background-image:url('fondo-acerca.svg')">
+  <div class="wrap">
+    <header class="article-head">
+      <div class="eyebrow">
+        <span class="kicker">Acerca</span>
+        <span class="line"></span>
+      </div>
+      <h1>Conjuntar lo que el día deja suelto</h1>
+      <p class="dek">45 Digital Noticias es un programa de radio (9 a 10 de la mañana). Estas columnas son la prolongación escrita de sus participaciones editoriales.</p>
+    </header>
+
+    <div class="prose">
+      <p>No perseguimos la nota del día, sino el subtexto que la une con otras. La apuesta es leer el poder desde la altura: tomar piezas que en apariencia no tienen relación y ver, desde arriba, dónde se tocan. Quién gana, quién paga, qué se mueve detrás.</p>
+
+      <p>No es grilla de bando. El invariante con el que se mide cada caso no es de qué lado conviene, sino una pregunta más vieja y más difícil de capturar: ¿esto defiende o impone? Esa distinción, no la del partido, es la que ordena la lectura.</p>
+
+      <p>Y hay una disciplina detrás. Lo verificable va separado de la opinión: el dato se coteja contra su fuente, y las fuentes van a la vista, enlazadas, para que cualquiera pueda comprobarlas o, mejor aún, descubrir algo por su cuenta. Una columna se sostiene cuando el lector puede cotejarla.</p>
+
+      <p>Las firma <strong>SRVO</strong>.</p>
+    </div>
+
+    <section class="fuentes">
+      <h2>Seguir y compartir</h2>
+      <ol style="list-style:none;padding-left:0;">
+        <li>Facebook: <a href="https://www.facebook.com/45DigitalMx" target="_blank" rel="noopener">facebook.com/45DigitalMx</a></li>
+      </ol>
+    </section>
+
+    <p class="signoff">SRVO</p>
+    <a class="back" href="index.html">← Volver a las columnas</a>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="sig">45 Digital Noticias.</span>
+    <span class="small">Columnas · expedientes · lectura sistémica · © 2026</span>
+  </div>
+</footer>
+
+<script>
+  const mt = document.querySelector('.menu-toggle');
+  const nav = document.getElementById('nav');
+  if (mt && nav) mt.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    mt.setAttribute('aria-expanded', open);
+  });
+</script>
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "PEGAR_TOKEN_CLOUDFLARE"}'></script>
+<!-- End Cloudflare Web Analytics -->
+</body>
+</html>

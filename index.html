@@ -149,6 +149,16 @@
           <span class="more">Leer →</span>
         </div>
       </a>
+
+      <a class="card reveal" data-date="2026-05-12" href="la-pastilla-de-kelley.html">
+        <div class="card-img"><img src="pastilla-kelley.svg" alt="" style="object-position:center 70%"></div>
+        <div class="card-body">
+          <span class="date">Derecho internacional</span>
+          <h3>La pastilla de Kelley</h3>
+          <p>La advertencia de Núremberg que sigue vigente: el mal no es excepcional, es reproducible.</p>
+          <span class="more">Leer →</span>
+        </div>
+      </a>
     </div>
 
     <div class="see-all-wrap"><a class="see-all" href="todas.html">Ver todas las columnas →</a></div>
@@ -196,7 +206,8 @@
       { t: "Cuando los enemigos cobran del mismo barril", d: "El petróleo no sube solo, lo suben los misiles. Y una parte de esa economía la pagas tú sin haber firmado nada.", h: "cuando-los-enemigos-cobran-del-mismo-barril.html", m: "6 min de lectura", g: "enemigos-barril.svg" },
       { t: "Sabios solo cuando aplauden", d: "La consulta como rito: se vota para que no se note que ya votaron por ti.", h: "sabios-solo-cuando-aplauden.html", m: "5 min de lectura", g: "sabios.svg" },
       { t: "Cuando el legalismo es coartada", d: "\"Que investigue la fiscalía, si hay pruebas, que proceda\" suena impecable. El problema es cuándo se dice, y hacia quién.", h: "cuando-el-legalismo-es-coartada.html", m: "6 min de lectura", g: "legalismo-coartada.svg" },
-      { t: "El truco del \"Estado de Derecho\"", d: "La ley que te frena y la ley que te firma. La única pregunta que importa: ¿quién decide qué es legal?", h: "el-truco-del-estado-de-derecho.html", m: "5 min de lectura", g: "estado-de-derecho.svg" }
+      { t: "El truco del \"Estado de Derecho\"", d: "La ley que te frena y la ley que te firma. La única pregunta que importa: ¿quién decide qué es legal?", h: "el-truco-del-estado-de-derecho.html", m: "5 min de lectura", g: "estado-de-derecho.svg" },
+      { t: "La pastilla de Kelley", d: "La advertencia de Núremberg que sigue vigente: el mal no es nacional ni excepcional, es estructural y reproducible.", h: "la-pastilla-de-kelley.html", m: "7 min de lectura", g: "pastilla-kelley.svg", p: "center 70%" }
     ];
     const p = featured[Math.floor(Math.random() * featured.length)];
     const title = document.getElementById('heroTitle');
@@ -205,7 +216,7 @@
       document.getElementById('heroDek').textContent = p.d;
       document.getElementById('heroMeta').textContent = p.m;
       document.getElementById('heroBtn').href = p.h;
-      const img = document.getElementById('heroImg'); if (img) img.src = p.g;
+      const img = document.getElementById('heroImg'); if (img) { img.src = p.g; img.style.objectPosition = p.p || 'center'; }
       const il = document.getElementById('heroImgLink'); if (il) il.href = p.h;
     }
   })();

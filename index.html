@@ -194,7 +194,7 @@
 <script>
   // ordenar columnas por fecha de publicación (más reciente primero) y limitar al tope
   (function () {
-    const CAP = 9; // máximo de columnas visibles en el mosaico de portada
+    const CAP = 6; // máximo de columnas visibles en el mosaico de portada (el resto, en "Ver todas")
     const grid = document.querySelector('.cards');
     if (grid) {
       Array.from(grid.querySelectorAll('.card'))

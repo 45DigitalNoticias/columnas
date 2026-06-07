@@ -91,7 +91,7 @@
     <div class="cards">
       <!-- PLANTILLA · por cada columna: data-date (ISO, fecha de publicación) + imagen + href + categoría + título + gancho.
            El script ordena por data-date (más reciente primero) y muestra solo las CAP más nuevas. -->
-      <a class="card reveal" data-date="2026-06-10" href="el-rey-de-ratas.html">
+      <a class="card reveal" data-date="2026-06-10" data-order="99" href="el-rey-de-ratas.html">
         <div class="card-img"><img src="rey-de-ratas.svg" alt=""></div>
         <div class="card-body">
           <span class="date">Poder</span>
@@ -157,7 +157,12 @@
     const grid = document.querySelector('.cards');
     if (grid) {
       Array.from(grid.querySelectorAll('.card'))
-        .sort((a, b) => (b.dataset.date || '').localeCompare(a.dataset.date || ''))
+        .sort((a, b) => {
+          // 1º por data-order (posición fija; default 50), 2º por fecha (más reciente primero)
+          const oa = +(a.dataset.order || 50), ob = +(b.dataset.order || 50);
+          if (oa !== ob) return oa - ob;
+          return (b.dataset.date || '').localeCompare(a.dataset.date || '');
+        })
         .forEach((c, i) => { grid.appendChild(c); c.style.display = i < CAP ? '' : 'none'; });
     }
   })();

@@ -64,17 +64,16 @@
           <span class="kicker">Columna destacada</span>
           <span class="line"></span>
         </div>
-        <h1>El rey de ratas</h1>
-        <p class="dek">El poder en turno no es una pirámide con un jefe. Es un nudo de colas: nadie manda del todo, y nadie puede zafarse sin desgarrarse.</p>
+        <h1 id="heroTitle">El rey de ratas</h1>
+        <p class="dek" id="heroDek">El poder en turno no es una pirámide con un jefe. Es un nudo de colas: nadie manda del todo, y nadie puede zafarse sin desgarrarse.</p>
         <div class="meta-row">
-          <span>5 min de lectura</span>
+          <span id="heroMeta">5 min de lectura</span>
         </div>
-        <a class="btn" href="el-rey-de-ratas.html">Leer la columna →</a>
+        <a class="btn" id="heroBtn" href="el-rey-de-ratas.html">Leer la columna →</a>
       </div>
       <aside class="hero-aside">
-        <p><b style="color:var(--amber)">45 Digital Noticias.</b></p>
-        <p>Lecturas que conjuntan lo que en apariencia no tiene relación. No periodismo de nota: vista cenital sobre el poder.</p>
-        <p>Programa en vivo por Facebook, 9–10 a.m. · columnas para quien quiera ahondar.</p>
+        <a id="heroImgLink" class="hero-figure-link" href="el-rey-de-ratas.html"><img id="heroImg" class="hero-figure" src="rey-de-ratas.svg" alt=""></a>
+        <p class="hero-tagline">Lecturas que conjuntan lo que en apariencia no tiene relación. Vista cenital sobre el poder.</p>
       </aside>
     </div>
   </div>
@@ -85,7 +84,7 @@
   <div class="wrap">
     <div class="section-head">
       <h2>Últimas columnas</h2>
-      <a href="#">Ver todas →</a>
+      <a href="todas.html">Ver todas →</a>
     </div>
 
     <div class="cards">
@@ -164,6 +163,26 @@
           return (b.dataset.date || '').localeCompare(a.dataset.date || '');
         })
         .forEach((c, i) => { grid.appendChild(c); c.style.display = i < CAP ? '' : 'none'; });
+    }
+  })();
+
+  // portada rotativa: elige una destacada al azar en cada carga
+  (function () {
+    const featured = [
+      { t: "El rey de ratas", d: "El poder en turno no es una pirámide con un jefe. Es un nudo de colas: nadie manda del todo, y nadie puede zafarse sin desgarrarse.", h: "el-rey-de-ratas.html", m: "5 min de lectura", g: "rey-de-ratas.svg" },
+      { t: "El día que se cerró el círculo", d: "BlackRock, las Afores y el 7 de abril que nadie juntó: la economía de guerra aterrizó en Palacio Nacional.", h: "el-dia-que-se-cerro-el-circulo.html", m: "6 min de lectura", g: "el-circulo.svg" },
+      { t: "Cuando los enemigos cobran del mismo barril", d: "El petróleo no sube solo, lo suben los misiles. Y una parte de esa economía la pagas tú sin haber firmado nada.", h: "cuando-los-enemigos-cobran-del-mismo-barril.html", m: "6 min de lectura", g: "enemigos-barril.svg" },
+      { t: "Sabios solo cuando aplauden", d: "La consulta como rito: se vota para que no se note que ya votaron por ti.", h: "sabios-solo-cuando-aplauden.html", m: "5 min de lectura", g: "sabios.svg" }
+    ];
+    const p = featured[Math.floor(Math.random() * featured.length)];
+    const title = document.getElementById('heroTitle');
+    if (title) {
+      title.textContent = p.t;
+      document.getElementById('heroDek').textContent = p.d;
+      document.getElementById('heroMeta').textContent = p.m;
+      document.getElementById('heroBtn').href = p.h;
+      const img = document.getElementById('heroImg'); if (img) img.src = p.g;
+      const il = document.getElementById('heroImgLink'); if (il) il.href = p.h;
     }
   })();
 

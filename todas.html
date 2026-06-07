@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Todas las columnas — 45 Digital Noticias</title>
+<meta name="description" content="Archivo completo de columnas de 45 Digital Noticias. Filtra por tema o busca por título.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="45 Digital Noticias">
+<meta property="og:locale" content="es_MX">
+<meta property="og:title" content="Todas las columnas — 45 Digital Noticias">
+<meta property="og:description" content="Archivo completo. Filtra por tema o busca por título.">
+<meta property="og:image" content="https://45digitalnoticias.github.io/columnas/og-home.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://45digitalnoticias.github.io/columnas/og-home.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="logo-45.png" alt="45 Digital Noticias">
+      <span class="name" style="display:none">45 DIGITAL <b>NOTICIAS</b></span>
+    </a>
+    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav" id="nav">
+      <a href="index.html">Columnas</a>
+      <a href="expedientes.html">Expedientes</a>
+      <a href="acerca.html">Acerca</a>
+    </nav>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Todas las columnas</h2>
+      <a href="index.html">← Portada</a>
+    </div>
+
+    <div class="filters">
+      <button class="filter-btn active" data-cat="all">Todas</button>
+      <button class="filter-btn" data-cat="poder">Poder</button>
+      <button class="filter-btn" data-cat="economia">Economía de guerra</button>
+      <button class="filter-btn" data-cat="blackrock">BlackRock · Afores</button>
+      <button class="filter-btn" data-cat="democracia">Democracia</button>
+      <span class="search-box"><input id="search" type="search" placeholder="Buscar columna…" aria-label="Buscar columna"></span>
+    </div>
+
+    <div class="cards">
+      <a class="card" data-cat="poder" data-title="el rey de ratas poder norbert elias figuración" href="el-rey-de-ratas.html">
+        <div class="card-img"><img src="rey-de-ratas.svg" alt=""></div>
+        <div class="card-body">
+          <span class="date">Poder</span>
+          <h3>El rey de ratas</h3>
+          <p>El poder en turno como un nudo de colas: nadie puede zafarse sin desgarrarse.</p>
+          <span class="more">Leer →</span>
+        </div>
+      </a>
+
+      <a class="card" data-cat="blackrock" data-title="el día que se cerró el círculo blackrock afores fink sheinbaum pensión capitalismo de gestores" href="el-dia-que-se-cerro-el-circulo.html">
+        <div class="card-img"><img src="el-circulo.svg" alt=""></div>
+        <div class="card-body">
+          <span class="date">BlackRock · Afores</span>
+          <h3>El día que se cerró el círculo</h3>
+          <p>El 7 de abril, dos hechos que nadie juntó: Fink en Palacio y la ley que abrió tu Afore.</p>
+          <span class="more">Leer →</span>
+        </div>
+      </a>
+
+      <a class="card" data-cat="economia" data-title="cuando los enemigos cobran del mismo barril economía de guerra lockheed petróleo doctrina del shock" href="cuando-los-enemigos-cobran-del-mismo-barril.html">
+        <div class="card-img"><img src="enemigos-barril.svg" alt=""></div>
+        <div class="card-body">
+          <span class="date">Economía de guerra</span>
+          <h3>Cuando los enemigos cobran del mismo barril</h3>
+          <p>Quién factura en cada disparo, y por qué tu Afore es socio silencioso.</p>
+          <span class="more">Leer →</span>
+        </div>
+      </a>
+
+      <a class="card" data-cat="democracia" data-title="sabios solo cuando aplauden democracia consulta elección legitimación luhmann" href="sabios-solo-cuando-aplauden.html">
+        <div class="card-img"><img src="sabios.svg" alt=""></div>
+        <div class="card-body">
+          <span class="date">Democracia</span>
+          <h3>Sabios solo cuando aplauden</h3>
+          <p>La consulta como rito: se vota para que no se note que ya votaron por ti.</p>
+          <span class="more">Leer →</span>
+        </div>
+      </a>
+    </div>
+
+    <p class="no-results">No hay columnas que coincidan con tu búsqueda.</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="sig">45 Digital Noticias.</span>
+    <span class="small">Columnas · lectura sistémica · © 2026 — Todos los textos cotejados contra fuente.</span>
+  </div>
+</footer>
+
+<script>
+  const mt = document.querySelector('.menu-toggle');
+  const nav = document.getElementById('nav');
+  if (mt && nav) mt.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    mt.setAttribute('aria-expanded', open);
+  });
+
+  // filtros por categoría + buscador
+  (function () {
+    const btns = Array.from(document.querySelectorAll('.filter-btn'));
+    const cards = Array.from(document.querySelectorAll('.cards .card'));
+    const search = document.getElementById('search');
+    const empty = document.querySelector('.no-results');
+    let cat = 'all';
+    function apply() {
+      const q = (search.value || '').toLowerCase().trim();
+      let shown = 0;
+      cards.forEach(c => {
+        const okCat = cat === 'all' || c.dataset.cat === cat;
+        const okQ = !q || (c.dataset.title || '').toLowerCase().includes(q) || c.textContent.toLowerCase().includes(q);
+        const show = okCat && okQ;
+        c.classList.toggle('hidden', !show);
+        if (show) shown++;
+      });
+      if (empty) empty.style.display = shown ? 'none' : 'block';
+    }
+    btns.forEach(b => b.addEventListener('click', () => {
+      btns.forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      cat = b.dataset.cat;
+      apply();
+    }));
+    if (search) search.addEventListener('input', apply);
+  })();
+</script>
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "PEGAR_TOKEN_CLOUDFLARE"}'></script>
+<!-- End Cloudflare Web Analytics -->
+</body>
+</html>

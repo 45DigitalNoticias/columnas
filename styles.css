@@ -255,7 +255,7 @@ a { color: inherit; text-decoration: none; }
 /* explora por tema (series) */
 .serie-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 @media (max-width: 760px) { .serie-grid { grid-template-columns: 1fr; } }
-.serie-card { display: block; padding: 28px 26px; border: 1px solid var(--line); border-radius: 14px; background: linear-gradient(160deg, rgba(204,161,90,.06), rgba(0,0,0,0)); transition: .2s; text-decoration: none; }
+.serie-card { display: block; padding: 28px 26px; border: 1px solid var(--line); border-radius: 14px; background: linear-gradient(160deg, rgba(204,161,90,.06), rgba(0,0,0,0)); transition: .2s; text-decoration: none; text-align: center; }
 .serie-card:hover { border-color: var(--amber); transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,0,0,.35); }
 .serie-card h3 { font-family: 'Fraunces', Georgia, serif; font-size: 1.55rem; color: #ebe5d6; margin: 0 0 4px; }
 .serie-card .serie-n { font-family: var(--ui, 'Inter', sans-serif); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--amber-bright, #ecc77f); }

@@ -109,7 +109,7 @@
       <a class="serie-card" href="todas.html?s=economia"><span class="serie-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3.5-4.5 3 3L21 6"/></svg></span><h3>Economía</h3><span class="serie-n">5 columnas</span><p>BlackRock, Afores, mercados y el precio del relato.</p><span class="more">Ver columnas →</span></a>
       <a class="serie-card" href="todas.html?s=democracia"><span class="serie-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V10M9.7 21V10M14.3 21V10M19 21V10"/><path d="M3.5 10h17"/><path d="M12 3L3.5 8h17z"/></svg></span><h3>Democracia</h3><span class="serie-n">5 columnas</span><p>Cómo se desfonda una democracia sin necesidad de romperla.</p><span class="more">Ver columnas →</span></a>
       <a class="serie-card" href="todas.html?s=justicia"><span class="serie-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v15"/><path d="M5 7h14"/><path d="M8.5 19h7"/><path d="M5 7l-2.5 5a2.5 2.5 0 0 0 5 0z"/><path d="M19 7l-2.5 5a2.5 2.5 0 0 0 5 0z"/></svg></span><h3>Justicia</h3><span class="serie-n">7 columnas</span><p>Acceso desigual, captura y el poder de decidir qué es legal.</p><span class="more">Ver columnas →</span></a>
-      <a class="serie-card" href="todas.html?s=cultura"><span class="serie-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="1.5"/><path d="M9 21h6M12 17v4"/><path d="M10.5 8.3l4 2.7-4 2.7z"/></svg></span><h3>Cultura</h3><span class="serie-n">5 columnas</span><p>Memoria, pantallas, IA y los mitos que consumimos.</p><span class="more">Ver columnas →</span></a>
+      <a class="serie-card" href="todas.html?s=cultura"><span class="serie-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="1.5"/><path d="M9 21h6M12 17v4"/><path d="M10.5 8.3l4 2.7-4 2.7z"/></svg></span><h3>Cultura</h3><span class="serie-n">6 columnas</span><p>Memoria, pantallas, IA y los mitos que consumimos.</p><span class="more">Ver columnas →</span></a>
     </div>
   </div>
 </section>
@@ -125,6 +125,16 @@
     <div class="cards">
       <!-- PLANTILLA · por cada columna: data-date (ISO, fecha de publicación) + imagen + href + categoría + título + gancho.
            El script ordena por data-date (más reciente primero) y muestra solo las CAP más nuevas. -->
+      <a class="card reveal" data-date="2026-06-19" href="la-renta-del-recuerdo.html">
+        <div class="card-img"><img src="renta-del-recuerdo.png" alt=""></div>
+        <div class="card-body">
+          <span class="date">Cultura · Memoria</span>
+          <h3>La renta del recuerdo</h3>
+          <p>El anuncio estelar del videojuego en 2026 es un juego de 1998. El recuerdo, detrás de una caseta de cobro.</p>
+          <span class="more">Leer →</span>
+        </div>
+      </a>
+
       <a class="card reveal" data-date="2026-06-16" href="la-justicia-se-arranca.html">
         <div class="card-img"><img src="la-justicia-se-arranca.png" alt="" style="object-position:center 35%"></div>
         <div class="card-body">
@@ -475,6 +485,7 @@
   // portada rotativa: elige una destacada al azar en cada carga
   (function () {
     const featured = [
+      { t: "La renta del recuerdo", d: "La noticia más grande del videojuego en 2026 es un juego de 1998. Cuando el pasado se vuelve el activo más rentable, el futuro deja de ser el negocio de alguien.", h: "la-renta-del-recuerdo.html", m: "5 min de lectura", g: "renta-del-recuerdo.png" },
       { t: "La justicia se arranca", d: "Citaron a Edith a una torre: las cámaras la vieron entrar, ninguna salir. El expediente solo avanzó cuando la familia lo empujó.", h: "la-justicia-se-arranca.html", m: "4 min de lectura", g: "la-justicia-se-arranca.png", p: "center 35%" },
       { t: "La fe pública no se hereda a dedo", d: "Zacatecas eliminó el examen para ser notario y dejó que el gobernador designe a dedo. La fe pública, de servicio a botín.", h: "la-fe-publica-no-se-hereda-a-dedo.html", m: "3 min de lectura", g: "fe-publica.png" },
       { t: "La zona ciega", d: "La exención a la FIFA no solo perdona impuestos: la releva de declarar. Se apaga la vigilancia.", h: "la-zona-ciega.html", m: "3 min de lectura", g: "zona-ciega.png" },

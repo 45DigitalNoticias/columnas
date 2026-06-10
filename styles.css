@@ -261,8 +261,8 @@ a { color: inherit; text-decoration: none; }
 .serie-card .serie-n { font-family: var(--ui, 'Inter', sans-serif); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--amber-bright, #ecc77f); }
 .serie-card p { margin: 12px 0 16px; color: var(--muted, #9aa39b); font-size: .96rem; line-height: 1.5; }
 .serie-card .more { font-family: var(--ui, 'Inter', sans-serif); font-size: .8rem; color: var(--amber-bright, #ecc77f); font-weight: 600; }
-.serie-ico { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; border: 1px solid var(--line); border-radius: 10px; color: var(--amber-bright, #ecc77f); background: rgba(204,161,90,.05); transition: .2s; }
-.serie-ico svg { width: 21px; height: 21px; display: block; }
+.serie-ico { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; border: 1px solid var(--line); border-radius: 11px; color: var(--amber-bright, #ecc77f); background: rgba(204,161,90,.05); transition: .2s; }
+.serie-ico svg { width: 23px; height: 23px; display: block; }
 .serie-card:hover .serie-ico { border-color: var(--amber); background: rgba(204,161,90,.12); transform: scale(1.05); }
 
 /* fondo de página (Acerca / Expedientes) */

@@ -156,6 +156,17 @@
     .wrap{padding:0 14px;}
   }
 #selDelitoMapa option,#selAnioMapa option{background:#161b22;color:#e6edf3;font-size:12.5px;}
+.menuBtn{display:none;width:44px;height:44px;border-radius:10px;border:1.5px solid rgba(251,191,36,.55);background:rgba(22,27,34,.85);color:var(--amber);font-size:19px;cursor:pointer;box-shadow:0 0 10px rgba(251,191,36,.2);}
+@media(max-width:980px){
+  .topbar{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;backdrop-filter:none;}
+  .menuBtn{display:flex;align-items:center;justify-content:center;}
+  .topnav{display:none;position:fixed !important;inset:64px 0 0 0 !important;width:100% !important;max-width:none !important;margin:0 !important;z-index:49;background:rgba(13,17,23,.97);flex-direction:column;align-items:stretch;justify-content:flex-start;gap:11px;padding:22px 18px;overflow-y:auto;}
+  .topnav.open{display:flex;}
+  .topnav a{text-align:center;padding:15px;font-size:12px;}
+}
+.fsbtn{width:30px;height:30px;border-radius:8px;border:1px solid var(--line);background:rgba(22,27,34,.85);color:#c9d1d9;font-size:14px;cursor:pointer;}
+.fsbtn:hover{border-color:rgba(251,191,36,.55);color:var(--amber);}
+#panelMapa:fullscreen{background:#0d1117;overflow:auto;padding:26px;}
 </style>
 <script>
 /* GA4 · solo en produccion (mismo flujo que /morelos/) */
@@ -175,6 +186,7 @@ if(/github\.io$/.test(location.hostname)){
     <nav class="topnav">
       <a href="como_leer.html" style="--cc:#e6edf3">✦ ¿Cómo leer?</a><a href="#" style="--cc:#fbbf24">◉ Mapa</a><a href="estado.html" style="--cc:#ec4899">⌖ Estados</a><a href="senales.html" style="--cc:#a78bfa">⇄ Señales</a><a href="../" style="--cc:#fb923c">✒ Columnas</a><a href="como_leer.html" style="--cc:#3fb950">⧉ Metodología</a><a href="como_leer.html" style="--cc:#22d3ee">Aa Glosario</a><a href="expedientes.html" style="--cc:#f85149">▣ Expedientes</a><a href="morelos/" class="navmor" style="--cc:#d45d9e">⌖ Morelos · a fondo</a>
     </nav>
+    <button class="menuBtn" onclick="document.querySelector('.topnav').classList.toggle('open');this.textContent=this.textContent==='☰'?'✕':'☰';" aria-label="Menú">☰</button>
   </header>
 
   <div class="wrap">
@@ -211,7 +223,7 @@ if(/github\.io$/.test(location.hostname)){
 
     <!-- MAPA -->
     <div class="mapgrid">
-      <div class="panel">
+      <div class="panel" id="panelMapa">
         <h3><span>Mapa nacional · <em>elige qué violencia quieres ver</em></span><span id="mapScope" style="color:#c9d1d9;text-transform:none;letter-spacing:0;font-family:Inter;font-weight:700;font-size:13px;"></span></h3>
         <div style="display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin-bottom:11px;">
           <div style="display:flex;align-items:center;gap:8px;background:rgba(22,27,34,.9);border:1.5px solid rgba(251,191,36,.55);border-radius:10px;padding:7px 12px;box-shadow:0 0 12px rgba(251,191,36,.18);">
@@ -225,7 +237,7 @@ if(/github\.io$/.test(location.hostname)){
           <span style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1px;color:var(--dim);">CATÁLOGO COMPLETO · 55 SUBTIPOS + DESAPARECIDOS RNPDNO</span>
         </div>
         <div style="display:flex;justify-content:flex-end;align-items:center;gap:10px;">
-          <div class="zoomctl"><button onclick="zoomMapa(1.25)" title="Acercar">+</button><button onclick="zoomMapa(0.8)" title="Alejar">−</button><button onclick="zoomMapa(0)" title="Restablecer" style="font-size:11px;">⟲</button></div>
+          <div class="zoomctl"><button onclick="zoomMapa(1.25)" title="Acercar">+</button><button onclick="zoomMapa(0.8)" title="Alejar">−</button><button onclick="zoomMapa(0)" title="Restablecer" style="font-size:11px;">⟲</button><button class="fsbtn" onclick="fsMapa()" title="Pantalla completa">⛶</button></div>
         </div>
         <div class="zoomwrap" id="mapaWrap" style="margin-top:12px;">
         <canvas id="mapa" width="1600" height="1050"></canvas>
@@ -317,6 +329,11 @@ if(/github\.io$/.test(location.hostname)){
   </footer>
   <script>
     let _zm=1;
+    function fsMapa(){
+      const el=document.getElementById('panelMapa');
+      if(document.fullscreenElement) document.exitFullscreen();
+      else (el.requestFullscreen||el.webkitRequestFullscreen).call(el);
+    }
     function zoomMapa(f){
       const c=document.getElementById('mapa');
       _zm = f===0 ? 1 : Math.min(4, Math.max(1, _zm*f));

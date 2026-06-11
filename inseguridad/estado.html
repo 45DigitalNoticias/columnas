@@ -123,6 +123,9 @@
     table.del td.pct{width:80px;}
     .wrap{padding:0 14px;}
   }
+#panelMapaMun:fullscreen{background:#0d1117;overflow:auto;padding:26px;}
+  /* desplegables siempre oscuros (catalogo municipal, periodos, etc.) */
+  select option, select optgroup{background:#161b22;color:#e6edf3;}
 </style>
 <script>
 /* GA4 · solo en produccion (mismo flujo que /morelos/) */
@@ -217,7 +220,7 @@ if(/github\.io$/.test(location.hostname)){
       <h3><span>Mapa de calor municipal · <em id="mapMunPeriodo"></em></span><span>vinculado al periodo del ranking · mismo filtro</span></h3>
       <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;align-items:center;" id="mapMunCtrl"></div>
       <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;align-items:center;" id="indBtns"></div>
-      <div style="display:flex;gap:6px;margin-bottom:10px;"><button onclick="zoomMun(1.25)" style="width:30px;height:30px;border-radius:8px;border:1px solid var(--line);background:rgba(22,27,34,.85);color:#c9d1d9;font-weight:700;cursor:pointer;">+</button><button onclick="zoomMun(0.8)" style="width:30px;height:30px;border-radius:8px;border:1px solid var(--line);background:rgba(22,27,34,.85);color:#c9d1d9;font-weight:700;cursor:pointer;">−</button><button onclick="zoomMun(0)" style="width:30px;height:30px;border-radius:8px;border:1px solid var(--line);background:rgba(22,27,34,.85);color:#c9d1d9;font-size:11px;cursor:pointer;">⟲</button><span style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--dim);letter-spacing:1px;align-self:center;">ZOOM · útil en tablet</span></div>
+      <div style="display:flex;gap:6px;margin-bottom:10px;"><button onclick="zoomMun(1.25)" style="width:30px;height:30px;border-radius:8px;border:1px solid var(--line);background:rgba(22,27,34,.85);color:#c9d1d9;font-weight:700;cursor:pointer;">+</button><button onclick="zoomMun(0.8)" style="width:30px;height:30px;border-radius:8px;border:1px solid var(--line);background:rgba(22,27,34,.85);color:#c9d1d9;font-weight:700;cursor:pointer;">−</button><button onclick="zoomMun(0)" style="width:30px;height:30px;border-radius:8px;border:1px solid var(--line);background:rgba(22,27,34,.85);color:#c9d1d9;font-size:11px;cursor:pointer;">⟲</button><button onclick="fsMun()" style="width:30px;height:30px;border-radius:8px;border:1px solid var(--line);background:rgba(22,27,34,.85);color:#c9d1d9;font-size:14px;cursor:pointer;" title="Pantalla completa">⛶</button><span style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--dim);letter-spacing:1px;align-self:center;">ZOOM · útil en tablet</span></div>
       <div id="mapMunWrap" style="position:relative;overflow:auto;max-height:640px;border-radius:8px;">
         <canvas id="mapaMun" style="width:100%;display:block;border-radius:8px;"></canvas>
         <div id="mapMunAviso" style="display:none;position:absolute;inset:0;background:rgba(13,17,23,.82);border-radius:8px;align-items:center;justify-content:center;text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1.5px;color:var(--mut);text-transform:uppercase;padding:30px;"></div>
@@ -558,7 +561,7 @@ function renderRank(){
 }
 
 // ================= MAPA MUNICIPAL VINCULADO =================
-let SMUN=null, GMUN=null, indMapa='hd';
+let SMUN=null, GMUN=null, SMA=null, indMapa='total', subMapa=null;
 const INDS = [['hd','Homicidio'],['feminicidio','Feminicidio'],['extorsion','Extorsión'],['secuestro','Secuestro'],['violencia_familiar','V. familiar'],['violacion','Violación'],['narcomenudeo','Narcomenudeo'],['total','Total']];
 
 function cargarMun(clave){
@@ -566,7 +569,8 @@ function cargarMun(clave){
   return Promise.all([
     fetch(`series_mun/smun_${id}.js`).then(r=>{if(!r.ok)throw 0;return r.text();}).then(t=>(new Function(t+'; return SERIE_MUNICIPAL;'))()),
     fetch(`series_mun/gm_${id}.json`).then(r=>{if(!r.ok)throw 0;return r.json();}),
-  ]).then(([sm,gm])=>{SMUN=sm;GMUN=gm;}).catch(()=>{SMUN=null;GMUN=null;});
+    fetch(`series_mun/sma_${id}.js`).then(r=>{if(!r.ok)throw 0;return r.text();}).then(t=>(new Function(t+'; return SERIE_MUN_ANUAL;'))()).catch(()=>null),
+  ]).then(([sm,gm,sa])=>{SMUN=sm;GMUN=gm;SMA=sa;}).catch(()=>{SMUN=null;GMUN=null;SMA=null;});
 }
 
 function renderMapaMun(){
@@ -581,12 +585,36 @@ function renderMapaMun(){
     PERIODOS_R.map((p,i)=>`<option value="${i}" ${i===periodoR?'selected':''}>${p.label}${p.parcial?' (parcial)':''}</option>`).join('') + `</select>` +
     `<span style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1px;color:var(--dim);text-transform:uppercase;">· sincronizado con el ranking</span>`;
   // botones indicador
-  document.getElementById('indBtns').innerHTML=INDS.map(([k,l])=>
-    `<button onclick="indMapa='${k}';renderMapaMun()" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;font-weight:700;padding:8px 12px;border-radius:8px;cursor:pointer;border:1px solid ${k===indMapa?P.color:'var(--line)'};color:${k===indMapa?P.color:'var(--mut)'};background:transparent;">${l}</button>`).join('');
+  const catEdo=(DELITOS_COMPLETO_2025[String(CLAVE)]||[]).slice().sort((a,b)=>b.v-a.v);
+  document.getElementById('indBtns').innerHTML =
+    `<span style="display:inline-flex;align-items:center;gap:8px;background:rgba(22,27,34,.9);border:1.5px solid ${P.color};border-radius:10px;padding:8px 13px;box-shadow:0 0 12px color-mix(in srgb, ${P.color} 28%, transparent);">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:1.6px;color:${P.color};font-weight:700;">▾ DELITO</span>
+        <select onchange="subMapa=this.value||null;renderMapaMun()" style="background:transparent;color:var(--txt);border:none;outline:none;font-family:Inter;font-size:13.5px;font-weight:700;cursor:pointer;max-width:330px;">
+          <option value="" ${!subMapa?'selected':''}>Todos los delitos (total)</option>
+          ${catEdo.map(r=>`<option value="${r.s.replace(/"/g,'&quot;')}" ${subMapa===r.s?'selected':''}>${r.s}</option>`).join('')}
+        </select></span>
+     <span style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1px;color:var(--dim);text-transform:uppercase;">catálogo completo · ${catEdo.length} subtipos · anual (total admite trimestres)</span>`;
   if(!SMUN||!GMUN){ aviso.style.display='flex'; aviso.textContent='Mapa municipal disponible próximamente para este estado (piloto: Coahuila)'; cv.style.visibility='hidden'; return; }
   // periodo compartido con el ranking (timeline estatal arranca 2015; municipal 2016)
   const per=PERIODOS_R[periodoR];
   document.getElementById('mapMunPeriodo').textContent=per.label+(per.parcial?' (PARCIAL)':'');
+  const vals={};
+  if(subMapa){
+    if(!SMA){ aviso.style.display='flex'; aviso.textContent='Catálogo anual municipal no disponible para este estado'; cv.style.visibility='hidden'; return; }
+    let ai=null;
+    if(/^20(1[6-9]|2[0-5])$/.test(per.label)) ai=parseInt(per.label)-2016;
+    else if(per.label==='2026 ene-abr') ai=10;
+    if(ai===null){
+      aviso.style.display='flex';
+      aviso.textContent = per.label==='2015' ? 'Sin dato municipal para 2015 (la serie municipal inicia en 2016)' : 'El catálogo completo municipal es ANUAL: usa un año o 2026 ene-abr';
+      cv.style.visibility='hidden'; return;
+    }
+    aviso.style.display='none'; cv.style.visibility='visible';
+    GMUN.features.forEach(f=>{
+      const m=SMA.munis[String(f.properties.cve)];
+      vals[f.properties.cve]= (m && m[subMapa]) ? m[subMapa][ai] : 0;
+    });
+  } else {
   const mi=per.ini-12, mf=mi+per.len;
   const en2025 = SMUN.sin_2025_municipal && SMUN.labels[Math.max(mi,0)] && SMUN.labels[Math.max(mi,0)].startsWith('2025');
   if(mi<0 || en2025){
@@ -595,12 +623,11 @@ function renderMapaMun(){
     cv.style.visibility='hidden'; return;
   }
   aviso.style.display='none'; cv.style.visibility='visible';
-  // valores por municipio en el periodo (matching por CLAVE INEGI)
-  const vals={};
   GMUN.features.forEach(f=>{
     const s=SMUN.munis[String(f.properties.cve)];
     vals[f.properties.cve]= s ? s[indMapa].slice(mi,mf).reduce((a,b)=>a+b,0) : 0;
   });
+  }
   // geometría → pixeles
   let a=1e9,b=1e9,c=-1e9,d=-1e9;
   GMUN.features.forEach(f=>f.geometry.coordinates.forEach(p=>p.forEach(r=>r.forEach(([x,y])=>{if(x<a)a=x;if(x>c)c=x;if(y<b)b=y;if(y>d)d=y;}))));
@@ -650,12 +677,17 @@ function renderMapaMun(){
   };
   // leyenda min/max
   const top=orden[orden.length-1],low=orden[0];
-  const lblInd=INDS.find(i=>i[0]===indMapa)[1];
+  const lblInd=subMapa||'Todos los delitos';
   document.getElementById('mapMunLey').innerHTML=
     `<span>← tenue: ${nomDe[low]} ${fmtN(vals[low]||0)}</span><span>${lblInd} · ${per.label}</span><span>intenso: ${nomDe[top]} ${fmtN(vals[top]||0)} →</span>`;
 }
 
 let _zmun=1;
+function fsMun(){
+  const el=document.getElementById('panelMapaMun');
+  if(document.fullscreenElement) document.exitFullscreen();
+  else (el.requestFullscreen||el.webkitRequestFullscreen).call(el);
+}
 function zoomMun(f){const cv=document.getElementById('mapaMun');_zmun=f===0?1:Math.min(4,Math.max(1,_zmun*f));cv.style.width=(_zmun*100)+'%';}
 // selector preview
 const sel = document.getElementById('selEstado');

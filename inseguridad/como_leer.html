@@ -1,0 +1,78 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cómo leer Inseguridad México · 45 Digital Noticias</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+body{background:#0d1117 url(assets/fondo_vector.svg) center bottom/cover fixed no-repeat;color:#e6edf3;font-family:Inter,system-ui,sans-serif;margin:0;}
+.topbar{display:flex;align-items:center;gap:11px;padding:13px 26px;border-bottom:1px solid rgba(48,54,61,.7);background:rgba(13,17,23,.93);position:sticky;top:0;z-index:50;}
+.topbar a{margin-left:auto;color:#fbbf24;font-family:JetBrains Mono,monospace;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;font-weight:700;padding:9px 15px;border:1.5px solid rgba(251,191,36,.5);border-radius:9px;background:rgba(22,27,34,.7);}
+.wrap{max-width:740px;margin:0 auto;padding:46px 26px 80px;}
+h1{font-family:Fraunces,serif;font-size:42px;letter-spacing:-1.2px;line-height:1.1;margin:0 0 10px;}
+h2{font-family:Fraunces,serif;font-size:24px;letter-spacing:-.4px;margin:34px 0 10px;color:#fbbf24;}
+.firma{font-family:JetBrains Mono,monospace;font-size:10.5px;letter-spacing:2px;color:#8b949e;text-transform:uppercase;margin-bottom:8px;}
+p,li{font-size:15px;line-height:1.85;color:#c9d1d9;text-align:justify;}
+strong{color:#e6edf3;} em{color:#fbbf24;font-style:italic;}
+ul{padding-left:22px;} figure{margin:22px 0;}figure img{width:100%;border-radius:11px;border:1px solid rgba(48,54,61,.7);display:block;}figcaption{font-family:JetBrains Mono,monospace;font-size:10px;letter-spacing:1px;color:#6b7480;text-transform:uppercase;margin-top:8px;text-align:center;}hr{border:none;border-top:1px solid rgba(48,54,61,.7);margin:26px 0;}
+</style><script>
+/* GA4 · solo en produccion (mismo flujo que /morelos/) */
+if(/github\.io$/.test(location.hostname)){
+  var _g=document.createElement('script');_g.async=1;_g.src='https://www.googletagmanager.com/gtag/js?id=G-R64XZVCF6F';document.head.appendChild(_g);
+  window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+  gtag('js',new Date());gtag('config','G-R64XZVCF6F');
+}
+</script>
+</head><body>
+<header class="topbar"><img src="assets/logo45.webp" style="height:42px;border-radius:9px;" alt="45DN"><a href="index.html">← Al dashboard</a></header>
+<main class="wrap"><h1>Cómo leer Inseguridad México (y por qué lo construimos así)</h1>
+<div class="firma"><strong>45 Digital Noticias · Columna editorial · junio 2026</strong></div>
+<hr>
+<p>México discute su seguridad con cifras sueltas: un porcentaje en una mañanera, un ranking en un titular, un mapa rojo en un noticiero. Cada cifra suele ser cierta, y cada una, sola, suele contar solo la parte que conviene a quien la enuncia. <strong>Inseguridad México</strong> existe para lo contrario: poner todas las cifras oficiales en un mismo lugar, con el catálogo completo de delitos, su historia y su fuente, para que cualquier persona pueda auditar lo que se le dice.</p>
+<p>Esta primera columna es la guía de uso. No porque el tablero sea difícil, pues está hecho para leerse de un vistazo, sino porque algunas de sus piezas muestran cosas que ningún reporte oficial pone junto, y conviene saber exactamente qué se está viendo.</p>
+<h2>Primero: el país como campo de temperatura</h2>
+<p>Lo primero que aparece es un mapa de México que se lee como un mapa del clima: zonas frías en azul, zonas que arden en rojo. No mide grados: mide <strong>tasas por cada 100 mil habitantes</strong> del delito que usted elija: homicidio, feminicidio, desaparecidos, extorsión, secuestro, violencia familiar, violación, o el total de carpetas.</p>
+<p>Dos decisiones de diseño importan aquí, y las declaramos:</p>
+<p><strong>Usamos tasas, no volúmenes.</strong> El Estado de México registra más carpetas que Colima por una razón que no necesita criminólogos: tiene casi veinte veces su población. Dividir entre habitantes es lo único que permite comparar. Por tasa de homicidio doloso en 2025, el primer lugar nacional no es ninguno de los estados grandes: es <strong>Colima, con 72.6 por cada 100 mil habitantes</strong>; Morelos es segundo con 48.5.</p><figure><img src="assets/img/portal_final_hd.webp" alt="Mapa nacional" loading="lazy"><figcaption>El mapa nacional · tasa de homicidio doloso 2025 · el ranking acompaña a la derecha</figcaption></figure>
+<p><strong>El degradado entre estados es visual, no estadístico.</strong> El color fluye de un estado a otro como en los mapas meteorológicos para que la lectura sea inmediata; el dato real de cada estado es el que aparece al pasar el cursor y el que sostiene el ranking lateral. La interpolación es estética y está declarada en la metodología.</p>
+<p>Cambie de indicador y observe algo que ningún comunicado muestra: <strong>cada delito dibuja un país distinto</strong>. El mapa del homicidio arde en el Pacífico norte; el de los desaparecidos se enciende en Tamaulipas, que registra 373 personas activas en búsqueda por cada 100 mil habitantes. Misma república, geografías de violencia diferentes.</p><figure><img src="assets/img/portal_final_rnpdno.webp" alt="El mismo mapa con el indicador Desaparecidos: otra geografía · Tamaulipas encabeza" loading="lazy"><figcaption>El mismo mapa con el indicador Desaparecidos: otra geografía · Tamaulipas encabeza</figcaption></figure>
+<h2>Su estado: los 55 delitos, sin resumen que esconda</h2>
+<p>Haga clic en cualquier estado, o entre directo a las radiografías estatales y elija el suyo. Lo que encuentra es deliberadamente completo: <strong>los 55 subtipos delictivos del catálogo oficial del Secretariado Ejecutivo (SESNSP)</strong>, agrupados por el bien jurídico que afectan, cada uno con su volumen, su porcentaje del total estatal, su miniserie 2015-2025 y su variación.</p>
+<p>¿Por qué los 55 y no los diez &quot;importantes&quot;? Porque la selección es la primera forma del ocultamiento. Un resumen decide por usted qué importa; el catálogo completo le permite decidirlo a usted.</p>
+<p>Tres herramientas acompañan la tabla:</p>
+<ul><li><strong>El histórico</strong>: cualquier delito, de 2015 a abril de 2026, en vista mensual, trimestral, semestral o anual. El último periodo incompleto siempre aparece marcado como <em>parcial</em>: una caída al final de una gráfica que no avisa que el periodo está incompleto es una mentira visual, y aquí no las hay.</li>
+<li><strong>El ranking por periodo</strong>: los delitos del estado enumerados de menor a mayor en el año o trimestre que usted elija, listo para capturar y compartir con su fuente al pie.</li>
+<li><strong>El mapa municipal</strong>, sincronizado con ese mismo periodo: el calor dentro del estado, municipio por municipio.</li></ul><figure><img src="assets/img/hist_trimestral_total.webp" alt="El histórico con filtros (mensual a anual) y el ranking del periodo · Coahuila" loading="lazy"><figcaption>El histórico con filtros (mensual a anual) y el ranking del periodo · Coahuila</figcaption></figure><figure><img src="assets/img/mapa_mun_vinculado.webp" alt="El mapa municipal sincronizado con el periodo del ranking" loading="lazy"><figcaption>El mapa municipal sincronizado con el periodo del ranking</figcaption></figure>
+<h2>La pieza que nadie más publica: el espejo</h2>
+<p>Aquí está el corazón metodológico del proyecto, y merece explicación.</p>
+<p>El catálogo oficial no solo tiene categorías precisas como &quot;Homicidio doloso&quot; o &quot;Robo a casa habitación&quot;. Tiene también <strong>bolsas</strong>: &quot;Otros delitos que atentan contra la vida&quot;, &quot;Otros robos&quot;, &quot;Otros delitos del Fuero Común&quot;. Son legales y a veces necesarias: hay hechos que no encajan limpio en ninguna casilla. Pero tienen una propiedad incómoda: <strong>lo que entra en una bolsa deja de poder auditarse</strong>. Nadie puede saber, desde el dato público, qué delitos contiene exactamente.</p>
+<p>A cada categoría precisa le corresponde una bolsa del mismo bien jurídico. Las llamamos <strong>espejos</strong>. Y la pregunta de auditoría es simple: cuando un delito específico baja, ¿bajó la violencia, o el registro se movió al espejo?</p>
+<p>Para responderla sin perseguir caso por caso, construimos el <strong>Monitor de Opacidad</strong>: una matriz de los 32 estados por once años donde cada celda dice qué fracción de todas las carpetas de ese estado cayó en bolsas ese año. Se lee en tres movimientos: la <strong>celda</strong> (Tabasco 2025: 34 de cada 100 carpetas son inauditables), la <strong>fila</strong> (si el color se intensifica, el estado mueve cada año más registro a las bolsas), y el <strong>Δ</strong> (el saldo de la década: rojo se opacó, cyan se transparentó).</p><figure><img src="assets/img/col_monitor.webp" alt="El Monitor de Opacidad · 32 estados × 11 años · % de carpetas en bolsas Otros" loading="lazy"><figcaption>El Monitor de Opacidad · 32 estados × 11 años · % de carpetas en bolsas Otros</figcaption></figure>
+<p>Debajo, el detector de pares muestra los casos concretos: <strong>27 señales</strong> donde un delito específico cayó más de 25% mientras su espejo subió más de 25% entre 2018 y 2025, cada una con sus dos series enfrentadas. El cruce de esas dos líneas es la pregunta.</p><figure><img src="assets/img/col_senal.webp" alt="Una señal: el delito específico (cyan) cae mientras su espejo (rojo) sube" loading="lazy"><figcaption>Una señal: el delito específico (cyan) cae mientras su espejo (rojo) sube</figcaption></figure>
+<p>Y aquí la advertencia que repetiremos siempre, porque la seriedad del proyecto depende de ella: <strong>opacidad no es culpa</strong>. Una celda alta o una señal no prueban manipulación; pueden ser cambios de criterio de captura o reformas legales. Lo que sí vuelven innegable es cuánto del delito de cada estado no se puede auditar, hacia dónde va esa fracción, y qué casos merecen explicación pública. Las señales son hipótesis a auditar. Quien tenga la explicación, tiene en este medio el espacio para darla.</p>
+<h2>Lo que sostiene todo: la trazabilidad</h2>
+<p>Cada cifra publicada en Inseguridad México tiene un registro en un archivo público de auditoría con su fuente primaria, su método de cálculo y su fecha de corte. Los datos provienen de bases oficiales (SESNSP, el Registro Nacional de Personas Desaparecidas RNPDNO, INEGI y CONAPO) y cualquier persona con una computadora puede reproducir cada número desde el archivo original. Cuando dos cortes oficiales difieren entre sí, lo decimos; cuando un dato no existe, lo decimos también, en lugar de rellenarlo.</p>
+<p>Las magnitudes de fondo, por si las busca al entrar: en 2025 el país registró <strong>2,016,723 carpetas de investigación</strong> del fuero común y <strong>19,987 homicidios dolosos</strong>: un descenso de 21.5% frente a 2024 que este tablero permite examinar delito por delito y estado por estado, en lugar de aplaudirlo o negarlo en bloque. Y en el registro de desaparecidos permanecen <strong>133,924 personas</strong> en calidad de activas: detrás de cada fila de esa base hay una familia que sigue buscando. Ese dato no baja con ningún comunicado.</p>
+<p>El tablero no opina. Ordena la evidencia y la deja auditable. La opinión, la suya, empieza donde termina el mapa.</p>
+<hr>
+<p><em>Las cifras de esta columna provienen del registro de trazabilidad del proyecto (cifras.csv) con cortes: SESNSP estatal abril 2026, RNPDNO 3 de junio de 2026, CONAPO proyecciones 2025. Metodología completa, fuentes y glosario, en las secciones correspondientes del sitio.</em></p></main><button class="shfab" onclick="document.getElementById('shpop').classList.toggle('open')" title="Compartir" aria-label="Compartir">⤴</button>
+<div class="shpop" id="shpop">
+  <a href="#" onclick="shGo('x');return false;" style="--sc:#e6edf3" title="X">𝕏</a>
+  <a href="#" onclick="shGo('fb');return false;" style="--sc:#1877f2" title="Facebook">f</a>
+  <a href="#" onclick="shGo('wa');return false;" style="--sc:#25d366" title="WhatsApp">✆</a>
+  <button onclick="navigator.clipboard.writeText(location.href);this.textContent='✓';setTimeout(()=>this.textContent='⧉',1200);" style="--sc:#fbbf24" title="Copiar enlace">⧉</button>
+</div>
+<style>
+.shfab{position:fixed;bottom:18px;right:18px;z-index:9400;width:52px;height:52px;border-radius:50%;border:none;background:linear-gradient(135deg,#fbbf24,#f59e0b);box-shadow:0 0 18px rgba(251,191,36,.5),0 3px 10px rgba(0,0,0,.5);color:#0d1117;font-size:21px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.shfab:hover{box-shadow:0 0 26px rgba(251,191,36,.75),0 3px 10px rgba(0,0,0,.5);}
+.shpop{position:fixed;bottom:80px;right:21px;z-index:9400;display:none;flex-direction:column;gap:9px;}
+.shpop.open{display:flex;}
+.shpop a,.shpop button{width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:700;text-decoration:none;cursor:pointer;background:rgba(13,17,23,.92);color:var(--sc);border:1.5px solid var(--sc);box-shadow:0 0 11px color-mix(in srgb, var(--sc) 40%, transparent);}
+.shpop a:hover,.shpop button:hover{background:color-mix(in srgb, var(--sc) 18%, rgba(13,17,23,.92));}
+@media(max-width:680px){.shfab{bottom:74px;}.shpop{bottom:136px;}}
+</style>
+<script>
+function shGo(n){
+  const u=encodeURIComponent(location.href), t=encodeURIComponent(document.title);
+  const m={x:'https://twitter.com/intent/tweet?text='+t+'&url='+u, fb:'https://www.facebook.com/sharer/sharer.php?u='+u, wa:'https://wa.me/?text='+t+'%20'+u};
+  window.open(m[n],'_blank','noopener');
+}
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "a4de56a9a4564d0ea0f4e0259af8bc7a"}'></script></body></html>

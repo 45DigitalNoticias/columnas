@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Señales de reclasificación · Inseguridad México · 45 Digital Noticias</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<script src="panorama_estatal.js"></script>
+<script src="series_completo.js"></script>
+<style>
+  :root{
+    --bg:#0d1117; --panel:rgba(22,27,34,.78); --line:rgba(48,54,61,.7);
+    --txt:#e6edf3; --mut:#8b949e; --dim:#6b7480;
+    --purple:#a78bfa; --cyan:#22d3ee; --red:#f85149; --amber:#fbbf24;
+  }
+  *{box-sizing:border-box;}
+  body{background:#0d1117 url(assets/fondo_vector.svg) center bottom/cover fixed no-repeat;color:var(--txt);font-family:Inter,system-ui,sans-serif;margin:0;}
+  .topbar{display:flex;align-items:center;justify-content:space-between;padding:13px 26px;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(13,17,23,.93);backdrop-filter:blur(8px);z-index:50;}
+  .brand{display:flex;align-items:center;gap:11px;}
+  .brand .n{font-weight:800;font-size:13px;display:block;}
+  .brand .s{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:2.5px;color:var(--purple);text-transform:uppercase;}
+  .topnav{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;}
+  .topnav a{color:var(--mut);text-decoration:none;margin-left:18px;}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 26px;}
+
+  .hero{text-align:center;padding:56px 0 30px;}
+  .hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:3.5px;color:var(--purple);text-transform:uppercase;font-weight:700;margin-bottom:14px;}
+  .hero h1{font-family:Fraunces,serif;font-size:52px;font-weight:700;line-height:1.05;letter-spacing:-1.4px;margin:0 auto 18px;max-width:880px;}
+  .hero h1 em{color:var(--purple);font-style:italic;}
+  .hero .lead{max-width:760px;margin:0 auto;font-size:15.5px;line-height:1.65;color:#c9d1d9;text-align:justify;}
+  .hero .lead strong{color:var(--txt);}
+
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin:34px 0 24px;}
+  .kpi{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;text-align:center;border-top:3px solid var(--purple);}
+  .kpi .num{font-family:Fraunces,serif;font-size:34px;font-weight:800;color:var(--purple);}
+  .kpi .lab{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:1.4px;color:var(--mut);text-transform:uppercase;margin-top:5px;line-height:1.5;}
+
+  .filtros{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin-bottom:22px;}
+  .filtros .lbl{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:1.5px;color:var(--dim);text-transform:uppercase;}
+  .fbtn{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;font-weight:700;padding:8px 13px;border-radius:8px;cursor:pointer;border:1px solid var(--line);color:var(--mut);background:transparent;}
+  .fbtn.act{border-color:var(--purple);color:var(--purple);background:rgba(167,139,250,.08);}
+  .filtros select{background:#161b22;color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:8px 12px;font-family:Inter;font-size:12.5px;}
+
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:40px;}
+  .scard{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--purple);border-radius:13px;padding:20px 22px;}
+  .scard .top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:4px;}
+  .scard .edo{font-family:Fraunces,serif;font-size:21px;font-weight:700;}
+  .scard .tag{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1.4px;color:var(--purple);text-transform:uppercase;font-weight:700;}
+  .scard .par{font-size:12.5px;color:var(--mut);margin-bottom:12px;line-height:1.4;}
+  .scard .pinza{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;}
+  .lado{background:rgba(13,17,23,.65);border-radius:8px;padding:10px 12px;}
+  .lado .l{font-size:9px;color:var(--dim);font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.6px;line-height:1.4;}
+  .lado .v{font-family:Fraunces,serif;font-size:24px;font-weight:800;}
+  .lado.down .v{color:var(--cyan);} .lado.up .v{color:var(--red);}
+  .scard .chartlbl{display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--dim);margin-top:6px;text-transform:uppercase;letter-spacing:.8px;}
+  .scard .chartlbl .c1{color:var(--cyan);} .scard .chartlbl .c2{color:var(--red);}
+  .metodo{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:24px 28px;margin-bottom:36px;}
+  .metodo h3{font-family:Fraunces,serif;font-size:21px;margin:0 0 10px;}
+  .metodo p{font-size:13px;color:var(--mut);line-height:1.7;margin:0 0 8px;text-align:justify;}
+  .metodo p strong{color:var(--txt);}
+  footer{border-top:1px solid var(--line);padding:20px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.4px;color:var(--dim);text-transform:uppercase;}
+  @media(max-width:900px){.grid{grid-template-columns:1fr;}.kpis{grid-template-columns:repeat(2,1fr);}.hero h1{font-size:34px;}}
+</style>
+<script>
+/* GA4 · solo en produccion (mismo flujo que /morelos/) */
+if(/github\.io$/.test(location.hostname)){
+  var _g=document.createElement('script');_g.async=1;_g.src='https://www.googletagmanager.com/gtag/js?id=G-R64XZVCF6F';document.head.appendChild(_g);
+  window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+  gtag('js',new Date());gtag('config','G-R64XZVCF6F');
+}
+</script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="assets/logo45.webp" style="height:44px;border-radius:9px;display:block;" alt="45 Digital Noticias">
+      <div><span class="n">45 DIGITAL NOTICIAS</span><span class="s">Señales de reclasificación</span></div>
+    </div>
+    <nav class="topnav"><a href="index.html">← Portal</a><a href="estado.html?estado=5">Dashboard estatal</a></nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Detector nacional · 32 estados · ventana 2018 → 2025 · hipótesis a auditar</div>
+      <h1>Cuando el delito baja, <em>¿a dónde se va?</em></h1>
+      <p class="lead">El catálogo SESNSP tiene categorías espejo — las bolsas <strong>"Otros…"</strong> de cada bien jurídico. Cuando un delito específico cae mientras su espejo sube, la estadística puede estar registrando lo mismo con otro nombre. Este detector cruza los 4 pares más sensibles en los 32 estados. <strong>Cada señal es hipótesis a auditar</strong> — puede ser cambio de criterio de captura, reforma legal o reclasificación — y se publica con su serie completa para que el lector la audite.</p>
+    </section>
+
+    <div class="kpis" id="kpis"></div>
+
+    <!-- MONITOR DE OPACIDAD · la matriz exhaustiva -->
+    <div class="metodo" style="margin-bottom:16px;">
+      <h3 style="display:flex;justify-content:space-between;align-items:baseline;"><span>Monitor de opacidad · <em style="color:var(--purple);font-style:italic;">% de carpetas en bolsas "Otros…"</em></span><span style="font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--dim);letter-spacing:1px;">32 ESTADOS × 11 AÑOS · EXHAUSTIVO · SIN UMBRALES</span></h3>
+      <p style="margin-bottom:14px;">En lugar de buscar pares uno a uno, esta matriz mide qué fracción de TODAS las carpetas de cada estado cae en las categorías espejo (no auditables) cada año. Leer por fila: el color sube = el estado usa cada vez más las bolsas. Click en el estado para filtrar sus señales abajo.</p>
+      <div id="heatmap" style="overflow-x:auto;"></div>
+      <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--dim);margin-top:8px;text-transform:uppercase;letter-spacing:.8px;">
+        <span>filas ordenadas por opacidad 2025 · Δ = cambio 2015→2025 en puntos</span>
+        <span>escala: <span style="color:#8b949e">0%</span> → <span style="color:var(--purple)">púrpura intenso = mayor opacidad</span></span>
+      </div>
+
+      <!-- GUÍA DE LECTURA · pedagogía integrada -->
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-top:18px;" id="guia">
+        <div style="background:rgba(13,17,23,.6);border:1px solid var(--line);border-radius:10px;padding:14px 16px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1.5px;color:var(--purple);text-transform:uppercase;font-weight:700;margin-bottom:6px;">① La celda</div>
+          <div style="font-size:12px;color:#c9d1d9;line-height:1.55;">De cada 100 carpetas del estado ese año, las que terminaron en una bolsa "Otros…". Un 34 significa que <b style="color:var(--txt)">una de cada tres es inauditable</b>.</div>
+        </div>
+        <div style="background:rgba(13,17,23,.6);border:1px solid var(--line);border-radius:10px;padding:14px 16px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1.5px;color:var(--purple);text-transform:uppercase;font-weight:700;margin-bottom:6px;">② La fila</div>
+          <div style="font-size:12px;color:#c9d1d9;line-height:1.55;">La trayectoria del estado. Púrpura que se intensifica: más carpetas migran a las bolsas. <b style="color:var(--txt)">Los quiebres bruscos son cambios de criterio</b> — y merecen explicación pública.</div>
+        </div>
+        <div style="background:rgba(13,17,23,.6);border:1px solid var(--line);border-radius:10px;padding:14px 16px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1.5px;color:var(--purple);text-transform:uppercase;font-weight:700;margin-bottom:6px;">③ El Δ</div>
+          <div style="font-size:12px;color:#c9d1d9;line-height:1.55;">El saldo de la década. <b style="color:var(--red)">Rojo: se opacó</b>. <b style="color:var(--cyan)">Cyan: se transparentó</b>. El monitor registra en ambas direcciones.</div>
+        </div>
+        <div style="background:rgba(13,17,23,.6);border:1px solid var(--line);border-radius:10px;padding:14px 16px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1.5px;color:var(--amber);text-transform:uppercase;font-weight:700;margin-bottom:6px;">④ El límite</div>
+          <div style="font-size:12px;color:#c9d1d9;line-height:1.55;">Opacidad no es culpa: parte del uso de "Otros" es legítimo. Lo que la matriz vuelve innegable es <b style="color:var(--txt)">cuánto del delito no se puede auditar — y hacia dónde va</b>.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin:34px 0 14px;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--purple);text-transform:uppercase;font-weight:700;margin-bottom:8px;">La biopsia · señal por señal</div>
+      <p style="max-width:680px;margin:0 auto;font-size:13px;color:var(--mut);line-height:1.6;">Caso por caso: el delito que cayó (<span style="color:var(--cyan);font-weight:700">cyan</span>) frente a su espejo que subió (<span style="color:var(--red);font-weight:700">rojo</span>), ordenados por carpetas desplazadas. El cruce de las dos líneas es la pregunta.</p>
+    </div>
+    <div class="filtros" id="filtros"></div>
+
+    <div class="grid" id="grid"></div>
+
+    <div class="metodo">
+      <h3>Método</h3>
+      <p><strong>Criterio del detector:</strong> el delito específico cae ≥25% entre 2018 y 2025 mientras su categoría espejo "Otros…" sube ≥25% en el mismo periodo (mínimo 1 carpeta en 2018 en ambos). Pares monitoreados: homicidio doloso / otros contra la vida · secuestro / otros contra la libertad personal · violación simple / otros contra la libertad sexual · robo a casa / otros robos.</p>
+      <p><strong>Regla editorial:</strong> las gráficas reproducen datos oficiales sin alteración (SESNSP base estatal, corte abril 2026). Una señal NO constituye imputación de manipulación: es un patrón estadístico que merece explicación pública. Cifras trazables en cifras.csv.</p>
+    </div>
+  </main>
+  <footer>45 Digital Noticias · Inseguridad México · SESNSP corte abr-2026 · serie 2015-2025 oficial sin interpolación</footer>
+
+<script>
+const PARES = [
+  {id:'hd', esp:'Homicidio doloso', otro:'Otros delitos que atentan contra la vida y la integridad corporal', corto:'Homicidio vs espejo'},
+  {id:'sec', esp:'Secuestro', otro:'Otros delitos que atentan contra la libertad personal', corto:'Secuestro vs espejo'},
+  {id:'vio', esp:'Violación simple', otro:'Otros delitos que atentan contra la libertad y la seguridad sexual', corto:'Violación vs espejo'},
+  {id:'rob', esp:'Robo a casa habitación', otro:'Otros robos', corto:'Robo casa vs espejo'},
+];
+const I18=SERIES_ANIOS.indexOf(2018), I25=SERIES_ANIOS.indexOf(2025);
+const fmtN=v=>Number(v).toLocaleString('es-MX');
+const nomC=e=>e.replace(' de Zaragoza','').replace(' de Ocampo','').replace(' de Ignacio de la Llave','');
+
+// detectar TODAS las señales
+const SIGS=[];
+PANORAMA_ESTATAL.forEach(r=>{
+  const S=SERIES_COMPLETO[String(r.clave_ent)];
+  PARES.forEach(p=>{
+    const se=S[p.esp], so=S[p.otro];
+    if(!se||!so) return;
+    const e18=se[I18], o18=so[I18];
+    if(e18>0&&o18>0){
+      const ve=(se[I25]-e18)/e18*100, vo=(so[I25]-o18)/o18*100;
+      if(ve<=-25&&vo>=25) SIGS.push({edo:nomC(r.entidad),clave:r.clave_ent,color:r.color,par:p,ve,vo,se,so});
+    }
+  });
+});
+// SCORE de severidad: carpetas DESPLAZADAS al espejo, ponderadas por la caída del específico
+// (magnitud real, no porcentaje: Edomex 2,584→6,356 pesa más que QRoo 3→325)
+SIGS.forEach(s=>{ s.score = (s.so[I25]-s.so[I18]) * Math.min(Math.abs(s.ve),100)/100; });
+SIGS.sort((a,b)=>b.score-a.score);
+
+// ===== MONITOR DE OPACIDAD · % en bolsas "Otros..." por estado-año =====
+const OPA = PANORAMA_ESTATAL.map(r=>{
+  const S=SERIES_COMPLETO[String(r.clave_ent)];
+  const fila = SERIES_ANIOS.map((an,i)=>{
+    let otros=0, tot=0;
+    Object.entries(S).forEach(([st,arr])=>{ tot+=arr[i]; if(st.startsWith('Otros')) otros+=arr[i]; });
+    return tot>0 ? otros/tot*100 : 0;
+  });
+  return {edo:nomC(r.entidad), clave:r.clave_ent, fila, v25:fila[fila.length-1], delta:fila[fila.length-1]-fila[0]};
+}).sort((a,b)=>b.v25-a.v25);
+
+function renderHeatmap(){
+  const mx = Math.max(...OPA.flatMap(o=>o.fila));
+  document.getElementById('heatmap').innerHTML =
+    `<div style="display:grid;grid-template-columns:120px repeat(${SERIES_ANIOS.length},1fr) 64px;gap:3px;min-width:760px;">`+
+    `<div></div>`+SERIES_ANIOS.map(a=>`<div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--dim);text-align:center;">${String(a).slice(2)}</div>`).join('')+
+    `<div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--dim);text-align:center;">Δ</div>`+
+    OPA.map(o=>{
+      const celdas = o.fila.map((v,i)=>{
+        const t=v/mx;
+        return `<div title="${o.edo} ${SERIES_ANIOS[i]}: ${v.toFixed(1)}% en bolsas Otros" style="height:22px;border-radius:4px;background:rgba(167,139,250,${(0.06+t*0.85).toFixed(2)});display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:8.5px;color:${t>0.45?'#0d1117':'rgba(230,237,243,.55)'};font-weight:700;">${v>=10?Math.round(v):''}</div>`;
+      }).join('');
+      const dc = o.delta>2?'var(--red)':(o.delta<-2?'var(--cyan)':'var(--dim)');
+      return `<div onclick="edoAct='${o.edo}';renderFiltros();renderGrid();document.getElementById('grid').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;font-size:11px;font-weight:600;display:flex;align-items:center;">${o.edo}</div>`+celdas+
+        `<div style="font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:700;color:${dc};display:flex;align-items:center;justify-content:center;">${o.delta>0?'+':''}${o.delta.toFixed(0)}pt</div>`;
+    }).join('')+`</div>`;
+}
+renderHeatmap();
+
+// KPIs
+const edosCon=new Set(SIGS.map(s=>s.clave)).size;
+document.getElementById('kpis').innerHTML=[
+  {n:SIGS.length,l:'señales detectadas<br>2018→2025'},
+  {n:edosCon+' / 32',l:'estados con al menos<br>una señal'},
+  {n:'4',l:'pares específico/espejo<br>monitoreados'},
+  {n:'≥25%',l:'criterio simétrico<br>caída y alza'},
+].map(k=>`<div class="kpi"><div class="num">${k.n}</div><div class="lab">${k.l}</div></div>`).join('');
+
+// filtros
+let parAct='todos', edoAct='todos';
+function renderFiltros(){
+  document.getElementById('filtros').innerHTML=
+    `<span class="lbl">par:</span>`+
+    [['todos','Todos'],...PARES.map(p=>[p.id,p.corto])].map(([id,l])=>
+      `<button class="fbtn ${id===parAct?'act':''}" onclick="parAct='${id}';renderFiltros();renderGrid()">${l}</button>`).join('')+
+    `<span class="lbl" style="margin-left:12px;">estado:</span>
+     <select onchange="edoAct=this.value;renderGrid()">
+       <option value="todos">Todos los estados</option>
+       ${[...new Set(SIGS.map(s=>s.edo))].sort((a,b)=>a.localeCompare(b,'es')).map(e=>`<option ${e===edoAct?'selected':''}>${e}</option>`).join('')}
+     </select>`;
+}
+
+// chart de series enfrentadas (cada una normalizada a su propio máximo)
+function dualChart(se,so){
+  const w=480,h=110,p=14;
+  const line=(arr,color)=>{
+    const mx=Math.max(...arr,1);
+    const pts=arr.map((v,i)=>`${p+i*(w-2*p)/(arr.length-1)},${h-p-(v/mx)*(h-2*p)}`).join(' ');
+    return `<polyline points="${pts}" fill="none" stroke="${color}" stroke-width="2" stroke-linejoin="round"/>`;
+  };
+  const yr=(i)=>`<text x="${p+i*(w-2*p)/(se.length-1)}" y="${h-2}" font-size="8" fill="#6b7480" font-family="JetBrains Mono" text-anchor="middle">${SERIES_ANIOS[i]}</text>`;
+  return `<svg width="100%" viewBox="0 0 ${w} ${h}">
+    <line x1="${p}" y1="${h-p}" x2="${w-p}" y2="${h-p}" stroke="rgba(48,54,61,.5)"/>
+    ${line(se,'#22d3ee')}${line(so,'#f85149')}
+    ${yr(0)}${yr(I18)}${yr(se.length-1)}
+  </svg>`;
+}
+
+function renderGrid(){
+  const fil=SIGS.filter(s=>(parAct==='todos'||s.par.id===parAct)&&(edoAct==='todos'||s.edo===edoAct));
+  document.getElementById('grid').innerHTML=fil.map(s=>`
+    <div class="scard">
+      <div class="top"><span class="edo" style="color:${s.color}">${s.edo}</span><span class="tag">${s.par.corto} · ${fmtN(Math.round(s.so[I25]-s.so[I18]))} desplazadas</span></div>
+      <div class="par">${s.par.esp} <span style="color:var(--dim)">vs</span> ${s.par.otro}</div>
+      <div class="pinza">
+        <div class="lado down"><div class="l">${s.par.esp} · 2018→2025<br>${fmtN(s.se[I18])} → ${fmtN(s.se[I25])}</div><div class="v">${s.ve.toFixed(0)}%</div></div>
+        <div class="lado up"><div class="l">espejo · 2018→2025<br>${fmtN(s.so[I18])} → ${fmtN(s.so[I25])}</div><div class="v">+${s.vo.toFixed(0)}%</div></div>
+      </div>
+      ${dualChart(s.se,s.so)}
+      <div class="chartlbl"><span class="c1">— ${s.par.esp}</span><span>cada línea a su propia escala</span><span class="c2">— espejo</span></div>
+    </div>`).join('') || '<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--dim);font-family:JetBrains Mono;font-size:11px;letter-spacing:2px;text-transform:uppercase;">Sin señales con esos filtros</div>';
+}
+renderFiltros(); renderGrid();
+</script>
+<button class="shfab" onclick="document.getElementById('shpop').classList.toggle('open')" title="Compartir" aria-label="Compartir">⤴</button>
+<div class="shpop" id="shpop">
+  <a href="#" onclick="shGo('x');return false;" style="--sc:#e6edf3" title="X">𝕏</a>
+  <a href="#" onclick="shGo('fb');return false;" style="--sc:#1877f2" title="Facebook">f</a>
+  <a href="#" onclick="shGo('wa');return false;" style="--sc:#25d366" title="WhatsApp">✆</a>
+  <button onclick="navigator.clipboard.writeText(location.href);this.textContent='✓';setTimeout(()=>this.textContent='⧉',1200);" style="--sc:#fbbf24" title="Copiar enlace">⧉</button>
+</div>
+<style>
+.shfab{position:fixed;bottom:18px;right:18px;z-index:9400;width:52px;height:52px;border-radius:50%;border:none;background:linear-gradient(135deg,#fbbf24,#f59e0b);box-shadow:0 0 18px rgba(251,191,36,.5),0 3px 10px rgba(0,0,0,.5);color:#0d1117;font-size:21px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.shfab:hover{box-shadow:0 0 26px rgba(251,191,36,.75),0 3px 10px rgba(0,0,0,.5);}
+.shpop{position:fixed;bottom:80px;right:21px;z-index:9400;display:none;flex-direction:column;gap:9px;}
+.shpop.open{display:flex;}
+.shpop a,.shpop button{width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:700;text-decoration:none;cursor:pointer;background:rgba(13,17,23,.92);color:var(--sc);border:1.5px solid var(--sc);box-shadow:0 0 11px color-mix(in srgb, var(--sc) 40%, transparent);}
+.shpop a:hover,.shpop button:hover{background:color-mix(in srgb, var(--sc) 18%, rgba(13,17,23,.92));}
+@media(max-width:680px){.shfab{bottom:74px;}.shpop{bottom:136px;}}
+</style>
+<script>
+function shGo(n){
+  const u=encodeURIComponent(location.href), t=encodeURIComponent(document.title);
+  const m={x:'https://twitter.com/intent/tweet?text='+t+'&url='+u, fb:'https://www.facebook.com/sharer/sharer.php?u='+u, wa:'https://wa.me/?text='+t+'%20'+u};
+  window.open(m[n],'_blank','noopener');
+}
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "a4de56a9a4564d0ea0f4e0259af8bc7a"}'></script></body>
+</html>

@@ -186,6 +186,52 @@
 
       <!-- PLANTILLA · por cada columna: data-date (ISO, fecha de publicación) + imagen + href + categoría + título + gancho.
            El script ordena por data-date (más reciente primero) y muestra solo las CAP más nuevas. -->
+      <a class="card reveal" data-date="2026-06-10" href="la-cifra-trofeo.html">
+        <div class="card-img"><img src="cifra-trofeo.webp" alt=""></div>
+        <div class="card-body">
+          <span class="date">Seguridad</span>
+          <h3>La cifra-trofeo</h3>
+          <p>Los homicidios sí bajan, pero no 49 por ciento: el truco está en la ventana y en quién cuenta. Tres varas para un mismo país.</p>
+          <span class="more">Leer →</span>
+        </div>
+      </a>
+      <a class="card reveal" data-date="2026-06-10" href="la-paz-que-no-cuenta.html">
+        <div class="card-img"><img src="paz-que-no-cuenta.png" alt=""></div>
+        <div class="card-body">
+          <span class="date">Seguridad</span>
+          <h3>La paz que no cuenta</h3>
+          <p>Mientras el homicidio baja, 2025 rompió el récord histórico de desaparecidos. La violencia no se acabó: cambió de registro.</p>
+          <span class="more">Leer →</span>
+        </div>
+      </a>
+      <a class="card reveal" data-date="2026-06-10" href="morelos-subcampeon-nacional.html">
+        <div class="card-img"><img src="morelos-subcampeon.svg" alt=""></div>
+        <div class="card-body">
+          <span class="date">Morelos</span>
+          <h3>Morelos, subcampeón nacional</h3>
+          <p>Primer lugar nacional en extorsión, segundo en homicidio y feminicidio. Cuando todo el país baja y tú no, el problema no es la marea.</p>
+          <span class="more">Leer →</span>
+        </div>
+      </a>
+      <a class="card reveal" data-date="2026-06-10" href="el-impuesto-del-miedo.html">
+        <div class="card-img"><img src="impuesto-miedo.svg" alt=""></div>
+        <div class="card-body">
+          <span class="date">Seguridad</span>
+          <h3>El impuesto del miedo</h3>
+          <p>El único delito de alto impacto en récord histórico mientras todo baja. Hay dos SAT en este país; solo uno emite facturas.</p>
+          <span class="more">Leer →</span>
+        </div>
+      </a>
+      <a class="card reveal" data-date="2026-06-10" href="que-estado-quieres-auditar.html">
+        <div class="card-img"><img src="que-estado-auditar.webp" alt=""></div>
+        <div class="card-body">
+          <span class="date">Dashboard</span>
+          <h3>¿Qué estado quieres auditar?</h3>
+          <p>55 delitos, 32 estados, 11 años y un detector de reclasificación: el tablero para auditar a tu estado sin creerle a nadie. Ni a nosotros.</p>
+          <span class="more">Leer →</span>
+        </div>
+      </a>
+
       <a class="card reveal" data-date="2026-06-19" href="la-renta-del-recuerdo.html">
         <div class="card-img"><img src="renta-del-recuerdo.png" alt=""></div>
         <div class="card-body">
@@ -546,6 +592,11 @@
   // portada rotativa: elige una destacada al azar en cada carga
   (function () {
     const featured = [
+      { t: "La cifra-trofeo", d: "Los homicidios sí bajan, pero no 49 por ciento: el truco está en la ventana y en quién cuenta. Tres varas para un mismo país.", h: "la-cifra-trofeo.html", m: "4 min de lectura", g: "cifra-trofeo.webp" },
+      { t: "La paz que no cuenta", d: "Mientras el homicidio baja, 2025 rompió el récord histórico de desaparecidos. La violencia no se acabó: cambió de registro.", h: "la-paz-que-no-cuenta.html", m: "4 min de lectura", g: "paz-que-no-cuenta.png" },
+      { t: "Morelos, subcampeón nacional", d: "Primer lugar nacional en extorsión, segundo en homicidio y feminicidio. Cuando todo el país baja y tú no, el problema no es la marea.", h: "morelos-subcampeon-nacional.html", m: "4 min de lectura", g: "morelos-subcampeon.svg" },
+      { t: "El impuesto del miedo", d: "El único delito de alto impacto en récord histórico mientras todo baja. Hay dos SAT en este país; solo uno emite facturas.", h: "el-impuesto-del-miedo.html", m: "4 min de lectura", g: "impuesto-miedo.svg" },
+      { t: "¿Qué estado quieres auditar?", d: "55 delitos, 32 estados, 11 años y un detector de reclasificación: el tablero para auditar a tu estado sin creerle a nadie. Ni a nosotros.", h: "que-estado-quieres-auditar.html", m: "4 min de lectura", g: "que-estado-auditar.webp" },
       { t: "La renta del recuerdo", d: "La noticia más grande del videojuego en 2026 es un juego de 1998. Cuando el pasado se vuelve el activo más rentable, el futuro deja de ser el negocio de alguien.", h: "la-renta-del-recuerdo.html", m: "5 min de lectura", g: "renta-del-recuerdo.png" },
       { t: "La justicia se arranca", d: "Citaron a Edith a una torre: las cámaras la vieron entrar, ninguna salir. El expediente solo avanzó cuando la familia lo empujó.", h: "la-justicia-se-arranca.html", m: "4 min de lectura", g: "la-justicia-se-arranca.png", p: "center 35%" },
       { t: "La fe pública no se hereda a dedo", d: "Zacatecas eliminó el examen para ser notario y dejó que el gobernador designe a dedo. La fe pública, de servicio a botín.", h: "la-fe-publica-no-se-hereda-a-dedo.html", m: "3 min de lectura", g: "fe-publica.png" },

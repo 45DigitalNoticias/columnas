@@ -640,7 +640,7 @@
       { t: "Carne de coartada", d: "El greenwashing de Burger King: la hamburguesa que se vende como redención se asa sobre la misma grasa de la res.", h: "carne-de-coartada.html", m: "5 min de lectura", g: "carne-de-coartada.png" },
       { t: "El corrido apócrifo", d: "Una banda sin músicos llegó al millón de oyentes. El streaming, la IA y lo que tu suscripción termina financiando.", h: "el-corrido-apocrifo.html", m: "5 min de lectura", g: "corrido-apocrifo.png" }
     ];
-    const p = featured[Math.floor(Math.random() * featured.length)];
+    const p = featured[0]; // Camino 1: la portada destaca SIEMPRE la más reciente (primera del catálogo)
     const title = document.getElementById('heroTitle');
     if (title) {
       title.textContent = p.t;
@@ -649,6 +649,21 @@
       document.getElementById('heroBtn').href = p.h;
       const img = document.getElementById('heroImg'); if (img) { img.src = p.g; img.style.objectPosition = p.p || 'center'; }
       const il = document.getElementById('heroImgLink'); if (il) il.href = p.h;
+      const kick = document.querySelector('.hero .kicker');
+      if (kick) kick.innerHTML = '<span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#cca15a;margin-right:8px;vertical-align:middle;"></span>Columna nueva';
+    }
+    // Camino 1: anclar la más reciente al FRENTE del mosaico (por posición, no por fecha),
+    // marcarla NUEVA y recalcular las 6 visibles.
+    const grid = document.querySelector('.cards');
+    const ncard = grid && grid.querySelector('.card[href="' + p.h + '"]');
+    if (grid && ncard) {
+      grid.insertBefore(ncard, grid.firstElementChild);
+      Array.from(grid.querySelectorAll('.card')).forEach((c, i) => { c.style.display = i < 6 ? '' : 'none'; });
+      ncard.style.position = 'relative';
+      const b = document.createElement('span');
+      b.textContent = 'NUEVA';
+      b.style.cssText = 'position:absolute;top:12px;left:12px;z-index:3;background:#cca15a;color:#0b0f16;font-family:Inter,system-ui,sans-serif;font-size:.64rem;font-weight:800;letter-spacing:.14em;padding:5px 11px;border-radius:999px;box-shadow:0 4px 14px rgba(0,0,0,.4);';
+      ncard.appendChild(b);
     }
   })();
 

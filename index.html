@@ -196,6 +196,15 @@
 
       <!-- PLANTILLA · por cada columna: data-date (ISO, fecha de publicación) + imagen + href + categoría + título + gancho.
            El script ordena por data-date (más reciente primero) y muestra solo las CAP más nuevas. -->
+      <a class="card reveal" data-date="2026-06-16" href="el-gotham-que-no-cuadra.html">
+        <div class="card-img"><img src="gotham-1-meseta.png" alt=""></div>
+        <div class="card-body">
+          <span class="date">Seguridad · Nacional</span>
+          <h3>El Gotham que no cuadra</h3>
+          <p>El homicidio no cayó 46 por ciento: el truco está en la ventana, las etiquetas y el promedio. La baja real es 8.6 por ciento.</p>
+          <span class="more">Leer →</span>
+        </div>
+      </a>
       <a class="card reveal" data-date="2026-06-24" href="el-cosmos-en-preventa.html">
         <div class="card-img"><img src="cosmos-en-preventa.png" alt=""></div>
         <div class="card-body">
@@ -630,6 +639,7 @@
   // portada rotativa: elige una destacada al azar en cada carga
   (function () {
     const featured = [
+      { t: "El Gotham que no cuadra", d: "El gobierno presume que el homicidio cayó 46 por ciento. Con los propios datos del SESNSP, cuatro palancas explican por qué la cifra es verdadera en su aritmética y falsa en lo que esconde. La baja real: 8.6 por ciento.", h: "el-gotham-que-no-cuadra.html", m: "5 min de lectura", g: "gotham-1-meseta.png" },
       { t: "El cosmos en preventa", d: "SpaceX salió a bolsa en la mayor IPO de la historia y valúa en billones un Marte que aún no produce un dólar. El cosmos se vende en preventa, leído con Polanyi.", h: "el-cosmos-en-preventa.html", m: "6 min de lectura", g: "cosmos-en-preventa.png" },
       { t: "La víctima ilegible", d: "En Cuautla casi todos se dicen víctima, y la imposibilidad de saber quién dice la verdad es justamente lo que el crimen necesita. El caso Cuautla leído con Kalyvas.", h: "la-victima-ilegible.html", m: "5 min de lectura", g: "victima-ilegible.png" },
       { t: "México 86: profesionalizamos la fiesta, no la casa", d: "Nueve meses después del terremoto del 85, el país inauguró un Mundial. Aprendimos a profesionalizar el espectáculo; la casa, la institución y la rendición de cuentas, sigue pendiente.", h: "mexico-86.html", m: "5 min de lectura", g: "mexico-86.svg" },

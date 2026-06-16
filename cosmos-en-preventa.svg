@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Un planeta de latón con una etiqueta de precio colgando, sobre un cielo índigo con estrellas: el cosmos vendido en preventa.">
+  <defs>
+    <radialGradient id="campoCP" cx="50%" cy="40%" r="88%">
+      <stop offset="0%" stop-color="#1c2040"/>
+      <stop offset="100%" stop-color="#090b18"/>
+    </radialGradient>
+    <radialGradient id="latonCP" cx="38%" cy="34%" r="82%">
+      <stop offset="0%" stop-color="#f0cd8b"/>
+      <stop offset="55%" stop-color="#c89a51"/>
+      <stop offset="100%" stop-color="#7c5a30"/>
+    </radialGradient>
+    <linearGradient id="tagCP" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#edc684"/>
+      <stop offset="100%" stop-color="#9a7236"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#campoCP)"/>
+
+  <!-- estrellas -->
+  <g fill="#e6c282">
+    <circle cx="170" cy="118" r="2.6" opacity="0.8"/>
+    <circle cx="318" cy="76" r="1.8" opacity="0.6"/>
+    <circle cx="980" cy="104" r="2.2" opacity="0.7"/>
+    <circle cx="1086" cy="208" r="1.6" opacity="0.5"/>
+    <circle cx="244" cy="506" r="2" opacity="0.6"/>
+    <circle cx="1020" cy="474" r="2.4" opacity="0.7"/>
+    <circle cx="118" cy="322" r="1.5" opacity="0.5"/>
+    <circle cx="902" cy="544" r="1.8" opacity="0.5"/>
+    <circle cx="700" cy="92" r="1.6" opacity="0.5"/>
+  </g>
+
+  <!-- sombra -->
+  <ellipse cx="520" cy="520" rx="210" ry="26" fill="#000" opacity="0.42"/>
+
+  <!-- planeta de latón -->
+  <circle cx="510" cy="300" r="172" fill="url(#latonCP)" stroke="#6f5128" stroke-width="3"/>
+  <g fill="none" stroke="#6f5128" stroke-width="3" opacity="0.4">
+    <path d="M350,252 q160,40 320,0"/>
+    <path d="M348,332 q162,42 324,-4"/>
+  </g>
+  <path d="M398,212 q72,-50 152,-30 -82,8 -152,92 z" fill="#ffffff" opacity="0.07"/>
+
+  <!-- hilo + etiqueta de precio -->
+  <line x1="652" y1="222" x2="778" y2="304" stroke="#c1923f" stroke-width="3"/>
+  <g transform="rotate(18 808 336)">
+    <path d="M756,304 l160,0 l32,34 l-32,34 l-160,0 z" fill="url(#tagCP)" stroke="#6f5128" stroke-width="3"/>
+    <circle cx="772" cy="338" r="9" fill="#090b18"/>
+    <text x="848" y="350" font-family="Inter, system-ui, sans-serif" font-size="34" font-weight="800" fill="#090b18" text-anchor="middle">$ ?</text>
+  </g>
+</svg>

@@ -216,6 +216,16 @@
 
       <!-- PLANTILLA · por cada columna: data-date (ISO, fecha de publicación) + imagen + href + categoría + título + gancho.
            El script ordena por data-date (más reciente primero) y muestra solo las CAP más nuevas. -->
+      <a class="card reveal" data-date="2026-07-01" href="cuatro-cifras-y-un-relevo.html">
+        <div class="card-img"><img src="cuatro-cifras-portada.png" alt=""></div>
+        <div class="card-body">
+          <span class="date">Seguridad · Morelos</span>
+          <h3>Cuatro cifras y un relevo</h3>
+          <p>Morelos relevó a su jefe de seguridad por el alza de violencia y, cinco semanas después, presumió una baja de 62.8 por ciento. La misma baja, contada de cuatro formas.</p>
+          <span class="more">Leer →</span>
+        </div>
+      </a>
+
       <a class="card reveal" data-date="2026-06-16" href="el-gotham-que-no-cuadra.html">
         <div class="card-img"><img src="gotham-portada.png" alt=""></div>
         <div class="card-body">
@@ -659,6 +669,7 @@
   // portada rotativa: elige una destacada al azar en cada carga
   (function () {
     const featured = [
+      { t: "Cuatro cifras y un relevo", d: "Morelos relevó a su jefe de seguridad por el alza de violencia y, cinco semanas después, se presentó como caso de éxito con −62.8%. La misma baja contada de cuatro formas, y un relevo que la contradice.", h: "cuatro-cifras-y-un-relevo.html", m: "5 min de lectura", g: "cuatro-cifras-portada.png" },
       { t: "El banco que se audita en inglés", d: "La CNBV multó diez veces al Banco del Bienestar en 2026. El monto es una migaja; el contexto, no: el cajero de efectivo más grande del país, con controles débiles, mientras el Tesoro de EU vigila la banca mexicana.", h: "el-banco-que-se-audita-en-ingles.html", m: "5 min de lectura", g: "banco-que-se-audita-en-ingles.png" },
       { t: "El partido que no televisan", d: "El G7, la Reserva Federal, Banxico y la OTAN sesionan dentro del calendario del Mundial. La atención que el torneo se lleva está medida, y la ventana se ha usado. Leído con Durante y Zhuravskaya.", h: "el-partido-que-no-televisan.html", m: "5 min de lectura", g: "partido-que-no-televisan.png" },
       { t: "El Gotham que no cuadra", d: "El gobierno presume que el homicidio cayó 46 por ciento. Con los propios datos del SESNSP, cuatro palancas explican por qué la cifra es verdadera en su aritmética y falsa en lo que esconde. La baja real: 8.6 por ciento.", h: "el-gotham-que-no-cuadra.html", m: "5 min de lectura", g: "gotham-portada.png" },

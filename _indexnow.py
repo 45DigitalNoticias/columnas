@@ -8,15 +8,18 @@ PUBLICADO (pusheado) y accesible antes de correr esto.
 
 Uso: python _indexnow.py
 """
-import json, re, urllib.request
+import json, re, sys, urllib.request
 from pathlib import Path
 
 HOST = "45digitalnoticias.github.io"
-KEY = "45dca17b9e0f4c2a8d6b3f5e1a7c9d20"
+KEY = "7c4e9a2f1b8d6035e4a9c2f7b1d8e6a3"
 KEY_LOCATION = f"https://{HOST}/columnas/{KEY}.txt"
 SITEMAP = Path(__file__).parent / "sitemap.xml"
 
-urls = re.findall(r"<loc>([^<]+)</loc>", SITEMAP.read_text(encoding="utf-8"))
+if len(sys.argv) > 1:
+    urls = sys.argv[1:]  # avisar solo las URLs indicadas (uso correcto: cambios, no todo el sitemap)
+else:
+    urls = re.findall(r"<loc>([^<]+)</loc>", SITEMAP.read_text(encoding="utf-8"))
 payload = {"host": HOST, "key": KEY, "keyLocation": KEY_LOCATION, "urlList": urls}
 data = json.dumps(payload).encode("utf-8")
 req = urllib.request.Request(

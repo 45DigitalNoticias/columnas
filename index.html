@@ -110,6 +110,17 @@
   </div>
 </section>
 
+<!-- ===== RECIÉN PUBLICADAS (banda de la última edición) ===== -->
+<section class="recientes" id="recientes" hidden aria-label="Columnas recién publicadas">
+  <div class="wrap">
+    <div class="recientes-head">
+      <span class="kicker"><span class="pulse" aria-hidden="true"></span> Recién publicadas</span>
+      <span class="recientes-sub">Lo último de esta entrega, además de la destacada.</span>
+    </div>
+    <div class="recientes-row" id="recientesRow"></div>
+  </div>
+</section>
+
 <!-- ===== COMPARTIR (intermedio) ===== -->
 <section class="share-site compact">
   <div class="wrap">
@@ -794,6 +805,48 @@
       b.style.cssText = 'position:absolute;top:12px;left:12px;z-index:3;background:#cca15a;color:#0b0f16;font-family:Inter,system-ui,sans-serif;font-size:.64rem;font-weight:800;letter-spacing:.14em;padding:5px 11px;border-radius:999px;box-shadow:0 4px 14px rgba(0,0,0,.4);';
       ncard.appendChild(b);
     }
+
+    // ===== Recién publicadas: banda con la última entrega (las hermanas que el hero sepulta) =====
+    (function buildRecientes() {
+      const N = 3; // cuántas mostrar además de la destacada (cubre publicar hasta 4 el mismo día)
+      const sec = document.getElementById('recientes');
+      const row = document.getElementById('recientesRow');
+      if (!sec || !row) return;
+      const sibs = featured.slice(1, 1 + N);
+      if (!sibs.length) return;
+      sibs.forEach(function (e) {
+        const src = grid && grid.querySelector('.card[href="' + e.h + '"]');
+        const catEl = src && src.querySelector('.date');
+        const cat = catEl ? catEl.textContent.trim() : '';
+        const a = document.createElement('a');
+        a.className = 'rec-card';
+        a.href = e.h;
+
+        const thumb = document.createElement('span');
+        thumb.className = 'rec-thumb';
+        const img = document.createElement('img');
+        img.src = e.g; img.alt = ''; img.loading = 'lazy';
+        if (e.p) img.style.objectPosition = e.p;
+        thumb.appendChild(img);
+
+        const body = document.createElement('span');
+        body.className = 'rec-body';
+        const pill = document.createElement('span');
+        pill.className = 'rec-pill'; pill.textContent = '● Nuevo';
+        body.appendChild(pill);
+        if (cat) { const c = document.createElement('span'); c.className = 'rec-cat'; c.textContent = cat; body.appendChild(c); }
+        const ti = document.createElement('span');
+        ti.className = 'rec-title'; ti.textContent = e.t;
+        body.appendChild(ti);
+        const more = document.createElement('span');
+        more.className = 'rec-more'; more.textContent = 'Leer →';
+        body.appendChild(more);
+
+        a.appendChild(thumb); a.appendChild(body);
+        row.appendChild(a);
+      });
+      sec.hidden = false;
+    })();
   })();
 
   // reveal on scroll

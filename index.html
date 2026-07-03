@@ -137,7 +137,7 @@
       <a href="todas.html">Ver todas →</a>
     </div>
     <div class="serie-grid">
-      <a class="serie-card" href="todas.html?s=mundial"><span class="serie-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.6 2.7 2.6 15.3 0 18M12 3c-2.6 2.7-2.6 15.3 0 18"/></svg></span><h3>Mundial 2026</h3><span class="serie-n">7 columnas</span><p>El negocio del torneo: exención fiscal, gasto público y la frontera.</p><span class="more">Ver columnas →</span></a>
+      <a class="serie-card" href="todas.html?s=mundial"><span class="serie-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.6 2.7 2.6 15.3 0 18M12 3c-2.6 2.7-2.6 15.3 0 18"/></svg></span><h3>Mundial 2026</h3><span class="serie-n">8 columnas</span><p>El negocio del torneo: exención fiscal, gasto público y la frontera.</p><span class="more">Ver columnas →</span></a>
       <a class="serie-card" href="todas.html?s=seguridad"><span class="serie-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l7.5 3v6c0 4.8-3.2 8.6-7.5 10-4.3-1.4-7.5-5.2-7.5-10v-6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span><h3>Seguridad</h3><span class="serie-n">13 columnas</span><p>El expediente nacional: 32 estados, el catálogo completo y las bolsas donde el delito se esconde.</p><span class="more">Ver columnas →</span></a>
       <a class="serie-card" href="todas.html?s=morelos"><span class="serie-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3"/></svg></span><h3>Morelos</h3><span class="serie-n">6 columnas</span><p>Poder, crimen y opacidad en el estado más asediado del país.</p><span class="more">Ver columnas →</span></a>
       <a class="serie-card" href="todas.html?s=economia"><span class="serie-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3.5-4.5 3 3L21 6"/></svg></span><h3>Economía</h3><span class="serie-n">10 columnas</span><p>BlackRock, Afores, mercados y el precio del relato.</p><span class="more">Ver columnas →</span></a>
@@ -157,7 +157,17 @@
     </div>
 
     <div class="cards">
-                                                            <a class="card reveal" data-date="2026-07-05" href="la-tormenta-perfecta.html">
+                                                                  <a class="card reveal" data-date="2026-07-09" href="el-ultimo-cerrojo.html">
+        <div class="card-img"><img src="el-ultimo-cerrojo-portada.png" alt=""></div>
+        <div class="card-body">
+          <span class="date">Mundial 2026 · Sociedad</span>
+          <h3>El último cerrojo</h3>
+          <p>Un dato que nadie cuenta: en casi un siglo de Mundiales, el arco campeón varonil ha sido territorio de un solo color. Y 2026 tiene su primera grieta.</p>
+          <span class="more">Leer →</span>
+        </div>
+      </a>
+
+<a class="card reveal" data-date="2026-07-05" href="la-tormenta-perfecta.html">
         <div class="card-img"><img src="tormenta-perfecta-portada.png" alt=""></div>
         <div class="card-body">
           <span class="date">Economía · Finanzas públicas</span>
@@ -792,6 +802,7 @@
   // portada rotativa: elige una destacada al azar en cada carga
   (function () {
     const featured = [
+      { t: "El último cerrojo", d: "En 96 años de Mundiales masculinos, ningún arquero negro ha sido campeón siendo titular. No es azar: es stacking, la segregación posicional que reserva las plazas de mando, como el arco, al grupo dominante. Del fantasma de Barbosa (1950) a Mike Maignan, que en 2026 puede ser la primera grieta. El futbol femenil ya rompió el muro en 1999 con Briana Scurry.", h: "el-ultimo-cerrojo.html", m: "5 min de lectura", g: "el-ultimo-cerrojo-portada.png" },
       { t: "La tormenta perfecta no viene por donde truena", d: "México no está en hiperinflación, pero se está configurando una tormenta perfecta. El déficit corre al +60%, la deuda ronda el 54% del PIB y Moody's bajó a Baa3; sin embargo el peso está fuerte y el petróleo a la baja tras la paz con Irán. El peligro real no es todavía monetario: es institucional y fiscal, entre la reforma judicial y el T-MEC. Venezuela como lista de cotejo, no como pronóstico.", h: "la-tormenta-perfecta.html", m: "5 min de lectura", g: "tormenta-perfecta-portada.png" },
       { t: "El dólar más honesto", d: "Las remesas (cerca de 64,000 mdd en 2025, más que la inversión extranjera) son el ingreso más limpio del país. En un año cayeron bajo dos manos: Estados Unidos las grava con el impuesto de Trump al efectivo y México las vigila con alertas de la UIF. La excepción de un millón de dólares desde Afganistán se usó para tasar y sospechar de los envíos de 300.", h: "el-dolar-mas-honesto.html", m: "5 min de lectura", g: "el-dolar-mas-honesto-portada.png" },
       { t: "La rebaja del 45%", d: "La baja de 45-49% en homicidio doloso que anuncia el gobierno es verdadera, pero es la combinación de medición más favorable: base en el mes pico, promedio diario de víctimas y solo homicidio doloso. Contando la violencia letal amplia (con la bolsa 'Otros delitos que atentan contra la vida', +96.8% desde 2018), la caída real ronda el 12.9%. Ley de Campbell.", h: "la-rebaja-del-45.html", m: "5 min de lectura", g: "la-rebaja-del-45-portada.png" },

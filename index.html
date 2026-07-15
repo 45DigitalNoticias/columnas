@@ -143,7 +143,7 @@
       <a class="serie-card" href="todas.html?s=economia"><span class="serie-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3.5-4.5 3 3L21 6"/></svg></span><h3>Economía</h3><span class="serie-n">11 columnas</span><p>BlackRock, Afores, mercados y el precio del relato.</p><span class="more">Ver columnas →</span></a>
       <a class="serie-card" href="todas.html?s=democracia"><span class="serie-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V10M9.7 21V10M14.3 21V10M19 21V10"/><path d="M3.5 10h17"/><path d="M12 3L3.5 8h17z"/></svg></span><h3>Democracia</h3><span class="serie-n">7 columnas</span><p>Cómo se desfonda una democracia sin necesidad de romperla.</p><span class="more">Ver columnas →</span></a>
       <a class="serie-card" href="todas.html?s=justicia"><span class="serie-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v15"/><path d="M5 7h14"/><path d="M8.5 19h7"/><path d="M5 7l-2.5 5a2.5 2.5 0 0 0 5 0z"/><path d="M19 7l-2.5 5a2.5 2.5 0 0 0 5 0z"/></svg></span><h3>Justicia</h3><span class="serie-n">9 columnas</span><p>Acceso desigual, captura y el poder de decidir qué es legal.</p><span class="more">Ver columnas →</span></a>
-      <a class="serie-card" href="todas.html?s=cultura"><span class="serie-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="1.5"/><path d="M9 21h6M12 17v4"/><path d="M10.5 8.3l4 2.7-4 2.7z"/></svg></span><h3>Cultura</h3><span class="serie-n">6 columnas</span><p>Memoria, pantallas, IA y los mitos que consumimos.</p><span class="more">Ver columnas →</span></a>
+      <a class="serie-card" href="todas.html?s=cultura"><span class="serie-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="1.5"/><path d="M9 21h6M12 17v4"/><path d="M10.5 8.3l4 2.7-4 2.7z"/></svg></span><h3>Cultura</h3><span class="serie-n">7 columnas</span><p>Memoria, pantallas, IA y los mitos que consumimos.</p><span class="more">Ver columnas →</span></a>
     </div>
   </div>
 </section>
@@ -157,7 +157,17 @@
     </div>
 
     <div class="cards">
-                                                                                                                              <a class="card reveal" data-date="2026-07-30" href="el-arresto-y-la-marea.html">
+                                                                                                                                    <a class="card reveal" data-date="2026-07-26" href="la-naturaleza-que-inventamos.html">
+        <div class="card-img"><img src="la-naturaleza-que-inventamos-portada.png" alt=""></div>
+        <div class="card-body">
+          <span class="date">Cultura · Ciencia y poder</span>
+          <h3>La naturaleza que inventamos</h3>
+          <p>Nos asusta el transgénico del laboratorio, pero comemos sin parpadear organismos que el ser humano lleva 9,000 años reescribiendo a mano. Lo que llamamos natural, en el súper, es el invento más viejo que existe.</p>
+          <span class="more">Leer →</span>
+        </div>
+      </a>
+
+<a class="card reveal" data-date="2026-07-30" href="el-arresto-y-la-marea.html">
         <div class="card-img"><img src="el-arresto-y-la-marea-portada.png" alt=""></div>
         <div class="card-body">
           <span class="date">Seguridad · Morelos</span>
@@ -902,6 +912,7 @@
   // portada rotativa: elige una destacada al azar en cada carga
   (function () {
     const featured = [
+      { t: "La naturaleza que inventamos", d: "La naranja dulce no existe en la naturaleza: es un híbrido que el ser humano fabricó cruzando mandarina y pomelo. Y con ella, casi todo el frutero. La sandía roja, el plátano sin semilla, la almendra que dejó de ser veneno, el maíz que salió de un pasto mexicano llamado teocintle y hasta el color naranja de la zanahoria son artefactos que la humanidad rediseñó a mano durante miles de años. Con la selección artificial de Darwin y los centros de origen de Nikolái Vavílov, el botánico que catalogó las semillas del mundo y murió de hambre en una cárcel de Stalin: el supermercado es un museo de biotecnología antigua que confundimos con naturaleza.", h: "la-naturaleza-que-inventamos.html", m: "7 min de lectura", g: "la-naturaleza-que-inventamos-portada.png" },
       { t: "El arresto y la marea", d: "La presidenta presume que, gracias a la detención del alcalde de Cuautla, los homicidios de Morelos bajaron de 3.7 a 1.9 al día. Pero la causa no cuadra: Cuautla aporta cerca del 10% de los homicidios del estado, al alcalde lo acusan de extorsión y delincuencia organizada, no de homicidios, la extorsión de Cuautla sigue subiendo, y el 1.9 es de junio, el mes del Mundial. Con el concepto de regresión a la media de Daniel Kahneman: tras un pico extraordinario, la cifra vuelve sola hacia el promedio, y el error clásico es atribuir ese regreso a la intervención que llegó en medio.", h: "el-arresto-y-la-marea.html", m: "4 min de lectura", g: "el-arresto-y-la-marea-portada.png" },
       { t: "La paz prestada del Mundial", d: "El gobierno presume que el homicidio doloso cayó 48%, pero cerró la cuenta en junio, el mes del Mundial. Con las sedes tomadas por la Guardia Nacional, la violencia sí cedió esas semanas: junio fue el mes menos violento del año, con una baja de 33.5% frente a junio de 2025. El problema es que fue un operativo, no una estrategia, y los operativos intensivos bajan el delito mientras duran y luego se desvanecen. Medida año contra año, la caída real ronda 21%, no 48%. El 48% junta dos extremos convenientes: el pico de septiembre de 2024 y el piso prestado del torneo. Con el concepto de disuasión residual de los crackdowns de Lawrence Sherman.", h: "la-paz-prestada-del-mundial.html", m: "4 min de lectura", g: "la-paz-prestada-del-mundial-portada.png" },
       { t: "El tren que trae lo que no debería", d: "La misma vía que el crimen saquea también la usa para traer lo que no debería. Según la Fiscalía, en apenas 52 días entraron por la aduana de Matamoros 144 millones de litros de combustible de contrabando, disfrazados en los permisos como solución de cloruro de calcio, y se distribuyeron por tren. En pesos, más de 3,000 millones. Y no lo dice solo México: el Tesoro de EE.UU. (FinCEN) documentó que la ruta se invirtió, que hasta un tercio del combustible vendido en México podría ser ilícito y que en 12 meses los bancos reportaron más de 7,000 millones de dólares en operaciones sospechosas. Con el concepto de Peter Andreas: el contrabando no se esconde del sistema, se disfraza de él.", h: "el-tren-que-trae-lo-que-no-deberia.html", m: "4 min de lectura", g: "el-tren-que-trae-lo-que-no-deberia-portada.png" },

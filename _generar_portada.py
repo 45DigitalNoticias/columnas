@@ -165,6 +165,43 @@ EXP = """      <a class="exp" href="{url}" target="_blank" rel="noopener">
       </a>"""
 
 
+OIR = """      <article class="oir-t" data-audio="{audio}" data-href="{href}">
+        <div class="oir-marco">
+          <img src="{img}" alt="" loading="lazy">
+          <button class="oir-btn" type="button" aria-label="Escuchar {titulo}">
+            <svg class="play" viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0l10 6-10 6z"/></svg>
+            <svg class="pausa" viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0h3.4v12H0zM6.6 0H10v12H6.6z"/></svg>
+          </button>
+          <span class="oir-dur">{dur}</span>
+          <div class="oir-pie">
+            <p class="m">{cat}</p>
+            <a class="t" href="{href}">{titulo}</a>
+          </div>
+          <span class="oir-pista"></span>
+        </div>
+      </article>"""
+
+
+def dur_mp3(f):
+    try:
+        from mutagen.mp3 import MP3
+        m, s = divmod(int(MP3(str(AQUI / f)).info.length), 60)
+        return "%d:%02d" % (m, s)
+    except Exception:
+        return ""
+
+MURAL = """    <a class="mural-t{grande}" href="{href}">
+      <img src="thumbs/{thumb}" alt="" loading="lazy" decoding="async">
+      <figcaption><span class="tema">{cat}</span>{titulo}</figcaption>
+    </a>"""
+
+
+def thumb_de(img):
+    """La miniatura que le toca a una portada. Los svg van tal cual."""
+    return img if img.endswith(".svg") else img.rsplit(".", 1)[0] + ".webp"
+
+
+
 def main(prueba=False):
     cols = columnas()
     if not cols:
@@ -210,7 +247,6 @@ def main(prueba=False):
         total=n, con_audio=con_audio, cats=cats,
         botones="\n".join('      <button class="f" data-t="%s">%s</button>' % (cl, nm)
                           for nm, cl, _ in CATS[:4]),
-        filas=filas,
         p_href=prin["href"], p_img=prin["img"], p_cat=prin["cat"],
         p_tit=prin["titulo"], p_dek=esc(prin["dek"]),
         carril="\n".join(LATERAL.format(href=c["href"], cat=c["cat"],

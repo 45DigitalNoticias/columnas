@@ -15,6 +15,34 @@ EXPEDIENTES = [
   "Hub de datos de violencia y desapariciones por municipio: rankings, series y fichas de Cuautla, Cuernavaca, Ayala y más."),
 ]
 
+
+# ============================================================
+# REELS DE LA PORTADA  ·  se rotan cambiando esta lista
+# ============================================================
+# Los mp4 pesan de 47 a 198 MB y no hay ffmpeg para comprimirlos, así que
+# NO se alojan en el sitio: la tarjeta muestra el cartel y la duración
+# reales y manda a donde vive el video.
+#
+# "url" es lo único pendiente: pon el enlace de YouTube o de Facebook de
+# cada reel. Mientras esté vacío, la tarjeta manda a la página de Facebook.
+REELS = [
+ {"titulo": "El país que no se cuenta",
+  "pie": "Seguridad · México",
+  "dur": "4:57",
+  "cartel": "el-pais-que-no-se-cuenta-portada.png",
+  "url": ""},
+ {"titulo": "Las ratas del agua",
+  "pie": "Morelos · SOAPSC",
+  "dur": "1:31",
+  "cartel": "cuenta-puente-portada.png",
+  "url": ""},
+ {"titulo": "¿Quién era Zapata?",
+  "pie": "Zapata y la tierra · Episodio 1",
+  "dur": "2:17",
+  "cartel": "zapata-ep01-portada.png",
+  "url": ""},
+]
+
 FB = "https://facebook.com/45DigitalMx"
 
 SVG_FB = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.5l.5-3h-3v-2c0-.6.4-1 1-1z"/></svg>'
@@ -84,7 +112,7 @@ PLANTILLA = """<!DOCTYPE html>
   <div class="wrap">
     <div class="principal">
       <div class="sec-head">
-        <span class="label">También esta semana</span>
+        <span class="label">Recién publicadas</span>
         <a class="ver" href="todas.html">Ver todas</a>
       </div>
       <a href="{p_href}">
@@ -97,23 +125,6 @@ PLANTILLA = """<!DOCTYPE html>
     <div class="divisor"></div>
     <div class="carril">
 {carril}
-    </div>
-  </div>
-</section>
-
-<section class="indice">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="label">El archivo</span>
-      <span class="label label--soft">{total} columnas · {con_audio} con audio</span>
-    </div>
-    <div class="filtros">
-      <button class="f on" data-t="all">Todas</button>
-{botones}
-      <input class="busca" type="search" placeholder="Buscar en el archivo" aria-label="Buscar en el archivo">
-    </div>
-    <div id="lista">
-{filas}
     </div>
   </div>
 </section>

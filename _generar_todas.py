@@ -27,13 +27,15 @@ def esc(t):
     return re.sub(r"<[^>]+>", "", t).replace('"', "&quot;").strip()
 
 
-TARJETA = """      <a class="tarjeta" href="{href}" data-cat="{dcat}" data-date="{iso}" data-title="{busca}">
-        <div class="tarjeta-img"><img src="{img}" alt="" loading="lazy" decoding="async"></div>
-        <span class="meta">{cat}</span>
-        <h3>{titulo}</h3>
-        <p>{dek}</p>
-        <span class="pie-t">{fecha} · {min}</span>
-      </a>"""
+TARJETA = """    <a class="mural-t{grande}" href="{href}" data-cat="{dcat}" data-date="{iso}" data-title="{busca}">
+      <img src="thumbs/{thumb}" alt="" loading="lazy" decoding="async">
+      <figcaption><span class="tema">{cat}</span>{titulo}</figcaption>
+    </a>"""
+
+
+def thumb_de(img):
+    """La miniatura que le toca. Los svg van tal cual."""
+    return img if img.endswith(".svg") else img.rsplit(".", 1)[0] + ".webp"
 
 PAGINA = """<!DOCTYPE html>
 <html lang="es">
@@ -68,7 +70,7 @@ PAGINA = """<!DOCTYPE html>
   <div class="wrap">
     <div class="lead-kicker"><span class="tick"></span><span class="label">El archivo completo</span></div>
     <h1>Todas las columnas</h1>
-    <p class="entrada">{total} piezas publicadas, {con_audio} de ellas narradas en audio. Filtra por tema o busca por palabra: los títulos, las entradas y las palabras clave de cada columna entran en la búsqueda.</p>
+    <p class="entrada">Las {total} columnas publicadas, cada una por su portada. Filtra por tema o busca por palabra: títulos, entradas y palabras clave entran en la búsqueda.</p>
   </div>
 </section>
 
@@ -79,7 +81,7 @@ PAGINA = """<!DOCTYPE html>
     <input class="busca" type="search" placeholder="Buscar columna" aria-label="Buscar columna">
   </div>
   <p class="cuantas" id="cuantas"></p>
-  <div class="rejilla" id="rejilla">
+  <div class="mural-grid" id="rejilla">
 {tarjetas}
   </div>
   <p class="vacio" id="vacio" hidden>Ninguna columna coincide con esa búsqueda.</p>
@@ -124,7 +126,7 @@ PAGINA = """<!DOCTYPE html>
 
 <script>
 (() => {{
-  const tarjetas = [...document.querySelectorAll('.tarjeta')];
+  const tarjetas = [...document.querySelectorAll('.mural-t')];
   const botones  = [...document.querySelectorAll('.f')];
   const busca    = document.querySelector('.busca');
   const cuantas  = document.getElementById('cuantas');
@@ -180,12 +182,14 @@ def main(prueba=False):
     head, cola = conservar(orig)
 
 
+    # una de cada siete al doble de tamaño: le da ritmo al muro
     tarjetas = "\n".join(
-        TARJETA.format(href=c["href"], dcat=" ".join(c["dcat"]), iso=c["iso"],
+        TARJETA.format(grande=" grande" if i % 7 == 0 else "", href=c["href"],
+                       dcat=" ".join(c["dcat"]), iso=c["iso"],
                        busca=esc(c.get("claves") or c["titulo"]),
-                       img=c["img"], cat=c["cat"], titulo=c["titulo"],
-                       dek=esc(c["dek"]), fecha=fecha_corta(c["iso"]), min=c["min"])
-        for c in cols)
+                       thumb=thumb_de(c["img"]),
+                       cat=c["cat"].split(" · ")[-1], titulo=c["titulo"])
+        for i, c in enumerate(cols))
 
     usadas = {d for c in cols for d in c["dcat"]}
     botones = "\n".join('    <button class="f" data-c="%s">%s</button>' % (cl, nm)

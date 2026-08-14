@@ -19,7 +19,7 @@ llama solo; también se puede correr a mano:
 Si una portada nueva no tiene miniatura, el panel deja un hueco y no
 avisa. Por eso conviene que corra siempre, no cuando uno se acuerde.
 """
-import io, os, re, sys, shutil, pathlib
+import io, os, sys, json, shutil, pathlib
 
 AQUI  = pathlib.Path(__file__).resolve().parent
 THUMB = AQUI / "thumbs"
@@ -28,17 +28,17 @@ CALID = 76
 
 
 def portadas():
-    """Las portadas que el sitio realmente usa, leídas de las tarjetas.
+    """Las portadas que el sitio realmente usa, declaradas en _columnas.json.
     No se busca por nombre de archivo: 48 de las 93 no llevan 'portada'
-    en el nombre y un glob por patrón se las come."""
-    usadas = []
-    for pag in ("todas.html", "index.html"):
-        f = AQUI / pag
-        if not f.exists():
-            continue
-        s = io.open(f, encoding="utf-8").read()
-        usadas += re.findall(r'<div class="card-img"><img src="([^"]+)"', s)
-    return [u for u in dict.fromkeys(usadas) if not u.startswith("http")]
+    en el nombre y un glob por patrón se las come. Tampoco se leen de las
+    tarjetas de index/todas: esas páginas las escriben los generadores
+    (dependencia circular) y su markup ya no trae card-img."""
+    mf = AQUI / "_columnas.json"
+    if not mf.exists():
+        print("Falta _columnas.json. Corre antes:  python _generar_manifiesto.py")
+        return []
+    usadas = [c.get("img", "") for c in json.loads(io.open(mf, encoding="utf-8").read())]
+    return [u for u in dict.fromkeys(usadas) if u and not u.startswith("http")]
 
 
 def main(rehacer=False):

@@ -82,8 +82,10 @@ def construir():
         d = re.search(r'"datePublished":\s*"([0-9-]{10})"', s)
         m = re.search(r'<div class="article-meta">\s*<span>(.*?)</span>', s, re.S) \
             or re.search(r'<span class="meta">(\d+ min)', s)
-        c["iso"] = d.group(1) if d else ""
-        c["min"] = (m.group(1).strip().replace(" de lectura", "") if m else "")
+        # si la página aún no declara fecha o minutos (una recién generada
+        # trae el JSON-LD hasta que corre el SEO), lo ya sabido NO se borra
+        c["iso"] = d.group(1) if d else c.get("iso", "")
+        c["min"] = (m.group(1).strip().replace(" de lectura", "") if m else c.get("min", ""))
         au = AQUI / ("audio-" + h.replace(".html", "") + ".mp3")
         c["audio"] = au.name if au.exists() else ""
         vivas.append(c)

@@ -1,15 +1,18 @@
 # -*- coding: utf-8 -*-
 """
-Convierte una columna publicada al formato editorial nuevo.
+Convierte una columna al formato editorial del sitio.
 
 Se escribe como SCRIPT y no a mano porque son 89 páginas: el molde
 tiene que ser uno solo y reproducible. El CSS vive en columna.css,
 enlazado, NO incrustado 89 veces.
 
     python _convertir_columna.py <slug>            # una, a preview
-    python _convertir_columna.py --todas           # las 89
+    python _convertir_columna.py --todas           # todas, a columnas-nuevas/
+    python _convertir_columna.py --publicar <slug> # una, EN SU LUGAR (publicación)
 
-Lee del sitio real y NO lo modifica: escribe en la carpeta de salida.
+Los dos primeros modos no tocan el sitio: escriben a la carpeta de
+salida. El tercero es el que usa _publicar_columna.py: toma la página
+recién generada en formato fuente y la deja en formato editorial.
 """
 import io, os, re, sys, html, json, pathlib
 
@@ -20,51 +23,33 @@ META   = {"index.html","todas.html","acerca.html","expedientes.html","privacidad
 
 # ---------------------------------------------------------------- datos
 def catalogo():
-    """Portada, categoría y fecha de cada columna, leídas de todas.html.
-    Es la fuente autorizada: ahí el sitio declara qué imagen usa cada una."""
-    # Se leen las DOS: hay columnas publicadas que están en la portada y
-    # no en todas.html (el-banco-que-se-audita-en-ingles es una), y sin
-    # index.html se quedarían sin imagen.
-    s = (io.open(SITIO / "todas.html", encoding="utf-8").read()
-         + io.open(SITIO / "index.html", encoding="utf-8").read())
+    """Portada, categoría, fecha y minutos de cada columna, desde
+    _columnas.json. El manifiesto es LA fuente de datos del sitio: las
+    tarjetas de index.html y todas.html las escriben los generadores, así
+    que leerlas de vuelta era la dependencia circular que ya costó una
+    columna perdida."""
+    mf = SITIO / "_columnas.json"
+    if not mf.exists():
+        raise SystemExit("Falta _columnas.json. Corre antes:  python _generar_manifiesto.py")
     fichas = {}
-    # Un solo camino: recorrer cada tarjeta y sacarle lo suyo. El patrón
-    # de una sola pasada fallaba porque el orden de los atributos cambia
-    # entre index.html y todas.html.
-    if True:
-        # OJO: en index.html la clase es "card reveal", no "card" a secas.
-        for blq in re.findall(r'<a class="card[^"]*".*?</a>', s, re.S):
-            h = re.search(r'href="([^"]+)"', blq)
-            i = re.search(r'card-img"><img src="([^"]+)"', blq)
-            c = re.search(r'<span class="date">([^<]*)</span>', blq)
-            d = re.search(r'data-date="([^"]*)"', blq)
-            if h and i:
-                fichas[h.group(1)] = {"fecha": d.group(1) if d else "",
-                                      "img": i.group(1),
-                                      "cat": c.group(1).strip() if c else ""}
+    for c in json.loads(io.open(mf, encoding="utf-8").read()):
+        fichas[c["href"]] = {"fecha": c.get("iso", ""), "img": c.get("img", ""),
+                             "cat": c.get("cat", ""), "min": c.get("min", "")}
     return fichas
 
 
 BORRADORES = {"columna-ejemplo.html", "_template.html"}
 
 def publicadas():
-    """Solo lo PUBLICADO. El criterio no es 'hay un .html en la carpeta':
-    eso incluye plantillas y columnas escritas que aún no salen. Publicado
-    = el sitio la enlaza desde todas.html o desde la portada.
-
-    Se descartan además las tarjetas externas (dashboards alojados en otro
-    repositorio), que no son páginas de este sitio."""
-    enlazadas = []
-    for pag in ("todas.html", "index.html"):
-        s = io.open(SITIO / pag, encoding="utf-8").read()
-        enlazadas += re.findall(r'<a class="card[^"]*"[^>]*href="([^"]+)"', s)
+    """Solo lo PUBLICADO = lo que declara _columnas.json y existe en disco.
+    El criterio no es 'hay un .html en la carpeta': eso incluye plantillas
+    y columnas escritas que aún no salen."""
+    cols = json.loads(io.open(SITIO / "_columnas.json", encoding="utf-8").read())
     vistas, fuera = [], []
-    for h in dict.fromkeys(enlazadas):
-        if h.startswith("http") or h in META or h in BORRADORES:
-            continue
-        (vistas if (SITIO / h).exists() else fuera).append(h)
+    for c in cols:
+        (vistas if (SITIO / c["href"]).exists() else fuera).append(c["href"])
     if fuera:
-        print("  AVISO enlazadas sin archivo:", ", ".join(fuera))
+        print("  AVISO en el manifiesto sin archivo:", ", ".join(fuera))
     sin_enlazar = [p.name for p in sorted(SITIO.glob("*.html"))
                    if p.name not in META and p.name not in BORRADORES and p.name not in vistas]
     if sin_enlazar:
@@ -346,23 +331,34 @@ PORTADA = """<figure class="portada wrap-medida">
 
 def convertir(slug, fichas, destino):
     origen = SITIO / slug
+    if 'class="article-head"' not in io.open(origen, encoding="utf-8").read():
+        # ya está en formato editorial: volver a convertirla la destruiría
+        # (extraer() no encontraría ni título ni prosa)
+        print("  YA CONVERTIDA (la salto):", slug)
+        return None
     d = extraer(origen)
     ficha = fichas.get(slug, {})
     audio_f = "audio-" + slug.replace(".html", "") + ".mp3"
 
     d["cat"] = ficha.get("cat") or d["kicker"]
     d["fecha_larga"] = fecha_larga(d["iso"] or ficha.get("fecha", ""))
+    if not d["minutos"] and ficha.get("min"):
+        d["minutos"] = ficha["min"] + " de lectura"
     # La barra decía "9 min de lectura", que es el tiempo de LEER, no el de
     # escuchar. Confundía dos cosas distintas. Ahora va la duración real del
     # mp3, leída del archivo.
-    d["audio"] = (AUDIO.format(src="../SITIO_COLUMNAS/" + audio_f,
-                               minutos=duracion(SITIO / audio_f))
+    # Las rutas van PLANAS (audio-x.mp3, portada.jpg): la página vive en la
+    # raíz del sitio, junto a sus assets. El prefijo ../SITIO_COLUMNAS/ era
+    # para previsualizar desde fuera y en el sitio publicado daba 404.
+    d["audio"] = (AUDIO.format(src=audio_f, minutos=duracion(SITIO / audio_f))
                   if (SITIO / audio_f).exists() else "")
-    d["portada"] = (PORTADA.format(src="../SITIO_COLUMNAS/" + ficha["img"], cat=d["cat"])
+    d["portada"] = (PORTADA.format(src=ficha["img"], cat=d["cat"])
                     if ficha.get("img") else "")
     # la prosa se re-indenta para que el HTML de salida sea legible
     d["prosa"] = "\n".join("    " + l.strip() for l in d["prosa"].splitlines() if l.strip())
-    io.open(destino, "w", encoding="utf-8").write(PAGINA.format(**d))
+    # newline="\n": las páginas publicadas van con LF; sin esto Windows mete
+    # CRLF y cada republicación ensucia el diff completo en git
+    io.open(destino, "w", encoding="utf-8", newline="\n").write(PAGINA.format(**d))
     return d
 
 
@@ -370,7 +366,7 @@ if __name__ == "__main__":
     fichas = catalogo()
     args = sys.argv[1:]
     if not args:
-        print("uso: python _convertir_columna.py <slug.html> | --todas"); sys.exit(1)
+        print("uso: python _convertir_columna.py <slug.html> | --todas | --publicar <slug.html>"); sys.exit(1)
 
     if args[0] == "--todas":
         dest = SALIDA / "columnas-nuevas"; dest.mkdir(exist_ok=True)
@@ -379,6 +375,8 @@ if __name__ == "__main__":
         for slug in todas:
             try:
                 d = convertir(slug, fichas, dest / slug)
+                if d is None:
+                    continue
                 if not d["titulo"] or not d["prosa"]:
                     print("  AVISO sin título o sin prosa:", slug); fallo += 1
                 else: ok += 1
@@ -386,9 +384,18 @@ if __name__ == "__main__":
                 print("  ERROR", slug, e); fallo += 1
         print(f"convertidas {ok}, con aviso {fallo}, de {len(todas)}")
     else:
-        slug = args[0]
-        d = convertir(slug, fichas, SALIDA / "propuesta-columna.html")
-        print("lista: propuesta-columna.html")
+        # --publicar escribe EN SU LUGAR (SITIO/slug); a secas, a preview
+        publicar = args[0] == "--publicar"
+        if publicar and len(args) < 2:
+            print("uso: python _convertir_columna.py --publicar <slug.html>"); sys.exit(1)
+        slug = args[1] if publicar else args[0]
+        destino = (SITIO / slug) if publicar else (SALIDA / "propuesta-columna.html")
+        d = convertir(slug, fichas, destino)
+        if d is None:
+            sys.exit(0)
+        if not d["titulo"] or not d["prosa"]:
+            print("  ERROR: sin título o sin prosa; revisa la página fuente."); sys.exit(1)
+        print("lista:", destino.name)
         print("  titulo :", d["titulo"][:60])
         print("  cat    :", d["cat"], "|", d["fecha_larga"], "|", d["minutos"])
         print("  audio  :", "sí" if d["audio"] else "NO")

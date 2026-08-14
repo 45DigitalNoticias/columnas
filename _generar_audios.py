@@ -1,26 +1,34 @@
-# Genera el lector de audio (Jorge/Dalia alternados) para todas las columnas del sitio.
-# Fuente del texto: el HTML publicado (versión evergreen corregida). Inserta el bloque
-# reproductor tras los botones de compartir. Idempotente: salta páginas con audio-col.
-import asyncio, io, os, re, sys
-from bs4 import BeautifulSoup
-import edge_tts
+# -*- coding: utf-8 -*-
+# Genera el mp3 del lector (Jorge/Dalia alternados) para las columnas que
+# no lo tengan. La lista sale de _columnas.json: el manifiesto es la fuente
+# de datos del sitio, no las tarjetas de index.html (los generadores las
+# reescriben y su markup cambió con el rediseño).
+#
+#     python _generar_audios.py                  # todas las que falten
+#     python _generar_audios.py <slug.html>      # solo esa
+#
+# NO toca las páginas: el reproductor del formato editorial lo pone
+# _convertir_columna.py cuando el mp3 existe. (La versión anterior insertaba
+# un bloque <audio> con regex sobre el markup viejo; ese markup ya no existe.)
+import asyncio, io, os, re, sys, json
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 os.chdir(ROOT)
 TXT_DIR = os.path.join(ROOT, "..", "_audio_textos_sitio")
 os.makedirs(TXT_DIR, exist_ok=True)
 
-idx = io.open("index.html", encoding="utf-8").read()
-order = re.findall(r'data-date="([\d-]+)"[^>]*href="([^"]+)"', idx)
-order = sorted(set(order), key=lambda t: (t[0], t[1]), reverse=True)
-local = [(d, h) for d, h in order if not h.startswith("http")]
-
 VOICES = ["es-MX-DaliaNeural", "es-MX-JorgeNeural"]
+# columnas que por decisión editorial NO llevan audio
+SIN_AUDIO = {"la-silla-del-acusado.html"}
+
 
 def adapt(path):
+    """El texto leíble de una columna, desde su HTML publicado. Entiende el
+    formato editorial nuevo (div .prosa) y el fuente (div .prose)."""
+    from bs4 import BeautifulSoup
     soup = BeautifulSoup(io.open(path, encoding="utf-8").read(), "html.parser")
     title = soup.find("h1").get_text(" ", strip=True)
-    prose = soup.find("div", class_="prose")
+    prose = soup.find("div", class_="prosa") or soup.find("div", class_="prose")
     parts = []
     for el in prose.find_all(["p", "h2", "li"]):
         if "pull" in (el.get("class") or []):
@@ -42,32 +50,29 @@ def adapt(path):
     outro = "\n\n45 Digital Noticias. La columna completa, con sus fuentes enlazadas, está en nuestro sitio de columnas."
     return title, intro + text + outro
 
-BLOCK = '''      <button class="share-btn" type="button" data-net="copy">Copiar enlace</button>
-    </div>
 
-    <div class="audio-col" style="max-width:var(--measure);margin:0 auto 38px;padding:16px 18px;border:1px solid rgba(204,161,90,.3);border-radius:12px;background:rgba(204,161,90,.05);">
-      <div style="font-family:'Inter',system-ui,sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#cca15a;margin-bottom:10px;">🎧 Escuchar la columna · {mins} min</div>
-      <audio controls preload="none" style="width:100%;display:block;">
-        <source src="{mp3}" type="audio/mpeg">
-        Tu navegador no soporta audio HTML5.
-      </audio>
-      <div style="font-family:'Inter',system-ui,sans-serif;font-size:.72rem;color:rgba(243,241,232,.55);margin-top:8px;">Lectura automática con voz sintética.</div>
-    </div>
-'''
-
-async def main():
-    i = 0
-    for date, href in local:
-        if href == "la-silla-del-acusado.html":
+async def main(solo=None):
+    import edge_tts
+    cols = json.loads(io.open("_columnas.json", encoding="utf-8").read())
+    # la voz alterna conforme se acumulan columnas con audio
+    hechos = sum(1 for c in cols if os.path.exists("audio-" + c["href"][:-5] + ".mp3"))
+    n = 0
+    for c in cols:
+        href = c["href"]
+        if solo and href != solo:
             continue
-        voice = VOICES[i % 2]
-        i += 1
-        html = io.open(href, encoding="utf-8").read()
-        if "audio-col" in html:
-            print("SALTADA (ya tiene):", href, flush=True)
+        if href in SIN_AUDIO:
+            if solo: print("SIN AUDIO por decisión editorial:", href, flush=True)
             continue
         slug = href[:-5]
         mp3 = f"audio-{slug}.mp3"
+        if os.path.exists(mp3):
+            if solo: print("YA EXISTE:", mp3, flush=True)
+            continue
+        if not os.path.exists(href):
+            print("SIN PÁGINA:", href, flush=True)
+            continue
+        voice = VOICES[(hechos + n) % 2]
         try:
             title, text = adapt(href)
         except Exception as e:
@@ -75,20 +80,15 @@ async def main():
             continue
         io.open(os.path.join(TXT_DIR, slug + ".txt"), "w", encoding="utf-8", newline="\n").write(text)
         try:
-            tts = edge_tts.Communicate(text, voice, rate="+4%")
-            await tts.save(mp3)
+            await edge_tts.Communicate(text, voice, rate="+4%").save(mp3)
         except Exception as e:
             print("ERROR tts", href, "->", e, flush=True)
             continue
-        mins = max(1, round(os.path.getsize(mp3) * 8 / 48000 / 60))
-        anchor = '      <button class="share-btn" type="button" data-net="copy">Copiar enlace</button>\n    </div>\n'
-        if anchor not in html:
-            print("ERROR ancla no encontrada:", href, flush=True)
-            continue
-        html = html.replace(anchor, BLOCK.format(mins=mins, mp3=mp3), 1)
-        io.open(href, "w", encoding="utf-8", newline="\n").write(html)
+        n += 1
         v = "Dalia" if "Dalia" in voice else "Jorge"
-        print(f"OK {href} -> {mp3} ({v}, ~{mins} min)", flush=True)
+        print(f"OK {href} -> {mp3} ({v})", flush=True)
+    print(f"FIN: {n} audios nuevos", flush=True)
 
-asyncio.run(main())
-print("FIN", flush=True)
+
+if __name__ == "__main__":
+    asyncio.run(main(sys.argv[1] if len(sys.argv) > 1 else None))

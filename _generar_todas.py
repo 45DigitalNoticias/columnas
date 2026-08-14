@@ -53,13 +53,13 @@ PAGINA = """<!DOCTYPE html>
 
 <header class="masthead">
   <div class="wrap">
-    <span class="fecha">{hoy}</span>
+    <span class="fecha"></span>
     <a href="index.html">
       <div class="logo">45 Digital <span class="n">Noticias</span></div>
       <div class="hilo"></div>
     </a>
     <nav>
-      <a href="index.html" aria-current="page">Columnas</a>
+      <a href="todas.html" aria-current="page">Columnas</a>
       <a href="expedientes.html">Expedientes</a>
       <a href="acerca.html">Acerca</a>
     </nav>
@@ -126,6 +126,12 @@ PAGINA = """<!DOCTYPE html>
 
 <script>
 (() => {{
+  // el masthead fecha la visita, no la última columna (su fecha de emisión
+  // puede ser futura por la cola de carpetas)
+  const fec = document.querySelector('.masthead .fecha');
+  if (fec) fec.textContent = new Date().toLocaleDateString('es-MX',
+      {{day: 'numeric', month: 'long', year: 'numeric'}});
+
   const tarjetas = [...document.querySelectorAll('.mural-t')];
   const botones  = [...document.querySelectorAll('.f')];
   const busca    = document.querySelector('.busca');

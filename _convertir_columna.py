@@ -182,13 +182,13 @@ PAGINA = """<!DOCTYPE html>
 
 <header class="masthead">
   <div class="wrap">
-    <span class="fecha">{fecha_larga}</span>
+    <span class="fecha"></span>
     <a href="index.html">
       <div class="logo">45 Digital <span class="n">Noticias</span></div>
       <div class="hilo"></div>
     </a>
     <nav>
-      <a href="index.html">Columnas</a>
+      <a href="todas.html">Columnas</a>
       <a href="expedientes.html">Expedientes</a>
       <a href="acerca.html">Acerca</a>
     </nav>
@@ -210,8 +210,6 @@ PAGINA = """<!DOCTYPE html>
 
       <div class="firma">
         <span class="autor">SRVO</span>
-        <span class="sep"></span>
-        <span class="meta">{fecha_larga}</span>
         <span class="sep"></span>
         <span class="meta">{minutos}</span>
       </div>

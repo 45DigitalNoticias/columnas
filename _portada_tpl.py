@@ -75,12 +75,12 @@ PLANTILLA = """<!DOCTYPE html>
 
   <header class="masthead">
     <div class="wrap">
-      <span class="fecha">{hoy}</span>
+      <span class="fecha"></span>
       <div>
         <div class="logo">45 Digital <span class="n">Noticias</span></div>
         <div class="hilo"></div>
       </div>
-      <nav><a href="index.html">Columnas</a><a href="expedientes.html">Expedientes</a><a href="acerca.html">Acerca</a></nav>
+      <nav><a href="todas.html">Columnas</a><a href="expedientes.html">Expedientes</a><a href="acerca.html">Acerca</a></nav>
     </div>
   </header>
 

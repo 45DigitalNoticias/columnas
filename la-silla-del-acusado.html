@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>La silla del acusado · 45 Digital Noticias</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="columna.css">
 <meta name="description" content="Dos alcaldes rurales de Morelos enfrentan la destitución por no pagar pensiones. Decidirán 20 diputados, y 10 de ellos fueron alcaldes. La mitad del jurado pasó por la silla del acusado.">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="45 Digital Noticias">
@@ -17,10 +21,6 @@
 <meta name="twitter:title" content="La silla del acusado">
 <meta name="twitter:description" content="Dos alcaldes de Morelos enfrentan la destitución por no pagar pensiones. Decidirán 20 diputados: 10 fueron alcaldes.">
 <meta name="twitter:image" content="https://45digitalnoticias.github.io/columnas/og-la-silla-del-acusado.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
 <!-- Google Analytics 4 (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R64XZVCF6F"></script>
 <script>
@@ -68,14 +68,14 @@
 </head>
 <body>
 
-<header class="site-header">
+<header class="masthead">
   <div class="wrap">
-    <a class="brand" href="index.html">
-      <img class="brand-logo" src="logo-45.png" alt="45 Digital Noticias">
-      <span class="name" style="display:none">45 DIGITAL <b>NOTICIAS</b></span>
+    <span class="fecha">12 de junio de 2026</span>
+    <a href="index.html">
+      <div class="logo">45 Digital <span class="n">Noticias</span></div>
+      <div class="hilo"></div>
     </a>
-    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
-    <nav class="nav" id="nav">
+    <nav>
       <a href="index.html">Columnas</a>
       <a href="expedientes.html">Expedientes</a>
       <a href="acerca.html">Acerca</a>
@@ -83,84 +83,65 @@
   </div>
 </header>
 
-<article class="article">
-  <div class="wrap">
+<!-- barra de avance de lectura -->
+<div class="avance" id="avance"></div>
 
-    <header class="article-head">
+<article>
+  <header class="cabeza">
+    <div class="wrap-medida">
       <div class="eyebrow">
-        <span class="kicker">Columna de opinión</span>
-        <span class="line"></span>
+        <span class="tick"></span>
+        <span class="label">Morelos · Congreso</span>
       </div>
       <h1>La silla del acusado</h1>
-      <p class="dek">Dos alcaldes rurales de Morelos enfrentan la destitución por no pagar pensiones. Decidirán 20 diputados, y 10 de ellos fueron alcaldes. La mitad del jurado pasó por la silla del acusado.</p>
-      <div class="article-meta">
-        <span>5 min de lectura</span>
+      <p class="entrada">Dos alcaldes rurales de Morelos enfrentan la destitución por no pagar pensiones. Decidirán 20 diputados, y 10 de ellos fueron alcaldes. La mitad del jurado pasó por la silla del acusado.</p>
+
+      <div class="firma">
+        <span class="autor">SRVO</span>
+        <span class="sep"></span>
+        <span class="meta">12 de junio de 2026</span>
+        <span class="sep"></span>
+        <span class="meta">5 min de lectura</span>
       </div>
-    </header>
 
-    <figure class="article-figure">
-      <img src="silla-del-acusado.webp" alt="Una silla curul de latón sobre fondo verde botella; su sombra se alarga hasta tomar la forma de un mazo de juez." style="aspect-ratio:1/1;object-fit:contain;max-width:560px;margin:0 auto;">
-    </figure>
-
-    <div class="share" aria-label="Compartir">
-      <span class="share-label">Compartir</span>
-      <a class="share-btn" data-net="wa" target="_blank" rel="noopener">WhatsApp</a>
-      <a class="share-btn" data-net="fb" target="_blank" rel="noopener">Facebook</a>
-      <a class="share-btn" data-net="x" target="_blank" rel="noopener">X</a>
-      <button class="share-btn" type="button" data-net="copy">Copiar enlace</button>
+      <button class="oir-barra" type="button" data-src="../SITIO_COLUMNAS/audio-la-silla-del-acusado.mp3">
+        <span class="ico"><svg class="play" viewBox="0 0 10 12" fill="currentColor"><path d="M0 0l10 6-10 6z"/></svg><svg class="pausa" viewBox="0 0 10 12" fill="currentColor"><path d="M0 0h3.4v12H0zM6.6 0H10v12H6.6z"/></svg></span>
+        <span class="txt">Escuchar la columna</span>
+        <span class="dur">7:05</span>
+        <span class="pista-audio"></span>
+      </button>
     </div>
+  </header>
 
-    <div class="audio-col" style="max-width:var(--measure);margin:0 auto 38px;padding:16px 18px;border:1px solid rgba(204,161,90,.3);border-radius:12px;background:rgba(204,161,90,.05);">
-      <div style="font-family:'Inter',system-ui,sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#cca15a;margin-bottom:10px;">🎧 Escuchar la columna · 7 min</div>
-      <audio controls preload="none" style="width:100%;display:block;">
-        <source src="audio-la-silla-del-acusado.mp3" type="audio/mpeg">
-        Tu navegador no soporta audio HTML5.
-      </audio>
-      <div style="font-family:'Inter',system-ui,sans-serif;font-size:.72rem;color:rgba(243,241,232,.55);margin-top:8px;">Lectura automática con voz sintética.</div>
-    </div>
+  <figure class="portada wrap-medida">
+    <img src="../SITIO_COLUMNAS/silla-del-acusado.webp" alt="">
+    <figcaption>Morelos · Congreso · Ilustración de la columna</figcaption>
+  </figure>
 
-    <div class="prose">
-      <p>El 10 de junio de 2026 entraron a la oficialía de partes del Congreso de Morelos dos oficios del Tribunal de Justicia Administrativa (TJA). Piden la separación inmediata del cargo y un año de inhabilitación para Enrique Alonso Plascencia, presidente municipal de Tlaquiltenango, y para José Carlos Jiménez Ponciano, alcalde indígena de Xoxocotla. Los expedientes (TJA/3ªS/77/2023 y TJA/3ªS/161/2023) no hablan de desvíos ni de enriquecimiento: hablan de sentencias firmes en juicios de pensiones, promovidos por particulares, que ambos ayuntamientos llevan más de cinco años sin cumplir, según el magistrado presidente del tribunal, Guillermo Arroyo Cruz.</p>
+  <div class="wrap-medida prosa">
+    <p>El 10 de junio de 2026 entraron a la oficialía de partes del Congreso de Morelos dos oficios del Tribunal de Justicia Administrativa (TJA). Piden la separación inmediata del cargo y un año de inhabilitación para Enrique Alonso Plascencia, presidente municipal de Tlaquiltenango, y para José Carlos Jiménez Ponciano, alcalde indígena de Xoxocotla. Los expedientes (TJA/3ªS/77/2023 y TJA/3ªS/161/2023) no hablan de desvíos ni de enriquecimiento: hablan de sentencias firmes en juicios de pensiones, promovidos por particulares, que ambos ayuntamientos llevan más de cinco años sin cumplir, según el magistrado presidente del tribunal, Guillermo Arroyo Cruz.</p>
+    <p>La nota fácil termina ahí: dos alcaldes en desacato, un tribunal firme, la ley que por fin alcanza a alguien. La historia completa tiene tres capas, y conviene mirarlas en orden: la jurídica, la aritmética y la política.</p>
+    <h2>La capa jurídica</h2>
+    <p>No pagar laudos y pensiones es una de las prácticas más extendidas del municipalismo mexicano. No es una virtud, pero tampoco es sinónimo de robo: es el resultado de haciendas municipales precarias, condenas que crecen con intereses y, en buena parte de estos casos, deudas heredadas de administraciones anteriores, como reportó la prensa local sobre los propios expedientes de Tlaquiltenango y Xoxocotla.</p>
+    <p>Tan extendida es la práctica que la Suprema Corte tuvo que intervenir varias veces, y siempre por Morelos. La Segunda Sala invalidó las destituciones que el propio TJA decretó contra integrantes del ayuntamiento de Puente de Ixtla (controversias constitucionales 44/2020 y 174/2021): un tribunal administrativo, dijo la Corte, no puede remover a servidores públicos electos; conforme al artículo 115, fracción I, de la Constitución federal, esa decisión corresponde en exclusiva a la Legislatura, por causas graves, con audiencia previa y mayoría de dos terceras partes. Antes, en la controversia 332/2019, la Corte ya había invalidado el artículo de la Ley del Servicio Civil que durante años sirvió de base para destituir alcaldes por laudos en Yautepec. Y en 2018 frenó con una suspensión la destitución de Cuauhtémoc Blanco como alcalde de Cuernavaca.</p>
+    <p>La ley estatal vigente ya incorpora esa lección. La Ley de Justicia Administrativa reserva la destitución directa a los funcionarios designados; para los electos remite al procedimiento de la Ley Orgánica Municipal: audiencia ante la Comisión de Gobernación y Gran Jurado y votación calificada del pleno. Por eso los oficios del TJA no destituyen por sí mismos: piden. La decisión es del Congreso. En una legislatura de 20, son 14 votos.</p>
+    <h2>La capa aritmética</h2>
+    <p>Aquí está el dato que este espacio verificó, perfil por perfil, en los currículums oficiales de la LVI Legislatura publicados en la plataforma Morelos Rinde Cuentas y en prensa local. De los 20 diputados que decidirán, diez encabezaron antes un ayuntamiento: Rafael Reyes, coordinador de Morena y receptor de los oficios, gobernó Jiutepec dos trienios; Isaac Pimentel, Ayala, dos trienios; Sergio Livera, Totolapan, dos trienios; Alberto Sánchez Ortega, Xochitepec, dos trienios; Erik Sánchez Zavala, Yecapixtla, dos trienios; Luz Dary Quevedo, Tetecala, dos trienios; Alfonso Sotelo, Jojutla; Jazmín Solano, Temixco; Alfredo Domínguez Mandujano, Tlaltizapán; y Guillermina Maya, quien encabezó el concejo municipal indígena de Hueyapan.</p>
+    <p>La consecuencia es de primaria: se requieren 14 votos y hay 10 ex alcaldes. No existe forma matemática de destituir a un alcalde en Morelos sin votos de ex alcaldes.</p>
+    <p class="pull">La mitad del jurado se sentó antes en la silla del acusado.</p>
+    <p>Hay un segundo eslabón, y está en la Constitución del estado: a los magistrados del TJA los designa el propio Congreso, también por dos terceras partes. El tribunal que pide la cabeza fue integrado por el órgano que decidirá si la corta. El circuito completo (designación, solicitud, veredicto) ocurre entre dos edificios de la misma ciudad.</p>
+    <h2>La capa política</h2>
+    <p>Guillermo O'Donnell llamó <em>accountability horizontal</em> a la vigilancia que las instituciones del Estado ejercen unas sobre otras, y advirtió que en las democracias nuevas esa vigilancia suele ser el eslabón más débil: existe en la norma, pero se activa de manera selectiva. Eso es exactamente lo que conviene observar aquí. La sanción por desacato existe desde hace años; los adeudos municipales por laudos y pensiones se cuentan por decenas en el estado; y sin embargo el mecanismo despertó, con todo su peso, sobre dos municipios rurales, uno de ellos indígena, sin grupo parlamentario propio y sin reflectores.</p>
+    <p>A mi juicio, y lo rotulo expresamente como opinión, la pregunta central no es si estos dos alcaldes deben, porque deben: hay una ciudadana de Xoxocotla que ganó su juicio de pensión y lleva años sin cobrar, y ella es la única víctima con nombre de expediente en esta historia. La pregunta central es por qué el castigo escogió a estos dos y no a los grandes deudores; cuántos de los municipios que gobernaron los propios diputados acumulan sentencias igual de incumplidas; y qué significa que la inhabilitación solicitada, contada desde junio de 2026, se empalme con los meses en que se definirán las candidaturas del proceso electoral de 2027. Esto último no es una imputación: es aritmética de calendario, y cada quien puede hacerla.</p>
+    <p>Hay algo más, y sigue siendo opinión: un mecanismo que puede activarse o guardarse a discreción vale más guardado que usado. Quien controla ese interruptor, frente a un mapa municipal donde las deudas por laudos y pensiones abundan, tiene algo que negociar con cada ayuntamiento que deba. En qué moneda se cobre esa negociación (dinero, alineamiento político o candidaturas) es exactamente lo que un padrón público de desacatos volvería visible. Por eso importa tanto ese padrón, y por eso llama la atención que nadie lo haya publicado.</p>
+    <p>Ese censo no requiere filtraciones ni valentía: obra en los archivos del propio TJA y del Tribunal Estatal de Conciliación y Arbitraje, es información pública y cualquier ciudadano puede solicitarla. Si la lista resulta larga y el castigo cayó parejo, habrá que decirlo con la misma tinta. Si la lista resulta larga y el castigo cayó dos veces, quedará demostrado que en Morelos la rendición de cuentas no es una regla: es un interruptor, y alguien decide cuándo encenderlo.</p>
+    <p class="pull">La rendición de cuentas no es una regla: es un interruptor.</p>
+    <p>Mientras tanto, los pensionados de Tlaquiltenango y Xoxocotla seguirán esperando lo único que ningún oficio ha pedido con urgencia: que les paguen.</p>
+  </div>
 
-      <p>La nota fácil termina ahí: dos alcaldes en desacato, un tribunal firme, la ley que por fin alcanza a alguien. La historia completa tiene tres capas, y conviene mirarlas en orden: la jurídica, la aritmética y la política.</p>
-
-      <h2>La capa jurídica</h2>
-
-      <p>No pagar laudos y pensiones es una de las prácticas más extendidas del municipalismo mexicano. No es una virtud, pero tampoco es sinónimo de robo: es el resultado de haciendas municipales precarias, condenas que crecen con intereses y, en buena parte de estos casos, deudas heredadas de administraciones anteriores, como reportó la prensa local sobre los propios expedientes de Tlaquiltenango y Xoxocotla.</p>
-
-      <p>Tan extendida es la práctica que la Suprema Corte tuvo que intervenir varias veces, y siempre por Morelos. La Segunda Sala invalidó las destituciones que el propio TJA decretó contra integrantes del ayuntamiento de Puente de Ixtla (controversias constitucionales 44/2020 y 174/2021): un tribunal administrativo, dijo la Corte, no puede remover a servidores públicos electos; conforme al artículo 115, fracción I, de la Constitución federal, esa decisión corresponde en exclusiva a la Legislatura, por causas graves, con audiencia previa y mayoría de dos terceras partes. Antes, en la controversia 332/2019, la Corte ya había invalidado el artículo de la Ley del Servicio Civil que durante años sirvió de base para destituir alcaldes por laudos en Yautepec. Y en 2018 frenó con una suspensión la destitución de Cuauhtémoc Blanco como alcalde de Cuernavaca.</p>
-
-      <p>La ley estatal vigente ya incorpora esa lección. La Ley de Justicia Administrativa reserva la destitución directa a los funcionarios designados; para los electos remite al procedimiento de la Ley Orgánica Municipal: audiencia ante la Comisión de Gobernación y Gran Jurado y votación calificada del pleno. Por eso los oficios del TJA no destituyen por sí mismos: piden. La decisión es del Congreso. En una legislatura de 20, son 14 votos.</p>
-
-      <h2>La capa aritmética</h2>
-
-      <p>Aquí está el dato que este espacio verificó, perfil por perfil, en los currículums oficiales de la LVI Legislatura publicados en la plataforma Morelos Rinde Cuentas y en prensa local. De los 20 diputados que decidirán, diez encabezaron antes un ayuntamiento: Rafael Reyes, coordinador de Morena y receptor de los oficios, gobernó Jiutepec dos trienios; Isaac Pimentel, Ayala, dos trienios; Sergio Livera, Totolapan, dos trienios; Alberto Sánchez Ortega, Xochitepec, dos trienios; Erik Sánchez Zavala, Yecapixtla, dos trienios; Luz Dary Quevedo, Tetecala, dos trienios; Alfonso Sotelo, Jojutla; Jazmín Solano, Temixco; Alfredo Domínguez Mandujano, Tlaltizapán; y Guillermina Maya, quien encabezó el concejo municipal indígena de Hueyapan.</p>
-
-      <p>La consecuencia es de primaria: se requieren 14 votos y hay 10 ex alcaldes. No existe forma matemática de destituir a un alcalde en Morelos sin votos de ex alcaldes.</p>
-
-      <p class="pull">La mitad del jurado se sentó antes en la silla del acusado.</p>
-
-      <p>Hay un segundo eslabón, y está en la Constitución del estado: a los magistrados del TJA los designa el propio Congreso, también por dos terceras partes. El tribunal que pide la cabeza fue integrado por el órgano que decidirá si la corta. El circuito completo (designación, solicitud, veredicto) ocurre entre dos edificios de la misma ciudad.</p>
-
-      <h2>La capa política</h2>
-
-      <p>Guillermo O'Donnell llamó <em>accountability horizontal</em> a la vigilancia que las instituciones del Estado ejercen unas sobre otras, y advirtió que en las democracias nuevas esa vigilancia suele ser el eslabón más débil: existe en la norma, pero se activa de manera selectiva. Eso es exactamente lo que conviene observar aquí. La sanción por desacato existe desde hace años; los adeudos municipales por laudos y pensiones se cuentan por decenas en el estado; y sin embargo el mecanismo despertó, con todo su peso, sobre dos municipios rurales, uno de ellos indígena, sin grupo parlamentario propio y sin reflectores.</p>
-
-      <p>A mi juicio, y lo rotulo expresamente como opinión, la pregunta central no es si estos dos alcaldes deben, porque deben: hay una ciudadana de Xoxocotla que ganó su juicio de pensión y lleva años sin cobrar, y ella es la única víctima con nombre de expediente en esta historia. La pregunta central es por qué el castigo escogió a estos dos y no a los grandes deudores; cuántos de los municipios que gobernaron los propios diputados acumulan sentencias igual de incumplidas; y qué significa que la inhabilitación solicitada, contada desde junio de 2026, se empalme con los meses en que se definirán las candidaturas del proceso electoral de 2027. Esto último no es una imputación: es aritmética de calendario, y cada quien puede hacerla.</p>
-
-      <p>Hay algo más, y sigue siendo opinión: un mecanismo que puede activarse o guardarse a discreción vale más guardado que usado. Quien controla ese interruptor, frente a un mapa municipal donde las deudas por laudos y pensiones abundan, tiene algo que negociar con cada ayuntamiento que deba. En qué moneda se cobre esa negociación (dinero, alineamiento político o candidaturas) es exactamente lo que un padrón público de desacatos volvería visible. Por eso importa tanto ese padrón, y por eso llama la atención que nadie lo haya publicado.</p>
-
-      <p>Ese censo no requiere filtraciones ni valentía: obra en los archivos del propio TJA y del Tribunal Estatal de Conciliación y Arbitraje, es información pública y cualquier ciudadano puede solicitarla. Si la lista resulta larga y el castigo cayó parejo, habrá que decirlo con la misma tinta. Si la lista resulta larga y el castigo cayó dos veces, quedará demostrado que en Morelos la rendición de cuentas no es una regla: es un interruptor, y alguien decide cuándo encenderlo.</p>
-
-      <p class="pull">La rendición de cuentas no es una regla: es un interruptor.</p>
-
-      <p>Mientras tanto, los pensionados de Tlaquiltenango y Xoxocotla seguirán esperando lo único que ningún oficio ha pedido con urgencia: que les paguen.</p>
-    </div>
-
-    <p class="signoff">SRVO</p>
-
-    <section class="fuentes">
-      <h2>Fuentes y referencias citadas</h2>
+  <section class="fuentes">
+    <div class="wrap-medida">
+      <div class="sec-head"><span class="label">Fuentes y referencias</span></div>
       <ol>
         <li>Oficios del TJA al Congreso de Morelos (10 de junio de 2026), expedientes TJA/3ªS/77/2023 (Tlaquiltenango) y TJA/3ªS/161/2023 (Xoxocotla). <a href="https://www.diariodemorelos.com/noticias/tiemblan-alcaldes-en-morelos-congreso-evalua-destituir-ediles-xoxocotla-tlaquiltenango" target="_blank" rel="noopener">Diario de Morelos</a> · <a href="https://www.eluniversal.com.mx/estados/tribunal-pide-a-congreso-de-morelos-separar-del-cargo-a-dos-ediles-por-desacato-a-sentencias-evasion-rebasa-los-5-anos-de-antiguedad/" target="_blank" rel="noopener">El Universal</a> · <a href="https://www.proceso.com.mx/nacional/estados/2026/6/11/tribunal-ordena-destituir-a-alcaldes-de-xoxocotla-y-tlaquiltenango-por-desacatar-sentencias-373697.html" target="_blank" rel="noopener">Proceso</a> · <a href="https://morelos.quadratin.com.mx/destituye-e-inhabilita-tja-a-los-alcaldes-de-tlaquiltenango-y-xoxocotla/" target="_blank" rel="noopener">Quadratín Morelos</a></li>
         <li>SCJN, Controversia Constitucional 174/2021 (Municipio de Puente de Ixtla): invalidez de la destitución de ediles electos decretada por el TJA; la remoción corresponde a la Legislatura conforme al art. 115 fr. I constitucional. <a href="https://www2.scjn.gob.mx/juridica/engroses/2/2021/9/3_289810_5979_firmado.pdf" target="_blank" rel="noopener">Engrose firmado (PDF)</a></li>
@@ -171,59 +152,87 @@
         <li>Marco legal cotejado en texto vigente: Constitución (CPEUM), art. 115 fr. I; Ley de Justicia Administrativa de Morelos, arts. 11 fr. V y 91; Ley Orgánica Municipal de Morelos, arts. 178, 181 y 183; Constitución de Morelos (designación de magistrados del TJA por el Congreso, dos terceras partes). <a href="https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf" target="_blank" rel="noopener">CPEUM (DOF)</a> · <a href="http://marcojuridico.morelos.gob.mx/" target="_blank" rel="noopener">Marco Jurídico de Morelos</a></li>
         <li>Guillermo O'Donnell, "Horizontal Accountability in New Democracies", <em>Journal of Democracy</em> 9(3), 1998. <a href="https://muse.jhu.edu/article/16798" target="_blank" rel="noopener">Project MUSE</a></li>
       </ol>
-    </section>
-
-    <div class="share share-end" aria-label="Compartir">
-      <span class="share-label">Compartir esta columna</span>
-      <a class="share-btn" data-net="wa" target="_blank" rel="noopener">WhatsApp</a>
-      <a class="share-btn" data-net="fb" target="_blank" rel="noopener">Facebook</a>
-      <a class="share-btn" data-net="x" target="_blank" rel="noopener">X</a>
-      <button class="share-btn" type="button" data-net="copy">Copiar enlace</button>
+      <p class="cotejo">Las ligas van a la vista para que cualquiera compruebe por su cuenta. Si alguna dejó de resolver, escríbenos y la reponemos.</p>
     </div>
+  </section>
 
-    <a class="back" href="index.html">← Volver a las columnas</a>
-  </div>
+  <section class="cierre wrap-medida">
+    <p class="firma-final">SRVO</p>
+    <div class="btns">
+      <a class="btn-red" data-red="facebook" href="#" aria-label="Compartir en Facebook"><span class="tip">Facebook</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.5l.5-3h-3v-2c0-.6.4-1 1-1z"/></svg></a>
+      <a class="btn-red" data-red="whatsapp" href="#" aria-label="Compartir por WhatsApp"><span class="tip">WhatsApp</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1112 20zm4.4-5.8c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 01-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3 0-.5l-.7-1.6c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.7.7-.9 1.6-.6 2.6.5 1.6 1.6 3 3.1 3.9 1.4.9 2.5 1 3.4.9.7-.1 1.4-.6 1.6-1.2.1-.3.1-.6 0-.7z"/></svg></a>
+      <a class="btn-red" data-red="x" href="#" aria-label="Compartir en X"><span class="tip">X</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 3h3l-6.6 7.5L21.7 21h-6l-4.7-6.1L5.6 21h-3l7-8L2.6 3h6.2l4.3 5.6zm-1 16h1.6L8.1 4.6H6.4z"/></svg></a>
+      <button class="btn-red" type="button" data-red="copiar" aria-label="Copiar enlace"><span class="tip">Copiar enlace</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a4 4 0 006 .4l2.4-2.4a4 4 0 00-5.7-5.7l-1.4 1.4"/><path d="M14 11a4 4 0 00-6-.4l-2.4 2.4a4 4 0 005.7 5.7l1.4-1.4"/></svg></button>
+    </div>
+  </section>
 </article>
 
-<footer class="site-footer">
+<footer class="pie-sitio">
   <div class="wrap">
-    <span class="sig">45 Digital Noticias.</span>
-    <span class="small">Columnas · lectura sistémica · © 2026 — Todos los textos cotejados contra fuente.</span>
+    <div class="pie-top">
+      <div class="pie-marca">
+        <p class="marca-n">45 Digital Noticias</p>
+        <div class="hilo"></div>
+        <p class="lema">Columnas de opinión con lectura sistémica. Lo verificable, separado de la lectura.</p>
+      </div>
+      <nav class="pie-col"><h4>Leer</h4>
+        <a href="index.html">Portada</a><a href="todas.html">Todas las columnas</a><a href="expedientes.html">Expedientes</a></nav>
+      <nav class="pie-col"><h4>Temas</h4>
+        <a href="#">Seguridad</a><a href="#">Morelos</a><a href="#">Economía</a><a href="#">Justicia</a></nav>
+      <nav class="pie-col"><h4>La casa</h4>
+        <a href="acerca.html">Acerca</a><a href="mailto:s.rvaldespin8@gmail.com">Escríbenos</a>
+        <a href="https://facebook.com/45DigitalMx" target="_blank" rel="noopener">Facebook</a></nav>
+    </div>
+    <div class="pie-bajo">
+      <p>© 2026 · 45 Digital Noticias. Textos de SRVO.<br>El programa se transmite en vivo de 9 a 10 de la mañana.</p>
+    </div>
   </div>
-<a id="ck-privacy-link" href="https://45digitalnoticias.github.io/columnas/privacidad.html" style="display:block;text-align:center;margin-top:10px;font-size:.76rem;letter-spacing:.04em;color:inherit;opacity:.65;text-decoration:none;">Aviso de privacidad</a>
 </footer>
 
 <script>
-  const mt = document.querySelector('.menu-toggle');
-  const nav = document.getElementById('nav');
-  if (mt && nav) mt.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    mt.setAttribute('aria-expanded', open);
-  });
-  (function () {
-    const url = encodeURIComponent(location.href);
-    const ttl = encodeURIComponent(document.title.split('—')[0].trim());
-    const map = {
-      wa: 'https://wa.me/?text=' + ttl + '%20' + url,
-      fb: 'https://www.facebook.com/sharer/sharer.php?u=' + url,
-      x: 'https://twitter.com/intent/tweet?text=' + ttl + '&url=' + url
-    };
-    document.querySelectorAll('.share-btn[data-net]').forEach(function (b) {
-      const n = b.dataset.net;
-      if (map[n]) b.href = map[n];
-      if (n === 'copy') b.addEventListener('click', function () {
-        navigator.clipboard.writeText(location.href).then(function () {
-          const t = b.textContent; b.textContent = '¡Copiado!';
-          setTimeout(function () { b.textContent = t; }, 1500);
-        });
-      });
+(() => {
+  // barra de avance de lectura
+  const barra = document.getElementById('avance'), art = document.querySelector('article');
+  addEventListener('scroll', () => {
+    const t = art.offsetTop, h = art.offsetHeight - innerHeight;
+    const p = Math.min(1, Math.max(0, (scrollY - t) / (h > 0 ? h : 1)));
+    barra.style.transform = 'scaleX(' + p + ')';
+  }, {passive:true});
+
+  // audio
+  const bt = document.querySelector('.oir-barra');
+  if (bt) {
+    const au = new Audio(bt.dataset.src);
+    const pista = bt.querySelector('.pista-audio');
+    bt.addEventListener('click', () => {
+      if (au.paused) { au.play().catch(()=>{}); bt.classList.add('suena'); }
+      else { au.pause(); bt.classList.remove('suena'); }
     });
-  })();
+    au.addEventListener('timeupdate', () => {
+      if (au.duration) pista.style.width = (au.currentTime / au.duration * 100) + '%';
+    });
+    au.addEventListener('ended', () => bt.classList.remove('suena'));
+  }
+
+  // compartir
+  const U = encodeURIComponent(location.href);
+  const T = encodeURIComponent(document.querySelector('h1').textContent + ' · 45 Digital Noticias');
+  const D = {facebook:`https://www.facebook.com/sharer/sharer.php?u=${U}`,
+             whatsapp:`https://api.whatsapp.com/send?text=${T}%20${U}`,
+             x:`https://twitter.com/intent/tweet?text=${T}&url=${U}`};
+  document.querySelectorAll('.btn-red').forEach(b => {
+    const r = b.dataset.red;
+    if (D[r]) { b.href = D[r]; b.target = '_blank'; b.rel = 'noopener'; return; }
+    b.addEventListener('click', async () => {
+      const tip = b.querySelector('.tip');
+      try { await navigator.clipboard.writeText(location.href); } catch { return; }
+      const a = tip.textContent; tip.textContent = 'Copiado'; b.classList.add('copiado');
+      setTimeout(() => { tip.textContent = a; b.classList.remove('copiado'); }, 1800);
+    });
+  });
+})();
 </script>
-<!-- Cloudflare Web Analytics -->
-<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4de56a9a4564d0ea0f4e0259af8bc7a"}'></script>
-<!-- End Cloudflare Web Analytics -->
-<!-- Cookie consent 45 Digital -->
+
 <style>
 #ck-consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:560px;margin:0 auto;background:#0e1320;border:1px solid rgba(204,161,90,.35);border-radius:12px;padding:16px 18px;box-shadow:0 18px 50px rgba(0,0,0,.5);font-family:'Inter',system-ui,sans-serif;color:#cdd3cc;display:none}
 #ck-consent.show{display:block}
@@ -258,8 +267,8 @@
 })();
 </script>
 <!-- /Cookie consent 45 Digital -->
-<!-- RED-45 start -->
-<nav aria-label="Red 45 Digital Noticias" style="max-width:1100px;margin:48px auto 22px;padding:18px 20px 4px;border-top:1px solid rgba(128,128,128,.28);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:13px;line-height:1.9;text-align:center;opacity:.85;"><div style="text-transform:uppercase;letter-spacing:2.5px;font-size:10.5px;opacity:.6;margin-bottom:7px;">Red 45 Digital Noticias</div><div><a href="https://45digitalnoticias.github.io/columnas/" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.45);">Columnas</a> &nbsp;·&nbsp; <a href="https://45digitalnoticias.github.io/Inseguridad-Mexico/" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.45);">Inseguridad México</a> &nbsp;·&nbsp; <a href="https://45digitalnoticias.github.io/Expediente-Hantavirus/" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.45);">Expediente Brotes</a> &nbsp;·&nbsp; <a href="https://45digitalnoticias.github.io/cementerio-transparencia/" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.45);">Cementerio de la Transparencia</a></div></nav>
-<!-- RED-45 end -->
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4de56a9a4564d0ea0f4e0259af8bc7a"}'></script>
+<!-- End Cloudflare Web Analytics -->
 </body>
 </html>

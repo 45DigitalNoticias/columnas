@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>El amparo del silencio · 45 Digital Noticias</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="columna.css">
 <meta name="description" content="El día del Operativo Enjambre, cuatro detenidos pidieron lo mismo: no ser entregados a Estados Unidos.">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="45 Digital Noticias">
@@ -17,10 +21,6 @@
 <meta name="twitter:title" content="El amparo del silencio">
 <meta name="twitter:description" content="El día del Operativo Enjambre, cuatro detenidos pidieron lo mismo: no ser entregados a Estados Unidos.">
 <meta name="twitter:image" content="https://45digitalnoticias.github.io/columnas/og-amparo-silencio.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
 <!-- Google Analytics 4 (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R64XZVCF6F"></script>
 <script>
@@ -68,14 +68,14 @@
 </head>
 <body>
 
-<header class="site-header">
+<header class="masthead">
   <div class="wrap">
-    <a class="brand" href="index.html">
-      <img class="brand-logo" src="logo-45.png" alt="45 Digital Noticias">
-      <span class="name" style="display:none">45 DIGITAL <b>NOTICIAS</b></span>
+    <span class="fecha">22 de mayo de 2026</span>
+    <a href="index.html">
+      <div class="logo">45 Digital <span class="n">Noticias</span></div>
+      <div class="hilo"></div>
     </a>
-    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
-    <nav class="nav" id="nav">
+    <nav>
       <a href="index.html">Columnas</a>
       <a href="expedientes.html">Expedientes</a>
       <a href="acerca.html">Acerca</a>
@@ -83,72 +83,59 @@
   </div>
 </header>
 
-<article class="article">
-  <div class="wrap">
+<!-- barra de avance de lectura -->
+<div class="avance" id="avance"></div>
 
-    <header class="article-head">
+<article>
+  <header class="cabeza">
+    <div class="wrap-medida">
       <div class="eyebrow">
-        <span class="kicker">Columna de opinión</span>
-        <span class="line"></span>
+        <span class="tick"></span>
+        <span class="label">Justicia</span>
       </div>
       <h1>El amparo del silencio</h1>
-      <p class="dek">El día del Operativo Enjambre, cuatro detenidos pidieron lo mismo: no ser entregados a Estados Unidos.</p>
-      <div class="article-meta">
-        <span>5 min de lectura</span>
+      <p class="entrada">El día del Operativo Enjambre, cuatro detenidos pidieron lo mismo: no ser entregados a Estados Unidos.</p>
+
+      <div class="firma">
+        <span class="autor">SRVO</span>
+        <span class="sep"></span>
+        <span class="meta">22 de mayo de 2026</span>
+        <span class="sep"></span>
+        <span class="meta">5 min de lectura</span>
       </div>
-    </header>
 
-    <figure class="article-figure">
-      <img src="amparo-silencio.png" alt="El amparo del silencio">
-    </figure>
-
-    <div class="share" aria-label="Compartir">
-      <span class="share-label">Compartir</span>
-      <a class="share-btn" data-net="wa" target="_blank" rel="noopener">WhatsApp</a>
-      <a class="share-btn" data-net="fb" target="_blank" rel="noopener">Facebook</a>
-      <a class="share-btn" data-net="x" target="_blank" rel="noopener">X</a>
-      <button class="share-btn" type="button" data-net="copy">Copiar enlace</button>
+      <button class="oir-barra" type="button" data-src="../SITIO_COLUMNAS/audio-el-amparo-del-silencio.mp3">
+        <span class="ico"><svg class="play" viewBox="0 0 10 12" fill="currentColor"><path d="M0 0l10 6-10 6z"/></svg><svg class="pausa" viewBox="0 0 10 12" fill="currentColor"><path d="M0 0h3.4v12H0zM6.6 0H10v12H6.6z"/></svg></span>
+        <span class="txt">Escuchar la columna</span>
+        <span class="dur">7:15</span>
+        <span class="pista-audio"></span>
+      </button>
     </div>
+  </header>
 
-    <div class="audio-col" style="max-width:var(--measure);margin:0 auto 38px;padding:16px 18px;border:1px solid rgba(204,161,90,.3);border-radius:12px;background:rgba(204,161,90,.05);">
-      <div style="font-family:'Inter',system-ui,sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#cca15a;margin-bottom:10px;">🎧 Escuchar la columna · 7 min</div>
-      <audio controls preload="none" style="width:100%;display:block;">
-        <source src="audio-el-amparo-del-silencio.mp3" type="audio/mpeg">
-        Tu navegador no soporta audio HTML5.
-      </audio>
-      <div style="font-family:'Inter',system-ui,sans-serif;font-size:.72rem;color:rgba(243,241,232,.55);margin-top:8px;">Lectura automática con voz sintética.</div>
-    </div>
+  <figure class="portada wrap-medida">
+    <img src="../SITIO_COLUMNAS/amparo-silencio.png" alt="">
+    <figcaption>Justicia · Ilustración de la columna</figcaption>
+  </figure>
 
-    <div class="prose">
-      <p>El miércoles 20 de mayo, mientras los reflectores se concentraban en las detenciones del Operativo Enjambre en Morelos y en la fuga del alcalde de Cuautla, Jesús Corona Damián, cuatro de los seis detenidos promovieron de inmediato amparo. Según el boletín del Poder Judicial Federal, los expedientes son consecutivos, Principal 969, 970, 971 y 972 de 2026, y corresponden, en ese orden, a Arisbel Rubí Vázquez Amaro (consejera estatal de Morena), Horacio Zavaleta Malacara (exoficial mayor del gobierno panista de Cuautla y aspirante a la alcaldía por Morena), Jonathan Espinoza Salinas (tesorero de Cuautla) y Agustín Toledano Amaro (alcalde de Atlatlahucan). Cuatro amparos consecutivos presentados el mismo día en oficialía de partes no parecen cuatro defensas individuales: parecen una sola defensa coordinada moviéndose por los miembros de una red. La cobertura local pasó de largo: como mucho, una línea que menciona a dos de los cuatro. Casi nadie reparó en lo que pidieron.</p>
+  <div class="wrap-medida prosa">
+    <p>El miércoles 20 de mayo, mientras los reflectores se concentraban en las detenciones del Operativo Enjambre en Morelos y en la fuga del alcalde de Cuautla, Jesús Corona Damián, cuatro de los seis detenidos promovieron de inmediato amparo. Según el boletín del Poder Judicial Federal, los expedientes son consecutivos, Principal 969, 970, 971 y 972 de 2026, y corresponden, en ese orden, a Arisbel Rubí Vázquez Amaro (consejera estatal de Morena), Horacio Zavaleta Malacara (exoficial mayor del gobierno panista de Cuautla y aspirante a la alcaldía por Morena), Jonathan Espinoza Salinas (tesorero de Cuautla) y Agustín Toledano Amaro (alcalde de Atlatlahucan). Cuatro amparos consecutivos presentados el mismo día en oficialía de partes no parecen cuatro defensas individuales: parecen una sola defensa coordinada moviéndose por los miembros de una red. La cobertura local pasó de largo: como mucho, una línea que menciona a dos de los cuatro. Casi nadie reparó en lo que pidieron.</p>
+    <p>No pidieron la libertad. La imputación por delincuencia organizada sigue intacta y la orden de aprehensión, cumplida. Lo que pidieron y obtuvieron fue una figura jurídica específica: suspensión de plano, el mecanismo del amparo reservado para impedir actos de imposible reparación, como deportación, expulsión, traslado arbitrario o desaparición forzada. El amparo no es contra la imputación. Es contra la posibilidad de que se los lleven.</p>
+    <p>La pregunta natural es: ¿llevarlos a dónde? Son mexicanos, detenidos en territorio mexicano, por delitos del fuero federal mexicano. Nadie aquí tiene competencia para deportarlos. Y, sin embargo, sus abogados pidieron justo el escudo que la ley mexicana ofrece contra un traslado al extranjero. Esa elección procesal no parece accidental: parece geopolítica.</p>
+    <p>Para entenderla, conviene mirar el otro extremo del país. El 29 de abril, tres semanas antes del operativo en Morelos, el Departamento de Justicia de Estados Unidos presentó una acusación formal en la Fiscalía Federal del Distrito Sur de Nueva York contra Rubén Rocha Moya, gobernador con licencia de Sinaloa, y nueve funcionarios sinaloenses más, por presunta conspiración para importar fentanilo, posesión de ametralladoras y dispositivos destructivos. La acusación está construida en buena medida sobre las declaraciones de Ismael "Mayo" Zambada, detenido en Nueva York desde julio de 2024.</p>
+    <p>Cuatro días después, el 4 de mayo, la periodista Anabel Hernández reveló que la fiscalía estadounidense manejaría una lista de al menos diez perfiles morenistas potencialmente extraditables. Y el 16 de mayo, cuatro días antes del operativo en Morelos, dos excolaboradores cercanos de Rocha Moya, los exsecretarios de Seguridad y de Finanzas Gerardo Mérida y Enrique Díaz, se entregaron voluntariamente a las autoridades estadounidenses. No fueron capturados: cruzaron la frontera por su propio pie a negociar como testigos. A cantar.</p>
+    <p class="pull">Lo que se blinda no es a la persona ni al partido: es a lo que la persona sabe.</p>
+    <p>Ese es el cuadro: una fiscalía federal estadounidense con apetito documentado de procesar funcionarios mexicanos vinculados al Cártel de Sinaloa, una lista activa de gobernadores en la mira, una cooperación bilateral condicionada al aumento de extradiciones, y un precedente fresco: el 7 de mayo, un juzgado de distrito concedió a "El Jardinero", exoperador del CJNG, exactamente la suspensión que pidió Toledano en Morelos, no ser trasladado ni entregado a Estados Unidos mientras se resuelve el amparo de fondo. Entre febrero de 2025 y enero de 2026, México entregó a Estados Unidos noventa y dos reos en tres envíos masivos. Sobre ese fondo, la suspensión de plano deja de ser una formalidad y se vuelve una decisión específica.</p>
+    <p>Aquí entra el sociólogo italiano Diego Gambetta. En <em>The Sicilian Mafia: The Business of Private Protection</em> (Harvard, 1993) desmonta una idea común: la mafia no se sostiene principalmente por el miedo al castigo del Estado, sino por un contrato implícito de protección mutua entre sus miembros, anclado en el conocimiento cruzado de información destructiva. Cada integrante guarda secretos sobre los demás. Si uno cae en manos del Estado adversario, lo que la red cuida no es a la persona, es a la información. El silencio, el omertà, no es virtud cultural: es el contrato más duro de los que sostienen el sistema.</p>
+    <p>Aplicado al caso, y aquí entro en lectura, no en hecho probado: si cualquiera de los cuatro detenidos acabara en una corte federal estadounidense con la opción de negociar, la red enfrentaría justo lo que Gambetta describió. Podrían mencionar a Raúl Tadeo Nava, exalcalde de Cuautla imputado en 2023 por un caso de 9.8 millones de pesos del predial, en libertad al cierre de esta columna (junio de 2026). Podrían mencionar nombres por encima del nivel municipal. Lo que los cuatro amparos del miércoles aseguran es que esa silla del interrogatorio, en Nueva York, no se les pondrá enfrente. Y el detalle más revelador: entre los cuatro amparos figura el de un aspirante a la alcaldía de Cuautla por Morena. No es defensa de un solo bando. La protección contra la entrega a Estados Unidos es transversal a la filiación partidista, porque la información que cada uno custodia también lo es.</p>
+    <p>Lo que se blinda no es a la persona ni al partido: es a lo que la persona sabe.</p>
+    <p>La elegancia de la figura está en su precisión. La suspensión de plano no exige demostrar inocencia ni cuestionar la imputación: solo acreditar un riesgo de acto irreparable. En el contexto bilateral actual, con el Mayo cooperando y los exsecretarios de Rocha entregándose, ese riesgo es verificable. El juez que la concede no exonera de delitos; cierra la puerta del aeropuerto. Y al cerrarla, a mi juicio, protege no a quien tiene enfrente, sino a quienes podrían ser nombrados.</p>
+    <p>Hay una palabra que la calle usa antes que la academia: "no soplar". Y una italiana que Gambetta documentó como contrato: omertà. Hoy, en México, ese contrato parece firmarse por la vía del amparo de plano, con la intervención de un juez federal y la coartada formal de "proteger derechos humanos". El aparato del Estado cumpliría así una función nueva: no garantizar justicia, sino garantizar el silencio dentro de la red política que el propio Estado, en paralelo, persigue con discurso anticrimen. Queda una pregunta, y hay que formularla con todas las letras: ¿a quién le sirve, en el saldo neto, que ningún detenido del Operativo Enjambre cruce hacia el norte? La respuesta no se mide en los nombres de quienes están en prisión, sino en los que se libran de aparecer en la próxima acusación federal. Y esos nombres sabemos al menos dónde buscarlos: en la foto del jardín de Totolapan y en la lista que reveló Anabel Hernández.</p>
+  </div>
 
-      <p>No pidieron la libertad. La imputación por delincuencia organizada sigue intacta y la orden de aprehensión, cumplida. Lo que pidieron y obtuvieron fue una figura jurídica específica: suspensión de plano, el mecanismo del amparo reservado para impedir actos de imposible reparación, como deportación, expulsión, traslado arbitrario o desaparición forzada. El amparo no es contra la imputación. Es contra la posibilidad de que se los lleven.</p>
-
-      <p>La pregunta natural es: ¿llevarlos a dónde? Son mexicanos, detenidos en territorio mexicano, por delitos del fuero federal mexicano. Nadie aquí tiene competencia para deportarlos. Y, sin embargo, sus abogados pidieron justo el escudo que la ley mexicana ofrece contra un traslado al extranjero. Esa elección procesal no parece accidental: parece geopolítica.</p>
-
-      <p>Para entenderla, conviene mirar el otro extremo del país. El 29 de abril, tres semanas antes del operativo en Morelos, el Departamento de Justicia de Estados Unidos presentó una acusación formal en la Fiscalía Federal del Distrito Sur de Nueva York contra Rubén Rocha Moya, gobernador con licencia de Sinaloa, y nueve funcionarios sinaloenses más, por presunta conspiración para importar fentanilo, posesión de ametralladoras y dispositivos destructivos. La acusación está construida en buena medida sobre las declaraciones de Ismael "Mayo" Zambada, detenido en Nueva York desde julio de 2024.</p>
-
-      <p>Cuatro días después, el 4 de mayo, la periodista Anabel Hernández reveló que la fiscalía estadounidense manejaría una lista de al menos diez perfiles morenistas potencialmente extraditables. Y el 16 de mayo, cuatro días antes del operativo en Morelos, dos excolaboradores cercanos de Rocha Moya, los exsecretarios de Seguridad y de Finanzas Gerardo Mérida y Enrique Díaz, se entregaron voluntariamente a las autoridades estadounidenses. No fueron capturados: cruzaron la frontera por su propio pie a negociar como testigos. A cantar.</p>
-
-      <p class="pull">Lo que se blinda no es a la persona ni al partido: es a lo que la persona sabe.</p>
-
-      <p>Ese es el cuadro: una fiscalía federal estadounidense con apetito documentado de procesar funcionarios mexicanos vinculados al Cártel de Sinaloa, una lista activa de gobernadores en la mira, una cooperación bilateral condicionada al aumento de extradiciones, y un precedente fresco: el 7 de mayo, un juzgado de distrito concedió a "El Jardinero", exoperador del CJNG, exactamente la suspensión que pidió Toledano en Morelos, no ser trasladado ni entregado a Estados Unidos mientras se resuelve el amparo de fondo. Entre febrero de 2025 y enero de 2026, México entregó a Estados Unidos noventa y dos reos en tres envíos masivos. Sobre ese fondo, la suspensión de plano deja de ser una formalidad y se vuelve una decisión específica.</p>
-
-      <p>Aquí entra el sociólogo italiano Diego Gambetta. En <em>The Sicilian Mafia: The Business of Private Protection</em> (Harvard, 1993) desmonta una idea común: la mafia no se sostiene principalmente por el miedo al castigo del Estado, sino por un contrato implícito de protección mutua entre sus miembros, anclado en el conocimiento cruzado de información destructiva. Cada integrante guarda secretos sobre los demás. Si uno cae en manos del Estado adversario, lo que la red cuida no es a la persona, es a la información. El silencio, el omertà, no es virtud cultural: es el contrato más duro de los que sostienen el sistema.</p>
-
-      <p>Aplicado al caso, y aquí entro en lectura, no en hecho probado: si cualquiera de los cuatro detenidos acabara en una corte federal estadounidense con la opción de negociar, la red enfrentaría justo lo que Gambetta describió. Podrían mencionar a Raúl Tadeo Nava, exalcalde de Cuautla imputado en 2023 por un caso de 9.8 millones de pesos del predial, en libertad al cierre de esta columna (junio de 2026). Podrían mencionar nombres por encima del nivel municipal. Lo que los cuatro amparos del miércoles aseguran es que esa silla del interrogatorio, en Nueva York, no se les pondrá enfrente. Y el detalle más revelador: entre los cuatro amparos figura el de un aspirante a la alcaldía de Cuautla por Morena. No es defensa de un solo bando. La protección contra la entrega a Estados Unidos es transversal a la filiación partidista, porque la información que cada uno custodia también lo es.</p>
-
-      <p>Lo que se blinda no es a la persona ni al partido: es a lo que la persona sabe.</p>
-
-      <p>La elegancia de la figura está en su precisión. La suspensión de plano no exige demostrar inocencia ni cuestionar la imputación: solo acreditar un riesgo de acto irreparable. En el contexto bilateral actual, con el Mayo cooperando y los exsecretarios de Rocha entregándose, ese riesgo es verificable. El juez que la concede no exonera de delitos; cierra la puerta del aeropuerto. Y al cerrarla, a mi juicio, protege no a quien tiene enfrente, sino a quienes podrían ser nombrados.</p>
-
-      <p>Hay una palabra que la calle usa antes que la academia: "no soplar". Y una italiana que Gambetta documentó como contrato: omertà. Hoy, en México, ese contrato parece firmarse por la vía del amparo de plano, con la intervención de un juez federal y la coartada formal de "proteger derechos humanos". El aparato del Estado cumpliría así una función nueva: no garantizar justicia, sino garantizar el silencio dentro de la red política que el propio Estado, en paralelo, persigue con discurso anticrimen. Queda una pregunta, y hay que formularla con todas las letras: ¿a quién le sirve, en el saldo neto, que ningún detenido del Operativo Enjambre cruce hacia el norte? La respuesta no se mide en los nombres de quienes están en prisión, sino en los que se libran de aparecer en la próxima acusación federal. Y esos nombres sabemos al menos dónde buscarlos: en la foto del jardín de Totolapan y en la lista que reveló Anabel Hernández.</p>
-    </div>
-
-    <p class="signoff">SRVO</p>
-
-    <section class="fuentes">
-      <h2>Fuentes y referencias citadas</h2>
+  <section class="fuentes">
+    <div class="wrap-medida">
+      <div class="sec-head"><span class="label">Fuentes y referencias</span></div>
       <ol>
         <li>Diego Gambetta, <em>The Sicilian Mafia: The Business of Private Protection</em> (Harvard University Press, 1993). <a href="https://www.hup.harvard.edu/books/9780674807426" target="_blank" rel="noopener">Harvard UP</a></li>
         <li>Amparos del Operativo Enjambre (expedientes Principal 969-972/2026, PJF, 20-may; suspensión de plano). <a href="https://morelos.quadratin.com.mx/promueven-amparos-contra-incomunicacion-por-operativo-enjambre/" target="_blank" rel="noopener">Quadratín Morelos</a></li>
@@ -159,59 +146,87 @@
         <li>Exigencia de EE.UU. de más extradiciones para mantener la cooperación. <a href="https://www.jornada.com.mx/2026/05/16/politica/003n1pol" target="_blank" rel="noopener">La Jornada</a> · Traslado de 92 reos en tres envíos (2025-2026). <a href="https://www.infobae.com/mexico/2026/01/21/mexico-entrego-92-narcotraficantes-a-eeuu-en-11-meses-lista-completa-de-capos/" target="_blank" rel="noopener">Infobae</a></li>
         <li>Pieza hermana: <a href="cobran-por-existir.html">Cobran por existir</a>.</li>
       </ol>
-    </section>
-
-    <div class="share share-end" aria-label="Compartir">
-      <span class="share-label">Compartir esta columna</span>
-      <a class="share-btn" data-net="wa" target="_blank" rel="noopener">WhatsApp</a>
-      <a class="share-btn" data-net="fb" target="_blank" rel="noopener">Facebook</a>
-      <a class="share-btn" data-net="x" target="_blank" rel="noopener">X</a>
-      <button class="share-btn" type="button" data-net="copy">Copiar enlace</button>
+      <p class="cotejo">Las ligas van a la vista para que cualquiera compruebe por su cuenta. Si alguna dejó de resolver, escríbenos y la reponemos.</p>
     </div>
+  </section>
 
-    <a class="back" href="index.html">← Volver a las columnas</a>
-  </div>
+  <section class="cierre wrap-medida">
+    <p class="firma-final">SRVO</p>
+    <div class="btns">
+      <a class="btn-red" data-red="facebook" href="#" aria-label="Compartir en Facebook"><span class="tip">Facebook</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.5l.5-3h-3v-2c0-.6.4-1 1-1z"/></svg></a>
+      <a class="btn-red" data-red="whatsapp" href="#" aria-label="Compartir por WhatsApp"><span class="tip">WhatsApp</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1112 20zm4.4-5.8c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 01-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3 0-.5l-.7-1.6c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.7.7-.9 1.6-.6 2.6.5 1.6 1.6 3 3.1 3.9 1.4.9 2.5 1 3.4.9.7-.1 1.4-.6 1.6-1.2.1-.3.1-.6 0-.7z"/></svg></a>
+      <a class="btn-red" data-red="x" href="#" aria-label="Compartir en X"><span class="tip">X</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 3h3l-6.6 7.5L21.7 21h-6l-4.7-6.1L5.6 21h-3l7-8L2.6 3h6.2l4.3 5.6zm-1 16h1.6L8.1 4.6H6.4z"/></svg></a>
+      <button class="btn-red" type="button" data-red="copiar" aria-label="Copiar enlace"><span class="tip">Copiar enlace</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a4 4 0 006 .4l2.4-2.4a4 4 0 00-5.7-5.7l-1.4 1.4"/><path d="M14 11a4 4 0 00-6-.4l-2.4 2.4a4 4 0 005.7 5.7l1.4-1.4"/></svg></button>
+    </div>
+  </section>
 </article>
 
-<footer class="site-footer">
+<footer class="pie-sitio">
   <div class="wrap">
-    <span class="sig">45 Digital Noticias.</span>
-    <span class="small">Columnas · lectura sistémica · © 2026 — Todos los textos cotejados contra fuente.</span>
+    <div class="pie-top">
+      <div class="pie-marca">
+        <p class="marca-n">45 Digital Noticias</p>
+        <div class="hilo"></div>
+        <p class="lema">Columnas de opinión con lectura sistémica. Lo verificable, separado de la lectura.</p>
+      </div>
+      <nav class="pie-col"><h4>Leer</h4>
+        <a href="index.html">Portada</a><a href="todas.html">Todas las columnas</a><a href="expedientes.html">Expedientes</a></nav>
+      <nav class="pie-col"><h4>Temas</h4>
+        <a href="#">Seguridad</a><a href="#">Morelos</a><a href="#">Economía</a><a href="#">Justicia</a></nav>
+      <nav class="pie-col"><h4>La casa</h4>
+        <a href="acerca.html">Acerca</a><a href="mailto:s.rvaldespin8@gmail.com">Escríbenos</a>
+        <a href="https://facebook.com/45DigitalMx" target="_blank" rel="noopener">Facebook</a></nav>
+    </div>
+    <div class="pie-bajo">
+      <p>© 2026 · 45 Digital Noticias. Textos de SRVO.<br>El programa se transmite en vivo de 9 a 10 de la mañana.</p>
+    </div>
   </div>
-<a id="ck-privacy-link" href="https://45digitalnoticias.github.io/columnas/privacidad.html" style="display:block;text-align:center;margin-top:10px;font-size:.76rem;letter-spacing:.04em;color:inherit;opacity:.65;text-decoration:none;">Aviso de privacidad</a>
 </footer>
 
 <script>
-  const mt = document.querySelector('.menu-toggle');
-  const nav = document.getElementById('nav');
-  if (mt && nav) mt.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    mt.setAttribute('aria-expanded', open);
-  });
-  (function () {
-    const url = encodeURIComponent(location.href);
-    const ttl = encodeURIComponent(document.title.split('—')[0].trim());
-    const map = {
-      wa: 'https://wa.me/?text=' + ttl + '%20' + url,
-      fb: 'https://www.facebook.com/sharer/sharer.php?u=' + url,
-      x: 'https://twitter.com/intent/tweet?text=' + ttl + '&url=' + url
-    };
-    document.querySelectorAll('.share-btn[data-net]').forEach(function (b) {
-      const n = b.dataset.net;
-      if (map[n]) b.href = map[n];
-      if (n === 'copy') b.addEventListener('click', function () {
-        navigator.clipboard.writeText(location.href).then(function () {
-          const t = b.textContent; b.textContent = '¡Copiado!';
-          setTimeout(function () { b.textContent = t; }, 1500);
-        });
-      });
+(() => {
+  // barra de avance de lectura
+  const barra = document.getElementById('avance'), art = document.querySelector('article');
+  addEventListener('scroll', () => {
+    const t = art.offsetTop, h = art.offsetHeight - innerHeight;
+    const p = Math.min(1, Math.max(0, (scrollY - t) / (h > 0 ? h : 1)));
+    barra.style.transform = 'scaleX(' + p + ')';
+  }, {passive:true});
+
+  // audio
+  const bt = document.querySelector('.oir-barra');
+  if (bt) {
+    const au = new Audio(bt.dataset.src);
+    const pista = bt.querySelector('.pista-audio');
+    bt.addEventListener('click', () => {
+      if (au.paused) { au.play().catch(()=>{}); bt.classList.add('suena'); }
+      else { au.pause(); bt.classList.remove('suena'); }
     });
-  })();
+    au.addEventListener('timeupdate', () => {
+      if (au.duration) pista.style.width = (au.currentTime / au.duration * 100) + '%';
+    });
+    au.addEventListener('ended', () => bt.classList.remove('suena'));
+  }
+
+  // compartir
+  const U = encodeURIComponent(location.href);
+  const T = encodeURIComponent(document.querySelector('h1').textContent + ' · 45 Digital Noticias');
+  const D = {facebook:`https://www.facebook.com/sharer/sharer.php?u=${U}`,
+             whatsapp:`https://api.whatsapp.com/send?text=${T}%20${U}`,
+             x:`https://twitter.com/intent/tweet?text=${T}&url=${U}`};
+  document.querySelectorAll('.btn-red').forEach(b => {
+    const r = b.dataset.red;
+    if (D[r]) { b.href = D[r]; b.target = '_blank'; b.rel = 'noopener'; return; }
+    b.addEventListener('click', async () => {
+      const tip = b.querySelector('.tip');
+      try { await navigator.clipboard.writeText(location.href); } catch { return; }
+      const a = tip.textContent; tip.textContent = 'Copiado'; b.classList.add('copiado');
+      setTimeout(() => { tip.textContent = a; b.classList.remove('copiado'); }, 1800);
+    });
+  });
+})();
 </script>
-<!-- Cloudflare Web Analytics -->
-<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4de56a9a4564d0ea0f4e0259af8bc7a"}'></script>
-<!-- End Cloudflare Web Analytics -->
-<!-- Cookie consent 45 Digital -->
+
 <style>
 #ck-consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:560px;margin:0 auto;background:#0e1320;border:1px solid rgba(204,161,90,.35);border-radius:12px;padding:16px 18px;box-shadow:0 18px 50px rgba(0,0,0,.5);font-family:'Inter',system-ui,sans-serif;color:#cdd3cc;display:none}
 #ck-consent.show{display:block}
@@ -246,8 +261,8 @@
 })();
 </script>
 <!-- /Cookie consent 45 Digital -->
-<!-- RED-45 start -->
-<nav aria-label="Red 45 Digital Noticias" style="max-width:1100px;margin:48px auto 22px;padding:18px 20px 4px;border-top:1px solid rgba(128,128,128,.28);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:13px;line-height:1.9;text-align:center;opacity:.85;"><div style="text-transform:uppercase;letter-spacing:2.5px;font-size:10.5px;opacity:.6;margin-bottom:7px;">Red 45 Digital Noticias</div><div><a href="https://45digitalnoticias.github.io/columnas/" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.45);">Columnas</a> &nbsp;·&nbsp; <a href="https://45digitalnoticias.github.io/Inseguridad-Mexico/" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.45);">Inseguridad México</a> &nbsp;·&nbsp; <a href="https://45digitalnoticias.github.io/Expediente-Hantavirus/" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.45);">Expediente Brotes</a> &nbsp;·&nbsp; <a href="https://45digitalnoticias.github.io/cementerio-transparencia/" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.45);">Cementerio de la Transparencia</a></div></nav>
-<!-- RED-45 end -->
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4de56a9a4564d0ea0f4e0259af8bc7a"}'></script>
+<!-- End Cloudflare Web Analytics -->
 </body>
 </html>

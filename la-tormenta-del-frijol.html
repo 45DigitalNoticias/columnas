@@ -3,7 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>La tormenta del frijol · 45 Digital Noticias</title>
+<title>La tormenta del frijol: Zacatecas y el arte de prometer mal · 45 Digital Noticias</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="columna.css">
 <meta name="description" content="Columna de opinión de 45 Digital Noticias. Zacatecas y el frijol: el precio garantizado roto, la represión y la crisis orgánica de Gramsci.">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="45 Digital Noticias">
@@ -17,10 +21,6 @@
 <meta name="twitter:title" content="La tormenta del frijol">
 <meta name="twitter:description" content="Zacatecas: el precio roto, la represión y la crisis orgánica.">
 <meta name="twitter:image" content="https://45digitalnoticias.github.io/columnas/og-frijol.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
 <!-- Google Analytics 4 (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R64XZVCF6F"></script>
 <script>
@@ -38,7 +38,7 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "La tormenta del frijol",
+  "headline": "La tormenta del frijol: Zacatecas y el arte de prometer mal",
   "description": "Columna de opinión de 45 Digital Noticias. Zacatecas y el frijol: el precio garantizado roto, la represión y la crisis orgánica de Gramsci.",
   "url": "https://45digitalnoticias.github.io/columnas/la-tormenta-del-frijol.html",
   "inLanguage": "es-MX",
@@ -68,14 +68,14 @@
 </head>
 <body>
 
-<header class="site-header">
+<header class="masthead">
   <div class="wrap">
-    <a class="brand" href="index.html">
-      <img class="brand-logo" src="logo-45.png" alt="45 Digital Noticias">
-      <span class="name" style="display:none">45 DIGITAL <b>NOTICIAS</b></span>
+    <span class="fecha">19 de mayo de 2026</span>
+    <a href="index.html">
+      <div class="logo">45 Digital <span class="n">Noticias</span></div>
+      <div class="hilo"></div>
     </a>
-    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
-    <nav class="nav" id="nav">
+    <nav>
       <a href="index.html">Columnas</a>
       <a href="expedientes.html">Expedientes</a>
       <a href="acerca.html">Acerca</a>
@@ -83,77 +83,61 @@
   </div>
 </header>
 
-<article class="article">
-  <div class="wrap">
+<!-- barra de avance de lectura -->
+<div class="avance" id="avance"></div>
 
-    <header class="article-head">
+<article>
+  <header class="cabeza">
+    <div class="wrap-medida">
       <div class="eyebrow">
-        <span class="kicker">Columna de opinión</span>
-        <span class="line"></span>
+        <span class="tick"></span>
+        <span class="label">Zacatecas</span>
       </div>
       <h1>La tormenta del frijol: Zacatecas y el arte de prometer mal</h1>
-      <p class="dek">El precio garantizado roto, una maestra de 74 años esposada y una convergencia social. Crisis orgánica: cuando a una administración solo le queda el dominio.</p>
-      <div class="article-meta">
-        <span>6 min de lectura</span>
+      <p class="entrada">El precio garantizado roto, una maestra de 74 años esposada y una convergencia social. Crisis orgánica: cuando a una administración solo le queda el dominio.</p>
+
+      <div class="firma">
+        <span class="autor">SRVO</span>
+        <span class="sep"></span>
+        <span class="meta">19 de mayo de 2026</span>
+        <span class="sep"></span>
+        <span class="meta">6 min de lectura</span>
       </div>
-    </header>
 
-    <figure class="article-figure">
-      <img src="tormenta-frijol.svg" alt="Un documento oficial roto del que se derraman granos de frijol">
-      <figcaption>Hay decretos que se firman para cumplirse y decretos que se firman para deshacerse.</figcaption>
-    </figure>
-
-    <div class="share" aria-label="Compartir">
-      <span class="share-label">Compartir</span>
-      <a class="share-btn" data-net="wa" target="_blank" rel="noopener">WhatsApp</a>
-      <a class="share-btn" data-net="fb" target="_blank" rel="noopener">Facebook</a>
-      <a class="share-btn" data-net="x" target="_blank" rel="noopener">X</a>
-      <button class="share-btn" type="button" data-net="copy">Copiar enlace</button>
+      <button class="oir-barra" type="button" data-src="../SITIO_COLUMNAS/audio-la-tormenta-del-frijol.mp3">
+        <span class="ico"><svg class="play" viewBox="0 0 10 12" fill="currentColor"><path d="M0 0l10 6-10 6z"/></svg><svg class="pausa" viewBox="0 0 10 12" fill="currentColor"><path d="M0 0h3.4v12H0zM6.6 0H10v12H6.6z"/></svg></span>
+        <span class="txt">Escuchar la columna</span>
+        <span class="dur">6:45</span>
+        <span class="pista-audio"></span>
+      </button>
     </div>
+  </header>
 
-    <div class="audio-col" style="max-width:var(--measure);margin:0 auto 38px;padding:16px 18px;border:1px solid rgba(204,161,90,.3);border-radius:12px;background:rgba(204,161,90,.05);">
-      <div style="font-family:'Inter',system-ui,sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#cca15a;margin-bottom:10px;">🎧 Escuchar la columna · 7 min</div>
-      <audio controls preload="none" style="width:100%;display:block;">
-        <source src="audio-la-tormenta-del-frijol.mp3" type="audio/mpeg">
-        Tu navegador no soporta audio HTML5.
-      </audio>
-      <div style="font-family:'Inter',system-ui,sans-serif;font-size:.72rem;color:rgba(243,241,232,.55);margin-top:8px;">Lectura automática con voz sintética.</div>
-    </div>
+  <figure class="portada wrap-medida">
+    <img src="../SITIO_COLUMNAS/tormenta-frijol.svg" alt="">
+    <figcaption>Zacatecas · Ilustración de la columna</figcaption>
+  </figure>
 
-    <div class="prose">
-      <p>Hay decretos que se firman para cumplirse y decretos que se firman para deshacerse. El que se publicó en el Diario Oficial el 31 de diciembre de 2025, con un precio de acopio garantizado de 27 mil pesos por tonelada de frijol, pertenecía a la primera categoría. El que se publicó el 1 de mayo de 2026, rebajándolo a 16 mil, lo movió en silencio a la segunda: una caída de más del 40% para el productor zacatecano, sin debate público, sin sesión legislativa, sin más explicación que un párrafo en las reglas de operación modificadas.</p>
+  <div class="wrap-medida prosa">
+    <p>Hay decretos que se firman para cumplirse y decretos que se firman para deshacerse. El que se publicó en el Diario Oficial el 31 de diciembre de 2025, con un precio de acopio garantizado de 27 mil pesos por tonelada de frijol, pertenecía a la primera categoría. El que se publicó el 1 de mayo de 2026, rebajándolo a 16 mil, lo movió en silencio a la segunda: una caída de más del 40% para el productor zacatecano, sin debate público, sin sesión legislativa, sin más explicación que un párrafo en las reglas de operación modificadas.</p>
+    <p>A Zacatecas le toca cargar el recorte porque Zacatecas siembra el frijol que come México: es el primer productor nacional, con cifras del SIAP que rondan año con año un tercio del total. Y aun así, donde el frijol no es una mercancía sino una columna vertebral familiar, el campesino retiene una fracción menor del precio final que paga el consumidor urbano. El resto se queda en una cadena de acopiadores, transportistas y especuladores que ya nadie nombra, porque hace décadas que la palabra "intermediario" se naturalizó como paisaje.</p>
+    <p>Cuando el gobierno federal anunció en 2025 que rompería esa cadena, que pagaría directo al productor, sin agachones ni moches, la promesa se leyó como reparación histórica. Lo que llegó fue una rebaja. Lo que vino después fue la represión.</p>
+    <p>El sábado 9 de mayo, una operación policial estatal desalojó a productores que llevaban semanas exigiendo que el precio comprometido se cumpliera. La fuerza pública detuvo a doce personas. Entre ellas, una maestra jubilada de 74 años. Esa edad conviene tenerla presente cuando el discurso oficial hable de "actores externos" o "infiltrados": la represión cayó sobre una jubilada del magisterio.</p>
+    <p>Hay un pasaje de los Cuadernos de la cárcel (Cuaderno 3, §34, hacia 1930) que conviene releer cada vez que un gobierno descubre la macana antes que la palabra: "la crisis consiste precisamente en que lo viejo muere y lo nuevo no puede nacer; en ese interregno se verifican los fenómenos morbosos más variados". Gramsci llamaba a eso crisis orgánica: el intervalo en que la clase dirigente pierde la capacidad de articular consenso y le queda solo el dominio. Cuando una administración tiene que esposar a una maestra de 74 años para sostener un decreto, no confiesa firmeza: confiesa agotamiento.</p>
+    <p class="pull">Las tormentas no caen del cielo, se arman.</p>
+    <p>El gobernador David Monreal Ávila, en funciones desde 2021 y con periodo hasta 2027 mientras su hermano Ricardo Monreal se posiciona desde la Cámara de Diputados para sucederlo, respondió con una amenaza: si las protestas continuaban, retiraría los apoyos federales. Ofreció castigo donde tocaba diálogo. Leído en clave gramsciana, no es un error táctico, sino la radiografía de una administración que ya solo sabe gobernar contra.</p>
+    <p>El corazón del conflicto no es el precio, aunque lo parezca: es a quién captura el precio. De las 96 mil toneladas autorizadas originalmente a 27 mil pesos, según denuncian los propios productores, ochenta mil habrían terminado en manos de acopiadores antes de llegar a la ventanilla oficial. El precio "de garantía" se cobró, pero no lo cobró el campesino. Y cuando el campesino salió a reclamar, el gobierno bajó el precio en lugar de investigar la captura.</p>
+    <p>Es una máquina que funciona, por así decirlo, legalmente: nadie roba en sentido penal. El acopiador compra al campesino al precio que este acepta porque no tiene transporte, ni acceso al programa federal, ni bodega. Luego revende. La diferencia es renta capturada, una operación tan vieja como el porfiriato que sobrevivió a todas las transformaciones. Lo nuevo no es la captura: es que el Estado, en lugar de combatirla, la convalidó al rebajar el precio oficial al nivel del acopiador. Ahí la palabra "neoliberalismo" deja de ser útil. Lo que pasa es más íntimo: el aparato federal renunció a competir con el intermediario y prefirió emparejar precios a la baja. No desmanteló el viejo modelo; lo heredó con otro membrete.</p>
+    <p>Lo que ocurrió el martes 12 de mayo en la capital zacatecana es lo que un observador atento reconoce de inmediato: una convergencia anómala. Marcharon miles de personas, según las cifras de los organizadores. Lo importante son los compañeros de la cifra: junto a los frijoleros marcharon normalistas, magisterio, sindicatos universitarios, colectivas feministas, estudiantes y organizaciones campesinas. Actores que, en un día cualquiera, no se hablan.</p>
+    <p>Las tormentas no caen del cielo, se arman. Se arman cuando un decreto roto se encuentra con doce detenidos y una maestra esposada, y ese encuentro lo atestigua un magisterio que recuerda sus propias represiones, y el feminismo lee en una mujer mayor esposada la violencia que combate en otros frentes, y los estudiantes reconocen en el campesino una versión rural de su propia precariedad. Que se suelden agendas que el oficialismo daba por dispersas es lo que define la crisis orgánica. No la pérdida de una elección: la pérdida del relato.</p>
+    <p>Conviene anotar un detalle que circula menos: la sucesión Monreal pesa en esta historia. Y no lo dice la oposición: el propio hermano del gobernador, el senador Saúl Monreal, admitió ante la prensa que David Monreal tiene como favorita para la candidatura de 2027 a su excuñada Verónica Díaz Robles, y ese frente sucesorio distrajo al ejecutivo estatal de la crisis que se gestaba en el campo. El patrimonialismo que Max Weber describió en 1922, la administración del Estado como hacienda familiar, tiene costos cuando el gobernante prioriza la sucesión sobre el oficio.</p>
+    <p>El conflicto del frijol terminará, probablemente, con un ajuste: tal vez 18 mil, tal vez 20 mil, tal vez una mesa con calculadora que produzca un número intermedio aceptable como derrota digna. Eso es lo de menos. Lo de más es lo que queda después: una administración que descubrió que ya no convence, una sociedad zacatecana que descubrió que sí puede converger, y un Senado con una solicitud de juicio político contra el gobernador sobre la mesa, con la posibilidad, inédita en tiempos recientes, de que la frase "desaparición de poderes" entre a un debate que hasta hace poco se reservaba para Sinaloa.</p>
+    <p>La pregunta no es cuánto vale el frijol. Es por qué un gobierno que prometió pagar al campesino terminó esposando a una maestra de 74 años. Esa pregunta no se cura con un precio nuevo. Se cura con un pacto nuevo. Y los pactos nuevos no los firma quien rompió el viejo.</p>
+  </div>
 
-      <p>A Zacatecas le toca cargar el recorte porque Zacatecas siembra el frijol que come México: es el primer productor nacional, con cifras del SIAP que rondan año con año un tercio del total. Y aun así, donde el frijol no es una mercancía sino una columna vertebral familiar, el campesino retiene una fracción menor del precio final que paga el consumidor urbano. El resto se queda en una cadena de acopiadores, transportistas y especuladores que ya nadie nombra, porque hace décadas que la palabra "intermediario" se naturalizó como paisaje.</p>
-
-      <p>Cuando el gobierno federal anunció en 2025 que rompería esa cadena, que pagaría directo al productor, sin agachones ni moches, la promesa se leyó como reparación histórica. Lo que llegó fue una rebaja. Lo que vino después fue la represión.</p>
-
-      <p>El sábado 9 de mayo, una operación policial estatal desalojó a productores que llevaban semanas exigiendo que el precio comprometido se cumpliera. La fuerza pública detuvo a doce personas. Entre ellas, una maestra jubilada de 74 años. Esa edad conviene tenerla presente cuando el discurso oficial hable de "actores externos" o "infiltrados": la represión cayó sobre una jubilada del magisterio.</p>
-
-      <p>Hay un pasaje de los Cuadernos de la cárcel (Cuaderno 3, §34, hacia 1930) que conviene releer cada vez que un gobierno descubre la macana antes que la palabra: "la crisis consiste precisamente en que lo viejo muere y lo nuevo no puede nacer; en ese interregno se verifican los fenómenos morbosos más variados". Gramsci llamaba a eso crisis orgánica: el intervalo en que la clase dirigente pierde la capacidad de articular consenso y le queda solo el dominio. Cuando una administración tiene que esposar a una maestra de 74 años para sostener un decreto, no confiesa firmeza: confiesa agotamiento.</p>
-
-      <p class="pull">Las tormentas no caen del cielo, se arman.</p>
-
-      <p>El gobernador David Monreal Ávila, en funciones desde 2021 y con periodo hasta 2027 mientras su hermano Ricardo Monreal se posiciona desde la Cámara de Diputados para sucederlo, respondió con una amenaza: si las protestas continuaban, retiraría los apoyos federales. Ofreció castigo donde tocaba diálogo. Leído en clave gramsciana, no es un error táctico, sino la radiografía de una administración que ya solo sabe gobernar contra.</p>
-
-      <p>El corazón del conflicto no es el precio, aunque lo parezca: es a quién captura el precio. De las 96 mil toneladas autorizadas originalmente a 27 mil pesos, según denuncian los propios productores, ochenta mil habrían terminado en manos de acopiadores antes de llegar a la ventanilla oficial. El precio "de garantía" se cobró, pero no lo cobró el campesino. Y cuando el campesino salió a reclamar, el gobierno bajó el precio en lugar de investigar la captura.</p>
-
-      <p>Es una máquina que funciona, por así decirlo, legalmente: nadie roba en sentido penal. El acopiador compra al campesino al precio que este acepta porque no tiene transporte, ni acceso al programa federal, ni bodega. Luego revende. La diferencia es renta capturada, una operación tan vieja como el porfiriato que sobrevivió a todas las transformaciones. Lo nuevo no es la captura: es que el Estado, en lugar de combatirla, la convalidó al rebajar el precio oficial al nivel del acopiador. Ahí la palabra "neoliberalismo" deja de ser útil. Lo que pasa es más íntimo: el aparato federal renunció a competir con el intermediario y prefirió emparejar precios a la baja. No desmanteló el viejo modelo; lo heredó con otro membrete.</p>
-
-      <p>Lo que ocurrió el martes 12 de mayo en la capital zacatecana es lo que un observador atento reconoce de inmediato: una convergencia anómala. Marcharon miles de personas, según las cifras de los organizadores. Lo importante son los compañeros de la cifra: junto a los frijoleros marcharon normalistas, magisterio, sindicatos universitarios, colectivas feministas, estudiantes y organizaciones campesinas. Actores que, en un día cualquiera, no se hablan.</p>
-
-      <p>Las tormentas no caen del cielo, se arman. Se arman cuando un decreto roto se encuentra con doce detenidos y una maestra esposada, y ese encuentro lo atestigua un magisterio que recuerda sus propias represiones, y el feminismo lee en una mujer mayor esposada la violencia que combate en otros frentes, y los estudiantes reconocen en el campesino una versión rural de su propia precariedad. Que se suelden agendas que el oficialismo daba por dispersas es lo que define la crisis orgánica. No la pérdida de una elección: la pérdida del relato.</p>
-
-      <p>Conviene anotar un detalle que circula menos: la sucesión Monreal pesa en esta historia. Y no lo dice la oposición: el propio hermano del gobernador, el senador Saúl Monreal, admitió ante la prensa que David Monreal tiene como favorita para la candidatura de 2027 a su excuñada Verónica Díaz Robles, y ese frente sucesorio distrajo al ejecutivo estatal de la crisis que se gestaba en el campo. El patrimonialismo que Max Weber describió en 1922, la administración del Estado como hacienda familiar, tiene costos cuando el gobernante prioriza la sucesión sobre el oficio.</p>
-
-      <p>El conflicto del frijol terminará, probablemente, con un ajuste: tal vez 18 mil, tal vez 20 mil, tal vez una mesa con calculadora que produzca un número intermedio aceptable como derrota digna. Eso es lo de menos. Lo de más es lo que queda después: una administración que descubrió que ya no convence, una sociedad zacatecana que descubrió que sí puede converger, y un Senado con una solicitud de juicio político contra el gobernador sobre la mesa, con la posibilidad, inédita en tiempos recientes, de que la frase "desaparición de poderes" entre a un debate que hasta hace poco se reservaba para Sinaloa.</p>
-
-      <p>La pregunta no es cuánto vale el frijol. Es por qué un gobierno que prometió pagar al campesino terminó esposando a una maestra de 74 años. Esa pregunta no se cura con un precio nuevo. Se cura con un pacto nuevo. Y los pactos nuevos no los firma quien rompió el viejo.</p>
-    </div>
-
-    <p class="signoff">SRVO</p>
-
-    <section class="fuentes">
-      <h2>Fuentes y referencias citadas</h2>
+  <section class="fuentes">
+    <div class="wrap-medida">
+      <div class="sec-head"><span class="label">Fuentes y referencias</span></div>
       <ol>
         <li>Antonio Gramsci, <em>Cuadernos de la cárcel</em>, Cuaderno 3 §34 (c. 1930; <a href="https://www.edicionesera.com.mx/libro/coleccion-cuadernos-de-la-carcel_165320/" target="_blank" rel="noopener">Era / BUAP, 1981</a>). Complemento: Armando Bartra, <em>Los herederos de Zapata</em> (<a href="https://cid-albertobeltran.cultura.gob.mx/catalogo-biblioteca/los-herederos-de-zapata-movimientos-campesinos-posrevolucionarios-en-mexico-1920-1980-armando-bartra/" target="_blank" rel="noopener">Era, 1985</a>); Max Weber, <em>Economía y sociedad</em> (1922; <a href="https://www.fondodeculturaeconomica.com/Ficha/9786071620897/F" target="_blank" rel="noopener">FCE, 2014</a>).</li>
         <li>Precio de acopio del frijol: 27 mil (DOF 31-dic-2025) y rebaja a 16 mil (DOF 1-may-2026). <a href="https://www.dof.gob.mx" target="_blank" rel="noopener">Diario Oficial de la Federación</a> · <a href="https://www.jornada.com.mx/noticia/2026/05/08/politica/gobierno-fija-nuevo-precio-al-frijol-y-desata-inconformidad-de-productores-en-zacatecas" target="_blank" rel="noopener">La Jornada</a></li>
@@ -162,59 +146,87 @@
         <li>Producción de frijol de Zacatecas (primer lugar nacional). <a href="https://www.gob.mx/siap" target="_blank" rel="noopener">SIAP / SADER</a></li>
         <li>Preferencia del gobernador por Verónica Díaz Robles, admitida por Saúl Monreal, y parentesco político (excuñada). <a href="https://www.sdpnoticias.com/estados/veronica-diaz-robles-seria-la-favorita-de-david-monreal-para-zacatecas/" target="_blank" rel="noopener">SDP Noticias (12-feb-2026)</a> · <a href="https://www.eluniversal.com.mx/opinion/kiosko/pide-saul-monreal-aplicar-nepotismo-a-su-excunada/" target="_blank" rel="noopener">El Universal (11-may-2026)</a></li>
       </ol>
-    </section>
-
-    <div class="share share-end" aria-label="Compartir">
-      <span class="share-label">Compartir esta columna</span>
-      <a class="share-btn" data-net="wa" target="_blank" rel="noopener">WhatsApp</a>
-      <a class="share-btn" data-net="fb" target="_blank" rel="noopener">Facebook</a>
-      <a class="share-btn" data-net="x" target="_blank" rel="noopener">X</a>
-      <button class="share-btn" type="button" data-net="copy">Copiar enlace</button>
+      <p class="cotejo">Las ligas van a la vista para que cualquiera compruebe por su cuenta. Si alguna dejó de resolver, escríbenos y la reponemos.</p>
     </div>
+  </section>
 
-    <a class="back" href="index.html">← Volver a las columnas</a>
-  </div>
+  <section class="cierre wrap-medida">
+    <p class="firma-final">SRVO</p>
+    <div class="btns">
+      <a class="btn-red" data-red="facebook" href="#" aria-label="Compartir en Facebook"><span class="tip">Facebook</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.5l.5-3h-3v-2c0-.6.4-1 1-1z"/></svg></a>
+      <a class="btn-red" data-red="whatsapp" href="#" aria-label="Compartir por WhatsApp"><span class="tip">WhatsApp</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1112 20zm4.4-5.8c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 01-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3 0-.5l-.7-1.6c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.7.7-.9 1.6-.6 2.6.5 1.6 1.6 3 3.1 3.9 1.4.9 2.5 1 3.4.9.7-.1 1.4-.6 1.6-1.2.1-.3.1-.6 0-.7z"/></svg></a>
+      <a class="btn-red" data-red="x" href="#" aria-label="Compartir en X"><span class="tip">X</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 3h3l-6.6 7.5L21.7 21h-6l-4.7-6.1L5.6 21h-3l7-8L2.6 3h6.2l4.3 5.6zm-1 16h1.6L8.1 4.6H6.4z"/></svg></a>
+      <button class="btn-red" type="button" data-red="copiar" aria-label="Copiar enlace"><span class="tip">Copiar enlace</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a4 4 0 006 .4l2.4-2.4a4 4 0 00-5.7-5.7l-1.4 1.4"/><path d="M14 11a4 4 0 00-6-.4l-2.4 2.4a4 4 0 005.7 5.7l1.4-1.4"/></svg></button>
+    </div>
+  </section>
 </article>
 
-<footer class="site-footer">
+<footer class="pie-sitio">
   <div class="wrap">
-    <span class="sig">45 Digital Noticias.</span>
-    <span class="small">Columnas · lectura sistémica · © 2026 — Todos los textos cotejados contra fuente.</span>
+    <div class="pie-top">
+      <div class="pie-marca">
+        <p class="marca-n">45 Digital Noticias</p>
+        <div class="hilo"></div>
+        <p class="lema">Columnas de opinión con lectura sistémica. Lo verificable, separado de la lectura.</p>
+      </div>
+      <nav class="pie-col"><h4>Leer</h4>
+        <a href="index.html">Portada</a><a href="todas.html">Todas las columnas</a><a href="expedientes.html">Expedientes</a></nav>
+      <nav class="pie-col"><h4>Temas</h4>
+        <a href="#">Seguridad</a><a href="#">Morelos</a><a href="#">Economía</a><a href="#">Justicia</a></nav>
+      <nav class="pie-col"><h4>La casa</h4>
+        <a href="acerca.html">Acerca</a><a href="mailto:s.rvaldespin8@gmail.com">Escríbenos</a>
+        <a href="https://facebook.com/45DigitalMx" target="_blank" rel="noopener">Facebook</a></nav>
+    </div>
+    <div class="pie-bajo">
+      <p>© 2026 · 45 Digital Noticias. Textos de SRVO.<br>El programa se transmite en vivo de 9 a 10 de la mañana.</p>
+    </div>
   </div>
-<a id="ck-privacy-link" href="https://45digitalnoticias.github.io/columnas/privacidad.html" style="display:block;text-align:center;margin-top:10px;font-size:.76rem;letter-spacing:.04em;color:inherit;opacity:.65;text-decoration:none;">Aviso de privacidad</a>
 </footer>
 
 <script>
-  const mt = document.querySelector('.menu-toggle');
-  const nav = document.getElementById('nav');
-  if (mt && nav) mt.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    mt.setAttribute('aria-expanded', open);
-  });
-  (function () {
-    const url = encodeURIComponent(location.href);
-    const ttl = encodeURIComponent(document.title.split('—')[0].trim());
-    const map = {
-      wa: 'https://wa.me/?text=' + ttl + '%20' + url,
-      fb: 'https://www.facebook.com/sharer/sharer.php?u=' + url,
-      x: 'https://twitter.com/intent/tweet?text=' + ttl + '&url=' + url
-    };
-    document.querySelectorAll('.share-btn[data-net]').forEach(function (b) {
-      const n = b.dataset.net;
-      if (map[n]) b.href = map[n];
-      if (n === 'copy') b.addEventListener('click', function () {
-        navigator.clipboard.writeText(location.href).then(function () {
-          const t = b.textContent; b.textContent = '¡Copiado!';
-          setTimeout(function () { b.textContent = t; }, 1500);
-        });
-      });
+(() => {
+  // barra de avance de lectura
+  const barra = document.getElementById('avance'), art = document.querySelector('article');
+  addEventListener('scroll', () => {
+    const t = art.offsetTop, h = art.offsetHeight - innerHeight;
+    const p = Math.min(1, Math.max(0, (scrollY - t) / (h > 0 ? h : 1)));
+    barra.style.transform = 'scaleX(' + p + ')';
+  }, {passive:true});
+
+  // audio
+  const bt = document.querySelector('.oir-barra');
+  if (bt) {
+    const au = new Audio(bt.dataset.src);
+    const pista = bt.querySelector('.pista-audio');
+    bt.addEventListener('click', () => {
+      if (au.paused) { au.play().catch(()=>{}); bt.classList.add('suena'); }
+      else { au.pause(); bt.classList.remove('suena'); }
     });
-  })();
+    au.addEventListener('timeupdate', () => {
+      if (au.duration) pista.style.width = (au.currentTime / au.duration * 100) + '%';
+    });
+    au.addEventListener('ended', () => bt.classList.remove('suena'));
+  }
+
+  // compartir
+  const U = encodeURIComponent(location.href);
+  const T = encodeURIComponent(document.querySelector('h1').textContent + ' · 45 Digital Noticias');
+  const D = {facebook:`https://www.facebook.com/sharer/sharer.php?u=${U}`,
+             whatsapp:`https://api.whatsapp.com/send?text=${T}%20${U}`,
+             x:`https://twitter.com/intent/tweet?text=${T}&url=${U}`};
+  document.querySelectorAll('.btn-red').forEach(b => {
+    const r = b.dataset.red;
+    if (D[r]) { b.href = D[r]; b.target = '_blank'; b.rel = 'noopener'; return; }
+    b.addEventListener('click', async () => {
+      const tip = b.querySelector('.tip');
+      try { await navigator.clipboard.writeText(location.href); } catch { return; }
+      const a = tip.textContent; tip.textContent = 'Copiado'; b.classList.add('copiado');
+      setTimeout(() => { tip.textContent = a; b.classList.remove('copiado'); }, 1800);
+    });
+  });
+})();
 </script>
-<!-- Cloudflare Web Analytics -->
-<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4de56a9a4564d0ea0f4e0259af8bc7a"}'></script>
-<!-- End Cloudflare Web Analytics -->
-<!-- Cookie consent 45 Digital -->
+
 <style>
 #ck-consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:560px;margin:0 auto;background:#0e1320;border:1px solid rgba(204,161,90,.35);border-radius:12px;padding:16px 18px;box-shadow:0 18px 50px rgba(0,0,0,.5);font-family:'Inter',system-ui,sans-serif;color:#cdd3cc;display:none}
 #ck-consent.show{display:block}
@@ -249,8 +261,8 @@
 })();
 </script>
 <!-- /Cookie consent 45 Digital -->
-<!-- RED-45 start -->
-<nav aria-label="Red 45 Digital Noticias" style="max-width:1100px;margin:48px auto 22px;padding:18px 20px 4px;border-top:1px solid rgba(128,128,128,.28);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:13px;line-height:1.9;text-align:center;opacity:.85;"><div style="text-transform:uppercase;letter-spacing:2.5px;font-size:10.5px;opacity:.6;margin-bottom:7px;">Red 45 Digital Noticias</div><div><a href="https://45digitalnoticias.github.io/columnas/" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.45);">Columnas</a> &nbsp;·&nbsp; <a href="https://45digitalnoticias.github.io/Inseguridad-Mexico/" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.45);">Inseguridad México</a> &nbsp;·&nbsp; <a href="https://45digitalnoticias.github.io/Expediente-Hantavirus/" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.45);">Expediente Brotes</a> &nbsp;·&nbsp; <a href="https://45digitalnoticias.github.io/cementerio-transparencia/" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.45);">Cementerio de la Transparencia</a></div></nav>
-<!-- RED-45 end -->
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4de56a9a4564d0ea0f4e0259af8bc7a"}'></script>
+<!-- End Cloudflare Web Analytics -->
 </body>
 </html>

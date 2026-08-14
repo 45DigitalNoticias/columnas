@@ -3,3 +3,5 @@ fondo_expedientes/
 IMÁGENES WEB/
 fondo.png
 _contact.html
+__pycache__/
+*.pyc

@@ -1,0 +1,440 @@
+/* ============================================================
+   45 DIGITAL NOTICIAS — portada
+   Se genera con _generar_portada.py. Esta hoja es la piel;
+   la misma paleta y tipografía que columna.css.
+   ============================================================ */
+:root{
+  --paper:#FFFFFF; --paper-gray:#F5F5F7;
+  --ink:#1D1D1F; --ink-2:#6E6E73; --ink-3:#86868B;
+  --rule:#D2D2D7; --rule-soft:#E8E8ED;
+  --laton:#B08D4F;
+  --noche:#0A0D12; --noche-ink:#F2EFE9;
+
+  --display:"Fraunces",Georgia,serif;
+  --body:"Newsreader",Georgia,serif;
+  --ui:"Inter",system-ui,-apple-system,sans-serif;
+
+  --gap:100px; --gap-lg:120px;
+  --maxw:1180px; --pad:clamp(22px,5vw,52px);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box}
+html{overflow-x:hidden}   /* red de seguridad: ninguna pista de grid empuja la página */
+body{margin:0; overflow-x:hidden; background:var(--paper); color:var(--ink);
+  font-family:var(--body); font-size:19px; line-height:1.62;
+  -webkit-font-smoothing:antialiased; font-optical-sizing:auto}
+img{max-width:100%; display:block}
+a{color:inherit; text-decoration:none}
+h1,h2,h3{margin:0; font-weight:400}
+p{margin:0}
+button{font:inherit; color:inherit; background:none; border:0; cursor:pointer}
+
+.wrap{max-width:var(--maxw); margin-inline:auto; padding-inline:var(--pad)}
+
+/* ============================================================
+   JUSTIFICADO — regla de la casa.
+   Va con `hyphens:auto` obligatorio: justificar sin partir palabras
+   abre ríos blancos en columnas angostas, y en móvil es peor. El
+   <html lang="es"> de arriba es lo que le dice al navegador con qué
+   diccionario partir. Se justifica la PROSA, nunca titulares,
+   etiquetas ni cifras.
+   ============================================================ */
+.justo,
+.principal p, .carril p, .exp p, .slide .standfirst{
+  text-align:justify; text-justify:inter-word;
+  hyphens:auto; -webkit-hyphens:auto;
+}
+.label{font-family:var(--ui); font-size:11px; font-weight:600; letter-spacing:.15em; text-transform:uppercase}
+.label--soft{color:var(--ink-3); font-weight:500}
+.meta{font-family:var(--ui); font-size:12px; color:var(--ink-3); font-variant-numeric:tabular-nums}
+
+/* ===== MASTHEAD ===== */
+.masthead{position:relative; z-index:6; border-bottom:1px solid rgba(242,239,233,.14)}
+.masthead .wrap{display:grid; grid-template-columns:1fr auto 1fr; align-items:center; height:78px; gap:24px}
+.masthead .fecha{font-family:var(--ui); font-size:11px; letter-spacing:.13em; text-transform:uppercase; color:rgba(242,239,233,.55)}
+.logo{font-family:var(--display); font-size:23px; font-weight:600; letter-spacing:-.015em; text-align:center; white-space:nowrap; color:var(--noche-ink)}
+.logo .n{font-weight:400; opacity:.62}
+.hilo{height:2px; width:34px; background:var(--laton); margin:5px auto 0}
+.masthead nav{display:flex; gap:26px; justify-content:flex-end; font-family:var(--ui); font-size:12px; font-weight:500; letter-spacing:.05em}
+.masthead nav a{color:rgba(242,239,233,.72); padding-bottom:2px; border-bottom:1px solid transparent; transition:.2s}
+.masthead nav a:hover{color:var(--noche-ink); border-color:var(--noche-ink)}
+
+/* ============================================================
+   PORTADA — collage ESTÁTICO con desvanecencia
+   ============================================================ */
+.portada{position:relative; background:var(--noche); color:var(--noche-ink); overflow:hidden}
+
+/* ============================================================
+   EL PANEL — una sola superficie, no piezas encimadas.
+   Filas y columnas en 1fr y gap 0: la retícula llena el hero exacto.
+   NO lleva viñeteo por pieza: eso era justo lo que recortaba cada
+   portada y las hacía leerse como collage pegado. Todas comparten
+   el mismo grado de color, y la luz va encima, sobre el conjunto.
+   ============================================================ */
+.mosaico{
+  position:absolute; inset:0; z-index:0; overflow:hidden;
+  display:grid; gap:0;
+  grid-template-columns:repeat(var(--cols,12), 1fr);
+  grid-template-rows:repeat(var(--rows,8), 1fr);
+  /* --presencia: transparencia PAREJA sobre el panel entero, no por zonas.
+     Ajustado por SRVO en el panel de pruebas: 50.
+     Medido: bajarla cuesta contraste casi en la misma proporción
+     (80% cuesta 20%, 60% cuesta 39%, 50% cuesta ~48%). A 18 columnas
+     la pieza mide ~80px y ya no se lee como fotografía sino como
+     textura, así que el claroscuro pesa menos y el titular manda más.
+     Es coherente: más densidad pide menos presencia. */
+  opacity:0; animation:panelEntra 1.15s var(--ease) .08s forwards;
+}
+@keyframes panelEntra{to{opacity:var(--presencia,.50)}}
+.mosaico img{
+  width:100%; height:100%; object-fit:cover; display:block;
+  /* color "vivo" */
+  filter:grayscale(.10) contrast(1.30) saturate(1.22) brightness(1.02);
+}
+
+/* capa 1 · tinte "fuerte": acerca los 93 matices a una misma luz */
+.tinte{position:absolute; inset:0; z-index:1; pointer-events:none; mix-blend-mode:soft-light;
+  background:linear-gradient(148deg, rgba(176,141,79,.55) 0%, rgba(30,44,66,.40) 55%, rgba(10,13,18,.55) 100%);
+}
+/* capa 2 · LA LUZ, una sola sobre todo el panel.
+   Ojo al centro: 76% / 32%, o sea a la DERECHA. En el fondo suelto la
+   puse a la izquierda porque no había nada que leer; aquí ahí va el
+   titular, así que la luz se corre al lado libre y el texto queda
+   sobre la parte honda de la sombra. */
+.luz{position:absolute; inset:0; z-index:2; pointer-events:none; mix-blend-mode:multiply;
+  background:radial-gradient(ellipse 58% 76% at 76% 32%,
+    rgba(4,6,10,0) 0%, rgba(4,6,10,.16) 26%, rgba(4,6,10,.55) 52%,
+    rgba(4,6,10,.86) 78%, rgba(4,6,10,.97) 100%);
+}
+/* capa 3 · el velo del texto: cortina sólida sobre la mitad izquierda.
+   Es lo que garantiza el contraste del titular, medido más abajo. */
+.velo{position:absolute; inset:0; z-index:3; pointer-events:none;
+  background:
+    linear-gradient(100deg, rgba(10,13,18,.97) 0%, rgba(10,13,18,.94) 27%, rgba(10,13,18,.66) 45%, rgba(10,13,18,.16) 68%, rgba(10,13,18,0) 100%),
+    linear-gradient(to bottom, rgba(10,13,18,.84) 0%, transparent 24%, transparent 74%, var(--noche) 100%);
+}
+/* capa 4 · grano: lo que borra la costura entre imágenes */
+.grano{position:absolute; inset:0; z-index:4; pointer-events:none; opacity:.055;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.portada-cuerpo{position:relative; z-index:5}
+.portada-cuerpo .wrap{
+  display:grid; grid-template-columns:minmax(0,7fr) minmax(0,5fr);
+  gap:clamp(32px,5vw,72px); align-items:center;
+  padding-block:clamp(58px,7vw,92px);
+  min-height:clamp(460px,52vw,600px);
+}
+
+/* ===== destacada rotativa (idéntica a la otra versión) ===== */
+.destacada{position:relative}
+.slide{position:absolute; inset:0; opacity:0; visibility:hidden; transform:translateY(14px); pointer-events:none;
+  transition:opacity .62s var(--ease), transform .62s var(--ease), visibility .62s}
+.slide.on{position:relative; opacity:1; visibility:visible; transform:none; pointer-events:auto}
+.eyebrow{display:flex; align-items:center; gap:12px; margin-bottom:22px}
+.eyebrow .tick{width:14px; height:1px; background:var(--laton)}
+.eyebrow .label{color:var(--noche-ink)}
+.eyebrow .nueva{font-family:var(--ui); font-size:10px; font-weight:600; letter-spacing:.13em;
+  text-transform:uppercase; color:var(--noche); background:var(--laton); padding:3px 8px}
+.slide h1{font-family:var(--display); font-size:clamp(40px,5.6vw,76px); font-weight:600;
+  line-height:1.03; letter-spacing:-.028em; text-wrap:balance; margin-bottom:22px}
+.slide .standfirst{font-family:var(--body); font-style:italic; font-weight:300;
+  font-size:clamp(18px,1.9vw,23px); line-height:1.45; color:rgba(242,239,233,.76); max-width:29em; margin-bottom:28px}
+.slide .byline{display:flex; align-items:center; gap:13px; flex-wrap:wrap;
+  padding-top:16px; border-top:1px solid rgba(242,239,233,.16); max-width:29em}
+.slide .byline .firma{font-family:var(--ui); font-size:12px; font-weight:600; letter-spacing:.06em}
+.slide .byline .meta{color:rgba(242,239,233,.55)}
+.slide .byline .sep{width:1px; height:11px; background:rgba(242,239,233,.22)}
+.chev{display:inline-flex; align-items:baseline; gap:6px; margin-top:26px;
+  font-family:var(--ui); font-size:15px; font-weight:500; color:#6cb0ff}
+.chev i{font-style:normal; transition:transform .28s var(--ease)}
+.chev:hover{text-decoration:underline; text-underline-offset:4px}
+.chev:hover i{transform:translateX(3px)}
+
+.activa{position:relative; aspect-ratio:4/5}
+.activa img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  opacity:0; transform:scale(1.04);
+  transition:opacity .72s var(--ease), transform 1.2s var(--ease);
+  box-shadow:0 26px 70px rgba(0,0,0,.62)}
+.activa img.on{opacity:1; transform:none}
+
+/* ===== rotador ===== */
+.rotador{position:relative; z-index:5; border-top:1px solid rgba(242,239,233,.14)}
+.rotador .wrap{display:flex; align-items:stretch; gap:0}
+.tab{flex:1; min-width:0; text-align:left; padding:19px 22px 19px 0;
+  border-right:1px solid rgba(242,239,233,.11);
+  display:flex; flex-direction:column; gap:6px; position:relative; transition:background .3s var(--ease)}
+.tab:first-child{padding-left:0}
+.tab:not(:first-child){padding-left:22px}
+.tab:last-child{border-right:0}
+.tab:hover{background:rgba(242,239,233,.05)}
+.tab .n{font-family:var(--ui); font-size:10px; letter-spacing:.12em; color:rgba(242,239,233,.42); font-variant-numeric:tabular-nums}
+.tab .t{font-family:var(--display); font-size:15px; font-weight:500; line-height:1.24;
+  color:rgba(242,239,233,.62); transition:color .3s var(--ease);
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden}
+.tab[aria-selected="true"] .t{color:var(--noche-ink)}
+.tab[aria-selected="true"] .n{color:var(--laton)}
+.tab .barra{position:absolute; left:0; bottom:-1px; height:2px; width:0; background:var(--laton)}
+.tab[aria-selected="true"] .barra{width:100%; transition:width var(--dwell,7s) linear}
+.rotador.pausa .tab[aria-selected="true"] .barra{transition:none}
+
+/* ===== categorías ===== */
+.cats{padding-block:clamp(56px,7vw,84px); border-bottom:1px solid var(--rule)}
+.cats-head{display:flex; align-items:baseline; gap:16px; margin-bottom:34px}
+.cats-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:0 clamp(26px,3.4vw,48px)}
+.cat{display:flex; align-items:center; gap:13px;
+  padding-block:16px; border-bottom:1px solid var(--rule-soft);
+  transition:padding-left .28s var(--ease), border-color .28s var(--ease)}
+.cat:hover{padding-left:9px; border-color:var(--ink)}
+/* el icono: trazo de 1.25, sin relleno, sin caja. Es el ÚNICO sitio
+   donde el latón aparece, y solo al pasar el mouse. */
+.cat .ico{width:21px; height:21px; flex:none; color:var(--ink-3); transition:color .28s var(--ease)}
+.cat:hover .ico{color:var(--laton)}
+.cat .nom{flex:1; font-family:var(--display); font-size:23px; font-weight:500; letter-spacing:-.016em; line-height:1.2}
+.cat .n{font-family:var(--ui); font-size:11.5px; color:var(--ink-3); font-variant-numeric:tabular-nums; flex:none}
+.cat:hover .n{color:var(--ink)}
+
+/* ============================================================
+   RECIÉN PUBLICADAS — el corazón editorial de la página.
+   Asimétrica: 6 columnas para la pieza con foto, 4 para el carril.
+   Un diario jerarquiza; no reparte el ancho en partes iguales.
+   ============================================================ */
+.recientes{padding-block:var(--gap)}
+.recientes .wrap{display:grid; grid-template-columns:minmax(0,6fr) 1px minmax(0,4fr); gap:clamp(30px,4.5vw,56px)}
+.divisor{background:var(--rule)}
+.principal img{width:100%; aspect-ratio:16/10; object-fit:cover; margin-bottom:22px;
+  transition:filter .5s var(--ease)}
+.principal a:hover img{filter:brightness(1.04)}
+.principal h2{font-family:var(--display); font-size:clamp(28px,3.4vw,40px); font-weight:600;
+  line-height:1.1; letter-spacing:-.02em; margin:9px 0 15px; text-wrap:balance}
+.principal p{font-size:18px; line-height:1.6; color:var(--ink-2); max-width:32em}
+.principal a:hover h2{text-decoration:underline; text-underline-offset:5px; text-decoration-thickness:1px}
+.carril{display:flex; flex-direction:column}
+.carril a{padding-block:24px; border-bottom:1px solid var(--rule-soft)}
+.carril a:first-child{padding-top:0}
+.carril a:last-child{border-bottom:0; padding-bottom:0}
+.carril h3{font-family:var(--display); font-size:21px; font-weight:600; line-height:1.2;
+  letter-spacing:-.012em; margin:8px 0 7px}
+.carril p{font-size:15.5px; line-height:1.55; color:var(--ink-2)}
+.carril a:hover h3{text-decoration:underline; text-underline-offset:4px; text-decoration-thickness:1px}
+
+/* ===== índice ===== */
+.indice{padding-block:var(--gap); background:var(--paper-gray)}
+.indice .busca{background:none}
+.sec-head{display:flex; align-items:baseline; gap:16px; padding-bottom:14px; margin-bottom:34px; border-bottom:1px solid var(--ink)}
+.sec-head .ver{margin-left:auto; font-family:var(--ui); font-size:12px; font-weight:500; color:var(--ink-2)}
+.sec-head .ver:hover{color:var(--ink); text-decoration:underline; text-underline-offset:3px}
+/* --- filtros del archivo: el índice se vuelve herramienta --- */
+.filtros{display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:26px}
+.f{font-family:var(--ui); font-size:12.5px; color:var(--ink-2); padding:7px 13px;
+  border:1px solid var(--rule); border-radius:980px; transition:.25s var(--ease)}
+.f:hover{border-color:var(--ink); color:var(--ink)}
+.f.on{background:var(--ink); border-color:var(--ink); color:var(--paper)}
+.busca{margin-left:auto; font-family:var(--ui); font-size:13px; color:var(--ink);
+  border:0; border-bottom:1px solid var(--rule); background:none; padding:7px 2px; width:210px; outline:0;
+  transition:border-color .25s}
+.busca::placeholder{color:var(--ink-3)}
+.busca:focus{border-color:var(--ink)}
+
+.fila{position:relative; display:grid; grid-template-columns:50px 92px minmax(0,1fr) 166px 54px 34px; gap:24px;
+  align-items:baseline; padding-block:24px; border-bottom:1px solid var(--rule-soft);
+  transition:background .2s; cursor:pointer}
+.fila[hidden]{display:none}
+.fila:first-of-type{border-top:1px solid var(--ink)}
+.fila:hover{background:var(--paper)}   /* la sección es gris: la fila activa se ACLARA */
+
+/* --- escuchar: 87 columnas YA tienen su mp3 grabado --- */
+.oir{align-self:center; width:31px; height:31px; flex:none; border:1px solid var(--rule);
+  border-radius:50%; display:grid; place-items:center; color:var(--ink-2);
+  opacity:.42; transition:.25s var(--ease)}
+.fila:hover .oir{opacity:1; border-color:var(--ink); color:var(--ink)}
+.oir svg{width:10px; height:10px}
+.oir .pausa{display:none}
+.fila.suena .oir{opacity:1; border-color:var(--laton); color:var(--laton)}
+.fila.suena .oir .play{display:none}
+.fila.suena .oir .pausa{display:block}
+.pista{position:absolute; left:0; bottom:-1px; height:1.5px; width:0; background:var(--laton); transition:width .25s linear}
+.fila .num{font-family:var(--ui); font-size:11px; font-weight:500; color:var(--ink-3); font-variant-numeric:tabular-nums}
+.fila .fecha{font-family:var(--ui); font-size:12px; color:var(--ink-3); font-variant-numeric:tabular-nums}
+.fila h3{font-family:var(--display); font-size:23px; font-weight:600; line-height:1.22; letter-spacing:-.014em; margin-bottom:6px}
+.fila .dek{font-size:16px; line-height:1.5; color:var(--ink-2); display:-webkit-box; -webkit-line-clamp:1; -webkit-box-orient:vertical; overflow:hidden}
+.fila .tema{font-family:var(--ui); font-size:11.5px; color:var(--ink-3)}
+.fila .min{font-family:var(--ui); font-size:11.5px; color:var(--ink-3); text-align:right; font-variant-numeric:tabular-nums}
+.fila:hover h3{text-decoration:underline; text-underline-offset:5px; text-decoration-thickness:1px}
+.mas{display:block; width:100%; margin-top:44px; padding:17px; border-top:1px solid var(--rule);
+  font-family:var(--ui); font-size:13px; font-weight:500; color:#06c; letter-spacing:.02em}
+.mas:hover{background:var(--paper)}
+
+/* ============================================================
+   EXPEDIENTES — los tableros interactivos. Aquí la imagen SÍ manda:
+   son productos visuales, no textos. Aun así, sin caja ni sombra:
+   la foto se apoya en el papel y la hairline hace de base.
+   ============================================================ */
+.expedientes{padding-block:var(--gap)}
+.exp-fila{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(26px,3.4vw,44px)}
+.exp{display:flex; flex-direction:column}
+.exp-img{overflow:hidden; aspect-ratio:16/10; background:var(--paper-gray); margin-bottom:18px}
+.exp-img img{width:100%; height:100%; object-fit:cover; transition:transform .7s var(--ease)}
+.exp:hover .exp-img img{transform:scale(1.035)}
+.exp h3{font-family:var(--display); font-size:24px; font-weight:600; line-height:1.2;
+  letter-spacing:-.015em; margin:9px 0 10px}
+.exp p{font-size:16px; line-height:1.55; color:var(--ink-2); flex:1}
+.exp .abrir{display:inline-flex; align-items:center; gap:7px; margin-top:16px;
+  font-family:var(--ui); font-size:13px; font-weight:500; color:#06c}
+.exp .abrir svg{width:11px; height:11px; transition:transform .28s var(--ease)}
+.exp:hover .abrir svg{transform:translate(2px,-2px)}
+.exp:hover h3{text-decoration:underline; text-underline-offset:5px; text-decoration-thickness:1px}
+
+/* ============================================================
+   REELS — la banda de video. Vertical 9:16, como se producen.
+   Va en oscuro: el video se mira mejor sobre negro, y le da a la
+   página un segundo respiro después del índice.
+   ============================================================ */
+.reels{background:var(--noche); color:var(--noche-ink); padding-block:var(--gap)}
+.reels .sec-head{border-bottom-color:rgba(242,239,233,.3)}
+.reels .label{color:var(--noche-ink)}
+.reels .label--soft{color:rgba(242,239,233,.5)}
+.reels .ver{color:rgba(242,239,233,.7)}
+.reels .ver:hover{color:var(--noche-ink)}
+.reels-fila{display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(14px,2vw,24px)}
+.reel{position:relative; display:block}
+.reel-marco{position:relative; aspect-ratio:9/16; overflow:hidden; background:#11151c}
+.reel-marco img{width:100%; height:100%; object-fit:cover; filter:brightness(.82);
+  transition:transform .7s var(--ease), filter .45s var(--ease)}
+.reel:hover .reel-marco img{transform:scale(1.045); filter:brightness(1)}
+.reel-marco::after{content:""; position:absolute; inset:0;
+  background:linear-gradient(to bottom, transparent 42%, rgba(10,13,18,.86) 100%)}
+.reel-play{position:absolute; z-index:2; left:50%; top:50%; translate:-50% -50%;
+  width:54px; height:54px; border:1px solid rgba(242,239,233,.55); border-radius:50%;
+  display:grid; place-items:center; backdrop-filter:blur(3px);
+  transition:.35s var(--ease)}
+.reel-play svg{width:15px; height:15px; margin-left:3px; fill:var(--noche-ink)}
+.reel:hover .reel-play{border-color:var(--noche-ink); scale:1.09; background:rgba(242,239,233,.14)}
+.reel-dur{position:absolute; z-index:2; right:10px; top:10px;
+  font-family:var(--ui); font-size:10.5px; letter-spacing:.06em; color:var(--noche-ink);
+  background:rgba(10,13,18,.62); padding:3px 7px; font-variant-numeric:tabular-nums}
+.reel-pie{position:absolute; z-index:2; left:14px; right:14px; bottom:13px}
+.reel-pie .t{font-family:var(--display); font-size:16px; font-weight:600; line-height:1.22; letter-spacing:-.01em}
+.reel-pie .m{font-family:var(--ui); font-size:10.5px; color:rgba(242,239,233,.62); margin-top:5px; letter-spacing:.05em; text-transform:uppercase}
+
+/* ===== declaración + pie ===== */
+/* ============================================================
+   DECLARACIÓN — el movimiento firmado de Apple: una frase sola,
+   centrada, con aire alrededor. Le pongo el motivo del ojo de Dios
+   detrás, que ya es identidad de la casa, en tinta clarísima.
+   ============================================================ */
+.declaracion{position:relative; padding-block:var(--gap-lg); text-align:center;
+  background:var(--paper-gray); overflow:hidden}
+.declaracion .vantage{position:absolute; left:50%; top:50%; translate:-50% -50%;
+  width:min(620px,86vw); opacity:.5; pointer-events:none}
+.declaracion .wrap{position:relative; z-index:2}
+.declaracion .hilo{margin-bottom:34px}
+.declaracion h2{font-family:var(--display); font-size:clamp(30px,4.2vw,52px); font-weight:500;
+  line-height:1.14; letter-spacing:-.025em; max-width:16em; margin-inline:auto; text-wrap:balance}
+.declaracion p{font-size:19px; line-height:1.65; color:var(--ink-2); max-width:30em; margin:28px auto 0}
+.declaracion .firma-decl{display:inline-block; margin-top:30px; font-family:var(--ui);
+  font-size:11px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-3)}
+
+/* ============================================================
+   COMPARTIR — no había en ninguna parte del prototipo.
+   Círculo hairline de 44px, como los de red del pie, para que el
+   sistema sea uno solo. Sin colores de marca: la página no se
+   convierte en un tablero de logotipos ajenos.
+   ============================================================ */
+.compartir{border-top:1px solid var(--rule); background:var(--paper)}   /* blanco: la declaración ya es gris */
+.compartir .wrap{display:flex; align-items:center; gap:22px; flex-wrap:wrap; padding-block:34px}
+.compartir .txt h3{font-family:var(--display); font-size:22px; font-weight:600; letter-spacing:-.015em}
+.compartir .txt p{font-family:var(--ui); font-size:12.5px; color:var(--ink-3); margin-top:5px}
+.btns{display:flex; gap:10px; margin-left:auto; flex-wrap:wrap}
+.btn-red{position:relative; width:44px; height:44px; border:1px solid var(--rule); border-radius:50%;
+  display:grid; place-items:center; color:var(--ink-2); background:var(--paper);
+  transition:.26s var(--ease)}
+.btn-red:hover{border-color:var(--ink); color:var(--ink); transform:translateY(-2px)}
+.btn-red svg{width:17px; height:17px}
+.btn-red .tip{position:absolute; bottom:calc(100% + 9px); left:50%; translate:-50% 0;
+  font-family:var(--ui); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase;
+  color:var(--paper); background:var(--ink); padding:4px 9px; white-space:nowrap;
+  opacity:0; pointer-events:none; transition:opacity .22s}
+.btn-red:hover .tip,.btn-red.copiado .tip{opacity:1}
+.btn-red.copiado{border-color:var(--laton); color:var(--laton)}
+
+/* ============================================================
+   PIE — pie de diario: cuatro columnas, no una línea suelta.
+   ============================================================ */
+.pie-sitio{border-top:1px solid var(--ink); padding-block:60px 40px}
+.pie-top{display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:clamp(26px,3.4vw,48px); align-items:start}
+.pie-marca .marca{font-family:var(--display); font-size:21px; font-weight:600; letter-spacing:-.015em}
+.pie-marca .hilo{margin:8px 0 0 0}
+.pie-marca .lema{font-size:15.5px; line-height:1.6; color:var(--ink-2); margin-top:16px; max-width:26em}
+.pie-col h4{font-family:var(--ui); font-size:11px; font-weight:600; letter-spacing:.15em;
+  text-transform:uppercase; color:var(--ink); margin-bottom:15px}
+.pie-col a{display:block; font-family:var(--ui); font-size:13.5px; color:var(--ink-2); padding-block:5px}
+.pie-col a:hover{color:var(--ink); text-decoration:underline; text-underline-offset:3px}
+.pie-bajo{display:flex; flex-wrap:wrap; gap:18px; justify-content:space-between; align-items:center;
+  margin-top:46px; padding-top:22px; border-top:1px solid var(--rule)}
+.pie-bajo p{font-family:var(--ui); font-size:11.5px; color:var(--ink-3); line-height:1.7}
+.redes{display:flex; gap:9px}
+.redes a{width:34px; height:34px; border:1px solid var(--rule); border-radius:50%;
+  display:grid; place-items:center; color:var(--ink-2); transition:.25s var(--ease)}
+.redes a:hover{border-color:var(--ink); color:var(--ink)}
+.redes svg{width:15px; height:15px}
+
+/* ===== responsive ===== */
+@media (max-width:1068px){
+
+  .cats-grid{grid-template-columns:repeat(2,1fr)}
+  .fila{grid-template-columns:78px minmax(0,1fr) 54px 34px}
+  .fila .num,.fila .tema{display:none}
+  .tab:nth-child(n+4){display:none}
+  .reels-fila{grid-template-columns:repeat(3,1fr)}
+  .reels-fila .reel:nth-child(4){display:none}
+  .exp-fila{grid-template-columns:repeat(2,1fr)}
+  .exp-fila .exp:nth-child(3){display:none}
+  .pie-top{grid-template-columns:1fr 1fr 1fr}
+  .pie-marca{grid-column:1 / -1; margin-bottom:14px}
+}
+@media (max-width:734px){
+  :root{--gap:64px; --gap-lg:80px}
+  body{font-size:18px}
+  /* minmax(0,1fr) y NO 1fr: "1fr" es minmax(auto,1fr) y la pista
+     crece con el contenido, que es lo que desbordaba la página. */
+  .masthead .wrap{grid-template-columns:minmax(0,1fr); height:auto; padding-block:18px; gap:12px; text-align:center}
+  .masthead .fecha{display:none}
+  .masthead nav{justify-content:center; gap:20px}
+  /* en móvil el texto ocupa TODO el ancho, así que el velo deja de ser
+     cortina lateral y pasa a ser parejo de arriba abajo */
+  .velo{background:linear-gradient(to bottom, rgba(10,13,18,.90) 0%, rgba(10,13,18,.93) 45%, var(--noche) 100%)}
+  .luz{background:radial-gradient(ellipse 90% 70% at 50% 24%,
+    rgba(4,6,10,0) 0%, rgba(4,6,10,.30) 40%, rgba(4,6,10,.86) 88%, rgba(4,6,10,.97) 100%)}
+  .portada-cuerpo .wrap{grid-template-columns:minmax(0,1fr); min-height:0; padding-block:44px}
+  .activa{display:none}
+  .slide .standfirst,.slide .byline{max-width:none}
+  .cats-grid{grid-template-columns:minmax(0,1fr)}
+  .tab:nth-child(n+3){display:none}
+  .fila{grid-template-columns:76px minmax(0,1fr) 34px; gap:13px}
+  .fila .min{display:none}
+  .fila .fecha{white-space:nowrap; font-size:11px}   /* "20 ago 2026" en UNA línea */
+  .sec-head{flex-wrap:wrap; gap:10px 14px}
+  .sec-head .label--soft{width:100%; order:3}
+  .filtros{gap:7px}
+  .busca{margin-left:0; width:100%}
+  .reels-fila{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .reels-fila .reel:nth-child(n+3){display:none}
+  .recientes .wrap{grid-template-columns:minmax(0,1fr)}
+  .divisor{display:none}
+  .carril{border-top:1px solid var(--rule); margin-top:30px; padding-top:6px}
+  .principal p,.carril p{max-width:none}
+  .exp-fila{grid-template-columns:minmax(0,1fr); gap:38px}
+  .exp-fila .exp:nth-child(3){display:flex}
+  .pie-top{grid-template-columns:repeat(2,minmax(0,1fr)); gap:30px}
+  .pie-marca{grid-column:1 / -1; margin-bottom:10px}
+}
+@media (prefers-reduced-motion:reduce){
+  .mosaico{animation:none; opacity:var(--presencia,.50)}
+  *{transition-duration:.01ms!important}
+}
+
+/* foco de teclado: no existía en el prototipo y es un defecto real */
+:focus-visible{outline:2px solid var(--laton); outline-offset:3px}
+.portada :focus-visible{outline-color:var(--noche-ink)}
+

@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>La avenida que se paga sola · 45 Digital Noticias</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="columna.css">
 <meta name="description" content="En diciembre de 2010 el Congreso de Morelos autorizó a Cuautla 140 millones de pesos a catorce años, para un alcalde al que le quedaban dos. El primer destino de la lista era pavimentar con concreto hidráulico la avenida Reforma. La avenida se hizo y a la empresa que la construyó no le pagaron: ganó el juicio en 2013 y sigue sin cobrar. El contrato cobraba cerca de diez mil pesos por cada día de retraso, y la deuda ya se duplicó hasta 41 millones 451 mil pesos.">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="45 Digital Noticias">
@@ -17,10 +21,6 @@
 <meta name="twitter:title" content="La avenida que se paga sola">
 <meta name="twitter:description" content="En diciembre de 2010 el Congreso de Morelos autorizó a Cuautla 140 millones de pesos a catorce años, para un alcalde al que le quedaban dos. El primer destino de la lista era pavimentar con concreto hidráulico la avenida Reforma. La avenida se hizo y a la empresa que la construyó no le pagaron: ganó el juicio en 2013 y sigue sin cobrar. El contrato cobraba cerca de diez mil pesos por cada día de retraso, y la deuda ya se duplicó hasta 41 millones 451 mil pesos.">
 <meta name="twitter:image" content="https://45digitalnoticias.github.io/columnas/og-la-avenida-que-se-paga-sola.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
 <!-- Google Analytics 4 (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R64XZVCF6F"></script>
 <script>
@@ -68,14 +68,14 @@
 </head>
 <body>
 
-<header class="site-header">
+<header class="masthead">
   <div class="wrap">
-    <a class="brand" href="index.html">
-      <img class="brand-logo" src="logo-45.png" alt="45 Digital Noticias">
-      <span class="name" style="display:none">45 DIGITAL <b>NOTICIAS</b></span>
+    <span class="fecha">18 de agosto de 2026</span>
+    <a href="index.html">
+      <div class="logo">45 Digital <span class="n">Noticias</span></div>
+      <div class="hilo"></div>
     </a>
-    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
-    <nav class="nav" id="nav">
+    <nav>
       <a href="index.html">Columnas</a>
       <a href="expedientes.html">Expedientes</a>
       <a href="acerca.html">Acerca</a>
@@ -83,194 +83,186 @@
   </div>
 </header>
 
-<article class="article">
-  <div class="wrap">
+<!-- barra de avance de lectura -->
+<div class="avance" id="avance"></div>
 
-    <header class="article-head">
+<article>
+  <header class="cabeza">
+    <div class="wrap-medida">
       <div class="eyebrow">
-        <span class="kicker">Columna de opinión</span>
-        <span class="line"></span>
+        <span class="tick"></span>
+        <span class="label">Morelos · Cuentas públicas</span>
       </div>
       <h1>La avenida que se paga sola</h1>
-      <p class="dek">En diciembre de 2010 el Congreso de Morelos autorizó a Cuautla 140 millones de pesos a catorce años, para un alcalde al que le quedaban dos. El primer destino de la lista era pavimentar con concreto hidráulico la avenida Reforma. La avenida se hizo y a la empresa que la construyó no le pagaron: ganó el juicio en 2013 y sigue sin cobrar. El contrato cobraba cerca de diez mil pesos por cada día de retraso, y la deuda ya se duplicó hasta 41 millones 451 mil pesos.</p>
-      <div class="article-meta">
-        <span>6 min de lectura</span>
+      <p class="entrada">En diciembre de 2010 el Congreso de Morelos autorizó a Cuautla 140 millones de pesos a catorce años, para un alcalde al que le quedaban dos. El primer destino de la lista era pavimentar con concreto hidráulico la avenida Reforma. La avenida se hizo y a la empresa que la construyó no le pagaron: ganó el juicio en 2013 y sigue sin cobrar. El contrato cobraba cerca de diez mil pesos por cada día de retraso, y la deuda ya se duplicó hasta 41 millones 451 mil pesos.</p>
+
+      <div class="firma">
+        <span class="autor">SRVO</span>
+        <span class="sep"></span>
+        <span class="meta">18 de agosto de 2026</span>
+        <span class="sep"></span>
+        <span class="meta">6 min de lectura</span>
       </div>
-    </header>
 
-    <figure class="article-figure">
-      <img src="la-avenida-que-se-paga-sola-portada.png" alt="La avenida que se paga sola">
-    </figure>
-
-    <div class="share" aria-label="Compartir">
-      <span class="share-label">Compartir</span>
-      <a class="share-btn" data-net="wa" target="_blank" rel="noopener">WhatsApp</a>
-      <a class="share-btn" data-net="fb" target="_blank" rel="noopener">Facebook</a>
-      <a class="share-btn" data-net="x" target="_blank" rel="noopener">X</a>
-      <button class="share-btn" type="button" data-net="copy">Copiar enlace</button>
+      <button class="oir-barra" type="button" data-src="../SITIO_COLUMNAS/audio-la-avenida-que-se-paga-sola.mp3">
+        <span class="ico"><svg class="play" viewBox="0 0 10 12" fill="currentColor"><path d="M0 0l10 6-10 6z"/></svg><svg class="pausa" viewBox="0 0 10 12" fill="currentColor"><path d="M0 0h3.4v12H0zM6.6 0H10v12H6.6z"/></svg></span>
+        <span class="txt">Escuchar la columna</span>
+        <span class="dur">10:45</span>
+        <span class="pista-audio"></span>
+      </button>
     </div>
+  </header>
 
-    <div class="audio-col" style="max-width:var(--measure);margin:0 auto 38px;padding:16px 18px;border:1px solid rgba(204,161,90,.3);border-radius:12px;background:rgba(204,161,90,.05);">
-      <div style="font-family:'Inter',system-ui,sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#cca15a;margin-bottom:10px;">🎧 Escuchar la columna · 11 min</div>
-      <audio controls preload="none" style="width:100%;display:block;">
-        <source src="audio-la-avenida-que-se-paga-sola.mp3" type="audio/mpeg">
-        Tu navegador no soporta audio HTML5.
-      </audio>
-      <div style="font-family:'Inter',system-ui,sans-serif;font-size:.72rem;color:rgba(243,241,232,.55);margin-top:8px;">Lectura automática con voz sintética.</div>
-    </div>
+  <figure class="portada wrap-medida">
+    <img src="../SITIO_COLUMNAS/la-avenida-que-se-paga-sola-portada.png" alt="">
+    <figcaption>Morelos · Cuentas públicas · Ilustración de la columna</figcaption>
+  </figure>
 
-    <div class="prose">
-      <p>Vaya a la avenida Reforma, en Cuautla. Está pavimentada con concreto hidráulico. Puede tocarla.</p>
+  <div class="wrap-medida prosa">
+    <p>Vaya a la avenida Reforma, en Cuautla. Está pavimentada con concreto hidráulico. Puede tocarla.</p>
+    <p>Esa avenida se autorizó el 2 de diciembre de 2010, en el Decreto 816 del Congreso del Estado de Morelos. Es el primer renglón de una lista de ocho. Dice, palabra por palabra: "Rehabilitación con concreto hidráulico de la Av. Reforma".</p>
+    <p>El presidente municipal Luis Felipe Güemes Ríos había pedido 280 millones. El crédito se solicitó, según consta en el expediente legislativo, para reestructurar deuda del municipio y para ejecutar obra. La Comisión de Hacienda redujo el monto a la mitad tras analizar la capacidad de pago del Ayuntamiento.</p>
+    <p>El plazo autorizado fue de 168 meses. Catorce años. Al alcalde que lo solicitó le quedaban dos.</p>
+    <p>Hay un detalle más en ese dictamen. La Ley de Ingresos de Cuautla para 2010 no contemplaba ese endeudamiento. El Congreso resolvió modificarla dentro del mismo decreto, según su propio texto, "con el objeto de facilitar al Municipio la contratación del financiamiento planteado". El crédito no cabía en la ley, así que le ajustaron la ley al crédito.</p>
+    <p>La avenida se hizo. La empresa que la construyó presentó sus facturas y no le pagaron.</p>
+    <h2 style="font-family:var(--display);font-weight:600;font-size:1.5rem;line-height:1.22;margin:2.4rem 0 .7rem;">Veinte millones que se volvieron cuarenta y uno</h2>
+    <p>Torreza Construcciones demandó al Ayuntamiento en 2012. El expediente es el 270/2012, del Juzgado Tercero Civil de Primera Instancia del Sexto Distrito Judicial. El 1 de julio de 2013 ganó: 20 millones 751 mil 690 pesos con 40 centavos.</p>
+    <p>No cobró.</p>
+    <p>La cuenta arranca ahí, en julio de 2013. Antes de esa fecha no había nada que pagar. Desde entonces han pasado cinco administraciones con tiempo material para hacer algo.</p>
+    <p>Jesús González Otero, que recibió la sentencia. Raúl Tadeo Nava, que en 2016 consiguió 204.9 millones de pesos. Jesús Corona Damián, en cuyo periodo la justicia federal amparó a la empresa dos veces. Rodrigo Luis Arredondo López, a quien el Tribunal Colegiado requirió con nombre y apellidos junto con los diez integrantes de su cabildo. Y otra vez Corona Damián, que en 2025 sí consiguió cuarenta millones de pesos para pagar una condena judicial, aunque no esta.</p>
+    <p>Tres partidos distintos. Trece años. Ninguno pagó. Ninguno la declaró.</p>
+    <p>El contrato que el propio municipio firmó traía una cláusula de pena convencional: un monto fijo por cada día de retraso. Los tribunales la han liquidado dos veces. Del 10 de febrero de 2016 al 14 de junio de 2019, mil doscientos veinte días, 12 millones 100 mil pesos. Del 15 de junio de 2019 al 23 de octubre de 2021, ochocientos sesenta y un días, 8 millones 600 mil.</p>
+    <p>Divida usted. Las dos liquidaciones, resueltas por jueces distintos con tres años de diferencia, dan casi exactamente la misma cifra: <strong>cerca de diez mil pesos por cada día</strong>. Sábados, domingos y días de asueto incluidos.  (la cifra diaria es división propia de cada liquidación entre los días de su periodo; pendiente de cotejo contra la cláusula)</p>
+    <p>La deuda asciende hoy a 41 millones 451 mil 690 pesos. De esos, 20.7 millones son la obra. Los otros 20.7 son puro castigo por no haberla pagado.</p>
+    <p><strong>No pagar la avenida ya costó lo mismo que la avenida.</strong> Cuautla pagará dos y solo tiene una.</p>
+    <p>Y esa cifra está subestimada, porque la pena solo se cuenta cuando alguien la reclama. Desde el 24 de octubre de 2021 han corrido otros mil setecientos cincuenta y dos días que nadie ha liquidado.  (los 1,752 días corridos son cálculo propio, no hay incidente promovido)</p>
+    <h2 style="font-family:var(--display);font-weight:600;font-size:1.5rem;line-height:1.22;margin:2.4rem 0 .7rem;">El dinero sí llegó. No fue para allá</h2>
+    <p>Aquí es donde la historia deja de ser un pleito de cobranza.</p>
+    <p>El 26 de abril de 2016, el entonces alcalde Raúl Tadeo Nava firmó un crédito con Banco Interacciones, hoy Banorte. Le autorizaron 235 millones y dispuso 204.9. A cambio comprometió el 73 por ciento de las participaciones federales del municipio hasta abril de 2031, dentro de un fideicomiso que cobra antes de que el dinero llegue a la tesorería. Los datos son públicos: están en el reporte de calificación de HR Ratings y en el Registro Público Único de la Secretaría de Hacienda.</p>
+    <p>El destino declarado de esos 204.9 millones fue refinanciamiento. Es decir, cambiar deuda vieja por deuda nueva. La avenida no estaba en la lista.</p>
+    <p>En 2025, la actual administración contrató 40 millones de pesos con el banco Bansí. Ese dinero, según el expediente de investigación sobre el municipio, sí fue a cubrir una condena judicial: la del caso de los parquímetros. No la de la avenida.  (dato del expediente de investigación sobre el municipio; pendiente el contrato)</p>
+    <p class="pull">Una deuda que no se declara no se presupuesta. Y una deuda que no se presupuesta no se paga nunca.</p>
+    <p>Hubo dinero dos veces. Hubo urgencias declaradas en sesión de cabildo. Al que puso el concreto no le tocó en ninguna.</p>
+    <h2 style="font-family:var(--display);font-weight:600;font-size:1.5rem;line-height:1.22;margin:2.4rem 0 .7rem;">El día en que un tribunal pidió nombres</h2>
+    <p>La constructora se amparó. El Juzgado Séptimo de Distrito le dio la razón dos veces, el 25 de junio de 2019 y el 10 de marzo de 2020, y ordenó al Ayuntamiento realizar todas las gestiones para cumplir. No pasó nada.</p>
+    <p>Conviene detenerse en 2019, porque ese año ocurrió algo más. La Fiscalía Anticorrupción del estado imputó a Güemes Ríos por peculado, en un asunto distinto y ajeno al de la avenida. El caso no prosperó: el 21 de mayo de 2019 el juez le negó la vinculación a proceso porque la carpeta estaba mal integrada, al no acreditarse cómo se habrían desviado los recursos, a quién se dieron instrucciones ni beneficio personal alguno.</p>
+    <p>Es decir: el único procedimiento penal que ha existido sobre ese periodo se cayó, y nunca tuvo por objeto ni el crédito de 2010 ni la avenida  (carpeta JC/845/2017; no consta ninguna otra investigación sobre el crédito ni sobre la obra).</p>
+    <p>Hasta que el 17 de marzo de 2023 el Tribunal Colegiado en Materia Civil del Décimo Octavo Circuito hizo algo distinto. Ordenó dejar de requerir al "Ayuntamiento" y empezar a requerir a los servidores públicos, dice la resolución, "con nombre y apellidos", bajo apercibimiento de separación del cargo y consignación penal conforme al artículo 193 de la Ley de Amparo.</p>
+    <p>El 13 de abril de 2023 se requirió personalmente a los once integrantes del cabildo. Contestaron dos, el presidente y la síndica, para informar que no podían cumplir. El 25 de mayo se hizo efectivo el apercibimiento y se dio vista a la Fiscalía General del Estado.</p>
+    <p>Ese es el punto de giro, y conviene entender por qué. La obligación del amparo se le impone al cargo, no a la persona  (art. 193 de la Ley de Amparo, texto vigente). Quien se sienta en la silla hereda el deber completo. En consecuencia, quien hoy tiene encima la amenaza de separación no es ninguno de los que tomaron las decisiones de 2010 ni de 2016. Son los que están. Esa última consecuencia es lectura del autor, no del texto legal.</p>
+    <h2 style="font-family:var(--display);font-weight:600;font-size:1.5rem;line-height:1.22;margin:2.4rem 0 .7rem;">Y lo que no cuesta un peso, tampoco se hizo</h2>
+    <p>En la cuenta pública de Cuautla al primer trimestre de 2026, impresa el 27 de mayo de este año, hay un documento titulado "Pasivos contingentes". Un pasivo contingente es la deuda que todavía no es exigible pero que se sabe que va a caer. Es exactamente la figura contable donde se anota un juicio perdido.</p>
+    <p>El documento dice esto, completo:</p>
+    <p><em>"El municipio de Cuautla no cuenta con pasivos contingentes que reportar en el periodo."</em></p>
+    <p>Una sentencia firme por 41 millones. Dos amparos perdidos. Un incidente de inejecución ante un Tribunal Colegiado. Una pena corriendo a diez mil pesos diarios. Laudos laborales impagos denunciados por la propia síndica municipal.</p>
+    <p>Cero.</p>
+    <p>Se puede discutir si el municipio tenía liquidez para pagar. No se puede discutir lo otro: <strong>declarar la deuda no cuesta dinero.</strong> Es obligatorio, es gratuito y es lo mínimo que se hace cuando ya se perdió el juicio. Tampoco se hizo. Y una deuda que no se declara no se presupuesta, y una que no se presupuesta no se paga nunca. (lectura del autor)</p>
+    <h2 style="font-family:var(--display);font-weight:600;font-size:1.5rem;line-height:1.22;margin:2.4rem 0 .7rem;">El mecanismo</h2>
+    <p>János Kornai llamó a esto restricción presupuestaria blanda: cuando un ente sabe que siempre habrá un crédito, un rescate o una prórroga, nunca enfrenta el costo real de sus decisiones. Kornai lo describió para las empresas del socialismo de Estado. Sirve igual para un municipio mexicano cuyas participaciones futuras siempre alcanzan para garantizar un préstamo más. (marco teórico, no dato)</p>
+    <p>Pero hay algo más simple debajo. <strong>El municipio es una persona moral que no se muere. Lo administran personas físicas que siempre se van.</strong> (lectura del autor)</p>
+    <p>Todo este expediente es el arbitraje entre esos dos hechos. Endeudar a catorce años a quien le quedan dos. No declarar el pasivo. Dejar correr la pena. No son errores distintos: son la misma operación, que consiste en trasladarle el costo a una entidad que no puede quejarse. (lectura del autor)</p>
+    <p>Por eso cada administración de Cuautla es al mismo tiempo heredera y autora. Recibe una bomba que no puso y, en el intento de sobrevivirla, arma la siguiente. (lectura del autor)</p>
+    <p>El 17 de marzo de 2023, un tribunal se negó a seguirle el juego . Dijo, en efecto, que la persona moral no va a la cárcel pero las personas físicas sí. La paráfrasis es del autor.</p>
+    <p>Mientras tanto la avenida sigue ahí, pavimentada, intacta y sin pagar. Y cada mañana que amanece sobre ella, cuesta diez mil pesos más.</p>
+    <p class="dipt">Antecedente: El crédito que no está <a href="el-credito-que-no-esta.html" target="_blank" rel="noopener">Ver el expediente →</a></p>
+  </div>
 
-      <p>Esa avenida se autorizó el 2 de diciembre de 2010, en el Decreto 816 del Congreso del Estado de Morelos. Es el primer renglón de una lista de ocho. Dice, palabra por palabra: "Rehabilitación con concreto hidráulico de la Av. Reforma".</p>
-
-      <p>El presidente municipal Luis Felipe Güemes Ríos había pedido 280 millones. El crédito se solicitó, según consta en el expediente legislativo, para reestructurar deuda del municipio y para ejecutar obra. La Comisión de Hacienda redujo el monto a la mitad tras analizar la capacidad de pago del Ayuntamiento.</p>
-
-      <p>El plazo autorizado fue de 168 meses. Catorce años. Al alcalde que lo solicitó le quedaban dos.</p>
-
-      <p>Hay un detalle más en ese dictamen. La Ley de Ingresos de Cuautla para 2010 no contemplaba ese endeudamiento. El Congreso resolvió modificarla dentro del mismo decreto, según su propio texto, "con el objeto de facilitar al Municipio la contratación del financiamiento planteado". El crédito no cabía en la ley, así que le ajustaron la ley al crédito.</p>
-
-      <p>La avenida se hizo. La empresa que la construyó presentó sus facturas y no le pagaron.</p>
-
-      <h2 style="font-family:var(--display);font-weight:600;font-size:1.5rem;line-height:1.22;margin:2.4rem 0 .7rem;">Veinte millones que se volvieron cuarenta y uno</h2>
-
-      <p>Torreza Construcciones demandó al Ayuntamiento en 2012. El expediente es el 270/2012, del Juzgado Tercero Civil de Primera Instancia del Sexto Distrito Judicial. El 1 de julio de 2013 ganó: 20 millones 751 mil 690 pesos con 40 centavos.</p>
-
-      <p>No cobró.</p>
-
-      <p>La cuenta arranca ahí, en julio de 2013. Antes de esa fecha no había nada que pagar. Desde entonces han pasado cinco administraciones con tiempo material para hacer algo.</p>
-
-      <p>Jesús González Otero, que recibió la sentencia. Raúl Tadeo Nava, que en 2016 consiguió 204.9 millones de pesos. Jesús Corona Damián, en cuyo periodo la justicia federal amparó a la empresa dos veces. Rodrigo Luis Arredondo López, a quien el Tribunal Colegiado requirió con nombre y apellidos junto con los diez integrantes de su cabildo. Y otra vez Corona Damián, que en 2025 sí consiguió cuarenta millones de pesos para pagar una condena judicial, aunque no esta.</p>
-
-      <p>Tres partidos distintos. Trece años. Ninguno pagó. Ninguno la declaró.</p>
-
-      <p>El contrato que el propio municipio firmó traía una cláusula de pena convencional: un monto fijo por cada día de retraso. Los tribunales la han liquidado dos veces. Del 10 de febrero de 2016 al 14 de junio de 2019, mil doscientos veinte días, 12 millones 100 mil pesos. Del 15 de junio de 2019 al 23 de octubre de 2021, ochocientos sesenta y un días, 8 millones 600 mil.</p>
-
-      <p>Divida usted. Las dos liquidaciones, resueltas por jueces distintos con tres años de diferencia, dan casi exactamente la misma cifra: <strong>cerca de diez mil pesos por cada día</strong>. Sábados, domingos y días de asueto incluidos.  (la cifra diaria es división propia de cada liquidación entre los días de su periodo; pendiente de cotejo contra la cláusula)</p>
-
-      <p>La deuda asciende hoy a 41 millones 451 mil 690 pesos. De esos, 20.7 millones son la obra. Los otros 20.7 son puro castigo por no haberla pagado.</p>
-
-      <p><strong>No pagar la avenida ya costó lo mismo que la avenida.</strong> Cuautla pagará dos y solo tiene una.</p>
-
-      <p>Y esa cifra está subestimada, porque la pena solo se cuenta cuando alguien la reclama. Desde el 24 de octubre de 2021 han corrido otros mil setecientos cincuenta y dos días que nadie ha liquidado.  (los 1,752 días corridos son cálculo propio, no hay incidente promovido)</p>
-
-      <h2 style="font-family:var(--display);font-weight:600;font-size:1.5rem;line-height:1.22;margin:2.4rem 0 .7rem;">El dinero sí llegó. No fue para allá</h2>
-
-      <p>Aquí es donde la historia deja de ser un pleito de cobranza.</p>
-
-      <p>El 26 de abril de 2016, el entonces alcalde Raúl Tadeo Nava firmó un crédito con Banco Interacciones, hoy Banorte. Le autorizaron 235 millones y dispuso 204.9. A cambio comprometió el 73 por ciento de las participaciones federales del municipio hasta abril de 2031, dentro de un fideicomiso que cobra antes de que el dinero llegue a la tesorería. Los datos son públicos: están en el reporte de calificación de HR Ratings y en el Registro Público Único de la Secretaría de Hacienda.</p>
-
-      <p>El destino declarado de esos 204.9 millones fue refinanciamiento. Es decir, cambiar deuda vieja por deuda nueva. La avenida no estaba en la lista.</p>
-
-      <p>En 2025, la actual administración contrató 40 millones de pesos con el banco Bansí. Ese dinero, según el expediente de investigación sobre el municipio, sí fue a cubrir una condena judicial: la del caso de los parquímetros. No la de la avenida.  (dato del expediente de investigación sobre el municipio; pendiente el contrato)</p>
-
-      <p class="pull">Una deuda que no se declara no se presupuesta. Y una deuda que no se presupuesta no se paga nunca.</p>
-
-      <p>Hubo dinero dos veces. Hubo urgencias declaradas en sesión de cabildo. Al que puso el concreto no le tocó en ninguna.</p>
-
-      <h2 style="font-family:var(--display);font-weight:600;font-size:1.5rem;line-height:1.22;margin:2.4rem 0 .7rem;">El día en que un tribunal pidió nombres</h2>
-
-      <p>La constructora se amparó. El Juzgado Séptimo de Distrito le dio la razón dos veces, el 25 de junio de 2019 y el 10 de marzo de 2020, y ordenó al Ayuntamiento realizar todas las gestiones para cumplir. No pasó nada.</p>
-
-      <p>Conviene detenerse en 2019, porque ese año ocurrió algo más. La Fiscalía Anticorrupción del estado imputó a Güemes Ríos por peculado, en un asunto distinto y ajeno al de la avenida. El caso no prosperó: el 21 de mayo de 2019 el juez le negó la vinculación a proceso porque la carpeta estaba mal integrada, al no acreditarse cómo se habrían desviado los recursos, a quién se dieron instrucciones ni beneficio personal alguno.</p>
-
-      <p>Es decir: el único procedimiento penal que ha existido sobre ese periodo se cayó, y nunca tuvo por objeto ni el crédito de 2010 ni la avenida  (carpeta JC/845/2017; no consta ninguna otra investigación sobre el crédito ni sobre la obra).</p>
-
-      <p>Hasta que el 17 de marzo de 2023 el Tribunal Colegiado en Materia Civil del Décimo Octavo Circuito hizo algo distinto. Ordenó dejar de requerir al "Ayuntamiento" y empezar a requerir a los servidores públicos, dice la resolución, "con nombre y apellidos", bajo apercibimiento de separación del cargo y consignación penal conforme al artículo 193 de la Ley de Amparo.</p>
-
-      <p>El 13 de abril de 2023 se requirió personalmente a los once integrantes del cabildo. Contestaron dos, el presidente y la síndica, para informar que no podían cumplir. El 25 de mayo se hizo efectivo el apercibimiento y se dio vista a la Fiscalía General del Estado.</p>
-
-      <p>Ese es el punto de giro, y conviene entender por qué. La obligación del amparo se le impone al cargo, no a la persona  (art. 193 de la Ley de Amparo, texto vigente). Quien se sienta en la silla hereda el deber completo. En consecuencia, quien hoy tiene encima la amenaza de separación no es ninguno de los que tomaron las decisiones de 2010 ni de 2016. Son los que están. Esa última consecuencia es lectura del autor, no del texto legal.</p>
-
-      <h2 style="font-family:var(--display);font-weight:600;font-size:1.5rem;line-height:1.22;margin:2.4rem 0 .7rem;">Y lo que no cuesta un peso, tampoco se hizo</h2>
-
-      <p>En la cuenta pública de Cuautla al primer trimestre de 2026, impresa el 27 de mayo de este año, hay un documento titulado "Pasivos contingentes". Un pasivo contingente es la deuda que todavía no es exigible pero que se sabe que va a caer. Es exactamente la figura contable donde se anota un juicio perdido.</p>
-
-      <p>El documento dice esto, completo:</p>
-
-      <p><em>"El municipio de Cuautla no cuenta con pasivos contingentes que reportar en el periodo."</em></p>
-
-      <p>Una sentencia firme por 41 millones. Dos amparos perdidos. Un incidente de inejecución ante un Tribunal Colegiado. Una pena corriendo a diez mil pesos diarios. Laudos laborales impagos denunciados por la propia síndica municipal.</p>
-
-      <p>Cero.</p>
-
-      <p>Se puede discutir si el municipio tenía liquidez para pagar. No se puede discutir lo otro: <strong>declarar la deuda no cuesta dinero.</strong> Es obligatorio, es gratuito y es lo mínimo que se hace cuando ya se perdió el juicio. Tampoco se hizo. Y una deuda que no se declara no se presupuesta, y una que no se presupuesta no se paga nunca. (lectura del autor)</p>
-
-      <h2 style="font-family:var(--display);font-weight:600;font-size:1.5rem;line-height:1.22;margin:2.4rem 0 .7rem;">El mecanismo</h2>
-
-      <p>János Kornai llamó a esto restricción presupuestaria blanda: cuando un ente sabe que siempre habrá un crédito, un rescate o una prórroga, nunca enfrenta el costo real de sus decisiones. Kornai lo describió para las empresas del socialismo de Estado. Sirve igual para un municipio mexicano cuyas participaciones futuras siempre alcanzan para garantizar un préstamo más. (marco teórico, no dato)</p>
-
-      <p>Pero hay algo más simple debajo. <strong>El municipio es una persona moral que no se muere. Lo administran personas físicas que siempre se van.</strong> (lectura del autor)</p>
-
-      <p>Todo este expediente es el arbitraje entre esos dos hechos. Endeudar a catorce años a quien le quedan dos. No declarar el pasivo. Dejar correr la pena. No son errores distintos: son la misma operación, que consiste en trasladarle el costo a una entidad que no puede quejarse. (lectura del autor)</p>
-
-      <p>Por eso cada administración de Cuautla es al mismo tiempo heredera y autora. Recibe una bomba que no puso y, en el intento de sobrevivirla, arma la siguiente. (lectura del autor)</p>
-
-      <p>El 17 de marzo de 2023, un tribunal se negó a seguirle el juego . Dijo, en efecto, que la persona moral no va a la cárcel pero las personas físicas sí. La paráfrasis es del autor.</p>
-
-      <p>Mientras tanto la avenida sigue ahí, pavimentada, intacta y sin pagar. Y cada mañana que amanece sobre ella, cuesta diez mil pesos más.</p>
-
-      <p class="dipt">Antecedente: El crédito que no está <a href="el-credito-que-no-esta.html" target="_blank" rel="noopener">Ver el expediente →</a></p>
-    </div>
-
-    <p class="signoff">SRVO</p>
-
-    <section class="fuentes">
-      <h2>Fuentes y referencias citadas</h2>
+  <section class="fuentes">
+    <div class="wrap-medida">
+      <div class="sec-head"><span class="label">Fuentes y referencias</span></div>
       <ol>
-        <li>Congreso del Estado de Morelos, <strong>Decreto 816</strong>, Periódico Oficial "Tierra y Libertad" 4856, 8 de diciembre de 2010. http://marcojuridico.morelos.gob.mx/archivos/decretos_legislativo/pdf/Dec.Credito-Cuatla2010.pdf</li>
-        <li>Congreso del Estado de Morelos, <strong>Decreto 134</strong>, Periódico Oficial 4502, 29 de diciembre de 2006. http://marcojuridico.morelos.gob.mx/archivos/decretos_legislativo/pdf/Dec00013-4502.pdf</li>
-        <li>Congreso del Estado de Morelos, <strong>Decreto 690</strong>, Periódico Oficial 4612, 14 de mayo de 2008. http://marcojuridico.morelos.gob.mx/archivos/decretos_legislativo/pdf/Dec-690-4612.pdf</li>
-        <li>Periódico Oficial "Tierra y Libertad" 5362, 20 de enero de 2016, fe de erratas al Decreto 118. https://periodico.morelos.gob.mx/obtenerPDF/2016/5362.pdf</li>
-        <li><strong>HR Ratings</strong>, <em>Municipio de Cuautla, Crédito Bancario Estructurado Banorte (P$235.0m, 2016)</em>, 6 de septiembre de 2022. https://www.hrratings.com/pdf/Reporte_Cuautla_Binter_235m_4Rev_2022.pdf</li>
+        <li>Congreso del Estado de Morelos, <strong>Decreto 816</strong>, Periódico Oficial "Tierra y Libertad" 4856, 8 de diciembre de 2010. <a href="http://marcojuridico.morelos.gob.mx/archivos/decretos_legislativo/pdf/Dec.Credito-Cuatla2010.pdf" target="_blank" rel="noopener">marcojuridico.morelos.gob.mx/archivos/decretos_legislativo/pdf/Dec.Credito-Cuatla2010.pdf</a></li>
+        <li>Congreso del Estado de Morelos, <strong>Decreto 134</strong>, Periódico Oficial 4502, 29 de diciembre de 2006. <a href="http://marcojuridico.morelos.gob.mx/archivos/decretos_legislativo/pdf/Dec00013-4502.pdf" target="_blank" rel="noopener">marcojuridico.morelos.gob.mx/archivos/decretos_legislativo/pdf/Dec00013-4502.pdf</a></li>
+        <li>Congreso del Estado de Morelos, <strong>Decreto 690</strong>, Periódico Oficial 4612, 14 de mayo de 2008. <a href="http://marcojuridico.morelos.gob.mx/archivos/decretos_legislativo/pdf/Dec-690-4612.pdf" target="_blank" rel="noopener">marcojuridico.morelos.gob.mx/archivos/decretos_legislativo/pdf/Dec-690-4612.pdf</a></li>
+        <li>Periódico Oficial "Tierra y Libertad" 5362, 20 de enero de 2016, fe de erratas al Decreto 118. <a href="https://periodico.morelos.gob.mx/obtenerPDF/2016/5362.pdf" target="_blank" rel="noopener">periodico.morelos.gob.mx/obtenerPDF/2016/5362.pdf</a></li>
+        <li><strong>HR Ratings</strong>, <em>Municipio de Cuautla, Crédito Bancario Estructurado Banorte (P$235.0m, 2016)</em>, 6 de septiembre de 2022. <a href="https://www.hrratings.com/pdf/Reporte_Cuautla_Binter_235m_4Rev_2022.pdf" target="_blank" rel="noopener">hrratings.com/pdf/Reporte_Cuautla_Binter_235m_4Rev_2022.pdf</a></li>
         <li><strong>Secretaría de Hacienda y Crédito Público</strong>, Registro Público Único de Financiamientos y Obligaciones, corte a marzo de 2026.</li>
         <li><strong>Ayuntamiento de Cuautla</strong>, Cuenta Pública, primer trimestre de 2026, apartado de Pasivos Contingentes.</li>
         <li><strong>Ley de Amparo</strong>, artículos 193, 195 y 196. Diario Oficial de la Federación.</li>
         <li><strong>Constitución Política de los Estados Unidos Mexicanos</strong>, artículos 117 fracción VIII y 134.</li>
         <li>János Kornai, <em>Economics of Shortage</em>, North-Holland, Ámsterdam, 1980.</li>
       </ol>
-    </section>
+      <p class="cotejo">Las ligas van a la vista para que cualquiera compruebe por su cuenta. Si alguna dejó de resolver, escríbenos y la reponemos.</p>
+    </div>
+  </section>
 
-    <a class="back" href="index.html">← Volver a las columnas</a>
-  </div>
+  <section class="cierre wrap-medida">
+    <p class="firma-final">SRVO</p>
+    <div class="btns">
+      <a class="btn-red" data-red="facebook" href="#" aria-label="Compartir en Facebook"><span class="tip">Facebook</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.5l.5-3h-3v-2c0-.6.4-1 1-1z"/></svg></a>
+      <a class="btn-red" data-red="whatsapp" href="#" aria-label="Compartir por WhatsApp"><span class="tip">WhatsApp</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1112 20zm4.4-5.8c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 01-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3 0-.5l-.7-1.6c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.7.7-.9 1.6-.6 2.6.5 1.6 1.6 3 3.1 3.9 1.4.9 2.5 1 3.4.9.7-.1 1.4-.6 1.6-1.2.1-.3.1-.6 0-.7z"/></svg></a>
+      <a class="btn-red" data-red="x" href="#" aria-label="Compartir en X"><span class="tip">X</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 3h3l-6.6 7.5L21.7 21h-6l-4.7-6.1L5.6 21h-3l7-8L2.6 3h6.2l4.3 5.6zm-1 16h1.6L8.1 4.6H6.4z"/></svg></a>
+      <button class="btn-red" type="button" data-red="copiar" aria-label="Copiar enlace"><span class="tip">Copiar enlace</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a4 4 0 006 .4l2.4-2.4a4 4 0 00-5.7-5.7l-1.4 1.4"/><path d="M14 11a4 4 0 00-6-.4l-2.4 2.4a4 4 0 005.7 5.7l1.4-1.4"/></svg></button>
+    </div>
+  </section>
 </article>
 
-<footer class="site-footer">
+<footer class="pie-sitio">
   <div class="wrap">
-    <span class="sig">45 Digital Noticias.</span>
-    <span class="small">Columnas · lectura sistémica · © 2026 — Todos los textos cotejados contra fuente.</span>
+    <div class="pie-top">
+      <div class="pie-marca">
+        <p class="marca-n">45 Digital Noticias</p>
+        <div class="hilo"></div>
+        <p class="lema">Columnas de opinión con lectura sistémica. Lo verificable, separado de la lectura.</p>
+      </div>
+      <nav class="pie-col"><h4>Leer</h4>
+        <a href="index.html">Portada</a><a href="todas.html">Todas las columnas</a><a href="expedientes.html">Expedientes</a></nav>
+      <nav class="pie-col"><h4>Temas</h4>
+        <a href="#">Seguridad</a><a href="#">Morelos</a><a href="#">Economía</a><a href="#">Justicia</a></nav>
+      <nav class="pie-col"><h4>La casa</h4>
+        <a href="acerca.html">Acerca</a><a href="mailto:s.rvaldespin8@gmail.com">Escríbenos</a>
+        <a href="https://facebook.com/45DigitalMx" target="_blank" rel="noopener">Facebook</a></nav>
+    </div>
+    <div class="pie-bajo">
+      <p>© 2026 · 45 Digital Noticias. Textos de SRVO.<br>El programa se transmite en vivo de 9 a 10 de la mañana.</p>
+    </div>
   </div>
-  <a id="ck-privacy-link" href="https://45digitalnoticias.github.io/columnas/privacidad.html" style="display:block;text-align:center;margin-top:10px;font-size:.76rem;letter-spacing:.04em;color:inherit;opacity:.65;text-decoration:none;">Aviso de privacidad</a>
 </footer>
 
 <script>
-  const mt = document.querySelector('.menu-toggle');
-  const nav = document.getElementById('nav');
-  if (mt && nav) mt.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    mt.setAttribute('aria-expanded', open);
-  });
-  (function () {
-    const url = encodeURIComponent(location.href);
-    const ttl = encodeURIComponent(document.title.split('—')[0].trim());
-    const map = {
-      wa: 'https://wa.me/?text=' + ttl + '%20' + url,
-      fb: 'https://www.facebook.com/sharer/sharer.php?u=' + url,
-      x: 'https://twitter.com/intent/tweet?text=' + ttl + '&url=' + url
-    };
-    document.querySelectorAll('.share-btn[data-net]').forEach(function (b) {
-      const n = b.dataset.net;
-      if (map[n]) b.href = map[n];
-      if (n === 'copy') b.addEventListener('click', function () {
-        navigator.clipboard.writeText(location.href).then(function () {
-          const t = b.textContent; b.textContent = '¡Copiado!';
-          setTimeout(function () { b.textContent = t; }, 1500);
-        });
-      });
+(() => {
+  // barra de avance de lectura
+  const barra = document.getElementById('avance'), art = document.querySelector('article');
+  addEventListener('scroll', () => {
+    const t = art.offsetTop, h = art.offsetHeight - innerHeight;
+    const p = Math.min(1, Math.max(0, (scrollY - t) / (h > 0 ? h : 1)));
+    barra.style.transform = 'scaleX(' + p + ')';
+  }, {passive:true});
+
+  // audio
+  const bt = document.querySelector('.oir-barra');
+  if (bt) {
+    const au = new Audio(bt.dataset.src);
+    const pista = bt.querySelector('.pista-audio');
+    bt.addEventListener('click', () => {
+      if (au.paused) { au.play().catch(()=>{}); bt.classList.add('suena'); }
+      else { au.pause(); bt.classList.remove('suena'); }
     });
-  })();
+    au.addEventListener('timeupdate', () => {
+      if (au.duration) pista.style.width = (au.currentTime / au.duration * 100) + '%';
+    });
+    au.addEventListener('ended', () => bt.classList.remove('suena'));
+  }
+
+  // compartir
+  const U = encodeURIComponent(location.href);
+  const T = encodeURIComponent(document.querySelector('h1').textContent + ' · 45 Digital Noticias');
+  const D = {facebook:`https://www.facebook.com/sharer/sharer.php?u=${U}`,
+             whatsapp:`https://api.whatsapp.com/send?text=${T}%20${U}`,
+             x:`https://twitter.com/intent/tweet?text=${T}&url=${U}`};
+  document.querySelectorAll('.btn-red').forEach(b => {
+    const r = b.dataset.red;
+    if (D[r]) { b.href = D[r]; b.target = '_blank'; b.rel = 'noopener'; return; }
+    b.addEventListener('click', async () => {
+      const tip = b.querySelector('.tip');
+      try { await navigator.clipboard.writeText(location.href); } catch { return; }
+      const a = tip.textContent; tip.textContent = 'Copiado'; b.classList.add('copiado');
+      setTimeout(() => { tip.textContent = a; b.classList.remove('copiado'); }, 1800);
+    });
+  });
+})();
 </script>
-<!-- Cookie consent 45 Digital -->
+
 <style>
 #ck-consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:560px;margin:0 auto;background:#0e1320;border:1px solid rgba(204,161,90,.35);border-radius:12px;padding:16px 18px;box-shadow:0 18px 50px rgba(0,0,0,.5);font-family:'Inter',system-ui,sans-serif;color:#cdd3cc;display:none}
 #ck-consent.show{display:block}
@@ -305,7 +297,6 @@
 })();
 </script>
 <!-- /Cookie consent 45 Digital -->
-
 <!-- Cloudflare Web Analytics -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4de56a9a4564d0ea0f4e0259af8bc7a"}'></script>
 <!-- End Cloudflare Web Analytics -->

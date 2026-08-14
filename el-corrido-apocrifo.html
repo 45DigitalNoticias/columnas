@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>El corrido apócrifo · 45 Digital Noticias</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="columna.css">
 <meta name="description" content="Una &quot;banda&quot; sin músicos llegó al millón de oyentes. El streaming, la IA y lo que tu suscripción termina financiando.">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="45 Digital Noticias">
@@ -17,10 +21,6 @@
 <meta name="twitter:title" content="El corrido apócrifo">
 <meta name="twitter:description" content="Una &quot;banda&quot; sin músicos llegó al millón de oyentes. El streaming, la IA y lo que tu suscripción termina financiando.">
 <meta name="twitter:image" content="https://45digitalnoticias.github.io/columnas/og-el-corrido-apocrifo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
 <!-- Google Analytics 4 (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R64XZVCF6F"></script>
 <script>
@@ -68,14 +68,14 @@
 </head>
 <body>
 
-<header class="site-header">
+<header class="masthead">
   <div class="wrap">
-    <a class="brand" href="index.html">
-      <img class="brand-logo" src="logo-45.png" alt="45 Digital Noticias">
-      <span class="name" style="display:none">45 DIGITAL <b>NOTICIAS</b></span>
+    <span class="fecha">29 de mayo de 2026</span>
+    <a href="index.html">
+      <div class="logo">45 Digital <span class="n">Noticias</span></div>
+      <div class="hilo"></div>
     </a>
-    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
-    <nav class="nav" id="nav">
+    <nav>
       <a href="index.html">Columnas</a>
       <a href="expedientes.html">Expedientes</a>
       <a href="acerca.html">Acerca</a>
@@ -83,74 +83,60 @@
   </div>
 </header>
 
-<article class="article">
-  <div class="wrap">
+<!-- barra de avance de lectura -->
+<div class="avance" id="avance"></div>
 
-    <header class="article-head">
+<article>
+  <header class="cabeza">
+    <div class="wrap-medida">
       <div class="eyebrow">
-        <span class="kicker">Columna de opinión</span>
-        <span class="line"></span>
+        <span class="tick"></span>
+        <span class="label">Tecnología</span>
       </div>
       <h1>El corrido apócrifo</h1>
-      <p class="dek">Una &quot;banda&quot; sin músicos llegó al millón de oyentes. El streaming, la IA y lo que tu suscripción termina financiando.</p>
-      <div class="article-meta">
-        <span>5 min de lectura</span>
+      <p class="entrada">Una &quot;banda&quot; sin músicos llegó al millón de oyentes. El streaming, la IA y lo que tu suscripción termina financiando.</p>
+
+      <div class="firma">
+        <span class="autor">SRVO</span>
+        <span class="sep"></span>
+        <span class="meta">29 de mayo de 2026</span>
+        <span class="sep"></span>
+        <span class="meta">5 min de lectura</span>
       </div>
-    </header>
 
-    <figure class="article-figure">
-      <img src="corrido-apocrifo.png" alt="El corrido apócrifo">
-    </figure>
-
-    <div class="share" aria-label="Compartir">
-      <span class="share-label">Compartir</span>
-      <a class="share-btn" data-net="wa" target="_blank" rel="noopener">WhatsApp</a>
-      <a class="share-btn" data-net="fb" target="_blank" rel="noopener">Facebook</a>
-      <a class="share-btn" data-net="x" target="_blank" rel="noopener">X</a>
-      <button class="share-btn" type="button" data-net="copy">Copiar enlace</button>
+      <button class="oir-barra" type="button" data-src="../SITIO_COLUMNAS/audio-el-corrido-apocrifo.mp3">
+        <span class="ico"><svg class="play" viewBox="0 0 10 12" fill="currentColor"><path d="M0 0l10 6-10 6z"/></svg><svg class="pausa" viewBox="0 0 10 12" fill="currentColor"><path d="M0 0h3.4v12H0zM6.6 0H10v12H6.6z"/></svg></span>
+        <span class="txt">Escuchar la columna</span>
+        <span class="dur">6:49</span>
+        <span class="pista-audio"></span>
+      </button>
     </div>
+  </header>
 
-    <div class="audio-col" style="max-width:var(--measure);margin:0 auto 38px;padding:16px 18px;border:1px solid rgba(204,161,90,.3);border-radius:12px;background:rgba(204,161,90,.05);">
-      <div style="font-family:'Inter',system-ui,sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#cca15a;margin-bottom:10px;">🎧 Escuchar la columna · 7 min</div>
-      <audio controls preload="none" style="width:100%;display:block;">
-        <source src="audio-el-corrido-apocrifo.mp3" type="audio/mpeg">
-        Tu navegador no soporta audio HTML5.
-      </audio>
-      <div style="font-family:'Inter',system-ui,sans-serif;font-size:.72rem;color:rgba(243,241,232,.55);margin-top:8px;">Lectura automática con voz sintética.</div>
-    </div>
+  <figure class="portada wrap-medida">
+    <img src="../SITIO_COLUMNAS/corrido-apocrifo.png" alt="">
+    <figcaption>Tecnología · Ilustración de la columna</figcaption>
+  </figure>
 
-    <div class="prose">
-      <p>En menos de un mes, una banda llamada The Velvet Sundown acumuló más de un millón de oyentes mensuales en Spotify. Su álbum debut, <em>Floating on Echoes</em>, se publicó el 5 de junio de 2025. Las listas de la plataforma la empujaron hacia sus rincones más comerciales, psicodelia setentera, folk-rock de pradera, y la prensa anglosajona la cubrió. El 5 de julio, la propia "banda" confirmó lo que ya se sospechaba: era un proyecto sintético, compuesto y cantado por inteligencia artificial, con imágenes también generadas, de acuerdo con <em>Rolling Stone</em>. Las regalías por más de un millón de oyentes se pagaron a una sociedad de gestión detrás de la cual no había músicos.</p>
+  <div class="wrap-medida prosa">
+    <p>En menos de un mes, una banda llamada The Velvet Sundown acumuló más de un millón de oyentes mensuales en Spotify. Su álbum debut, <em>Floating on Echoes</em>, se publicó el 5 de junio de 2025. Las listas de la plataforma la empujaron hacia sus rincones más comerciales, psicodelia setentera, folk-rock de pradera, y la prensa anglosajona la cubrió. El 5 de julio, la propia "banda" confirmó lo que ya se sospechaba: era un proyecto sintético, compuesto y cantado por inteligencia artificial, con imágenes también generadas, de acuerdo con <em>Rolling Stone</em>. Las regalías por más de un millón de oyentes se pagaron a una sociedad de gestión detrás de la cual no había músicos.</p>
+    <p>El caso no es anecdótico, es síntoma. Revela un modelo de extracción que el streaming ha consolidado por etapas y que la inteligencia artificial generativa cierra como un círculo.</p>
+    <p>El primer eslabón se montó el 1 de abril de 2024, cuando Spotify activó su "umbral de mil reproducciones": cualquier pista que no alcance mil reproducciones en doce meses ya no genera regalías para sus autores. El dinero, según documentó <em>Music Business Worldwide</em>, no se elimina: se redistribuye hacia los catálogos grandes. El estrato bajo de músicos (los que empiezan, los regionales, los de nichos) trabaja, su música suena, pero no cobra.</p>
+    <p>El segundo eslabón es lo que la periodista Liz Pelly disecciona en <em>Mood Machine</em> (2025): Spotify rellena sus listas más rentables, <em>Peaceful Piano</em>, <em>Deep Focus</em>, con tracks de proveedores fantasma que cobran tarifa fija y no regalías. Lo llama <em>Perfect Fit Content</em>. La traducción es directa: cada minuto de música ambiental en una oficina es un minuto que no se le pagó a un compositor con cara y nombre.</p>
+    <p>El tercer eslabón es la IA generativa. En junio de 2024, la asociación discográfica estadounidense (RIAA) demandó a la vez a Suno y a Udio, las dos plataformas que dominan la generación de música por IA, por entrenar sus modelos con catálogos protegidos sin licencia. Warner negoció con Suno en noviembre de 2025 y Universal con Udio ese mismo otoño, según el rastreador de <em>Chartlex</em>. Pero los litigios siguen abiertos por demandado: Suno aún enfrenta a las disqueras, y Udio, a Sony y a Warner. Mientras los pleitos avanzan, las plataformas ya producen música por IA. Velvet Sundown es solo el caso más visible.</p>
+    <p>El cuarto eslabón, y el que más pesa, es lo que el dinero del streaming termina financiando. El director general de Spotify, Daniel Ek, escribió en redes el 29 de mayo de 2024 una frase que se le devolvió como bumerán: "el costo de crear contenido se aproxima a cero". No fue torpeza: fue tesis empresarial. Y la operación coherente ya estaba en marcha. Ek usa su fondo personal de inversión, Prima Materia, para colocar capital en Helsing, una empresa alemana de inteligencia artificial militar (identificación de blancos, drones, plataformas de combate) con contratos en Ucrania y con varios ejércitos europeos. En junio de 2025, Prima Materia lideró una ronda de 600 millones de euros en Helsing, que pasó de valer cinco mil a doce mil millones de euros en menos de un año, como documentó CNBC. Ek preside el consejo de Helsing desde 2021.</p>
+    <p class="pull">No es metáfora. Es contabilidad.</p>
+    <p>El círculo se cierra: el suscriptor paga su Spotify creyendo que financia música; la plataforma reduce al máximo lo que paga al músico, cuando paga; el excedente alimenta el patrimonio de Ek; y Ek financia, a través de Prima Materia, fabricantes de drones. No es metáfora. Es contabilidad.</p>
+    <p>Aquí entra México. El 14 de mayo de 2026, el Diario Oficial de la Federación publicó una reforma a la Ley Federal del Derecho de Autor y a la Ley Federal del Trabajo que, por primera vez, reconoce que la voz forma parte del derecho a la imagen de las personas: su uso en cualquier sistema de inteligencia artificial requiere autorización del titular, y esa autorización es revocable. Las sanciones van de cinco mil a cuarenta mil UMA, entre 586 mil y cuatro millones seiscientos mil pesos según la gravedad.</p>
+    <p>Detrás de la reforma hubo presión sostenida de la Sociedad de Autores y Compositores de México, que desde enero de 2026 advirtió en público, como consignó Mauricio Jalife en <em>El Financiero</em>, que la IA se alimenta de obras protegidas sin contraprestación y que las plataformas pagan menos de lo justo. Un caso aceleró el debate: la voz del actor de doblaje Pepe Lavat, fallecido en 2018, fue clonada y reutilizada en 2025 sin autorización de sus herederos, según <em>El Informador</em>.</p>
+    <p>México llegó antes que Estados Unidos a tener un marco legal específico sobre clonación de voz. Falta ver si se aplica, porque el caso mexicano más visible ya está en plataformas que consumen millones: una cuenta de TikTok publicó una versión de <em>El burrito sabanero</em> cantada por las voces clonadas con IA de Natanael Cano, Peso Pluma y Junior H, según N+. Ninguno grabó el tema, ninguno autorizó, ninguno cobró. Es el corrido apócrifo: regional mexicano sin sierra, sin desierto, sin biografía. Música sin lugar.</p>
+    <p>Walter Benjamin escribió en 1936 sobre la obra de arte en la época de su reproductibilidad técnica; le preocupaba que el cine y la fotografía borraran el aura del original. No pudo prever una época no de reproductibilidad, sino de generabilidad sintética: máquinas que producen obras sin que haya original. El economista griego Yanis Varoufakis llama a este modelo tecnofeudalismo (2023): las plataformas no son mercados, son feudos; el usuario y el creador son siervos que trabajan la tierra digital, y los señores extraen renta. La inteligencia artificial generativa cierra el sistema: el señor ya no necesita al siervo, produce su propia cosecha.</p>
+    <p>La pregunta no es si la IA debe usarse en música, sino quién cobra cuando la máquina canta con voz prestada. México respondió, con todas sus limitaciones, el 14 de mayo: la voz es del titular, la autorización es revocable, la sanción es económica. Pero la pregunta más grande, qué se financia cuando uno paga una suscripción, sigue abierta. El catálogo de Spotify dejó de ser archivo. Es cantera. Y el músico, cada vez más, es la piedra de la que se extrae el material para que la máquina lo sustituya.</p>
+  </div>
 
-      <p>El caso no es anecdótico, es síntoma. Revela un modelo de extracción que el streaming ha consolidado por etapas y que la inteligencia artificial generativa cierra como un círculo.</p>
-
-      <p>El primer eslabón se montó el 1 de abril de 2024, cuando Spotify activó su "umbral de mil reproducciones": cualquier pista que no alcance mil reproducciones en doce meses ya no genera regalías para sus autores. El dinero, según documentó <em>Music Business Worldwide</em>, no se elimina: se redistribuye hacia los catálogos grandes. El estrato bajo de músicos (los que empiezan, los regionales, los de nichos) trabaja, su música suena, pero no cobra.</p>
-
-      <p>El segundo eslabón es lo que la periodista Liz Pelly disecciona en <em>Mood Machine</em> (2025): Spotify rellena sus listas más rentables, <em>Peaceful Piano</em>, <em>Deep Focus</em>, con tracks de proveedores fantasma que cobran tarifa fija y no regalías. Lo llama <em>Perfect Fit Content</em>. La traducción es directa: cada minuto de música ambiental en una oficina es un minuto que no se le pagó a un compositor con cara y nombre.</p>
-
-      <p>El tercer eslabón es la IA generativa. En junio de 2024, la asociación discográfica estadounidense (RIAA) demandó a la vez a Suno y a Udio, las dos plataformas que dominan la generación de música por IA, por entrenar sus modelos con catálogos protegidos sin licencia. Warner negoció con Suno en noviembre de 2025 y Universal con Udio ese mismo otoño, según el rastreador de <em>Chartlex</em>. Pero los litigios siguen abiertos por demandado: Suno aún enfrenta a las disqueras, y Udio, a Sony y a Warner. Mientras los pleitos avanzan, las plataformas ya producen música por IA. Velvet Sundown es solo el caso más visible.</p>
-
-      <p>El cuarto eslabón, y el que más pesa, es lo que el dinero del streaming termina financiando. El director general de Spotify, Daniel Ek, escribió en redes el 29 de mayo de 2024 una frase que se le devolvió como bumerán: "el costo de crear contenido se aproxima a cero". No fue torpeza: fue tesis empresarial. Y la operación coherente ya estaba en marcha. Ek usa su fondo personal de inversión, Prima Materia, para colocar capital en Helsing, una empresa alemana de inteligencia artificial militar (identificación de blancos, drones, plataformas de combate) con contratos en Ucrania y con varios ejércitos europeos. En junio de 2025, Prima Materia lideró una ronda de 600 millones de euros en Helsing, que pasó de valer cinco mil a doce mil millones de euros en menos de un año, como documentó CNBC. Ek preside el consejo de Helsing desde 2021.</p>
-
-      <p class="pull">No es metáfora. Es contabilidad.</p>
-
-      <p>El círculo se cierra: el suscriptor paga su Spotify creyendo que financia música; la plataforma reduce al máximo lo que paga al músico, cuando paga; el excedente alimenta el patrimonio de Ek; y Ek financia, a través de Prima Materia, fabricantes de drones. No es metáfora. Es contabilidad.</p>
-
-      <p>Aquí entra México. El 14 de mayo de 2026, el Diario Oficial de la Federación publicó una reforma a la Ley Federal del Derecho de Autor y a la Ley Federal del Trabajo que, por primera vez, reconoce que la voz forma parte del derecho a la imagen de las personas: su uso en cualquier sistema de inteligencia artificial requiere autorización del titular, y esa autorización es revocable. Las sanciones van de cinco mil a cuarenta mil UMA, entre 586 mil y cuatro millones seiscientos mil pesos según la gravedad.</p>
-
-      <p>Detrás de la reforma hubo presión sostenida de la Sociedad de Autores y Compositores de México, que desde enero de 2026 advirtió en público, como consignó Mauricio Jalife en <em>El Financiero</em>, que la IA se alimenta de obras protegidas sin contraprestación y que las plataformas pagan menos de lo justo. Un caso aceleró el debate: la voz del actor de doblaje Pepe Lavat, fallecido en 2018, fue clonada y reutilizada en 2025 sin autorización de sus herederos, según <em>El Informador</em>.</p>
-
-      <p>México llegó antes que Estados Unidos a tener un marco legal específico sobre clonación de voz. Falta ver si se aplica, porque el caso mexicano más visible ya está en plataformas que consumen millones: una cuenta de TikTok publicó una versión de <em>El burrito sabanero</em> cantada por las voces clonadas con IA de Natanael Cano, Peso Pluma y Junior H, según N+. Ninguno grabó el tema, ninguno autorizó, ninguno cobró. Es el corrido apócrifo: regional mexicano sin sierra, sin desierto, sin biografía. Música sin lugar.</p>
-
-      <p>Walter Benjamin escribió en 1936 sobre la obra de arte en la época de su reproductibilidad técnica; le preocupaba que el cine y la fotografía borraran el aura del original. No pudo prever una época no de reproductibilidad, sino de generabilidad sintética: máquinas que producen obras sin que haya original. El economista griego Yanis Varoufakis llama a este modelo tecnofeudalismo (2023): las plataformas no son mercados, son feudos; el usuario y el creador son siervos que trabajan la tierra digital, y los señores extraen renta. La inteligencia artificial generativa cierra el sistema: el señor ya no necesita al siervo, produce su propia cosecha.</p>
-
-      <p>La pregunta no es si la IA debe usarse en música, sino quién cobra cuando la máquina canta con voz prestada. México respondió, con todas sus limitaciones, el 14 de mayo: la voz es del titular, la autorización es revocable, la sanción es económica. Pero la pregunta más grande, qué se financia cuando uno paga una suscripción, sigue abierta. El catálogo de Spotify dejó de ser archivo. Es cantera. Y el músico, cada vez más, es la piedra de la que se extrae el material para que la máquina lo sustituya.</p>
-    </div>
-
-    <p class="signoff">SRVO</p>
-
-    <section class="fuentes">
-      <h2>Fuentes y referencias citadas</h2>
+  <section class="fuentes">
+    <div class="wrap-medida">
+      <div class="sec-head"><span class="label">Fuentes y referencias</span></div>
       <ol>
         <li>Walter Benjamin, <em>La obra de arte en la época de su reproductibilidad técnica</em> (1936). <a href="https://es.wikipedia.org/wiki/La_obra_de_arte_en_la_%C3%A9poca_de_su_reproductibilidad_t%C3%A9cnica" target="_blank" rel="noopener">Ficha de la obra</a> · Yanis Varoufakis, <em>Tecnofeudalismo</em> (Bodley Head, 2023 / Deusto, 2024). <a href="https://www.penguin.co.uk/books/451795/technofeudalism-by-varoufakis-yanis/9781529926095" target="_blank" rel="noopener">Penguin</a> · Liz Pelly, <em>Mood Machine</em> (One Signal/Atria, 2025).</li>
         <li>The Velvet Sundown, proyecto sintético confirmado, más de 1M de oyentes. <a href="https://www.rollingstone.com/music/music-features/ai-band-the-velvet-sundown-confirm-ai-1235379354/" target="_blank" rel="noopener">Rolling Stone</a> · <a href="https://www.digitalmusicnews.com/2025/07/07/velvet-sundown-one-million-spotify-monthly-listeners/" target="_blank" rel="noopener">Digital Music News</a></li>
@@ -162,59 +148,87 @@
         <li>Reforma mexicana sobre voz e IA (DOF 14-may-2026). <a href="https://cadenapolitica.com/2026/05/15/mexico-reforma-ley-federal-trabajo-derecho-autor-ia-artistas/" target="_blank" rel="noopener">Cadena Política</a> · presión SACM: <a href="https://www.elfinanciero.com.mx/opinion/mauricio-jalife/2026/01/21/llama-la-sociedad-de-autores-a-regular-la-ia/" target="_blank" rel="noopener">Mauricio Jalife en El Financiero</a></li>
         <li>Clonación de voz de Pepe Lavat (2025). <a href="https://www.informador.mx/mexico/doblaje-gobierno-de-mexico-reconocera-la-voz-humana-como-herramienta-artistica-hay-avances-en-reforma-contra-el-uso-de-inteligencia-artificial-20260213-0078.html" target="_blank" rel="noopener">El Informador</a> · <em>El burrito sabanero</em> con voces IA: <a href="https://www.nmas.com.mx/tendencias/crean-con-ia-version-de-burrito-sabanero-con-voz-de-natanael-cano-y-peso-pluma/" target="_blank" rel="noopener">N+</a></li>
       </ol>
-    </section>
-
-    <div class="share share-end" aria-label="Compartir">
-      <span class="share-label">Compartir esta columna</span>
-      <a class="share-btn" data-net="wa" target="_blank" rel="noopener">WhatsApp</a>
-      <a class="share-btn" data-net="fb" target="_blank" rel="noopener">Facebook</a>
-      <a class="share-btn" data-net="x" target="_blank" rel="noopener">X</a>
-      <button class="share-btn" type="button" data-net="copy">Copiar enlace</button>
+      <p class="cotejo">Las ligas van a la vista para que cualquiera compruebe por su cuenta. Si alguna dejó de resolver, escríbenos y la reponemos.</p>
     </div>
+  </section>
 
-    <a class="back" href="index.html">← Volver a las columnas</a>
-  </div>
+  <section class="cierre wrap-medida">
+    <p class="firma-final">SRVO</p>
+    <div class="btns">
+      <a class="btn-red" data-red="facebook" href="#" aria-label="Compartir en Facebook"><span class="tip">Facebook</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.5l.5-3h-3v-2c0-.6.4-1 1-1z"/></svg></a>
+      <a class="btn-red" data-red="whatsapp" href="#" aria-label="Compartir por WhatsApp"><span class="tip">WhatsApp</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1112 20zm4.4-5.8c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 01-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3 0-.5l-.7-1.6c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.7.7-.9 1.6-.6 2.6.5 1.6 1.6 3 3.1 3.9 1.4.9 2.5 1 3.4.9.7-.1 1.4-.6 1.6-1.2.1-.3.1-.6 0-.7z"/></svg></a>
+      <a class="btn-red" data-red="x" href="#" aria-label="Compartir en X"><span class="tip">X</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 3h3l-6.6 7.5L21.7 21h-6l-4.7-6.1L5.6 21h-3l7-8L2.6 3h6.2l4.3 5.6zm-1 16h1.6L8.1 4.6H6.4z"/></svg></a>
+      <button class="btn-red" type="button" data-red="copiar" aria-label="Copiar enlace"><span class="tip">Copiar enlace</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a4 4 0 006 .4l2.4-2.4a4 4 0 00-5.7-5.7l-1.4 1.4"/><path d="M14 11a4 4 0 00-6-.4l-2.4 2.4a4 4 0 005.7 5.7l1.4-1.4"/></svg></button>
+    </div>
+  </section>
 </article>
 
-<footer class="site-footer">
+<footer class="pie-sitio">
   <div class="wrap">
-    <span class="sig">45 Digital Noticias.</span>
-    <span class="small">Columnas · lectura sistémica · © 2026 — Todos los textos cotejados contra fuente.</span>
+    <div class="pie-top">
+      <div class="pie-marca">
+        <p class="marca-n">45 Digital Noticias</p>
+        <div class="hilo"></div>
+        <p class="lema">Columnas de opinión con lectura sistémica. Lo verificable, separado de la lectura.</p>
+      </div>
+      <nav class="pie-col"><h4>Leer</h4>
+        <a href="index.html">Portada</a><a href="todas.html">Todas las columnas</a><a href="expedientes.html">Expedientes</a></nav>
+      <nav class="pie-col"><h4>Temas</h4>
+        <a href="#">Seguridad</a><a href="#">Morelos</a><a href="#">Economía</a><a href="#">Justicia</a></nav>
+      <nav class="pie-col"><h4>La casa</h4>
+        <a href="acerca.html">Acerca</a><a href="mailto:s.rvaldespin8@gmail.com">Escríbenos</a>
+        <a href="https://facebook.com/45DigitalMx" target="_blank" rel="noopener">Facebook</a></nav>
+    </div>
+    <div class="pie-bajo">
+      <p>© 2026 · 45 Digital Noticias. Textos de SRVO.<br>El programa se transmite en vivo de 9 a 10 de la mañana.</p>
+    </div>
   </div>
-<a id="ck-privacy-link" href="https://45digitalnoticias.github.io/columnas/privacidad.html" style="display:block;text-align:center;margin-top:10px;font-size:.76rem;letter-spacing:.04em;color:inherit;opacity:.65;text-decoration:none;">Aviso de privacidad</a>
 </footer>
 
 <script>
-  const mt = document.querySelector('.menu-toggle');
-  const nav = document.getElementById('nav');
-  if (mt && nav) mt.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    mt.setAttribute('aria-expanded', open);
-  });
-  (function () {
-    const url = encodeURIComponent(location.href);
-    const ttl = encodeURIComponent(document.title.split('—')[0].trim());
-    const map = {
-      wa: 'https://wa.me/?text=' + ttl + '%20' + url,
-      fb: 'https://www.facebook.com/sharer/sharer.php?u=' + url,
-      x: 'https://twitter.com/intent/tweet?text=' + ttl + '&url=' + url
-    };
-    document.querySelectorAll('.share-btn[data-net]').forEach(function (b) {
-      const n = b.dataset.net;
-      if (map[n]) b.href = map[n];
-      if (n === 'copy') b.addEventListener('click', function () {
-        navigator.clipboard.writeText(location.href).then(function () {
-          const t = b.textContent; b.textContent = '¡Copiado!';
-          setTimeout(function () { b.textContent = t; }, 1500);
-        });
-      });
+(() => {
+  // barra de avance de lectura
+  const barra = document.getElementById('avance'), art = document.querySelector('article');
+  addEventListener('scroll', () => {
+    const t = art.offsetTop, h = art.offsetHeight - innerHeight;
+    const p = Math.min(1, Math.max(0, (scrollY - t) / (h > 0 ? h : 1)));
+    barra.style.transform = 'scaleX(' + p + ')';
+  }, {passive:true});
+
+  // audio
+  const bt = document.querySelector('.oir-barra');
+  if (bt) {
+    const au = new Audio(bt.dataset.src);
+    const pista = bt.querySelector('.pista-audio');
+    bt.addEventListener('click', () => {
+      if (au.paused) { au.play().catch(()=>{}); bt.classList.add('suena'); }
+      else { au.pause(); bt.classList.remove('suena'); }
     });
-  })();
+    au.addEventListener('timeupdate', () => {
+      if (au.duration) pista.style.width = (au.currentTime / au.duration * 100) + '%';
+    });
+    au.addEventListener('ended', () => bt.classList.remove('suena'));
+  }
+
+  // compartir
+  const U = encodeURIComponent(location.href);
+  const T = encodeURIComponent(document.querySelector('h1').textContent + ' · 45 Digital Noticias');
+  const D = {facebook:`https://www.facebook.com/sharer/sharer.php?u=${U}`,
+             whatsapp:`https://api.whatsapp.com/send?text=${T}%20${U}`,
+             x:`https://twitter.com/intent/tweet?text=${T}&url=${U}`};
+  document.querySelectorAll('.btn-red').forEach(b => {
+    const r = b.dataset.red;
+    if (D[r]) { b.href = D[r]; b.target = '_blank'; b.rel = 'noopener'; return; }
+    b.addEventListener('click', async () => {
+      const tip = b.querySelector('.tip');
+      try { await navigator.clipboard.writeText(location.href); } catch { return; }
+      const a = tip.textContent; tip.textContent = 'Copiado'; b.classList.add('copiado');
+      setTimeout(() => { tip.textContent = a; b.classList.remove('copiado'); }, 1800);
+    });
+  });
+})();
 </script>
-<!-- Cloudflare Web Analytics -->
-<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4de56a9a4564d0ea0f4e0259af8bc7a"}'></script>
-<!-- End Cloudflare Web Analytics -->
-<!-- Cookie consent 45 Digital -->
+
 <style>
 #ck-consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:560px;margin:0 auto;background:#0e1320;border:1px solid rgba(204,161,90,.35);border-radius:12px;padding:16px 18px;box-shadow:0 18px 50px rgba(0,0,0,.5);font-family:'Inter',system-ui,sans-serif;color:#cdd3cc;display:none}
 #ck-consent.show{display:block}
@@ -249,8 +263,8 @@
 })();
 </script>
 <!-- /Cookie consent 45 Digital -->
-<!-- RED-45 start -->
-<nav aria-label="Red 45 Digital Noticias" style="max-width:1100px;margin:48px auto 22px;padding:18px 20px 4px;border-top:1px solid rgba(128,128,128,.28);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:13px;line-height:1.9;text-align:center;opacity:.85;"><div style="text-transform:uppercase;letter-spacing:2.5px;font-size:10.5px;opacity:.6;margin-bottom:7px;">Red 45 Digital Noticias</div><div><a href="https://45digitalnoticias.github.io/columnas/" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.45);">Columnas</a> &nbsp;·&nbsp; <a href="https://45digitalnoticias.github.io/Inseguridad-Mexico/" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.45);">Inseguridad México</a> &nbsp;·&nbsp; <a href="https://45digitalnoticias.github.io/Expediente-Hantavirus/" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.45);">Expediente Brotes</a> &nbsp;·&nbsp; <a href="https://45digitalnoticias.github.io/cementerio-transparencia/" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.45);">Cementerio de la Transparencia</a></div></nav>
-<!-- RED-45 end -->
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4de56a9a4564d0ea0f4e0259af8bc7a"}'></script>
+<!-- End Cloudflare Web Analytics -->
 </body>
 </html>

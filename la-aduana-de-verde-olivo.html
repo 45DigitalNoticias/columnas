@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>La aduana de verde olivo · 45 Digital Noticias</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="columna.css">
 <meta name="description" content="Cierra el arco del tren. Las dos piezas anteriores terminaron en la misma puerta: la aduana de Matamoros, por donde según la Fiscalía entraron 144 millones de litros de combustible de contrabando en 52 días. Quien cuidaba esa puerta era el Ejército. Hoy la Defensa coordina 21 aduanas fronterizas y la Marina las 17 marítimas: 38 puertas, la caja del país. El argumento para llegar ahí fue la incorruptibilidad, pero el expediente más grande de huachicol fiscal apunta hacia adentro, a dos marinos de alto rango con al menos 69 operaciones y unos 564 millones de litros. Y la respuesta institucional, la reforma vigente desde enero, le quitó al SAT civil la facultad exclusiva de fiscalizar las aduanas para dársela a la agencia que coordinan la Defensa y la Marina. Con el concepto de Alfred Stepan: el nuevo profesionalismo, cuando el militar deja de vigilar la frontera para gestionarla.">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="45 Digital Noticias">
@@ -17,10 +21,6 @@
 <meta name="twitter:title" content="La aduana de verde olivo">
 <meta name="twitter:description" content="Cierra el arco del tren. Las dos piezas anteriores terminaron en la misma puerta: la aduana de Matamoros, por donde según la Fiscalía entraron 144 millones de litros de combustible de contrabando en 52 días. Quien cuidaba esa puerta era el Ejército. Hoy la Defensa coordina 21 aduanas fronterizas y la Marina las 17 marítimas: 38 puertas, la caja del país. El argumento para llegar ahí fue la incorruptibilidad, pero el expediente más grande de huachicol fiscal apunta hacia adentro, a dos marinos de alto rango con al menos 69 operaciones y unos 564 millones de litros. Y la respuesta institucional, la reforma vigente desde enero, le quitó al SAT civil la facultad exclusiva de fiscalizar las aduanas para dársela a la agencia que coordinan la Defensa y la Marina. Con el concepto de Alfred Stepan: el nuevo profesionalismo, cuando el militar deja de vigilar la frontera para gestionarla.">
 <meta name="twitter:image" content="https://45digitalnoticias.github.io/columnas/og-la-aduana-de-verde-olivo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
 <!-- Google Analytics 4 (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R64XZVCF6F"></script>
 <script>
@@ -68,14 +68,14 @@
 </head>
 <body>
 
-<header class="site-header">
+<header class="masthead">
   <div class="wrap">
-    <a class="brand" href="index.html">
-      <img class="brand-logo" src="logo-45.png" alt="45 Digital Noticias">
-      <span class="name" style="display:none">45 DIGITAL <b>NOTICIAS</b></span>
+    <span class="fecha">24 de julio de 2026</span>
+    <a href="index.html">
+      <div class="logo">45 Digital <span class="n">Noticias</span></div>
+      <div class="hilo"></div>
     </a>
-    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
-    <nav class="nav" id="nav">
+    <nav>
       <a href="index.html">Columnas</a>
       <a href="expedientes.html">Expedientes</a>
       <a href="acerca.html">Acerca</a>
@@ -83,76 +83,61 @@
   </div>
 </header>
 
-<article class="article">
-  <div class="wrap">
+<!-- barra de avance de lectura -->
+<div class="avance" id="avance"></div>
 
-    <header class="article-head">
+<article>
+  <header class="cabeza">
+    <div class="wrap-medida">
       <div class="eyebrow">
-        <span class="kicker">Columna de opinión</span>
-        <span class="line"></span>
+        <span class="tick"></span>
+        <span class="label">Seguridad · Aduanas</span>
       </div>
       <h1>La aduana de verde olivo</h1>
-      <p class="dek">Cierra el arco del tren. Las dos piezas anteriores terminaron en la misma puerta: la aduana de Matamoros, por donde según la Fiscalía entraron 144 millones de litros de combustible de contrabando en 52 días. Quien cuidaba esa puerta era el Ejército. Hoy la Defensa coordina 21 aduanas fronterizas y la Marina las 17 marítimas: 38 puertas, la caja del país. El argumento para llegar ahí fue la incorruptibilidad, pero el expediente más grande de huachicol fiscal apunta hacia adentro, a dos marinos de alto rango con al menos 69 operaciones y unos 564 millones de litros. Y la respuesta institucional, la reforma vigente desde enero, le quitó al SAT civil la facultad exclusiva de fiscalizar las aduanas para dársela a la agencia que coordinan la Defensa y la Marina. Con el concepto de Alfred Stepan: el nuevo profesionalismo, cuando el militar deja de vigilar la frontera para gestionarla.</p>
-      <div class="article-meta">
-        <span>5 min de lectura</span>
+      <p class="entrada">Cierra el arco del tren. Las dos piezas anteriores terminaron en la misma puerta: la aduana de Matamoros, por donde según la Fiscalía entraron 144 millones de litros de combustible de contrabando en 52 días. Quien cuidaba esa puerta era el Ejército. Hoy la Defensa coordina 21 aduanas fronterizas y la Marina las 17 marítimas: 38 puertas, la caja del país. El argumento para llegar ahí fue la incorruptibilidad, pero el expediente más grande de huachicol fiscal apunta hacia adentro, a dos marinos de alto rango con al menos 69 operaciones y unos 564 millones de litros. Y la respuesta institucional, la reforma vigente desde enero, le quitó al SAT civil la facultad exclusiva de fiscalizar las aduanas para dársela a la agencia que coordinan la Defensa y la Marina. Con el concepto de Alfred Stepan: el nuevo profesionalismo, cuando el militar deja de vigilar la frontera para gestionarla.</p>
+
+      <div class="firma">
+        <span class="autor">SRVO</span>
+        <span class="sep"></span>
+        <span class="meta">24 de julio de 2026</span>
+        <span class="sep"></span>
+        <span class="meta">5 min de lectura</span>
       </div>
-    </header>
 
-    <figure class="article-figure">
-      <img src="la-aduana-de-verde-olivo-portada.png" alt="La aduana de verde olivo">
-    </figure>
-
-    <div class="share" aria-label="Compartir">
-      <span class="share-label">Compartir</span>
-      <a class="share-btn" data-net="wa" target="_blank" rel="noopener">WhatsApp</a>
-      <a class="share-btn" data-net="fb" target="_blank" rel="noopener">Facebook</a>
-      <a class="share-btn" data-net="x" target="_blank" rel="noopener">X</a>
-      <button class="share-btn" type="button" data-net="copy">Copiar enlace</button>
+      <button class="oir-barra" type="button" data-src="../SITIO_COLUMNAS/audio-la-aduana-de-verde-olivo.mp3">
+        <span class="ico"><svg class="play" viewBox="0 0 10 12" fill="currentColor"><path d="M0 0l10 6-10 6z"/></svg><svg class="pausa" viewBox="0 0 10 12" fill="currentColor"><path d="M0 0h3.4v12H0zM6.6 0H10v12H6.6z"/></svg></span>
+        <span class="txt">Escuchar la columna</span>
+        <span class="dur">7:37</span>
+        <span class="pista-audio"></span>
+      </button>
     </div>
+  </header>
 
-    <div class="audio-col" style="max-width:var(--measure);margin:0 auto 38px;padding:16px 18px;border:1px solid rgba(204,161,90,.3);border-radius:12px;background:rgba(204,161,90,.05);">
-      <div style="font-family:'Inter',system-ui,sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#cca15a;margin-bottom:10px;">🎧 Escuchar la columna · 8 min</div>
-      <audio controls preload="none" style="width:100%;display:block;">
-        <source src="audio-la-aduana-de-verde-olivo.mp3" type="audio/mpeg">
-        Tu navegador no soporta audio HTML5.
-      </audio>
-      <div style="font-family:'Inter',system-ui,sans-serif;font-size:.72rem;color:rgba(243,241,232,.55);margin-top:8px;">Lectura automática con voz sintética.</div>
-    </div>
+  <figure class="portada wrap-medida">
+    <img src="../SITIO_COLUMNAS/la-aduana-de-verde-olivo-portada.png" alt="">
+    <figcaption>Seguridad · Aduanas · Ilustración de la columna</figcaption>
+  </figure>
 
-    <div class="prose">
-      <p>La pieza anterior de este arco terminó en una puerta: la Aduana de Matamoros, por donde, según la Fiscalía, entraron 144 millones de litros de combustible de contrabando en 52 días. Hoy toca ver quién cuidaba esa puerta. La cuidaba el Ejército.</p>
+  <div class="wrap-medida prosa">
+    <p>La pieza anterior de este arco terminó en una puerta: la Aduana de Matamoros, por donde, según la Fiscalía, entraron 144 millones de litros de combustible de contrabando en 52 días. Hoy toca ver quién cuidaba esa puerta. La cuidaba el Ejército.</p>
+    <p>De acuerdo con la Fiscalía General de la República, tres de los prófugos que busca por ese caso son militares: los tenientes coroneles Armando Barrera Trujillo y Blas Pedro Sarabia García, que encabezaron la Aduana de Matamoros entre 2024 y 2026, y el teniente de Policía Militar Jorge García García, subdirector de Operación Aduanera del mismo recinto . Un juez federal de Almoloya de Juárez libró las órdenes de aprehensión dentro de una lista de 13 imputados, entre funcionarios aduanales, agentes y empresarios; siete ya fueron detenidos y vinculados a proceso . Conviene decirlo con todas sus letras: son presuntos. Hay órdenes, no sentencias, y así deben tratarse hasta que un juez resuelva. Pero el dato de fondo no depende de su culpabilidad ni de su inocencia: las aduanas del país están en manos de las Fuerzas Armadas, y por una de ellas pasó lo que la Fiscalía describe.</p>
+    <p>Conviene fechar la decisión, porque no viene de siempre. El decreto de julio de 2021 creó la Agencia Nacional de Aduanas de México y ordenó priorizar al personal militar, con el argumento de que el comercio exterior es un asunto de seguridad nacional; para diciembre de 2022 el Ejército ya había desplazado al personal civil de 31 aduanas . Hoy el Reglamento Interior de la propia Agencia lo dice sin rodeos: la Secretaría de la Defensa Nacional coordina 21 aduanas fronterizas, de Tijuana a Matamoros, más la interior del AIFA, y la Secretaría de Marina coordina las 17 aduanas marítimas, de Veracruz a Manzanillo . Son 38 puertas. Por ahí entran la mercancía y el dinero del país. No es una obra ni un hotel: es la caja.</p>
+    <p>El argumento para llegar hasta ahí fue la confianza: soldados incorruptibles frente a aduaneros civiles corruptos. Vale la pena confrontarlo con el expediente más grande que existe sobre el tema, porque ese expediente no apunta al aduanero civil. Apunta hacia adentro.</p>
+    <p>Según la investigación de la Fiscalía, reconstruida por El País, una red de contrabando de combustible operó desde junio de 2023 colocando personal de confianza en puestos estratégicos de varias aduanas, y la encabezaban dos marinos de alto rango: el vicealmirante Manuel Roberto Farías Laguna, detenido el 7 de septiembre de 2025, y el contralmirante Fernando Farías Laguna, detenido el 23 de abril de 2026 en Buenos Aires . Se les atribuyen al menos 69 operaciones y unos 564 millones de litros , presuntos mientras no haya sentencia. Son sobrinos políticos del almirante Rafael Ojeda Durán, secretario de Marina el sexenio pasado, quien no es imputado ni está siendo investigado en esa carpeta, de acuerdo con la propia Fiscalía .</p>
+    <p>El método era el disfraz de la pieza anterior con otra etiqueta: la fracción arancelaria de los aditivos para aceites lubricantes. Y no era una aduana. El País documentó 21 aduanas en 13 estados con un crecimiento anómalo en la importación de lubricantes, 27,000 millones de litros por encima de lo habitual entre 2021 y 2022, y un daño potencial al fisco cercano a los 120,000 millones de pesos . La cifra rima con la de la pieza pasada, cuando el excomisionado Francisco Barnés estimó las pérdidas reales del huachicol en al menos 123,000 millones. Son mediciones distintas y no hay que sumarlas; lo que comparten es el orden de magnitud.</p>
+    <p class="pull">El blindaje no es la impunidad: es la opacidad.</p>
+    <p>El politólogo Alfred Stepan llamó a esto el nuevo profesionalismo: el momento en que el militar deja de vigilar la frontera para gestionarla. Ahí la lógica cambia. El que cuidaba el paso pasa a cobrar y a autorizar el paso. Y hereda el blindaje del conglomerado: opera con dinero y funciones públicas, pero con una fiscalización mínima y buena parte de la información clasificada como reservada .</p>
+    <p>Lo que cierra el círculo es de este año. La respuesta institucional al huachicol fiscal fue una reforma a la Ley Aduanera, publicada el 19 de noviembre de 2025 y vigente desde el 1 de enero de 2026. ¿Qué hace? Sustituye al Servicio de Administración Tributaria por la Agencia Nacional de Aduanas como órgano ejecutor exclusivo para administrar, fiscalizar y recaudar en la entrada y salida de mercancías, y crea un Consejo Aduanero donde la Agencia participa en el otorgamiento, la suspensión y la cancelación de las patentes de los agentes aduanales, algo que antes resolvía el SAT . Dicho de otro modo: el diagnóstico señaló redes de corrupción dentro de la estructura castrense, y el remedio le quitó facultades a la autoridad tributaria civil para dárselas a la agencia que coordinan la Defensa y la Marina. México Unido Contra la Delincuencia lo nombra sin adornos en su análisis de la reforma: la paradoja de que la respuesta institucional refuerza el papel de las mismas autoridades involucradas .</p>
+    <p>¿Y la rendición de cuentas? Basta un ejemplo, también de este año. La presidenta Claudia Sheinbaum afirmó que no habría investigación contra el almirante Ojeda porque "él denunció". En mayo, la Fiscalía informó que Ojeda nunca formalizó denuncia alguna: hubo una reunión privada con el entonces fiscal, y ahí quedó . No es una acusación contra nadie, es la fotografía de un circuito. Dos versiones oficiales que no coinciden, y nadie obligado a reconciliarlas.</p>
+    <p>Y hay que ser preciso con el blindaje, para no inflarlo. No es que el Ejército se juzgue a sí mismo: desde la reforma de 2014 al Código de Justicia Militar, tras el fallo Radilla de la Corte Interamericana, los delitos comunes o federales de un militar contra civiles se ven en la justicia civil , y por eso a estos oficiales los procesa la Fiscalía y no una corte marcial. El escudo no está en el juzgado. Está en la caja: se puede procesar el delito, pero ver lo que ocurre dentro de una aduana bajo mando militar y bajo reserva cuesta muchísimo más. El blindaje no es la impunidad: es la opacidad.</p>
+    <p>A mi juicio, y lo ofrezco como lectura, ese es el fondo del asunto. El argumento para militarizar las aduanas fue la incorruptibilidad. Lo que muestran los expedientes va en sentido contrario, y la respuesta del Estado no fue devolver la lupa: fue concentrar más mando y menos luz. No es que el uniforme corrompa. Es que un cuarto sin ventanas, lo administre quien lo administre, invita a que algo pase. La opacidad no es un accidente del modelo: es su rasgo.</p>
+    <p>Con esto cierra el arco. Tres piezas, una misma vía. La saquean, la usan para contrabandear, y la puerta la cuida quien no rinde cuentas. Que quede claro, para no exceder lo que el dato permite: no acuso a una institución de un delito, la Fiscalía imputa a personas y son presuntas hasta que un juez diga lo contrario. Lo que sí sostengo, como lectura, es el modelo: quien administra sin que nadie lo audite, tarde o temprano administra también lo que no debería.</p>
+    <p class="dipt">Pieza anterior del arco: «El tren que trae lo que no debería» <a href="el-tren-que-trae-lo-que-no-deberia.html" target="_blank" rel="noopener">Ver el expediente →</a></p>
+  </div>
 
-      <p>De acuerdo con la Fiscalía General de la República, tres de los prófugos que busca por ese caso son militares: los tenientes coroneles Armando Barrera Trujillo y Blas Pedro Sarabia García, que encabezaron la Aduana de Matamoros entre 2024 y 2026, y el teniente de Policía Militar Jorge García García, subdirector de Operación Aduanera del mismo recinto . Un juez federal de Almoloya de Juárez libró las órdenes de aprehensión dentro de una lista de 13 imputados, entre funcionarios aduanales, agentes y empresarios; siete ya fueron detenidos y vinculados a proceso . Conviene decirlo con todas sus letras: son presuntos. Hay órdenes, no sentencias, y así deben tratarse hasta que un juez resuelva. Pero el dato de fondo no depende de su culpabilidad ni de su inocencia: las aduanas del país están en manos de las Fuerzas Armadas, y por una de ellas pasó lo que la Fiscalía describe.</p>
-
-      <p>Conviene fechar la decisión, porque no viene de siempre. El decreto de julio de 2021 creó la Agencia Nacional de Aduanas de México y ordenó priorizar al personal militar, con el argumento de que el comercio exterior es un asunto de seguridad nacional; para diciembre de 2022 el Ejército ya había desplazado al personal civil de 31 aduanas . Hoy el Reglamento Interior de la propia Agencia lo dice sin rodeos: la Secretaría de la Defensa Nacional coordina 21 aduanas fronterizas, de Tijuana a Matamoros, más la interior del AIFA, y la Secretaría de Marina coordina las 17 aduanas marítimas, de Veracruz a Manzanillo . Son 38 puertas. Por ahí entran la mercancía y el dinero del país. No es una obra ni un hotel: es la caja.</p>
-
-      <p>El argumento para llegar hasta ahí fue la confianza: soldados incorruptibles frente a aduaneros civiles corruptos. Vale la pena confrontarlo con el expediente más grande que existe sobre el tema, porque ese expediente no apunta al aduanero civil. Apunta hacia adentro.</p>
-
-      <p>Según la investigación de la Fiscalía, reconstruida por El País, una red de contrabando de combustible operó desde junio de 2023 colocando personal de confianza en puestos estratégicos de varias aduanas, y la encabezaban dos marinos de alto rango: el vicealmirante Manuel Roberto Farías Laguna, detenido el 7 de septiembre de 2025, y el contralmirante Fernando Farías Laguna, detenido el 23 de abril de 2026 en Buenos Aires . Se les atribuyen al menos 69 operaciones y unos 564 millones de litros , presuntos mientras no haya sentencia. Son sobrinos políticos del almirante Rafael Ojeda Durán, secretario de Marina el sexenio pasado, quien no es imputado ni está siendo investigado en esa carpeta, de acuerdo con la propia Fiscalía .</p>
-
-      <p>El método era el disfraz de la pieza anterior con otra etiqueta: la fracción arancelaria de los aditivos para aceites lubricantes. Y no era una aduana. El País documentó 21 aduanas en 13 estados con un crecimiento anómalo en la importación de lubricantes, 27,000 millones de litros por encima de lo habitual entre 2021 y 2022, y un daño potencial al fisco cercano a los 120,000 millones de pesos . La cifra rima con la de la pieza pasada, cuando el excomisionado Francisco Barnés estimó las pérdidas reales del huachicol en al menos 123,000 millones. Son mediciones distintas y no hay que sumarlas; lo que comparten es el orden de magnitud.</p>
-
-      <p class="pull">El blindaje no es la impunidad: es la opacidad.</p>
-
-      <p>El politólogo Alfred Stepan llamó a esto el nuevo profesionalismo: el momento en que el militar deja de vigilar la frontera para gestionarla. Ahí la lógica cambia. El que cuidaba el paso pasa a cobrar y a autorizar el paso. Y hereda el blindaje del conglomerado: opera con dinero y funciones públicas, pero con una fiscalización mínima y buena parte de la información clasificada como reservada .</p>
-
-      <p>Lo que cierra el círculo es de este año. La respuesta institucional al huachicol fiscal fue una reforma a la Ley Aduanera, publicada el 19 de noviembre de 2025 y vigente desde el 1 de enero de 2026. ¿Qué hace? Sustituye al Servicio de Administración Tributaria por la Agencia Nacional de Aduanas como órgano ejecutor exclusivo para administrar, fiscalizar y recaudar en la entrada y salida de mercancías, y crea un Consejo Aduanero donde la Agencia participa en el otorgamiento, la suspensión y la cancelación de las patentes de los agentes aduanales, algo que antes resolvía el SAT . Dicho de otro modo: el diagnóstico señaló redes de corrupción dentro de la estructura castrense, y el remedio le quitó facultades a la autoridad tributaria civil para dárselas a la agencia que coordinan la Defensa y la Marina. México Unido Contra la Delincuencia lo nombra sin adornos en su análisis de la reforma: la paradoja de que la respuesta institucional refuerza el papel de las mismas autoridades involucradas .</p>
-
-      <p>¿Y la rendición de cuentas? Basta un ejemplo, también de este año. La presidenta Claudia Sheinbaum afirmó que no habría investigación contra el almirante Ojeda porque "él denunció". En mayo, la Fiscalía informó que Ojeda nunca formalizó denuncia alguna: hubo una reunión privada con el entonces fiscal, y ahí quedó . No es una acusación contra nadie, es la fotografía de un circuito. Dos versiones oficiales que no coinciden, y nadie obligado a reconciliarlas.</p>
-
-      <p>Y hay que ser preciso con el blindaje, para no inflarlo. No es que el Ejército se juzgue a sí mismo: desde la reforma de 2014 al Código de Justicia Militar, tras el fallo Radilla de la Corte Interamericana, los delitos comunes o federales de un militar contra civiles se ven en la justicia civil , y por eso a estos oficiales los procesa la Fiscalía y no una corte marcial. El escudo no está en el juzgado. Está en la caja: se puede procesar el delito, pero ver lo que ocurre dentro de una aduana bajo mando militar y bajo reserva cuesta muchísimo más. El blindaje no es la impunidad: es la opacidad.</p>
-
-      <p>A mi juicio, y lo ofrezco como lectura, ese es el fondo del asunto. El argumento para militarizar las aduanas fue la incorruptibilidad. Lo que muestran los expedientes va en sentido contrario, y la respuesta del Estado no fue devolver la lupa: fue concentrar más mando y menos luz. No es que el uniforme corrompa. Es que un cuarto sin ventanas, lo administre quien lo administre, invita a que algo pase. La opacidad no es un accidente del modelo: es su rasgo.</p>
-
-      <p>Con esto cierra el arco. Tres piezas, una misma vía. La saquean, la usan para contrabandear, y la puerta la cuida quien no rinde cuentas. Que quede claro, para no exceder lo que el dato permite: no acuso a una institución de un delito, la Fiscalía imputa a personas y son presuntas hasta que un juez diga lo contrario. Lo que sí sostengo, como lectura, es el modelo: quien administra sin que nadie lo audite, tarde o temprano administra también lo que no debería.</p>
-
-      <p class="dipt">Pieza anterior del arco: «El tren que trae lo que no debería» <a href="el-tren-que-trae-lo-que-no-deberia.html" target="_blank" rel="noopener">Ver el expediente →</a></p>
-    </div>
-
-    <p class="signoff">SRVO</p>
-
-    <section class="fuentes">
-      <h2>Fuentes y referencias citadas</h2>
+  <section class="fuentes">
+    <div class="wrap-medida">
+      <div class="sec-head"><span class="label">Fuentes y referencias</span></div>
       <ol>
         <li>Alfred Stepan, <em>The Military in Politics: Changing Patterns in Brazil</em> (Princeton University Press, 1971); "The New Professionalism of Internal Warfare and Military Role Expansion", en <em>Authoritarian Brazil</em> (Yale University Press, 1973). <a href="https://press.princeton.edu/books/paperback/9780691644981/the-military-in-politics" target="_blank" rel="noopener">Ficha</a></li>
         <li>Órdenes de aprehensión contra los tenientes coroneles Armando Barrera Trujillo y Blas Pedro Sarabia García y el teniente Jorge García García, por el caso de la Aduana de Matamoros; 13 imputados, 7 detenidos y vinculados a proceso (imputación de la FGR; presuntos, prófugos).  <a href="https://www.elimparcial.com/mexico/2026/07/06/fgr-va-contra-tres-militares-profugos-por-presunto-huachicol-fiscal-los-vincula-con-el-ingreso-de-144-millones-de-litros-por-la-aduana-de-matamoros/" target="_blank" rel="noopener">El Imparcial</a> · <a href="https://politico.mx/2026/07/06/fgr-va-contra-3-militares-por-presuntamente-estar-ligados-a-red-de-huachicol-fiscal-en-matamoros/" target="_blank" rel="noopener">Politico.mx</a></li>
@@ -166,48 +151,87 @@
         <li>Reforma de 2014 al artículo 57 del Código de Justicia Militar (tras el caso Radilla, Corte Interamericana): los delitos comunes o federales de militares contra civiles se juzgan en la justicia civil.  <a href="https://hchr.org.mx/historias-destacadas/jurisdiccion-militar-acotada-2/" target="_blank" rel="noopener">ONU-DH</a> · <a href="https://www.diputados.gob.mx/LeyesBiblio//pdf/CJM.pdf" target="_blank" rel="noopener">Código de Justicia Militar (PDF)</a></li>
         <li>Piezas anteriores del arco: <a href="https://45digitalnoticias.github.io/columnas/el-robo-que-se-llama-vandalismo.html" target="_blank" rel="noopener">El robo que se llama vandalismo</a> · <a href="https://45digitalnoticias.github.io/columnas/el-tren-que-trae-lo-que-no-deberia.html" target="_blank" rel="noopener">El tren que trae lo que no debería</a></li>
       </ol>
-    </section>
+      <p class="cotejo">Las ligas van a la vista para que cualquiera compruebe por su cuenta. Si alguna dejó de resolver, escríbenos y la reponemos.</p>
+    </div>
+  </section>
 
-    <a class="back" href="index.html">← Volver a las columnas</a>
-  </div>
+  <section class="cierre wrap-medida">
+    <p class="firma-final">SRVO</p>
+    <div class="btns">
+      <a class="btn-red" data-red="facebook" href="#" aria-label="Compartir en Facebook"><span class="tip">Facebook</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.5l.5-3h-3v-2c0-.6.4-1 1-1z"/></svg></a>
+      <a class="btn-red" data-red="whatsapp" href="#" aria-label="Compartir por WhatsApp"><span class="tip">WhatsApp</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1112 20zm4.4-5.8c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 01-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3 0-.5l-.7-1.6c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.7.7-.9 1.6-.6 2.6.5 1.6 1.6 3 3.1 3.9 1.4.9 2.5 1 3.4.9.7-.1 1.4-.6 1.6-1.2.1-.3.1-.6 0-.7z"/></svg></a>
+      <a class="btn-red" data-red="x" href="#" aria-label="Compartir en X"><span class="tip">X</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 3h3l-6.6 7.5L21.7 21h-6l-4.7-6.1L5.6 21h-3l7-8L2.6 3h6.2l4.3 5.6zm-1 16h1.6L8.1 4.6H6.4z"/></svg></a>
+      <button class="btn-red" type="button" data-red="copiar" aria-label="Copiar enlace"><span class="tip">Copiar enlace</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a4 4 0 006 .4l2.4-2.4a4 4 0 00-5.7-5.7l-1.4 1.4"/><path d="M14 11a4 4 0 00-6-.4l-2.4 2.4a4 4 0 005.7 5.7l1.4-1.4"/></svg></button>
+    </div>
+  </section>
 </article>
 
-<footer class="site-footer">
+<footer class="pie-sitio">
   <div class="wrap">
-    <span class="sig">45 Digital Noticias.</span>
-    <span class="small">Columnas · lectura sistémica · © 2026 — Todos los textos cotejados contra fuente.</span>
+    <div class="pie-top">
+      <div class="pie-marca">
+        <p class="marca-n">45 Digital Noticias</p>
+        <div class="hilo"></div>
+        <p class="lema">Columnas de opinión con lectura sistémica. Lo verificable, separado de la lectura.</p>
+      </div>
+      <nav class="pie-col"><h4>Leer</h4>
+        <a href="index.html">Portada</a><a href="todas.html">Todas las columnas</a><a href="expedientes.html">Expedientes</a></nav>
+      <nav class="pie-col"><h4>Temas</h4>
+        <a href="#">Seguridad</a><a href="#">Morelos</a><a href="#">Economía</a><a href="#">Justicia</a></nav>
+      <nav class="pie-col"><h4>La casa</h4>
+        <a href="acerca.html">Acerca</a><a href="mailto:s.rvaldespin8@gmail.com">Escríbenos</a>
+        <a href="https://facebook.com/45DigitalMx" target="_blank" rel="noopener">Facebook</a></nav>
+    </div>
+    <div class="pie-bajo">
+      <p>© 2026 · 45 Digital Noticias. Textos de SRVO.<br>El programa se transmite en vivo de 9 a 10 de la mañana.</p>
+    </div>
   </div>
-  <a id="ck-privacy-link" href="https://45digitalnoticias.github.io/columnas/privacidad.html" style="display:block;text-align:center;margin-top:10px;font-size:.76rem;letter-spacing:.04em;color:inherit;opacity:.65;text-decoration:none;">Aviso de privacidad</a>
 </footer>
 
 <script>
-  const mt = document.querySelector('.menu-toggle');
-  const nav = document.getElementById('nav');
-  if (mt && nav) mt.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    mt.setAttribute('aria-expanded', open);
-  });
-  (function () {
-    const url = encodeURIComponent(location.href);
-    const ttl = encodeURIComponent(document.title.split('—')[0].trim());
-    const map = {
-      wa: 'https://wa.me/?text=' + ttl + '%20' + url,
-      fb: 'https://www.facebook.com/sharer/sharer.php?u=' + url,
-      x: 'https://twitter.com/intent/tweet?text=' + ttl + '&url=' + url
-    };
-    document.querySelectorAll('.share-btn[data-net]').forEach(function (b) {
-      const n = b.dataset.net;
-      if (map[n]) b.href = map[n];
-      if (n === 'copy') b.addEventListener('click', function () {
-        navigator.clipboard.writeText(location.href).then(function () {
-          const t = b.textContent; b.textContent = '¡Copiado!';
-          setTimeout(function () { b.textContent = t; }, 1500);
-        });
-      });
+(() => {
+  // barra de avance de lectura
+  const barra = document.getElementById('avance'), art = document.querySelector('article');
+  addEventListener('scroll', () => {
+    const t = art.offsetTop, h = art.offsetHeight - innerHeight;
+    const p = Math.min(1, Math.max(0, (scrollY - t) / (h > 0 ? h : 1)));
+    barra.style.transform = 'scaleX(' + p + ')';
+  }, {passive:true});
+
+  // audio
+  const bt = document.querySelector('.oir-barra');
+  if (bt) {
+    const au = new Audio(bt.dataset.src);
+    const pista = bt.querySelector('.pista-audio');
+    bt.addEventListener('click', () => {
+      if (au.paused) { au.play().catch(()=>{}); bt.classList.add('suena'); }
+      else { au.pause(); bt.classList.remove('suena'); }
     });
-  })();
+    au.addEventListener('timeupdate', () => {
+      if (au.duration) pista.style.width = (au.currentTime / au.duration * 100) + '%';
+    });
+    au.addEventListener('ended', () => bt.classList.remove('suena'));
+  }
+
+  // compartir
+  const U = encodeURIComponent(location.href);
+  const T = encodeURIComponent(document.querySelector('h1').textContent + ' · 45 Digital Noticias');
+  const D = {facebook:`https://www.facebook.com/sharer/sharer.php?u=${U}`,
+             whatsapp:`https://api.whatsapp.com/send?text=${T}%20${U}`,
+             x:`https://twitter.com/intent/tweet?text=${T}&url=${U}`};
+  document.querySelectorAll('.btn-red').forEach(b => {
+    const r = b.dataset.red;
+    if (D[r]) { b.href = D[r]; b.target = '_blank'; b.rel = 'noopener'; return; }
+    b.addEventListener('click', async () => {
+      const tip = b.querySelector('.tip');
+      try { await navigator.clipboard.writeText(location.href); } catch { return; }
+      const a = tip.textContent; tip.textContent = 'Copiado'; b.classList.add('copiado');
+      setTimeout(() => { tip.textContent = a; b.classList.remove('copiado'); }, 1800);
+    });
+  });
+})();
 </script>
-<!-- Cookie consent 45 Digital -->
+
 <style>
 #ck-consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:560px;margin:0 auto;background:#0e1320;border:1px solid rgba(204,161,90,.35);border-radius:12px;padding:16px 18px;box-shadow:0 18px 50px rgba(0,0,0,.5);font-family:'Inter',system-ui,sans-serif;color:#cdd3cc;display:none}
 #ck-consent.show{display:block}
@@ -242,7 +266,6 @@
 })();
 </script>
 <!-- /Cookie consent 45 Digital -->
-
 <!-- Cloudflare Web Analytics -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4de56a9a4564d0ea0f4e0259af8bc7a"}'></script>
 <!-- End Cloudflare Web Analytics -->

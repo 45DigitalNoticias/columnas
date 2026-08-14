@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>El timo de la transparencia · 45 Digital Noticias</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="columna.css">
 <meta name="description" content="Antes se llamaba encubrimiento. Hoy se llama transparencia. El INAI y el IMIPE, vaciados por dentro.">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="45 Digital Noticias">
@@ -17,10 +21,6 @@
 <meta name="twitter:title" content="El timo de la transparencia">
 <meta name="twitter:description" content="Antes se llamaba encubrimiento. Hoy se llama transparencia. El INAI y el IMIPE, vaciados por dentro.">
 <meta name="twitter:image" content="https://45digitalnoticias.github.io/columnas/og-timo-transparencia.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
 <!-- Google Analytics 4 (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R64XZVCF6F"></script>
 <script>
@@ -68,14 +68,14 @@
 </head>
 <body>
 
-<header class="site-header">
+<header class="masthead">
   <div class="wrap">
-    <a class="brand" href="index.html">
-      <img class="brand-logo" src="logo-45.png" alt="45 Digital Noticias">
-      <span class="name" style="display:none">45 DIGITAL <b>NOTICIAS</b></span>
+    <span class="fecha">20 de mayo de 2026</span>
+    <a href="index.html">
+      <div class="logo">45 Digital <span class="n">Noticias</span></div>
+      <div class="hilo"></div>
     </a>
-    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
-    <nav class="nav" id="nav">
+    <nav>
       <a href="index.html">Columnas</a>
       <a href="expedientes.html">Expedientes</a>
       <a href="acerca.html">Acerca</a>
@@ -83,70 +83,58 @@
   </div>
 </header>
 
-<article class="article">
-  <div class="wrap">
+<!-- barra de avance de lectura -->
+<div class="avance" id="avance"></div>
 
-    <header class="article-head">
+<article>
+  <header class="cabeza">
+    <div class="wrap-medida">
       <div class="eyebrow">
-        <span class="kicker">Columna de opinión</span>
-        <span class="line"></span>
+        <span class="tick"></span>
+        <span class="label">Transparencia</span>
       </div>
       <h1>El timo de la transparencia</h1>
-      <p class="dek">Antes se llamaba encubrimiento. Hoy se llama transparencia. El INAI y el IMIPE, vaciados por dentro.</p>
-      <div class="article-meta">
-        <span>4 min de lectura</span>
+      <p class="entrada">Antes se llamaba encubrimiento. Hoy se llama transparencia. El INAI y el IMIPE, vaciados por dentro.</p>
+
+      <div class="firma">
+        <span class="autor">SRVO</span>
+        <span class="sep"></span>
+        <span class="meta">20 de mayo de 2026</span>
+        <span class="sep"></span>
+        <span class="meta">4 min de lectura</span>
       </div>
-    </header>
 
-    <figure class="article-figure">
-      <img src="timo-transparencia.png" alt="El timo de la transparencia">
-    </figure>
-
-    <div class="share" aria-label="Compartir">
-      <span class="share-label">Compartir</span>
-      <a class="share-btn" data-net="wa" target="_blank" rel="noopener">WhatsApp</a>
-      <a class="share-btn" data-net="fb" target="_blank" rel="noopener">Facebook</a>
-      <a class="share-btn" data-net="x" target="_blank" rel="noopener">X</a>
-      <button class="share-btn" type="button" data-net="copy">Copiar enlace</button>
+      <button class="oir-barra" type="button" data-src="../SITIO_COLUMNAS/audio-timo-de-la-transparencia.mp3">
+        <span class="ico"><svg class="play" viewBox="0 0 10 12" fill="currentColor"><path d="M0 0l10 6-10 6z"/></svg><svg class="pausa" viewBox="0 0 10 12" fill="currentColor"><path d="M0 0h3.4v12H0zM6.6 0H10v12H6.6z"/></svg></span>
+        <span class="txt">Escuchar la columna</span>
+        <span class="dur">6:11</span>
+        <span class="pista-audio"></span>
+      </button>
     </div>
+  </header>
 
-    <div class="audio-col" style="max-width:var(--measure);margin:0 auto 38px;padding:16px 18px;border:1px solid rgba(204,161,90,.3);border-radius:12px;background:rgba(204,161,90,.05);">
-      <div style="font-family:'Inter',system-ui,sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#cca15a;margin-bottom:10px;">🎧 Escuchar la columna · 6 min</div>
-      <audio controls preload="none" style="width:100%;display:block;">
-        <source src="audio-timo-de-la-transparencia.mp3" type="audio/mpeg">
-        Tu navegador no soporta audio HTML5.
-      </audio>
-      <div style="font-family:'Inter',system-ui,sans-serif;font-size:.72rem;color:rgba(243,241,232,.55);margin-top:8px;">Lectura automática con voz sintética.</div>
-    </div>
+  <figure class="portada wrap-medida">
+    <img src="../SITIO_COLUMNAS/timo-transparencia.png" alt="">
+    <figcaption>Transparencia · Ilustración de la columna</figcaption>
+  </figure>
 
-    <div class="prose">
-      <p>Hace cinco siglos, los frailes mendicantes inventaron en la Nueva España un truco contable: las cuentas se llevaban en doble entrada, pero los libros que leía el visitador del rey no eran los del archivo interno. La doble contabilidad no la inventaron los empresarios del siglo XXI; nació con la maquinaria del Estado virreinal. Lo que cambió fue la palabra. Antes se llamaba encubrimiento. Hoy se llama transparencia.</p>
+  <div class="wrap-medida prosa">
+    <p>Hace cinco siglos, los frailes mendicantes inventaron en la Nueva España un truco contable: las cuentas se llevaban en doble entrada, pero los libros que leía el visitador del rey no eran los del archivo interno. La doble contabilidad no la inventaron los empresarios del siglo XXI; nació con la maquinaria del Estado virreinal. Lo que cambió fue la palabra. Antes se llamaba encubrimiento. Hoy se llama transparencia.</p>
+    <p>México vive el tercer momento de su historia institucional reciente en que un gobierno reemplaza el aparato fiscalizador autónomo por uno que depende del Ejecutivo. Esta vez no por decreto del titular, sino por reforma constitucional aprobada por el Congreso. El INAI, el Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos, fue extinguido el 21 de marzo de 2025, un día después de que el decreto se publicara en el Diario Oficial. En su lugar, el gobierno federal creó un organismo con nombre publicitario: Transparencia para el Pueblo.</p>
+    <p>Lo dijo la propia secretaria de Anticorrupción y Buen Gobierno, Raquel Buenrostro: el nuevo organismo asumiría el 80% de las funciones del INAI con 52% menos de presupuesto, más de quinientos millones de pesos de "ahorro" al año. Lo que no dijo fue lo que cambiaba además del dinero: las cinco voces colegiadas de los comisionados se reemplazaron por una sola titular, designada por el Ejecutivo y dependiente de la misma Secretaría a la que, en muchos casos, tendría que vigilar. El acusado escoge al juez.</p>
+    <p>Tres meses después del estreno, Artículo 19, una de las organizaciones de defensa de la libertad de información más sólidas del continente, descargó del propio portal oficial las resoluciones del nuevo organismo y las contó. De 2,253 recursos de revisión interpuestos por ciudadanos a quienes el gobierno había negado información, solo 457 se resolvieron, y de esos, 455 fueron desechados: el 99.6%. El organismo respondió con su propio número, 14.6%; ambas cifras salen del mismo dataset oficial y lo que las separa es la base de cálculo. Conviene decir qué mide cada una: con la métrica de Artículo 19, que cuenta los desechos sobre lo efectivamente resuelto, el desecho es casi total, muy por encima del INAI autónomo, cuyo promedio histórico rondaba entre el 18 y el 30%. La cifra oficial del 14.6%, calculada sobre otra base, no es comparable directamente ni con ese 99.6% ni con el historial del INAI.</p>
+    <p class="pull">La opacidad ya no es defecto del aparato estatal: es su rasgo.</p>
+    <p>Lo más revelador no son las cifras, sino lo que ocurre cuando un periodista intenta verificarlas. El portal oficial transparencia.gob.mx opera sin certificado de seguridad válido; los navegadores lo marcan como inseguro antes de mostrar contenido. El único conjunto de datos que el organismo publica en el portal nacional de datos abiertos es un "Plan de Apertura", un papel donde se comprometió a publicar nueve tipos de datasets durante 2026, con mayo como primera fecha. Al 19 de mayo de 2026, ninguno aparece publicado. El organismo que se llama Transparencia para el Pueblo cumplió con publicar un plan; no con publicar la transparencia.</p>
+    <p>En Morelos el modelo federal se replicó con precisión quirúrgica. El IMIPE, el organismo morelense autónomo, fue extinguido por decreto el 27 de enero de 2026. El gobierno de Margarita González Saravia completó la operación con el decreto del 6 de mayo: una Transparencia para el Pueblo de Morelos subordinada a la Secretaría Anticorrupción del Ejecutivo estatal. Mismo molde: cinco comisionados colegiados sustituidos por una titular, presupuesto recortado de 27 a 5 millones, sin portal funcional al corte de esta columna (junio de 2026). Y 4,599 quejas ciudadanas que el IMIPE no alcanzó a resolver quedaron desechadas, sin pronunciamiento de fondo, al cierre del instituto, según el conteo de Morelos Rinde Cuentas.</p>
+    <p>Este programa auditó 29 sitios oficiales del gobierno de Morelos. Once funcionan. Dieciocho no le sirven al ciudadano: siete son cascarones decorativos, siete no responden, dos son inseguros, uno está extinto y uno nunca tuvo portal. El portal local de transparencia es una pantalla de inicio de sesión con un eslogan. El sitio anterior solo muestra el mensaje "Sitio No Vigente". El órgano sustituto del IMIPE no tiene siquiera una URL pública asignada.</p>
+    <p>La filósofa estadounidense Wendy Brown describió el mecanismo en <em>Undoing the Demos</em> (2015): el órgano garante existe, el portal se llama "transparencia", la ley se cita en cada respuesta, pero la sustancia se evacua. Lo que queda es una cáscara que cumple con el lenguaje sin cumplir con la función.</p>
+    <p>Cuando un ciudadano pregunta hoy a un funcionario por un contrato, le responden: pídalo por transparencia. Lo que el funcionario calla es que el órgano que recibiría la solicitud depende del mismo Ejecutivo que oculta la información; que el portal donde tendría que consultarla muestra un eslogan en vez de datos; que la institución que vigilaría la respuesta acaba de ser cancelada; y que la nueva, medida sobre lo que efectivamente resolvió, desechó el 99.6% de los recursos, muy por encima del 18 a 30% que desechaba el modelo que sustituyó, mientras la cifra oficial del 14.6%, calculada sobre otra base, no admite comparación directa. Esto no es accidente burocrático. Es diseño. La opacidad ya no es defecto del aparato estatal: es su rasgo.</p>
+    <p class="dipt">Expediente completo: auditoría de 29 sitios oficiales de Morelos. <a href="https://45digitalnoticias.github.io/cementerio-transparencia/" target="_blank" rel="noopener">Ver el expediente →</a></p>
+  </div>
 
-      <p>México vive el tercer momento de su historia institucional reciente en que un gobierno reemplaza el aparato fiscalizador autónomo por uno que depende del Ejecutivo. Esta vez no por decreto del titular, sino por reforma constitucional aprobada por el Congreso. El INAI, el Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos, fue extinguido el 21 de marzo de 2025, un día después de que el decreto se publicara en el Diario Oficial. En su lugar, el gobierno federal creó un organismo con nombre publicitario: Transparencia para el Pueblo.</p>
-
-      <p>Lo dijo la propia secretaria de Anticorrupción y Buen Gobierno, Raquel Buenrostro: el nuevo organismo asumiría el 80% de las funciones del INAI con 52% menos de presupuesto, más de quinientos millones de pesos de "ahorro" al año. Lo que no dijo fue lo que cambiaba además del dinero: las cinco voces colegiadas de los comisionados se reemplazaron por una sola titular, designada por el Ejecutivo y dependiente de la misma Secretaría a la que, en muchos casos, tendría que vigilar. El acusado escoge al juez.</p>
-
-      <p>Tres meses después del estreno, Artículo 19, una de las organizaciones de defensa de la libertad de información más sólidas del continente, descargó del propio portal oficial las resoluciones del nuevo organismo y las contó. De 2,253 recursos de revisión interpuestos por ciudadanos a quienes el gobierno había negado información, solo 457 se resolvieron, y de esos, 455 fueron desechados: el 99.6%. El organismo respondió con su propio número, 14.6%; ambas cifras salen del mismo dataset oficial y lo que las separa es la base de cálculo. Conviene decir qué mide cada una: con la métrica de Artículo 19, que cuenta los desechos sobre lo efectivamente resuelto, el desecho es casi total, muy por encima del INAI autónomo, cuyo promedio histórico rondaba entre el 18 y el 30%. La cifra oficial del 14.6%, calculada sobre otra base, no es comparable directamente ni con ese 99.6% ni con el historial del INAI.</p>
-
-      <p class="pull">La opacidad ya no es defecto del aparato estatal: es su rasgo.</p>
-
-      <p>Lo más revelador no son las cifras, sino lo que ocurre cuando un periodista intenta verificarlas. El portal oficial transparencia.gob.mx opera sin certificado de seguridad válido; los navegadores lo marcan como inseguro antes de mostrar contenido. El único conjunto de datos que el organismo publica en el portal nacional de datos abiertos es un "Plan de Apertura", un papel donde se comprometió a publicar nueve tipos de datasets durante 2026, con mayo como primera fecha. Al 19 de mayo de 2026, ninguno aparece publicado. El organismo que se llama Transparencia para el Pueblo cumplió con publicar un plan; no con publicar la transparencia.</p>
-
-      <p>En Morelos el modelo federal se replicó con precisión quirúrgica. El IMIPE, el organismo morelense autónomo, fue extinguido por decreto el 27 de enero de 2026. El gobierno de Margarita González Saravia completó la operación con el decreto del 6 de mayo: una Transparencia para el Pueblo de Morelos subordinada a la Secretaría Anticorrupción del Ejecutivo estatal. Mismo molde: cinco comisionados colegiados sustituidos por una titular, presupuesto recortado de 27 a 5 millones, sin portal funcional al corte de esta columna (junio de 2026). Y 4,599 quejas ciudadanas que el IMIPE no alcanzó a resolver quedaron desechadas, sin pronunciamiento de fondo, al cierre del instituto, según el conteo de Morelos Rinde Cuentas.</p>
-
-      <p>Este programa auditó 29 sitios oficiales del gobierno de Morelos. Once funcionan. Dieciocho no le sirven al ciudadano: siete son cascarones decorativos, siete no responden, dos son inseguros, uno está extinto y uno nunca tuvo portal. El portal local de transparencia es una pantalla de inicio de sesión con un eslogan. El sitio anterior solo muestra el mensaje "Sitio No Vigente". El órgano sustituto del IMIPE no tiene siquiera una URL pública asignada.</p>
-
-      <p>La filósofa estadounidense Wendy Brown describió el mecanismo en <em>Undoing the Demos</em> (2015): el órgano garante existe, el portal se llama "transparencia", la ley se cita en cada respuesta, pero la sustancia se evacua. Lo que queda es una cáscara que cumple con el lenguaje sin cumplir con la función.</p>
-
-      <p>Cuando un ciudadano pregunta hoy a un funcionario por un contrato, le responden: pídalo por transparencia. Lo que el funcionario calla es que el órgano que recibiría la solicitud depende del mismo Ejecutivo que oculta la información; que el portal donde tendría que consultarla muestra un eslogan en vez de datos; que la institución que vigilaría la respuesta acaba de ser cancelada; y que la nueva, medida sobre lo que efectivamente resolvió, desechó el 99.6% de los recursos, muy por encima del 18 a 30% que desechaba el modelo que sustituyó, mientras la cifra oficial del 14.6%, calculada sobre otra base, no admite comparación directa. Esto no es accidente burocrático. Es diseño. La opacidad ya no es defecto del aparato estatal: es su rasgo.</p>
-
-      <p class="dipt">Expediente completo: auditoría de 29 sitios oficiales de Morelos. <a href="https://45digitalnoticias.github.io/cementerio-transparencia/" target="_blank" rel="noopener">Ver el expediente →</a></p>
-    </div>
-
-    <p class="signoff">SRVO</p>
-
-    <section class="fuentes">
-      <h2>Fuentes y referencias citadas</h2>
+  <section class="fuentes">
+    <div class="wrap-medida">
+      <div class="sec-head"><span class="label">Fuentes y referencias</span></div>
       <ol>
         <li>Wendy Brown, <em>Undoing the Demos: Neoliberalism's Stealth Revolution</em> (<a href="https://www.zonebooks.org/books/9-undoing-the-demos-neoliberalism-s-stealth-revolution" target="_blank" rel="noopener">Zone Books / MIT Press, 2015</a>).</li>
         <li>Extinción del INAI por reforma constitucional (DOF 20-mar-2025, vigente 21-mar-2025). <a href="https://www.dof.gob.mx/index_111.php?year=2025&amp;month=03&amp;day=20" target="_blank" rel="noopener">Diario Oficial de la Federación</a></li>
@@ -157,59 +145,87 @@
         <li>Cifra de 4,599 quejas pendientes al cierre del IMIPE.  <a href="https://morelosrindecuentas.org.mx/" target="_blank" rel="noopener">Morelos Rinde Cuentas</a> (atribución de la organización; verificación documental pendiente).</li>
         <li>Auditoría propia de 29 sitios oficiales (19-may-2026), publicada como expediente interactivo.  <a href="https://45digitalnoticias.github.io/cementerio-transparencia/" target="_blank" rel="noopener">El Cementerio de la Transparencia (Morelos 2026)</a></li>
       </ol>
-    </section>
-
-    <div class="share share-end" aria-label="Compartir">
-      <span class="share-label">Compartir esta columna</span>
-      <a class="share-btn" data-net="wa" target="_blank" rel="noopener">WhatsApp</a>
-      <a class="share-btn" data-net="fb" target="_blank" rel="noopener">Facebook</a>
-      <a class="share-btn" data-net="x" target="_blank" rel="noopener">X</a>
-      <button class="share-btn" type="button" data-net="copy">Copiar enlace</button>
+      <p class="cotejo">Las ligas van a la vista para que cualquiera compruebe por su cuenta. Si alguna dejó de resolver, escríbenos y la reponemos.</p>
     </div>
+  </section>
 
-    <a class="back" href="index.html">← Volver a las columnas</a>
-  </div>
+  <section class="cierre wrap-medida">
+    <p class="firma-final">SRVO</p>
+    <div class="btns">
+      <a class="btn-red" data-red="facebook" href="#" aria-label="Compartir en Facebook"><span class="tip">Facebook</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.5l.5-3h-3v-2c0-.6.4-1 1-1z"/></svg></a>
+      <a class="btn-red" data-red="whatsapp" href="#" aria-label="Compartir por WhatsApp"><span class="tip">WhatsApp</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1112 20zm4.4-5.8c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 01-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3 0-.5l-.7-1.6c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.7.7-.9 1.6-.6 2.6.5 1.6 1.6 3 3.1 3.9 1.4.9 2.5 1 3.4.9.7-.1 1.4-.6 1.6-1.2.1-.3.1-.6 0-.7z"/></svg></a>
+      <a class="btn-red" data-red="x" href="#" aria-label="Compartir en X"><span class="tip">X</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 3h3l-6.6 7.5L21.7 21h-6l-4.7-6.1L5.6 21h-3l7-8L2.6 3h6.2l4.3 5.6zm-1 16h1.6L8.1 4.6H6.4z"/></svg></a>
+      <button class="btn-red" type="button" data-red="copiar" aria-label="Copiar enlace"><span class="tip">Copiar enlace</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a4 4 0 006 .4l2.4-2.4a4 4 0 00-5.7-5.7l-1.4 1.4"/><path d="M14 11a4 4 0 00-6-.4l-2.4 2.4a4 4 0 005.7 5.7l1.4-1.4"/></svg></button>
+    </div>
+  </section>
 </article>
 
-<footer class="site-footer">
+<footer class="pie-sitio">
   <div class="wrap">
-    <span class="sig">45 Digital Noticias.</span>
-    <span class="small">Columnas · lectura sistémica · © 2026 — Todos los textos cotejados contra fuente.</span>
+    <div class="pie-top">
+      <div class="pie-marca">
+        <p class="marca-n">45 Digital Noticias</p>
+        <div class="hilo"></div>
+        <p class="lema">Columnas de opinión con lectura sistémica. Lo verificable, separado de la lectura.</p>
+      </div>
+      <nav class="pie-col"><h4>Leer</h4>
+        <a href="index.html">Portada</a><a href="todas.html">Todas las columnas</a><a href="expedientes.html">Expedientes</a></nav>
+      <nav class="pie-col"><h4>Temas</h4>
+        <a href="#">Seguridad</a><a href="#">Morelos</a><a href="#">Economía</a><a href="#">Justicia</a></nav>
+      <nav class="pie-col"><h4>La casa</h4>
+        <a href="acerca.html">Acerca</a><a href="mailto:s.rvaldespin8@gmail.com">Escríbenos</a>
+        <a href="https://facebook.com/45DigitalMx" target="_blank" rel="noopener">Facebook</a></nav>
+    </div>
+    <div class="pie-bajo">
+      <p>© 2026 · 45 Digital Noticias. Textos de SRVO.<br>El programa se transmite en vivo de 9 a 10 de la mañana.</p>
+    </div>
   </div>
-<a id="ck-privacy-link" href="https://45digitalnoticias.github.io/columnas/privacidad.html" style="display:block;text-align:center;margin-top:10px;font-size:.76rem;letter-spacing:.04em;color:inherit;opacity:.65;text-decoration:none;">Aviso de privacidad</a>
 </footer>
 
 <script>
-  const mt = document.querySelector('.menu-toggle');
-  const nav = document.getElementById('nav');
-  if (mt && nav) mt.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    mt.setAttribute('aria-expanded', open);
-  });
-  (function () {
-    const url = encodeURIComponent(location.href);
-    const ttl = encodeURIComponent(document.title.split('—')[0].trim());
-    const map = {
-      wa: 'https://wa.me/?text=' + ttl + '%20' + url,
-      fb: 'https://www.facebook.com/sharer/sharer.php?u=' + url,
-      x: 'https://twitter.com/intent/tweet?text=' + ttl + '&url=' + url
-    };
-    document.querySelectorAll('.share-btn[data-net]').forEach(function (b) {
-      const n = b.dataset.net;
-      if (map[n]) b.href = map[n];
-      if (n === 'copy') b.addEventListener('click', function () {
-        navigator.clipboard.writeText(location.href).then(function () {
-          const t = b.textContent; b.textContent = '¡Copiado!';
-          setTimeout(function () { b.textContent = t; }, 1500);
-        });
-      });
+(() => {
+  // barra de avance de lectura
+  const barra = document.getElementById('avance'), art = document.querySelector('article');
+  addEventListener('scroll', () => {
+    const t = art.offsetTop, h = art.offsetHeight - innerHeight;
+    const p = Math.min(1, Math.max(0, (scrollY - t) / (h > 0 ? h : 1)));
+    barra.style.transform = 'scaleX(' + p + ')';
+  }, {passive:true});
+
+  // audio
+  const bt = document.querySelector('.oir-barra');
+  if (bt) {
+    const au = new Audio(bt.dataset.src);
+    const pista = bt.querySelector('.pista-audio');
+    bt.addEventListener('click', () => {
+      if (au.paused) { au.play().catch(()=>{}); bt.classList.add('suena'); }
+      else { au.pause(); bt.classList.remove('suena'); }
     });
-  })();
+    au.addEventListener('timeupdate', () => {
+      if (au.duration) pista.style.width = (au.currentTime / au.duration * 100) + '%';
+    });
+    au.addEventListener('ended', () => bt.classList.remove('suena'));
+  }
+
+  // compartir
+  const U = encodeURIComponent(location.href);
+  const T = encodeURIComponent(document.querySelector('h1').textContent + ' · 45 Digital Noticias');
+  const D = {facebook:`https://www.facebook.com/sharer/sharer.php?u=${U}`,
+             whatsapp:`https://api.whatsapp.com/send?text=${T}%20${U}`,
+             x:`https://twitter.com/intent/tweet?text=${T}&url=${U}`};
+  document.querySelectorAll('.btn-red').forEach(b => {
+    const r = b.dataset.red;
+    if (D[r]) { b.href = D[r]; b.target = '_blank'; b.rel = 'noopener'; return; }
+    b.addEventListener('click', async () => {
+      const tip = b.querySelector('.tip');
+      try { await navigator.clipboard.writeText(location.href); } catch { return; }
+      const a = tip.textContent; tip.textContent = 'Copiado'; b.classList.add('copiado');
+      setTimeout(() => { tip.textContent = a; b.classList.remove('copiado'); }, 1800);
+    });
+  });
+})();
 </script>
-<!-- Cloudflare Web Analytics -->
-<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4de56a9a4564d0ea0f4e0259af8bc7a"}'></script>
-<!-- End Cloudflare Web Analytics -->
-<!-- Cookie consent 45 Digital -->
+
 <style>
 #ck-consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:560px;margin:0 auto;background:#0e1320;border:1px solid rgba(204,161,90,.35);border-radius:12px;padding:16px 18px;box-shadow:0 18px 50px rgba(0,0,0,.5);font-family:'Inter',system-ui,sans-serif;color:#cdd3cc;display:none}
 #ck-consent.show{display:block}
@@ -244,8 +260,8 @@
 })();
 </script>
 <!-- /Cookie consent 45 Digital -->
-<!-- RED-45 start -->
-<nav aria-label="Red 45 Digital Noticias" style="max-width:1100px;margin:48px auto 22px;padding:18px 20px 4px;border-top:1px solid rgba(128,128,128,.28);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:13px;line-height:1.9;text-align:center;opacity:.85;"><div style="text-transform:uppercase;letter-spacing:2.5px;font-size:10.5px;opacity:.6;margin-bottom:7px;">Red 45 Digital Noticias</div><div><a href="https://45digitalnoticias.github.io/columnas/" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.45);">Columnas</a> &nbsp;·&nbsp; <a href="https://45digitalnoticias.github.io/Inseguridad-Mexico/" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.45);">Inseguridad México</a> &nbsp;·&nbsp; <a href="https://45digitalnoticias.github.io/Expediente-Hantavirus/" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.45);">Expediente Brotes</a> &nbsp;·&nbsp; <a href="https://45digitalnoticias.github.io/cementerio-transparencia/" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.45);">Cementerio de la Transparencia</a></div></nav>
-<!-- RED-45 end -->
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4de56a9a4564d0ea0f4e0259af8bc7a"}'></script>
+<!-- End Cloudflare Web Analytics -->
 </body>
 </html>

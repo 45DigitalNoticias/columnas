@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>El municipio que copió al crimen · 45 Digital Noticias</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="columna.css">
 <meta name="description" content="Según la denuncia de Telmex, Megacable y Totalplay ante la FGR, el municipio de Salvador Alvarado (Guamúchil) reclasificó su cableado sobre postes de CFE como &#x27;obra&#x27;, multiplicó por siete la multa hasta rebasar los 1,500 millones de pesos y ofreció condonar el 60-70% a cambio de pagos por fuera. Es la mecánica que Diego Gambetta describió para la mafia en 1993: fabricar el peligro para vender la protección, ahora con acta de cabildo en vez de pistola. La Suprema Corte ya tiene criterio de que un municipio no puede cobrar por infraestructura de telecomunicaciones: cobra por lo que la Corte prohibió. Y no se queda en Guamúchil: en el Sinaloa de un gobernador imputado por el DOJ y en plena revisión del T-MEC, le entrega a Washington el argumento de captura del Estado que buscaba.">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="45 Digital Noticias">
@@ -17,10 +21,6 @@
 <meta name="twitter:title" content="El municipio que copió al crimen">
 <meta name="twitter:description" content="Según la denuncia de Telmex, Megacable y Totalplay ante la FGR, el municipio de Salvador Alvarado (Guamúchil) reclasificó su cableado sobre postes de CFE como &#x27;obra&#x27;, multiplicó por siete la multa hasta rebasar los 1,500 millones de pesos y ofreció condonar el 60-70% a cambio de pagos por fuera. Es la mecánica que Diego Gambetta describió para la mafia en 1993: fabricar el peligro para vender la protección, ahora con acta de cabildo en vez de pistola. La Suprema Corte ya tiene criterio de que un municipio no puede cobrar por infraestructura de telecomunicaciones: cobra por lo que la Corte prohibió. Y no se queda en Guamúchil: en el Sinaloa de un gobernador imputado por el DOJ y en plena revisión del T-MEC, le entrega a Washington el argumento de captura del Estado que buscaba.">
 <meta name="twitter:image" content="https://45digitalnoticias.github.io/columnas/og-el-municipio-que-copio-al-crimen.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
 <!-- Google Analytics 4 (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R64XZVCF6F"></script>
 <script>
@@ -68,14 +68,14 @@
 </head>
 <body>
 
-<header class="site-header">
+<header class="masthead">
   <div class="wrap">
-    <a class="brand" href="index.html">
-      <img class="brand-logo" src="logo-45.png" alt="45 Digital Noticias">
-      <span class="name" style="display:none">45 DIGITAL <b>NOTICIAS</b></span>
+    <span class="fecha">10 de julio de 2026</span>
+    <a href="index.html">
+      <div class="logo">45 Digital <span class="n">Noticias</span></div>
+      <div class="hilo"></div>
     </a>
-    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
-    <nav class="nav" id="nav">
+    <nav>
       <a href="index.html">Columnas</a>
       <a href="expedientes.html">Expedientes</a>
       <a href="acerca.html">Acerca</a>
@@ -83,119 +83,149 @@
   </div>
 </header>
 
-<article class="article">
-  <div class="wrap">
+<!-- barra de avance de lectura -->
+<div class="avance" id="avance"></div>
 
-    <header class="article-head">
+<article>
+  <header class="cabeza">
+    <div class="wrap-medida">
       <div class="eyebrow">
-        <span class="kicker">Columna de opinión</span>
-        <span class="line"></span>
+        <span class="tick"></span>
+        <span class="label">Seguridad · Sinaloa</span>
       </div>
       <h1>El municipio que copió al crimen</h1>
-      <p class="dek">Según la denuncia de Telmex, Megacable y Totalplay ante la FGR, el municipio de Salvador Alvarado (Guamúchil) reclasificó su cableado sobre postes de CFE como &#x27;obra&#x27;, multiplicó por siete la multa hasta rebasar los 1,500 millones de pesos y ofreció condonar el 60-70% a cambio de pagos por fuera. Es la mecánica que Diego Gambetta describió para la mafia en 1993: fabricar el peligro para vender la protección, ahora con acta de cabildo en vez de pistola. La Suprema Corte ya tiene criterio de que un municipio no puede cobrar por infraestructura de telecomunicaciones: cobra por lo que la Corte prohibió. Y no se queda en Guamúchil: en el Sinaloa de un gobernador imputado por el DOJ y en plena revisión del T-MEC, le entrega a Washington el argumento de captura del Estado que buscaba.</p>
-      <div class="article-meta">
-        <span>5 min de lectura</span>
+      <p class="entrada">Según la denuncia de Telmex, Megacable y Totalplay ante la FGR, el municipio de Salvador Alvarado (Guamúchil) reclasificó su cableado sobre postes de CFE como &#x27;obra&#x27;, multiplicó por siete la multa hasta rebasar los 1,500 millones de pesos y ofreció condonar el 60-70% a cambio de pagos por fuera. Es la mecánica que Diego Gambetta describió para la mafia en 1993: fabricar el peligro para vender la protección, ahora con acta de cabildo en vez de pistola. La Suprema Corte ya tiene criterio de que un municipio no puede cobrar por infraestructura de telecomunicaciones: cobra por lo que la Corte prohibió. Y no se queda en Guamúchil: en el Sinaloa de un gobernador imputado por el DOJ y en plena revisión del T-MEC, le entrega a Washington el argumento de captura del Estado que buscaba.</p>
+
+      <div class="firma">
+        <span class="autor">SRVO</span>
+        <span class="sep"></span>
+        <span class="meta">10 de julio de 2026</span>
+        <span class="sep"></span>
+        <span class="meta">5 min de lectura</span>
       </div>
-    </header>
 
-    <figure class="article-figure">
-      <img src="el-municipio-que-copio-al-crimen-portada.png" alt="El municipio que copió al crimen">
-    </figure>
-
-    <div class="share" aria-label="Compartir">
-      <span class="share-label">Compartir</span>
-      <a class="share-btn" data-net="wa" target="_blank" rel="noopener">WhatsApp</a>
-      <a class="share-btn" data-net="fb" target="_blank" rel="noopener">Facebook</a>
-      <a class="share-btn" data-net="x" target="_blank" rel="noopener">X</a>
-      <button class="share-btn" type="button" data-net="copy">Copiar enlace</button>
+      <button class="oir-barra" type="button" data-src="../SITIO_COLUMNAS/audio-el-municipio-que-copio-al-crimen.mp3">
+        <span class="ico"><svg class="play" viewBox="0 0 10 12" fill="currentColor"><path d="M0 0l10 6-10 6z"/></svg><svg class="pausa" viewBox="0 0 10 12" fill="currentColor"><path d="M0 0h3.4v12H0zM6.6 0H10v12H6.6z"/></svg></span>
+        <span class="txt">Escuchar la columna</span>
+        <span class="dur">7:53</span>
+        <span class="pista-audio"></span>
+      </button>
     </div>
+  </header>
 
-    <div class="audio-col" style="max-width:var(--measure);margin:0 auto 38px;padding:16px 18px;border:1px solid rgba(204,161,90,.3);border-radius:12px;background:rgba(204,161,90,.05);">
-      <div style="font-family:'Inter',system-ui,sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#cca15a;margin-bottom:10px;">🎧 Escuchar la columna · 8 min</div>
-      <audio controls preload="none" style="width:100%;display:block;">
-        <source src="audio-el-municipio-que-copio-al-crimen.mp3" type="audio/mpeg">
-        Tu navegador no soporta audio HTML5.
-      </audio>
-      <div style="font-family:'Inter',system-ui,sans-serif;font-size:.72rem;color:rgba(243,241,232,.55);margin-top:8px;">Lectura automática con voz sintética.</div>
-    </div>
+  <figure class="portada wrap-medida">
+    <img src="../SITIO_COLUMNAS/el-municipio-que-copio-al-crimen-portada.png" alt="">
+    <figcaption>Seguridad · Sinaloa · Ilustración de la columna</figcaption>
+  </figure>
 
-    <div class="prose">
-      <p>Hay un truco que el crimen organizado perfeccionó hace décadas y que ahora, según la denuncia que Telmex, Megacable y Totalplay presentaron ante la Fiscalía General de la República, se ejecuta desde una presidencia municipal. El truco tiene tres tiempos: se fabrica un problema que no existía, se infla su costo hasta volverlo insoportable y luego se ofrece, en voz baja, la salida. En Salvador Alvarado, Sinaloa, cabecera Guamúchil, esos tres tiempos se leen con nitidez incómoda de tan clara. El primero: el ayuntamiento resolvió que el cable que las tres empresas tienen tendido sobre los postes de la Comisión Federal de Electricidad ya no es cableado sino "obra en la vía pública". El segundo: con esa reclasificación, una multa que el reglamento de construcción fija en torno a los 60 mil pesos se dispara a más de 410 mil por cada punto de red, hasta acumular, según los denunciantes, sanciones por encima de los mil 500 millones de pesos. El tercero lo describe la denuncia con nombre y apellido: un asesor de la alcaldesa, Pedro Molineros Urías, se acerca a las empresas y ofrece condonar entre el 60 y el 70 por ciento de las multas a cambio de pagos por fuera.</p>
+  <div class="wrap-medida prosa">
+    <p>Hay un truco que el crimen organizado perfeccionó hace décadas y que ahora, según la denuncia que Telmex, Megacable y Totalplay presentaron ante la Fiscalía General de la República, se ejecuta desde una presidencia municipal. El truco tiene tres tiempos: se fabrica un problema que no existía, se infla su costo hasta volverlo insoportable y luego se ofrece, en voz baja, la salida. En Salvador Alvarado, Sinaloa, cabecera Guamúchil, esos tres tiempos se leen con nitidez incómoda de tan clara. El primero: el ayuntamiento resolvió que el cable que las tres empresas tienen tendido sobre los postes de la Comisión Federal de Electricidad ya no es cableado sino "obra en la vía pública". El segundo: con esa reclasificación, una multa que el reglamento de construcción fija en torno a los 60 mil pesos se dispara a más de 410 mil por cada punto de red, hasta acumular, según los denunciantes, sanciones por encima de los mil 500 millones de pesos. El tercero lo describe la denuncia con nombre y apellido: un asesor de la alcaldesa, Pedro Molineros Urías, se acerca a las empresas y ofrece condonar entre el 60 y el 70 por ciento de las multas a cambio de pagos por fuera.</p>
+    <p>Ese tercer tiempo es el que delata el modelo, y tiene un teórico preciso. El sociólogo Diego Gambetta, en <em>The Sicilian Mafia: The Business of Private Protection</em> (Harvard University Press, 1993), explicó que la mafia no vende exactamente violencia: vende protección. Y que su negocio prospera justamente donde puede manufacturar la inseguridad que después cobra por aliviar. El mafioso rentable no es el que protege de un peligro ajeno; es el que produce el peligro para tener algo que vender. Vista con ese lente, la "condonación" que se ofrece en Guamúchil deja de parecer un gesto de clemencia administrativa y se revela como lo que es en la gramática de Gambetta: el cierre de la venta. La multa desproporcionada es el peligro fabricado. El descuento es el producto.</p>
+    <p>Falta la pieza que convierte un abuso de cobro en algo más grave. Charles Tilly, en un ensayo de 1985 que ya es clásico, sostuvo que entre un Estado y una banda de extorsión hay una sola diferencia de fondo: la legitimidad. Ambos controlan un territorio y cobran por dejar pasar; lo que distingue al impuesto de la plaza es que el primero se ejerce con derecho y el segundo por la fuerza. En Salvador Alvarado esa frontera se difumina. Porque cuando las empresas se negaron a pagar, el municipio, de acuerdo con la denuncia, ordenó cortar y retirar tramos de fibra óptica, y dejó sin servicio a miles de usuarios. Un gobierno que interrumpe una infraestructura crítica para presionar a quien no cede no está cobrando un derecho: está usando a la población como rehén de una negociación, para tomar prestada la expresión con que el columnista Jorge Fernández Menéndez describió el caso en Excélsior. El cobro de piso no llegó con una pistola en la ventanilla. Llegó con acta de cabildo. El diputado federal Mario Zamora le encontró el nombre exacto al pedir la intervención de la FGR: "cobro de piso institucional".</p>
+    <p class="pull">Antes esa factura la giraba el crimen. La novedad, si la denuncia tiene razón, es que ahora viene con logotipo.</p>
+    <p>Conviene, antes de seguir, conceder y citar lo que la autoridad responde. Guadalupe López González rechazó los señalamientos, los calificó de "difamaciones" y sostuvo que las actuaciones del municipio están "sustentadas legalmente"; su tesorero explicó que las multas se originaron porque las empresas no pagaron la licencia para instalar cableado en la vía pública, "permisos mínimos conforme a la normativa municipal". Es una defensa atendible en abstracto: el artículo 115 constitucional faculta a los municipios para regular la construcción y cobrar por el uso del espacio público, y nada de lo aquí escrito da por probada la extorsión, pues existe una denuncia, no una sentencia. El problema es que esa defensa choca de frente con un criterio de la Suprema Corte. La SCJN tiene establecido que los municipios no tienen facultad para cobrar por instalar, operar, mantener o retirar infraestructura de telecomunicaciones, porque es competencia exclusiva de la Federación, y cobros equivalentes en municipios de Guerrero e Hidalgo ya fueron anulados. No hay todavía una resolución sobre Salvador Alvarado, pero el criterio fija algo incómodo para la autoridad: lo que el ayuntamiento cobra como "derecho" es, precisamente, lo que la Corte ha dicho que un municipio no puede cobrar. Y aun si el cobro fuese válido, la aritmética lo desborda. Un derecho legítimo no multiplica por siete la multa mediante un cambio de etiqueta, no se acumula por "coordenada" hasta rozar los mil millones y, sobre todo, no se ofrece en descuento del 60 o 70 por ciento a cambio de un pago discreto. El derecho se paga en la caja. Lo que se negocia en corto, por definición, ya no es un derecho.</p>
+    <p>El caso, además, no es una rareza aislada, y ahí está su verdadera densidad. No habían pasado cinco meses desde que se desarticuló la red de extorsión que encabezaba el exalcalde morenista de Tequila, Jalisco, cuando apareció este esquema en Sinaloa, según reseñó El Universal. Es el mismo molde replicándose de un estado a otro. Y el estado en que ahora reaparece no es cualquiera. Ocurre en el Sinaloa de Rubén Rocha Moya, un gobernador al que el Departamento de Justicia de Estados Unidos acusó el 29 de abril de 2026 de conspirar con la facción de Los Chapitos, y que solicitó licencia al cargo tres días después, de acuerdo con Infobae. El propio funcionario de Obras señalado en la denuncia, José Ricardo Cruz Rocha, es reportado por la prensa local como sobrino del gobernador. La extorsión municipal, si la denuncia prospera, no sería una excepción dentro de un aparato sano: sería una pieza más de un aparato bajo sospecha desde su cúspide.</p>
+    <p>De ahí que la preocupación, como apuntó Mauricio Flores en La Razón, no se detenga en la frontera. Y aquí ofrezco mi lectura, no un hecho. Telmex es América Móvil, es decir, uno de los actores de telecomunicaciones que la Oficina del Representante Comercial de Estados Unidos ya trae señalados: su Reporte de Estimación Comercial 2026 insiste en las barreras de competencia del mercado mexicano, el costo del espectro y la dominancia del operador tradicional. Todo esto sucede mientras Estados Unidos declinó, el 1 de julio, confirmar la extensión del T-MEC y dejó en su lugar una revisión anual. En ese tablero, un municipio gobernado por Morena que extorsiona a una empresa de telecom no es un escándalo local: es un argumento servido en bandeja a la contraparte comercial. La frase que Washington necesita para endurecer su posición se escribe sola: en México ni la infraestructura crítica está a salvo, y quien la ataca es el propio gobierno. En plena renegociación, y con el gobernador del estado imputado del otro lado de la frontera, un cable colgado de un poste en Guamúchil terminó siendo un dato de política exterior.</p>
+    <p>Queda el punto ciego, que la honestidad obliga a declarar. Todo lo anterior parte de la denuncia de una de las partes; la otra tiene derecho a su versión y a la presunción de inocencia, y será la Fiscalía, no una columna, la que determine si hubo delito. Pero el modelo que describe el expediente no es nuevo para nadie. Lo inquietante no es que un grupo criminal cobre piso; a eso, tristemente, ya nos acostumbramos. Lo inquietante es que la mecánica, fabricar el peligro para vender la protección, haya encontrado quien la ejecute desde un escritorio con escudo oficial. Antes esa factura la giraba el crimen. La novedad, si la denuncia tiene razón, es que ahora viene con logotipo.</p>
+  </div>
 
-      <p>Ese tercer tiempo es el que delata el modelo, y tiene un teórico preciso. El sociólogo Diego Gambetta, en <em>The Sicilian Mafia: The Business of Private Protection</em> (Harvard University Press, 1993), explicó que la mafia no vende exactamente violencia: vende protección. Y que su negocio prospera justamente donde puede manufacturar la inseguridad que después cobra por aliviar. El mafioso rentable no es el que protege de un peligro ajeno; es el que produce el peligro para tener algo que vender. Vista con ese lente, la "condonación" que se ofrece en Guamúchil deja de parecer un gesto de clemencia administrativa y se revela como lo que es en la gramática de Gambetta: el cierre de la venta. La multa desproporcionada es el peligro fabricado. El descuento es el producto.</p>
-
-      <p>Falta la pieza que convierte un abuso de cobro en algo más grave. Charles Tilly, en un ensayo de 1985 que ya es clásico, sostuvo que entre un Estado y una banda de extorsión hay una sola diferencia de fondo: la legitimidad. Ambos controlan un territorio y cobran por dejar pasar; lo que distingue al impuesto de la plaza es que el primero se ejerce con derecho y el segundo por la fuerza. En Salvador Alvarado esa frontera se difumina. Porque cuando las empresas se negaron a pagar, el municipio, de acuerdo con la denuncia, ordenó cortar y retirar tramos de fibra óptica, y dejó sin servicio a miles de usuarios. Un gobierno que interrumpe una infraestructura crítica para presionar a quien no cede no está cobrando un derecho: está usando a la población como rehén de una negociación, para tomar prestada la expresión con que el columnista Jorge Fernández Menéndez describió el caso en Excélsior. El cobro de piso no llegó con una pistola en la ventanilla. Llegó con acta de cabildo. El diputado federal Mario Zamora le encontró el nombre exacto al pedir la intervención de la FGR: "cobro de piso institucional".</p>
-
-      <p class="pull">Antes esa factura la giraba el crimen. La novedad, si la denuncia tiene razón, es que ahora viene con logotipo.</p>
-
-      <p>Conviene, antes de seguir, conceder y citar lo que la autoridad responde. Guadalupe López González rechazó los señalamientos, los calificó de "difamaciones" y sostuvo que las actuaciones del municipio están "sustentadas legalmente"; su tesorero explicó que las multas se originaron porque las empresas no pagaron la licencia para instalar cableado en la vía pública, "permisos mínimos conforme a la normativa municipal". Es una defensa atendible en abstracto: el artículo 115 constitucional faculta a los municipios para regular la construcción y cobrar por el uso del espacio público, y nada de lo aquí escrito da por probada la extorsión, pues existe una denuncia, no una sentencia. El problema es que esa defensa choca de frente con un criterio de la Suprema Corte. La SCJN tiene establecido que los municipios no tienen facultad para cobrar por instalar, operar, mantener o retirar infraestructura de telecomunicaciones, porque es competencia exclusiva de la Federación, y cobros equivalentes en municipios de Guerrero e Hidalgo ya fueron anulados. No hay todavía una resolución sobre Salvador Alvarado, pero el criterio fija algo incómodo para la autoridad: lo que el ayuntamiento cobra como "derecho" es, precisamente, lo que la Corte ha dicho que un municipio no puede cobrar. Y aun si el cobro fuese válido, la aritmética lo desborda. Un derecho legítimo no multiplica por siete la multa mediante un cambio de etiqueta, no se acumula por "coordenada" hasta rozar los mil millones y, sobre todo, no se ofrece en descuento del 60 o 70 por ciento a cambio de un pago discreto. El derecho se paga en la caja. Lo que se negocia en corto, por definición, ya no es un derecho.</p>
-
-      <p>El caso, además, no es una rareza aislada, y ahí está su verdadera densidad. No habían pasado cinco meses desde que se desarticuló la red de extorsión que encabezaba el exalcalde morenista de Tequila, Jalisco, cuando apareció este esquema en Sinaloa, según reseñó El Universal. Es el mismo molde replicándose de un estado a otro. Y el estado en que ahora reaparece no es cualquiera. Ocurre en el Sinaloa de Rubén Rocha Moya, un gobernador al que el Departamento de Justicia de Estados Unidos acusó el 29 de abril de 2026 de conspirar con la facción de Los Chapitos, y que solicitó licencia al cargo tres días después, de acuerdo con Infobae. El propio funcionario de Obras señalado en la denuncia, José Ricardo Cruz Rocha, es reportado por la prensa local como sobrino del gobernador. La extorsión municipal, si la denuncia prospera, no sería una excepción dentro de un aparato sano: sería una pieza más de un aparato bajo sospecha desde su cúspide.</p>
-
-      <p>De ahí que la preocupación, como apuntó Mauricio Flores en La Razón, no se detenga en la frontera. Y aquí ofrezco mi lectura, no un hecho. Telmex es América Móvil, es decir, uno de los actores de telecomunicaciones que la Oficina del Representante Comercial de Estados Unidos ya trae señalados: su Reporte de Estimación Comercial 2026 insiste en las barreras de competencia del mercado mexicano, el costo del espectro y la dominancia del operador tradicional. Todo esto sucede mientras Estados Unidos declinó, el 1 de julio, confirmar la extensión del T-MEC y dejó en su lugar una revisión anual. En ese tablero, un municipio gobernado por Morena que extorsiona a una empresa de telecom no es un escándalo local: es un argumento servido en bandeja a la contraparte comercial. La frase que Washington necesita para endurecer su posición se escribe sola: en México ni la infraestructura crítica está a salvo, y quien la ataca es el propio gobierno. En plena renegociación, y con el gobernador del estado imputado del otro lado de la frontera, un cable colgado de un poste en Guamúchil terminó siendo un dato de política exterior.</p>
-
-      <p>Queda el punto ciego, que la honestidad obliga a declarar. Todo lo anterior parte de la denuncia de una de las partes; la otra tiene derecho a su versión y a la presunción de inocencia, y será la Fiscalía, no una columna, la que determine si hubo delito. Pero el modelo que describe el expediente no es nuevo para nadie. Lo inquietante no es que un grupo criminal cobre piso; a eso, tristemente, ya nos acostumbramos. Lo inquietante es que la mecánica, fabricar el peligro para vender la protección, haya encontrado quien la ejecute desde un escritorio con escudo oficial. Antes esa factura la giraba el crimen. La novedad, si la denuncia tiene razón, es que ahora viene con logotipo.</p>
-    </div>
-
-    <p class="signoff">SRVO</p>
-
-    <section class="fuentes">
-      <h2>Fuentes y referencias citadas</h2>
+  <section class="fuentes">
+    <div class="wrap-medida">
+      <div class="sec-head"><span class="label">Fuentes y referencias</span></div>
       <ol>
         <li>Diego Gambetta, <em>The Sicilian Mafia: The Business of Private Protection</em> (Harvard University Press, 1993). ISBN 978-0674807426.</li>
         <li>Charles Tilly, "War Making and State Making as Organized Crime", en Peter Evans, Dietrich Rueschemeyer y Theda Skocpol (eds.), <em>Bringing the State Back In</em> (Cambridge University Press, 1985).</li>
-        <li>ejecentral, "Alcaldesa Guadalupe López es acusada por presunta extorsión contra empresas de telecomunicaciones en Sinaloa; esto se sabe": https://www.ejecentral.com.mx/nuestro-eje/alcaldesa-guadalupe-lopez-es-acusada-por-presunta-extorsion-contra-empresas-de-telecomunicaciones-en-sinaloa-esto-se-sabe</li>
-        <li>Jorge Fernández Menéndez, "Guamúchil, extorsión y telecomunicaciones" (Excélsior; cita la carpeta FED/SIN/GUAM/0000898/2026): https://www.excelsior.com.mx/opinion/jorge-fernandez-menendez/guamuchil-extorsion-y-telecomunicaciones</li>
-        <li>"¿Un nuevo Tequila en Sinaloa?" (El Universal, columna Bajo Reserva): https://www.eluniversal.com.mx/opinion/bajo-reserva/un-nuevo-tequila-en-sinaloa/</li>
-        <li>Mauricio Flores, "Guadalupe López presiona a empresas Telecom en Sinaloa" (La Razón): https://www.razon.com.mx/opinion/2026/07/06/guadalupe-lopez-presiona-a-empresas-telecom-en-sinaloa/</li>
-        <li>Infobae, "Quién es la familia de Rubén Rocha Moya, el gobernador con licencia de Sinaloa en la mira de EEUU": https://www.infobae.com/mexico/2026/05/11/quien-es-la-familia-de-ruben-rocha-moya-el-gobernador-con-licencia-de-sinaloa-en-la-mira-de-eeuu/</li>
-        <li>Milenio, "Telecom con obstáculos de competencia en el mercado mexicano: USTR" (Reporte de Estimación Comercial 2026): https://www.milenio.com/negocios/telecom-obstaculos-competencia-mercado-mexicano-ustr</li>
-        <li>El Imparcial, "SCJN falló en contra de cortes y cobros ilegales a empresas de Internet…" (criterio: los municipios no pueden cobrar por infraestructura de telecom): https://www.elimparcial.com/mundo/2026/07/03/scjn-fallo-en-contra-de-cortes-y-cobros-ilegales-a-empresas-de-internet-tras-denuncias-contra-alcaldesa-sinaloense/</li>
-        <li>Excélsior, "Ayuntamiento de Salvador Alvarado es señalado por presuntas multas irregulares…" (respuesta del ayuntamiento y del tesorero): https://www.excelsior.com.mx/nacional/municipio-extorsion-empresas-comunicaciones</li>
-        <li>Ríodoce, "Multas millonarias desatan disputa en Salvador Alvarado": https://riodoce.mx/2026/07/06/multas-millonarias-desatan-disputa-en-salvador-alvarado/</li>
+        <li>ejecentral, "Alcaldesa Guadalupe López es acusada por presunta extorsión contra empresas de telecomunicaciones en Sinaloa; esto se sabe": <a href="https://www.ejecentral.com.mx/nuestro-eje/alcaldesa-guadalupe-lopez-es-acusada-por-presunta-extorsion-contra-empresas-de-telecomunicaciones-en-sinaloa-esto-se-sabe" target="_blank" rel="noopener">ejecentral.com.mx/nuestro-eje/alcaldesa-guadalupe-lopez-es-acusada-por-presunta-extorsion-contra-empresas-de-telecomunicaciones-en-sinaloa-esto-se-sabe</a></li>
+        <li>Jorge Fernández Menéndez, "Guamúchil, extorsión y telecomunicaciones" (Excélsior; cita la carpeta FED/SIN/GUAM/0000898/2026): <a href="https://www.excelsior.com.mx/opinion/jorge-fernandez-menendez/guamuchil-extorsion-y-telecomunicaciones" target="_blank" rel="noopener">excelsior.com.mx/opinion/jorge-fernandez-menendez/guamuchil-extorsion-y-telecomunicaciones</a></li>
+        <li>"¿Un nuevo Tequila en Sinaloa?" (El Universal, columna Bajo Reserva): <a href="https://www.eluniversal.com.mx/opinion/bajo-reserva/un-nuevo-tequila-en-sinaloa/" target="_blank" rel="noopener">eluniversal.com.mx/opinion/bajo-reserva/un-nuevo-tequila-en-sinaloa</a></li>
+        <li>Mauricio Flores, "Guadalupe López presiona a empresas Telecom en Sinaloa" (La Razón): <a href="https://www.razon.com.mx/opinion/2026/07/06/guadalupe-lopez-presiona-a-empresas-telecom-en-sinaloa/" target="_blank" rel="noopener">razon.com.mx/opinion/2026/07/06/guadalupe-lopez-presiona-a-empresas-telecom-en-sinaloa</a></li>
+        <li>Infobae, "Quién es la familia de Rubén Rocha Moya, el gobernador con licencia de Sinaloa en la mira de EEUU": <a href="https://www.infobae.com/mexico/2026/05/11/quien-es-la-familia-de-ruben-rocha-moya-el-gobernador-con-licencia-de-sinaloa-en-la-mira-de-eeuu/" target="_blank" rel="noopener">infobae.com/mexico/2026/05/11/quien-es-la-familia-de-ruben-rocha-moya-el-gobernador-con-licencia-de-sinaloa-en-la-mira-de-eeuu</a></li>
+        <li>Milenio, "Telecom con obstáculos de competencia en el mercado mexicano: USTR" (Reporte de Estimación Comercial 2026): <a href="https://www.milenio.com/negocios/telecom-obstaculos-competencia-mercado-mexicano-ustr" target="_blank" rel="noopener">milenio.com/negocios/telecom-obstaculos-competencia-mercado-mexicano-ustr</a></li>
+        <li>El Imparcial, "SCJN falló en contra de cortes y cobros ilegales a empresas de Internet…" (criterio: los municipios no pueden cobrar por infraestructura de telecom): <a href="https://www.elimparcial.com/mundo/2026/07/03/scjn-fallo-en-contra-de-cortes-y-cobros-ilegales-a-empresas-de-internet-tras-denuncias-contra-alcaldesa-sinaloense/" target="_blank" rel="noopener">elimparcial.com/mundo/2026/07/03/scjn-fallo-en-contra-de-cortes-y-cobros-ilegales-a-empresas-de-internet-tras-denuncias-contra-alcaldesa-sinaloense</a></li>
+        <li>Excélsior, "Ayuntamiento de Salvador Alvarado es señalado por presuntas multas irregulares…" (respuesta del ayuntamiento y del tesorero): <a href="https://www.excelsior.com.mx/nacional/municipio-extorsion-empresas-comunicaciones" target="_blank" rel="noopener">excelsior.com.mx/nacional/municipio-extorsion-empresas-comunicaciones</a></li>
+        <li>Ríodoce, "Multas millonarias desatan disputa en Salvador Alvarado": <a href="https://riodoce.mx/2026/07/06/multas-millonarias-desatan-disputa-en-salvador-alvarado/" target="_blank" rel="noopener">riodoce.mx/2026/07/06/multas-millonarias-desatan-disputa-en-salvador-alvarado</a></li>
       </ol>
-    </section>
+      <p class="cotejo">Las ligas van a la vista para que cualquiera compruebe por su cuenta. Si alguna dejó de resolver, escríbenos y la reponemos.</p>
+    </div>
+  </section>
 
-    <a class="back" href="index.html">← Volver a las columnas</a>
-  </div>
+  <section class="cierre wrap-medida">
+    <p class="firma-final">SRVO</p>
+    <div class="btns">
+      <a class="btn-red" data-red="facebook" href="#" aria-label="Compartir en Facebook"><span class="tip">Facebook</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.5l.5-3h-3v-2c0-.6.4-1 1-1z"/></svg></a>
+      <a class="btn-red" data-red="whatsapp" href="#" aria-label="Compartir por WhatsApp"><span class="tip">WhatsApp</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1112 20zm4.4-5.8c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 01-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3 0-.5l-.7-1.6c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.7.7-.9 1.6-.6 2.6.5 1.6 1.6 3 3.1 3.9 1.4.9 2.5 1 3.4.9.7-.1 1.4-.6 1.6-1.2.1-.3.1-.6 0-.7z"/></svg></a>
+      <a class="btn-red" data-red="x" href="#" aria-label="Compartir en X"><span class="tip">X</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 3h3l-6.6 7.5L21.7 21h-6l-4.7-6.1L5.6 21h-3l7-8L2.6 3h6.2l4.3 5.6zm-1 16h1.6L8.1 4.6H6.4z"/></svg></a>
+      <button class="btn-red" type="button" data-red="copiar" aria-label="Copiar enlace"><span class="tip">Copiar enlace</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a4 4 0 006 .4l2.4-2.4a4 4 0 00-5.7-5.7l-1.4 1.4"/><path d="M14 11a4 4 0 00-6-.4l-2.4 2.4a4 4 0 005.7 5.7l1.4-1.4"/></svg></button>
+    </div>
+  </section>
 </article>
 
-<footer class="site-footer">
+<footer class="pie-sitio">
   <div class="wrap">
-    <span class="sig">45 Digital Noticias.</span>
-    <span class="small">Columnas · lectura sistémica · © 2026 — Todos los textos cotejados contra fuente.</span>
+    <div class="pie-top">
+      <div class="pie-marca">
+        <p class="marca-n">45 Digital Noticias</p>
+        <div class="hilo"></div>
+        <p class="lema">Columnas de opinión con lectura sistémica. Lo verificable, separado de la lectura.</p>
+      </div>
+      <nav class="pie-col"><h4>Leer</h4>
+        <a href="index.html">Portada</a><a href="todas.html">Todas las columnas</a><a href="expedientes.html">Expedientes</a></nav>
+      <nav class="pie-col"><h4>Temas</h4>
+        <a href="#">Seguridad</a><a href="#">Morelos</a><a href="#">Economía</a><a href="#">Justicia</a></nav>
+      <nav class="pie-col"><h4>La casa</h4>
+        <a href="acerca.html">Acerca</a><a href="mailto:s.rvaldespin8@gmail.com">Escríbenos</a>
+        <a href="https://facebook.com/45DigitalMx" target="_blank" rel="noopener">Facebook</a></nav>
+    </div>
+    <div class="pie-bajo">
+      <p>© 2026 · 45 Digital Noticias. Textos de SRVO.<br>El programa se transmite en vivo de 9 a 10 de la mañana.</p>
+    </div>
   </div>
-  <a id="ck-privacy-link" href="https://45digitalnoticias.github.io/columnas/privacidad.html" style="display:block;text-align:center;margin-top:10px;font-size:.76rem;letter-spacing:.04em;color:inherit;opacity:.65;text-decoration:none;">Aviso de privacidad</a>
 </footer>
 
 <script>
-  const mt = document.querySelector('.menu-toggle');
-  const nav = document.getElementById('nav');
-  if (mt && nav) mt.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    mt.setAttribute('aria-expanded', open);
-  });
-  (function () {
-    const url = encodeURIComponent(location.href);
-    const ttl = encodeURIComponent(document.title.split('—')[0].trim());
-    const map = {
-      wa: 'https://wa.me/?text=' + ttl + '%20' + url,
-      fb: 'https://www.facebook.com/sharer/sharer.php?u=' + url,
-      x: 'https://twitter.com/intent/tweet?text=' + ttl + '&url=' + url
-    };
-    document.querySelectorAll('.share-btn[data-net]').forEach(function (b) {
-      const n = b.dataset.net;
-      if (map[n]) b.href = map[n];
-      if (n === 'copy') b.addEventListener('click', function () {
-        navigator.clipboard.writeText(location.href).then(function () {
-          const t = b.textContent; b.textContent = '¡Copiado!';
-          setTimeout(function () { b.textContent = t; }, 1500);
-        });
-      });
+(() => {
+  // barra de avance de lectura
+  const barra = document.getElementById('avance'), art = document.querySelector('article');
+  addEventListener('scroll', () => {
+    const t = art.offsetTop, h = art.offsetHeight - innerHeight;
+    const p = Math.min(1, Math.max(0, (scrollY - t) / (h > 0 ? h : 1)));
+    barra.style.transform = 'scaleX(' + p + ')';
+  }, {passive:true});
+
+  // audio
+  const bt = document.querySelector('.oir-barra');
+  if (bt) {
+    const au = new Audio(bt.dataset.src);
+    const pista = bt.querySelector('.pista-audio');
+    bt.addEventListener('click', () => {
+      if (au.paused) { au.play().catch(()=>{}); bt.classList.add('suena'); }
+      else { au.pause(); bt.classList.remove('suena'); }
     });
-  })();
+    au.addEventListener('timeupdate', () => {
+      if (au.duration) pista.style.width = (au.currentTime / au.duration * 100) + '%';
+    });
+    au.addEventListener('ended', () => bt.classList.remove('suena'));
+  }
+
+  // compartir
+  const U = encodeURIComponent(location.href);
+  const T = encodeURIComponent(document.querySelector('h1').textContent + ' · 45 Digital Noticias');
+  const D = {facebook:`https://www.facebook.com/sharer/sharer.php?u=${U}`,
+             whatsapp:`https://api.whatsapp.com/send?text=${T}%20${U}`,
+             x:`https://twitter.com/intent/tweet?text=${T}&url=${U}`};
+  document.querySelectorAll('.btn-red').forEach(b => {
+    const r = b.dataset.red;
+    if (D[r]) { b.href = D[r]; b.target = '_blank'; b.rel = 'noopener'; return; }
+    b.addEventListener('click', async () => {
+      const tip = b.querySelector('.tip');
+      try { await navigator.clipboard.writeText(location.href); } catch { return; }
+      const a = tip.textContent; tip.textContent = 'Copiado'; b.classList.add('copiado');
+      setTimeout(() => { tip.textContent = a; b.classList.remove('copiado'); }, 1800);
+    });
+  });
+})();
 </script>
-<!-- Cookie consent 45 Digital -->
+
 <style>
 #ck-consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:560px;margin:0 auto;background:#0e1320;border:1px solid rgba(204,161,90,.35);border-radius:12px;padding:16px 18px;box-shadow:0 18px 50px rgba(0,0,0,.5);font-family:'Inter',system-ui,sans-serif;color:#cdd3cc;display:none}
 #ck-consent.show{display:block}
@@ -230,7 +260,6 @@
 })();
 </script>
 <!-- /Cookie consent 45 Digital -->
-
 <!-- Cloudflare Web Analytics -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4de56a9a4564d0ea0f4e0259af8bc7a"}'></script>
 <!-- End Cloudflare Web Analytics -->

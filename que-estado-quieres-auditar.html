@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>¿Qué estado quieres auditar? · 45 Digital Noticias</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="columna.css">
 <meta name="description" content="Columna de opinión de 45 Digital Noticias. 55 delitos, 32 estados, 11 años y un detector de reclasificación: el tablero para auditar a tu estado sin creerle a nadie. Ni a nosotros.">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="45 Digital Noticias">
@@ -17,10 +21,6 @@
 <meta name="twitter:title" content="¿Qué estado quieres auditar?">
 <meta name="twitter:description" content="55 delitos, 32 estados, 11 años y un detector de reclasificación: el tablero para auditar a tu estado sin creerle a nadie. Ni a nosotros.">
 <meta name="twitter:image" content="https://45digitalnoticias.github.io/columnas/que-estado-auditar.webp">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
 <!-- Google Analytics 4 (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R64XZVCF6F"></script>
 <script>
@@ -68,15 +68,14 @@
 </head>
 <body>
 
-<!-- ===== HEADER ===== -->
-<header class="site-header">
+<header class="masthead">
   <div class="wrap">
-    <a class="brand" href="index.html">
-      <img class="brand-logo" src="logo-45.png" alt="45 Digital Noticias">
-      <span class="name" style="display:none">45 DIGITAL <b>NOTICIAS</b></span>
+    <span class="fecha">10 de junio de 2026</span>
+    <a href="index.html">
+      <div class="logo">45 Digital <span class="n">Noticias</span></div>
+      <div class="hilo"></div>
     </a>
-    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
-    <nav class="nav" id="nav">
+    <nav>
       <a href="index.html">Columnas</a>
       <a href="expedientes.html">Expedientes</a>
       <a href="acerca.html">Acerca</a>
@@ -84,130 +83,143 @@
   </div>
 </header>
 
-<!-- ===== ARTÍCULO ===== -->
-<article class="article">
-  <div class="wrap">
+<!-- barra de avance de lectura -->
+<div class="avance" id="avance"></div>
 
-    <header class="article-head">
+<article>
+  <header class="cabeza">
+    <div class="wrap-medida">
       <div class="eyebrow">
-        <span class="kicker">Columna de opinión</span>
-        <span class="line"></span>
+        <span class="tick"></span>
+        <span class="label">Dashboard</span>
       </div>
       <h1>¿Qué estado quieres auditar?</h1>
-      <p class="dek">55 delitos, 32 estados, 11 años y un detector de reclasificación: el tablero para auditar a tu estado sin creerle a nadie. Ni a nosotros.</p>
-      <div class="article-meta">
-        <span>4 min de lectura</span>
+      <p class="entrada">55 delitos, 32 estados, 11 años y un detector de reclasificación: el tablero para auditar a tu estado sin creerle a nadie. Ni a nosotros.</p>
+
+      <div class="firma">
+        <span class="autor">SRVO</span>
+        <span class="sep"></span>
+        <span class="meta">10 de junio de 2026</span>
+        <span class="sep"></span>
+        <span class="meta">4 min de lectura</span>
       </div>
-    </header>
 
-        <figure class="article-figure">
-      <img src="que-estado-auditar.webp" alt="" style="aspect-ratio:3/2;object-fit:contain">
-      <figcaption>El mapa nacional del dashboard: elige qué violencia ver y el país cambia de color.</figcaption>
-    </figure>
-
-    <div class="share" aria-label="Compartir">
-      <span class="share-label">Compartir</span>
-      <a class="share-btn" data-net="wa" target="_blank" rel="noopener">WhatsApp</a>
-      <a class="share-btn" data-net="fb" target="_blank" rel="noopener">Facebook</a>
-      <a class="share-btn" data-net="x" target="_blank" rel="noopener">X</a>
-      <button class="share-btn" type="button" data-net="copy">Copiar enlace</button>
+      <button class="oir-barra" type="button" data-src="../SITIO_COLUMNAS/audio-que-estado-quieres-auditar.mp3">
+        <span class="ico"><svg class="play" viewBox="0 0 10 12" fill="currentColor"><path d="M0 0l10 6-10 6z"/></svg><svg class="pausa" viewBox="0 0 10 12" fill="currentColor"><path d="M0 0h3.4v12H0zM6.6 0H10v12H6.6z"/></svg></span>
+        <span class="txt">Escuchar la columna</span>
+        <span class="dur">5:33</span>
+        <span class="pista-audio"></span>
+      </button>
     </div>
+  </header>
 
-    <div class="audio-col" style="max-width:var(--measure);margin:0 auto 38px;padding:16px 18px;border:1px solid rgba(204,161,90,.3);border-radius:12px;background:rgba(204,161,90,.05);">
-      <div style="font-family:'Inter',system-ui,sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#cca15a;margin-bottom:10px;">🎧 Escuchar la columna · 6 min</div>
-      <audio controls preload="none" style="width:100%;display:block;">
-        <source src="audio-que-estado-quieres-auditar.mp3" type="audio/mpeg">
-        Tu navegador no soporta audio HTML5.
-      </audio>
-      <div style="font-family:'Inter',system-ui,sans-serif;font-size:.72rem;color:rgba(243,241,232,.55);margin-top:8px;">Lectura automática con voz sintética.</div>
-    </div>
+  <figure class="portada wrap-medida">
+    <img src="../SITIO_COLUMNAS/que-estado-auditar.webp" alt="">
+    <figcaption>Dashboard · Ilustración de la columna</figcaption>
+  </figure>
 
-    <div class="prose">
-      <p>Durante las últimas entregas, esta serie ha desmontado cifras con cierta insistencia: demostró que el 49 por ciento de reducción de homicidios es un artefacto de ventana estadística, documentó el récord histórico de desapariciones que ninguna conferencia menciona, midió la extorsión que crece mientras todo lo demás baja y exhibió los cajones estadísticos que nacen, oportunamente, en los cambios de gobierno. Más de un lector ha hecho la pregunta obligada: ¿de dónde sale todo esto? La respuesta merece columna propia, porque no es una fuente confidencial ni un filtrador valiente. Es una herramienta. Y desde hoy es de ustedes.</p>
+  <div class="wrap-medida prosa">
+    <p>Durante las últimas entregas, esta serie ha desmontado cifras con cierta insistencia: demostró que el 49 por ciento de reducción de homicidios es un artefacto de ventana estadística, documentó el récord histórico de desapariciones que ninguna conferencia menciona, midió la extorsión que crece mientras todo lo demás baja y exhibió los cajones estadísticos que nacen, oportunamente, en los cambios de gobierno. Más de un lector ha hecho la pregunta obligada: ¿de dónde sale todo esto? La respuesta merece columna propia, porque no es una fuente confidencial ni un filtrador valiente. Es una herramienta. Y desde hoy es de ustedes.</p>
+    <p>45 Digital Noticias construyó un <a href="https://45digitalnoticias.github.io/Inseguridad-Mexico/" target="_blank" rel="noopener">dashboard nacional de seguridad</a>: un tablero público que reúne, en un solo lugar, lo que el Estado mexicano publica fragmentado, fechado con retraso y enterrado en hojas de cálculo que nadie abre. El inventario completo: los 55 delitos del catálogo oficial del Secretariado Ejecutivo, no solo los cinco mediáticos; los 32 estados; once años de serie histórica, de 2015 al corte de mayo de 2026; el registro nacional de personas desaparecidas al día; y todo convertido a tasas por cada 100 mil habitantes con las proyecciones de población de CONAPO, que es la única manera honesta de comparar a Tlaxcala con el Estado de México.</p>
+    <p>La puerta de entrada es un mapa que se lee como se lee el clima: zonas frías en azul, zonas que arden en rojo. El visitante elige qué violencia quiere ver (homicidio, feminicidio, desaparecidos, extorsión, secuestro, violencia familiar, violación o el total) y el país cambia de color frente a sus ojos. El hallazgo pedagógico es inmediato: el mapa de la extorsión no se parece al del homicidio, ni el del feminicidio al del secuestro. No existe "la inseguridad" en singular; existen climas distintos, y cada estado vive el suyo.</p>
+    <p>De ahí, cada entidad tiene página propia: su catálogo completo de delitos con la serie de once años, su variación respecto del pico de 2018, su panel de desaparecidos, su mapa municipal de calor. Y una sección que, hasta donde sabemos, no existe en ningún portal oficial de este país: el detector de señales de reclasificación. El equipo cruzó las series de cada delito grave contra las de su cajón estadístico vecino, esas bolsas llamadas "otros delitos que atentan contra...", y encontró 22 casos donde el delito específico baja mientras el cajón se dispara. El secuestro de Coahuila que llega a cero mientras su categoría espejo crece seis veces. La violación que "baja" en la capital mientras la bolsa de "otros delitos sexuales" se multiplica por 45. El tablero no dictamina: publica el par completo, con su serie y su fuente, y deja que el lector juzgue. Puede ser reforma legal, cambio de criterio o maquillaje. El punto es que ahora se ve.</p>
+    <p>Conviene decir con claridad qué aporta de distinto este tablero frente a lo que ya existe. Primero, la unidad: las bases oficiales están dispersas entre el Secretariado, el INEGI, el registro de desaparecidos y CONAPO; aquí conversan entre sí. Segundo, la memoria: los portales oficiales privilegian el corte reciente; aquí la serie completa está siempre a un clic, porque el truco favorito de la propaganda es elegir la ventana. Tercero, la transparencia inversa: cada cifra trae su método y su origen documentados, de modo que cualquier lector puede reconstruir las cuentas y, si encuentra error, corregirnos en público. Y cuarto, lo que llamaríamos honestidad estructural: donde el registro oficial falla (los ceros inverosímiles, los cajones sin nombre, la cifra negra), el tablero no lo disimula: lo convierte en sección.</p>
+    <p>El politólogo francés Pierre Rosanvallon escribió en 2006 que la democracia electoral es solo la mitad del sistema. La otra mitad, la que llamó contrademocracia, la ejercen los ciudadanos que vigilan, cotejan y desconfían de manera organizada: no el que grita, el que audita. Esa mitad no se ejerce en las casillas sino entre elecciones, y requiere algo que los discursos no dan: instrumentos. Un ciudadano sin datos solo puede elegir entre creer o no creer; un ciudadano con datos puede verificar. La diferencia entre esas dos posturas es, exactamente, la diferencia entre audiencia y ciudadanía.</p>
+    <p class="pull">No el que grita: el que audita.</p>
+    <p>Porque ese es el fondo del asunto. El gobierno tiene sus cifras y su conferencia de los martes. El crimen tiene sus padrones y sus cobradores. Entre ambos, el ciudadano común llevaba años obligado a elegir a quién creerle. La apuesta de este tablero es modesta y radical a la vez: que no tenga que creerle a nadie, ni siquiera a nosotros. Que abra el mapa, busque su estado, baje a su municipio, siga su delito, y llegue a la conversación pública con el dato en la mano.</p>
+    <p>Las próximas columnas de esta serie van a salir de ahí, y ojalá no solo las nuestras. Si usted encuentra un cero que no cuadra, una baja demasiado perfecta, un cajón que engorda en silencio, escríbanos: las mejores auditorías son las que nadie encargó. Las cifras oficiales ya están contadas. Lo que faltaba era quién las contara de vuelta. A partir de hoy, las contamos juntos.</p>
+  </div>
 
-      <p>45 Digital Noticias construyó un <a href="https://45digitalnoticias.github.io/Inseguridad-Mexico/" target="_blank" rel="noopener">dashboard nacional de seguridad</a>: un tablero público que reúne, en un solo lugar, lo que el Estado mexicano publica fragmentado, fechado con retraso y enterrado en hojas de cálculo que nadie abre. El inventario completo: los 55 delitos del catálogo oficial del Secretariado Ejecutivo, no solo los cinco mediáticos; los 32 estados; once años de serie histórica, de 2015 al corte de mayo de 2026; el registro nacional de personas desaparecidas al día; y todo convertido a tasas por cada 100 mil habitantes con las proyecciones de población de CONAPO, que es la única manera honesta de comparar a Tlaxcala con el Estado de México.</p>
-
-      <p>La puerta de entrada es un mapa que se lee como se lee el clima: zonas frías en azul, zonas que arden en rojo. El visitante elige qué violencia quiere ver (homicidio, feminicidio, desaparecidos, extorsión, secuestro, violencia familiar, violación o el total) y el país cambia de color frente a sus ojos. El hallazgo pedagógico es inmediato: el mapa de la extorsión no se parece al del homicidio, ni el del feminicidio al del secuestro. No existe "la inseguridad" en singular; existen climas distintos, y cada estado vive el suyo.</p>
-
-      <p>De ahí, cada entidad tiene página propia: su catálogo completo de delitos con la serie de once años, su variación respecto del pico de 2018, su panel de desaparecidos, su mapa municipal de calor. Y una sección que, hasta donde sabemos, no existe en ningún portal oficial de este país: el detector de señales de reclasificación. El equipo cruzó las series de cada delito grave contra las de su cajón estadístico vecino, esas bolsas llamadas "otros delitos que atentan contra...", y encontró 22 casos donde el delito específico baja mientras el cajón se dispara. El secuestro de Coahuila que llega a cero mientras su categoría espejo crece seis veces. La violación que "baja" en la capital mientras la bolsa de "otros delitos sexuales" se multiplica por 45. El tablero no dictamina: publica el par completo, con su serie y su fuente, y deja que el lector juzgue. Puede ser reforma legal, cambio de criterio o maquillaje. El punto es que ahora se ve.</p>
-
-      <p>Conviene decir con claridad qué aporta de distinto este tablero frente a lo que ya existe. Primero, la unidad: las bases oficiales están dispersas entre el Secretariado, el INEGI, el registro de desaparecidos y CONAPO; aquí conversan entre sí. Segundo, la memoria: los portales oficiales privilegian el corte reciente; aquí la serie completa está siempre a un clic, porque el truco favorito de la propaganda es elegir la ventana. Tercero, la transparencia inversa: cada cifra trae su método y su origen documentados, de modo que cualquier lector puede reconstruir las cuentas y, si encuentra error, corregirnos en público. Y cuarto, lo que llamaríamos honestidad estructural: donde el registro oficial falla (los ceros inverosímiles, los cajones sin nombre, la cifra negra), el tablero no lo disimula: lo convierte en sección.</p>
-
-      <p>El politólogo francés Pierre Rosanvallon escribió en 2006 que la democracia electoral es solo la mitad del sistema. La otra mitad, la que llamó contrademocracia, la ejercen los ciudadanos que vigilan, cotejan y desconfían de manera organizada: no el que grita, el que audita. Esa mitad no se ejerce en las casillas sino entre elecciones, y requiere algo que los discursos no dan: instrumentos. Un ciudadano sin datos solo puede elegir entre creer o no creer; un ciudadano con datos puede verificar. La diferencia entre esas dos posturas es, exactamente, la diferencia entre audiencia y ciudadanía.</p>
-
-      <p class="pull">No el que grita: el que audita.</p>
-
-      <p>Porque ese es el fondo del asunto. El gobierno tiene sus cifras y su conferencia de los martes. El crimen tiene sus padrones y sus cobradores. Entre ambos, el ciudadano común llevaba años obligado a elegir a quién creerle. La apuesta de este tablero es modesta y radical a la vez: que no tenga que creerle a nadie, ni siquiera a nosotros. Que abra el mapa, busque su estado, baje a su municipio, siga su delito, y llegue a la conversación pública con el dato en la mano.</p>
-
-      <p>Las próximas columnas de esta serie van a salir de ahí, y ojalá no solo las nuestras. Si usted encuentra un cero que no cuadra, una baja demasiado perfecta, un cajón que engorda en silencio, escríbanos: las mejores auditorías son las que nadie encargó. Las cifras oficiales ya están contadas. Lo que faltaba era quién las contara de vuelta. A partir de hoy, las contamos juntos.</p>
-    </div>
-
-    <p class="signoff">SRVO</p>
-
-    <section class="fuentes">
-      <h2>Fuentes y referencias citadas</h2>
+  <section class="fuentes">
+    <div class="wrap-medida">
+      <div class="sec-head"><span class="label">Fuentes y referencias</span></div>
       <ol>
         <li>Dashboard nacional de seguridad de 45 Digital Noticias. <a href="https://45digitalnoticias.github.io/Inseguridad-Mexico/" target="_blank" rel="noopener">Entrar al dashboard</a>.</li>
         <li>Bases integradas: SESNSP, incidencia delictiva del fuero común, corte abril 2026 <a href="https://www.gob.mx/sesnsp/acciones-y-programas/datos-abiertos-de-incidencia-delictiva" target="_blank" rel="noopener">Datos abiertos SESNSP</a> · RNPDNO, versión pública, corte 3 de junio de 2026 <a href="https://versionpublicarnpdno.segob.gob.mx/" target="_blank" rel="noopener">RNPDNO</a> · Proyecciones de población CONAPO 2025 <a href="https://www.gob.mx/conapo/documentos/proyecciones-de-la-poblacion-de-mexico-y-de-las-entidades-federativas-2020-2070" target="_blank" rel="noopener">CONAPO</a></li>
         <li>Pierre Rosanvallon, *La contre-démocratie. La politique à l'âge de la défiance*, Seuil, 2006 (en español: *La contrademocracia. La política en la era de la desconfianza*, Manantial, 2007). <a href="https://es.wikipedia.org/wiki/Pierre_Rosanvallon" target="_blank" rel="noopener">Pierre Rosanvallon</a></li>
         <li>Columnas previas de la serie citadas como hallazgos del tablero: *La cifra-trofeo*, *La paz que no cuenta*, *Morelos, subcampeón nacional* y *El impuesto del miedo*, 45 Digital Noticias. [enlazar cuando se publiquen en el sitio]</li>
       </ol>
-    </section>
-
-    <div class="share share-end" aria-label="Compartir">
-      <span class="share-label">Compartir esta columna</span>
-      <a class="share-btn" data-net="wa" target="_blank" rel="noopener">WhatsApp</a>
-      <a class="share-btn" data-net="fb" target="_blank" rel="noopener">Facebook</a>
-      <a class="share-btn" data-net="x" target="_blank" rel="noopener">X</a>
-      <button class="share-btn" type="button" data-net="copy">Copiar enlace</button>
+      <p class="cotejo">Las ligas van a la vista para que cualquiera compruebe por su cuenta. Si alguna dejó de resolver, escríbenos y la reponemos.</p>
     </div>
+  </section>
 
-    <a class="back" href="index.html">← Volver a las columnas</a>
-  </div>
+  <section class="cierre wrap-medida">
+    <p class="firma-final">SRVO</p>
+    <div class="btns">
+      <a class="btn-red" data-red="facebook" href="#" aria-label="Compartir en Facebook"><span class="tip">Facebook</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.5l.5-3h-3v-2c0-.6.4-1 1-1z"/></svg></a>
+      <a class="btn-red" data-red="whatsapp" href="#" aria-label="Compartir por WhatsApp"><span class="tip">WhatsApp</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1112 20zm4.4-5.8c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 01-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3 0-.5l-.7-1.6c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.7.7-.9 1.6-.6 2.6.5 1.6 1.6 3 3.1 3.9 1.4.9 2.5 1 3.4.9.7-.1 1.4-.6 1.6-1.2.1-.3.1-.6 0-.7z"/></svg></a>
+      <a class="btn-red" data-red="x" href="#" aria-label="Compartir en X"><span class="tip">X</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 3h3l-6.6 7.5L21.7 21h-6l-4.7-6.1L5.6 21h-3l7-8L2.6 3h6.2l4.3 5.6zm-1 16h1.6L8.1 4.6H6.4z"/></svg></a>
+      <button class="btn-red" type="button" data-red="copiar" aria-label="Copiar enlace"><span class="tip">Copiar enlace</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a4 4 0 006 .4l2.4-2.4a4 4 0 00-5.7-5.7l-1.4 1.4"/><path d="M14 11a4 4 0 00-6-.4l-2.4 2.4a4 4 0 005.7 5.7l1.4-1.4"/></svg></button>
+    </div>
+  </section>
 </article>
 
-<!-- ===== FOOTER ===== -->
-<footer class="site-footer">
+<footer class="pie-sitio">
   <div class="wrap">
-    <span class="sig">45 Digital Noticias.</span>
-    <span class="small">Columnas · lectura sistémica · © 2026 — Todos los textos cotejados contra fuente.</span>
+    <div class="pie-top">
+      <div class="pie-marca">
+        <p class="marca-n">45 Digital Noticias</p>
+        <div class="hilo"></div>
+        <p class="lema">Columnas de opinión con lectura sistémica. Lo verificable, separado de la lectura.</p>
+      </div>
+      <nav class="pie-col"><h4>Leer</h4>
+        <a href="index.html">Portada</a><a href="todas.html">Todas las columnas</a><a href="expedientes.html">Expedientes</a></nav>
+      <nav class="pie-col"><h4>Temas</h4>
+        <a href="#">Seguridad</a><a href="#">Morelos</a><a href="#">Economía</a><a href="#">Justicia</a></nav>
+      <nav class="pie-col"><h4>La casa</h4>
+        <a href="acerca.html">Acerca</a><a href="mailto:s.rvaldespin8@gmail.com">Escríbenos</a>
+        <a href="https://facebook.com/45DigitalMx" target="_blank" rel="noopener">Facebook</a></nav>
+    </div>
+    <div class="pie-bajo">
+      <p>© 2026 · 45 Digital Noticias. Textos de SRVO.<br>El programa se transmite en vivo de 9 a 10 de la mañana.</p>
+    </div>
   </div>
-<a id="ck-privacy-link" href="https://45digitalnoticias.github.io/columnas/privacidad.html" style="display:block;text-align:center;margin-top:10px;font-size:.76rem;letter-spacing:.04em;color:inherit;opacity:.65;text-decoration:none;">Aviso de privacidad</a>
 </footer>
 
 <script>
-  const mt = document.querySelector('.menu-toggle');
-  const nav = document.getElementById('nav');
-  if (mt && nav) mt.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    mt.setAttribute('aria-expanded', open);
-  });
+(() => {
+  // barra de avance de lectura
+  const barra = document.getElementById('avance'), art = document.querySelector('article');
+  addEventListener('scroll', () => {
+    const t = art.offsetTop, h = art.offsetHeight - innerHeight;
+    const p = Math.min(1, Math.max(0, (scrollY - t) / (h > 0 ? h : 1)));
+    barra.style.transform = 'scaleX(' + p + ')';
+  }, {passive:true});
 
-  // botones de compartir
-  (function () {
-    const url = encodeURIComponent(location.href);
-    const ttl = encodeURIComponent(document.title.split('—')[0].trim());
-    const map = {
-      wa: 'https://wa.me/?text=' + ttl + '%20' + url,
-      fb: 'https://www.facebook.com/sharer/sharer.php?u=' + url,
-      x: 'https://twitter.com/intent/tweet?text=' + ttl + '&url=' + url
-    };
-    document.querySelectorAll('.share-btn[data-net]').forEach(function (b) {
-      const n = b.dataset.net;
-      if (map[n]) b.href = map[n];
-      if (n === 'copy') b.addEventListener('click', function () {
-        navigator.clipboard.writeText(location.href).then(function () {
-          const t = b.textContent; b.textContent = '¡Copiado!';
-          setTimeout(function () { b.textContent = t; }, 1500);
-        });
-      });
+  // audio
+  const bt = document.querySelector('.oir-barra');
+  if (bt) {
+    const au = new Audio(bt.dataset.src);
+    const pista = bt.querySelector('.pista-audio');
+    bt.addEventListener('click', () => {
+      if (au.paused) { au.play().catch(()=>{}); bt.classList.add('suena'); }
+      else { au.pause(); bt.classList.remove('suena'); }
     });
-  })();
+    au.addEventListener('timeupdate', () => {
+      if (au.duration) pista.style.width = (au.currentTime / au.duration * 100) + '%';
+    });
+    au.addEventListener('ended', () => bt.classList.remove('suena'));
+  }
+
+  // compartir
+  const U = encodeURIComponent(location.href);
+  const T = encodeURIComponent(document.querySelector('h1').textContent + ' · 45 Digital Noticias');
+  const D = {facebook:`https://www.facebook.com/sharer/sharer.php?u=${U}`,
+             whatsapp:`https://api.whatsapp.com/send?text=${T}%20${U}`,
+             x:`https://twitter.com/intent/tweet?text=${T}&url=${U}`};
+  document.querySelectorAll('.btn-red').forEach(b => {
+    const r = b.dataset.red;
+    if (D[r]) { b.href = D[r]; b.target = '_blank'; b.rel = 'noopener'; return; }
+    b.addEventListener('click', async () => {
+      const tip = b.querySelector('.tip');
+      try { await navigator.clipboard.writeText(location.href); } catch { return; }
+      const a = tip.textContent; tip.textContent = 'Copiado'; b.classList.add('copiado');
+      setTimeout(() => { tip.textContent = a; b.classList.remove('copiado'); }, 1800);
+    });
+  });
+})();
 </script>
-<!-- Cloudflare Web Analytics -->
-<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4de56a9a4564d0ea0f4e0259af8bc7a"}'></script>
-<!-- End Cloudflare Web Analytics -->
-<!-- Cookie consent 45 Digital -->
+
 <style>
 #ck-consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:560px;margin:0 auto;background:#0e1320;border:1px solid rgba(204,161,90,.35);border-radius:12px;padding:16px 18px;box-shadow:0 18px 50px rgba(0,0,0,.5);font-family:'Inter',system-ui,sans-serif;color:#cdd3cc;display:none}
 #ck-consent.show{display:block}
@@ -242,8 +254,8 @@
 })();
 </script>
 <!-- /Cookie consent 45 Digital -->
-<!-- RED-45 start -->
-<nav aria-label="Red 45 Digital Noticias" style="max-width:1100px;margin:48px auto 22px;padding:18px 20px 4px;border-top:1px solid rgba(128,128,128,.28);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:13px;line-height:1.9;text-align:center;opacity:.85;"><div style="text-transform:uppercase;letter-spacing:2.5px;font-size:10.5px;opacity:.6;margin-bottom:7px;">Red 45 Digital Noticias</div><div><a href="https://45digitalnoticias.github.io/columnas/" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.45);">Columnas</a> &nbsp;·&nbsp; <a href="https://45digitalnoticias.github.io/Inseguridad-Mexico/" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.45);">Inseguridad México</a> &nbsp;·&nbsp; <a href="https://45digitalnoticias.github.io/Expediente-Hantavirus/" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.45);">Expediente Brotes</a> &nbsp;·&nbsp; <a href="https://45digitalnoticias.github.io/cementerio-transparencia/" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(128,128,128,.45);">Cementerio de la Transparencia</a></div></nav>
-<!-- RED-45 end -->
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4de56a9a4564d0ea0f4e0259af8bc7a"}'></script>
+<!-- End Cloudflare Web Analytics -->
 </body>
 </html>

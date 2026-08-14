@@ -3,6 +3,12 @@
 (() => {
   const RUTA = '';
   const DWELL = 7000;
+
+  // El masthead fecha la VISITA, no la última columna: la más reciente trae
+  // fecha de emisión (puede ser futura, por la cola de carpetas) y confundía.
+  const _fec = document.querySelector('.masthead .fecha');
+  if (_fec) _fec.textContent = new Date().toLocaleDateString('es-MX',
+      {day: 'numeric', month: 'long', year: 'numeric'});
   // COLUMNAS y PORTADAS los inyecta _generar_portada.py
 
   /* ---------- el panel ---------- */
@@ -61,7 +67,6 @@
       <p class="standfirst">${c.d}</p>
       <div class="byline">
         <span class="firma">SRVO</span><span class="sep"></span>
-        <span class="meta">${c.fecha}</span><span class="sep"></span>
         <span class="meta">${c.min}</span>
       </div>
       <a class="chev" href="${RUTA + c.href}">Leer la columna <i>›</i></a>`;

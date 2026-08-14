@@ -136,3 +136,39 @@ button{font:inherit; color:inherit; background:none; border:0; cursor:pointer}
   .pie-marca{grid-column:1 / -1; margin-bottom:10px}
 }
 @media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important}}
+
+/* ============================================================
+   EL MURAL — todas las columnas por su portada, a sangre.
+   Una de cada siete ocupa el doble, para que el muro tenga ritmo
+   y no parezca una hoja de contactos.
+   ============================================================ */
+.mural{padding-block:0 clamp(50px,6vw,80px)}
+.mural .sec-head{margin-bottom:30px}
+.mural-grid{display:grid; grid-template-columns:repeat(6,1fr); gap:2px}
+.mural-t{position:relative; display:block; aspect-ratio:1/1; overflow:hidden; background:var(--noche)}
+.mural-t.grande{grid-column:span 2; grid-row:span 2}
+.mural-t img{width:100%; height:100%; object-fit:cover;
+  filter:brightness(.82) saturate(1.05); transition:transform .8s var(--ease), filter .45s var(--ease)}
+.mural-t:hover img{transform:scale(1.05); filter:brightness(1) saturate(1.15)}
+.mural-t::after{content:""; position:absolute; inset:0;
+  background:linear-gradient(to bottom, transparent 42%, rgba(10,13,18,.9) 100%)}
+.mural-t figcaption{position:absolute; z-index:2; inset:auto 12px 11px 12px;
+  font-family:var(--display); font-size:13px; font-weight:600; line-height:1.22;
+  letter-spacing:-.008em; color:#F2EFE9;
+  display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden}
+.mural-t.grande figcaption{font-size:20px; inset:auto 18px 16px 18px; -webkit-line-clamp:4}
+.mural-t .tema{display:block; font-family:var(--ui); font-size:9.5px; font-weight:500;
+  letter-spacing:.1em; text-transform:uppercase; color:rgba(242,239,233,.66); margin-bottom:5px}
+@media (max-width:1068px){
+  .reels-fila{grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px}
+  .mural-grid{grid-template-columns:repeat(4,1fr)}
+}
+@media (max-width:734px){
+  .reels-fila{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .reels-fila .reel:nth-child(3){display:none}
+  .mural-grid{grid-template-columns:repeat(3,1fr)}
+  .mural-t figcaption{font-size:11px; -webkit-line-clamp:2; inset:auto 8px 8px 8px}
+  .mural-t.grande figcaption{font-size:15px}
+}
+
+

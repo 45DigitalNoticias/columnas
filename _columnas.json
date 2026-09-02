@@ -1,5 +1,19 @@
 [
  {
+  "href": "la-palanca.html",
+  "img": "la-palanca.jpg",
+  "cat": "Seguridad",
+  "dcat": [
+   "seguridad"
+  ],
+  "claves": "la palanca segundo informe de gobierno seguridad detenciones sesnsp envipe inegi cifra negra extorsion guardia nacional fasp arquimedes falacia de mcnamara percepcion de inseguridad",
+  "titulo": "La palanca",
+  "dek": "El Segundo Informe presume 95 detenidos al día. El INEGI cuenta 92,000 delitos diarios: una detención por cada mil. La inversión más grande en seguridad la hiciste tú.",
+  "iso": "2026-09-12",
+  "min": "5 min",
+  "audio": "audio-la-palanca.mp3"
+ },
+ {
   "href": "el-sombrero-que-destapo-la-farsa.html",
   "img": "el-sombrero-que-destapo-la-farsa.jpg",
   "cat": "Seguridad",

@@ -66,13 +66,20 @@ async def main(solo=None):
             continue
         slug = href[:-5]
         mp3 = f"audio-{slug}.mp3"
-        if os.path.exists(mp3):
+        if os.path.exists(mp3) and not os.environ.get("AUDIO_REGENERAR"):
             if solo: print("YA EXISTE:", mp3, flush=True)
             continue
         if not os.path.exists(href):
             print("SIN PÁGINA:", href, flush=True)
             continue
         voice = VOICES[(hechos + n) % 2]
+        # Regeneración de una columna ya publicada (sep-2026): la voz se CONSERVA.
+        # Sin esto, regenerar uno por uno pondría la misma voz a todos, porque la
+        # alternancia se calcula por conteo de mp3 existentes.
+        #   AUDIO_VOZ=Dalia|Jorge  fuerza la voz  ·  AUDIO_REGENERAR=1  sobreescribe el mp3
+        forzada = os.environ.get("AUDIO_VOZ", "").strip().lower()
+        if forzada:
+            voice = next((v for v in VOICES if forzada in v.lower()), voice)
         try:
             title, text = adapt(href)
         except Exception as e:

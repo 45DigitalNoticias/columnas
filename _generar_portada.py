@@ -52,7 +52,41 @@ def columnas():
     if not m.exists():
         raise SystemExit("Falta _columnas.json. Corre antes:  python _generar_manifiesto.py")
     cols = json.loads(io.open(m, encoding="utf-8").read())
+    for c in cols:
+        c["dcat"] = temas(c)
     return [c for c in cols if (AQUI / c["href"]).exists()]
+
+
+def temas(c):
+    """Temas EFECTIVOS de una columna: los declarados al publicar MÁS los que su etiqueta
+    nombra como tema (24-sep-2026).
+
+    Por qué existe. Cada columna entraba al filtro con el tema único de su publicar.json,
+    así que "Seguridad · Morelos" no contaba en Morelos, una etiqueta "Justicia" no
+    contaba en Justicia, y "El obradorista de la oposición" (Poder · Cuautla) no aparecía
+    en Morelos. Corregirlo a mano en el manifiesto no sirve: al republicar, el pipeline
+    vuelve a escribir un solo tema y el arreglo se pierde. Por eso vive aquí.
+
+    Criterio ESTRICTO: un segmento de la etiqueta cuenta solo si ES el tema ("Morelos",
+    "Seguridad", "Cuautla" -> Morelos), o si la etiqueta ARRANCA con él ("Economía de la
+    atención", "Mundial 2026"). "Cultura · Cine y poder" NO entra en Poder: ahí la palabra
+    describe, no clasifica. Nunca se quita un tema declarado."""
+    import re, unicodedata
+    def n(s):
+        s = unicodedata.normalize("NFD", s.lower())
+        return "".join(ch for ch in s if unicodedata.category(ch) != "Mn").strip()
+    base = ["seguridad", "morelos", "economia", "justicia", "mundial", "cultura", "democracia", "poder"]
+    alias = {"cuautla": "morelos"}
+    efectivos = list(c.get("dcat") or [])
+    segs = [n(s) for s in re.split(r"[·—]", c.get("cat") or "") if s.strip()]
+    for i, s in enumerate(segs):
+        for t in base:
+            if s == t or s.startswith(t + " ") and (i == 0 or t == "mundial"):
+                if t not in efectivos:
+                    efectivos.append(t)
+        if s in alias and alias[s] not in efectivos:
+            efectivos.append(alias[s])
+    return efectivos
 
 
 def orden_panel():

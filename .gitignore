@@ -5,3 +5,10 @@ fondo.png
 _contact.html
 __pycache__/
 *.pyc
+
+# --- RECETAS (27-sep-2026): ningún script del taller sube ---
+*.py
+*.ps1
+*.sh
+*.bat
+*.ipynb

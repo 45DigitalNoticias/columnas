@@ -165,7 +165,7 @@
       <img src="thumbs/los-que-si-tuvieron-nombre-portada.webp" alt="" loading="lazy" decoding="async">
       <figcaption><span class="tema">Morelos</span>Los que sí tuvieron nombre</figcaption>
     </a>
-    <a class="mural-t" href="siete-veces-el-sueldo.html" data-cat="Nacional · Poder y propaganda" data-date="2026-10-10" data-title="siete veces el sueldo samuel garcia gobernador nuevo leon publicidad facebook instagram meta biblioteca de anuncios gasto sueldo mandato 32 gobernadores ranking mariana rodriguez uzu digital gobierno del estado de nuevo leon descargo articulo 134 constitucion promocion personalizada ley general de comunicacion social tribunal electoral sentencias congreso de nuevo leon informe de gobierno daniel boorstin the image pseudoeventos 45 digital noticias">
+    <a class="mural-t" href="siete-veces-el-sueldo.html" data-cat="poder" data-date="2026-10-10" data-title="siete veces el sueldo samuel garcia gobernador nuevo leon publicidad facebook instagram meta biblioteca de anuncios gasto sueldo mandato 32 gobernadores ranking mariana rodriguez uzu digital gobierno del estado de nuevo leon descargo articulo 134 constitucion promocion personalizada ley general de comunicacion social tribunal electoral sentencias congreso de nuevo leon informe de gobierno daniel boorstin the image pseudoeventos 45 digital noticias">
       <img src="thumbs/siete-veces-el-sueldo-portada.webp" alt="" loading="lazy" decoding="async">
       <figcaption><span class="tema">Dinero público y propaganda</span>Siete veces el sueldo</figcaption>
     </a>
@@ -679,9 +679,43 @@
   const busca    = document.querySelector('.busca');
   const cuantas  = document.getElementById('cuantas');
   const vacio    = document.getElementById('vacio');
+  const quieto   = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const EASE     = 'cubic-bezier(.16,1,.3,1)';
   let tema = 'all';
 
-  function aplicar() {
+  // FLIP al filtrar: las que se quedan se deslizan de donde estaban a su
+  // lugar nuevo; las que entran aparecen en cascada. Las que salen se van
+  // de golpe: no tienen lugar al que ir. Fuera de pantalla no se anima.
+  function mover(antes) {
+    const alto = innerHeight;
+    let k = 0;
+    tarjetas.forEach(t => {
+      if (t.hidden) return;
+      const r = t.getBoundingClientRect();
+      if (r.top > alto + 100 || r.bottom < -100) return;
+      const a = antes.get(t);
+      const dx = a ? a.left - r.left : 0, dy = a ? a.top - r.top : 0;
+      if (a && Math.abs(dy) < alto) {
+        if (dx || dy) t.animate(
+          [{transform: `translate(${dx}px,${dy}px)`}, {transform: 'none'}],
+          {duration: 600, easing: EASE});
+      } else {
+        t.animate(
+          [{opacity: 0, transform: 'scale(.92)'}, {opacity: 1, transform: 'none'}],
+          {duration: 500, delay: 60 + Math.min(k++, 12) * 35, easing: EASE, fill: 'backwards'});
+      }
+    });
+  }
+
+  function aplicar(animar) {
+    let antes = null;
+    if (animar && !quieto) {
+      // se mide la posición VISIBLE (con la animación anterior a medias, si
+      // la hay) y luego se cancela, para que un clic rápido no dé saltos
+      antes = new Map(tarjetas.filter(t => !t.hidden)
+                              .map(t => [t, t.getBoundingClientRect()]));
+      tarjetas.forEach(t => t.getAnimations().forEach(x => x.cancel()));
+    }
     const q = busca.value.trim().toLowerCase();
     let n = 0;
     tarjetas.forEach(t => {
@@ -697,11 +731,12 @@
       ? `${n} columnas`
       : `${n} de ${tarjetas.length} columnas`;
     vacio.hidden = n > 0;
+    if (antes) mover(antes);
   }
 
   botones.forEach(b => b.addEventListener('click', () => {
     botones.forEach(x => x.classList.remove('on'));
-    b.classList.add('on'); tema = b.dataset.c; aplicar();
+    b.classList.add('on'); tema = b.dataset.c; aplicar(true);
     // la dirección refleja el filtro, para poder compartirla
     const u = new URL(location);
     tema === 'all' ? u.searchParams.delete('s') : u.searchParams.set('s', tema);

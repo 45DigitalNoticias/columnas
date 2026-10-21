@@ -74,7 +74,9 @@ button{font:inherit; color:inherit; background:none; border:0; cursor:pointer}
 .rejilla{display:grid; grid-template-columns:repeat(3,minmax(0,1fr));
   gap:clamp(28px,3.4vw,46px) clamp(24px,3vw,40px); padding-block:26px clamp(50px,6vw,80px)}
 .tarjeta{display:flex; flex-direction:column; padding-bottom:22px; border-bottom:1px solid var(--rule-soft)}
-.tarjeta[hidden]{display:none}
+/* el filtro oculta con el atributo hidden; sin !important lo pisa el display
+   de cada tarjeta (.mural-t{display:block}) y el filtro no hace nada */
+[hidden]{display:none !important}
 .tarjeta-img{overflow:hidden; aspect-ratio:3/2; background:var(--paper-gray); margin-bottom:16px}
 .tarjeta-img img{width:100%; height:100%; object-fit:cover;
   transition:transform .7s var(--ease), filter .4s var(--ease)}

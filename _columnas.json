@@ -1495,20 +1495,6 @@
   "audio": "audio-el-partido-que-no-televisan.mp3"
  },
  {
-  "href": "dos-cobradores-en-la-misma-via.html",
-  "img": "dos-cobradores-portada.png",
-  "cat": "Seguridad · Istmo",
-  "dcat": [
-   "seguridad"
-  ],
-  "claves": "dos cobradores en la misma via dos cobradores en la misma via corredor interoceanico istmo tehuantepec tren linea z homicidio ruta peaje plaza derecho de piso charles tilly estado crimen organizado sesnsp comalcalco tapachula salina cruz juchitan cardenas veracruz oaxaca chiapas tabasco seguridad",
-  "titulo": "Dos cobradores en la misma vía",
-  "dek": "El homicidio subió 72% sobre la ruta del Tren Interoceánico mientras el país bajaba. La violencia siguió a la vía, no a la pobreza.",
-  "iso": "2026-06-20",
-  "min": "5 min",
-  "audio": "audio-dos-cobradores-en-la-misma-via.mp3"
- },
- {
   "href": "el-sobre-amarillo-y-el-castillo.html",
   "img": "sobre-castillo-portada.png",
   "cat": "Poder · Estado de derecho",
@@ -1535,6 +1521,20 @@
   "iso": "2026-06-20",
   "min": "4 min",
   "audio": "audio-la-aritmetica-del-poder.mp3"
+ },
+ {
+  "href": "dos-cobradores-en-la-misma-via.html",
+  "img": "dos-cobradores-portada.png",
+  "cat": "Seguridad · Istmo",
+  "dcat": [
+   "seguridad"
+  ],
+  "claves": "dos cobradores en la misma via dos cobradores en la misma via corredor interoceanico istmo tehuantepec tren linea z homicidio ruta peaje plaza derecho de piso charles tilly estado crimen organizado sesnsp comalcalco tapachula salina cruz juchitan cardenas veracruz oaxaca chiapas tabasco seguridad",
+  "titulo": "Dos cobradores en la misma vía",
+  "dek": "El homicidio subió 72% sobre la ruta del Tren Interoceánico mientras el país bajaba. La violencia siguió a la vía, no a la pobreza.",
+  "iso": "2026-06-20",
+  "min": "5 min",
+  "audio": "audio-dos-cobradores-en-la-misma-via.mp3"
  },
  {
   "href": "la-renta-del-recuerdo.html",
@@ -2079,20 +2079,6 @@
   "audio": "audio-el-dia-que-se-cerro-el-circulo.mp3"
  },
  {
-  "href": "cuando-los-enemigos-cobran-del-mismo-barril.html",
-  "img": "enemigos-barril.svg",
-  "cat": "Economía de guerra",
-  "dcat": [
-   "economia"
-  ],
-  "claves": "cuando los enemigos cobran del mismo barril cuando los enemigos cobran del mismo barril economia de guerra lockheed petroleo doctrina del shock",
-  "titulo": "Cuando los enemigos cobran del mismo barril",
-  "dek": "Quién factura en cada disparo, y por qué tu Afore es socio silencioso.",
-  "iso": "2026-04-28",
-  "min": "6 min",
-  "audio": "audio-cuando-los-enemigos-cobran-del-mismo-barril.mp3"
- },
- {
   "href": "sabios-solo-cuando-aplauden.html",
   "img": "sabios.svg",
   "cat": "Democracia",
@@ -2105,5 +2091,19 @@
   "iso": "2026-04-28",
   "min": "5 min",
   "audio": "audio-sabios-solo-cuando-aplauden.mp3"
+ },
+ {
+  "href": "cuando-los-enemigos-cobran-del-mismo-barril.html",
+  "img": "enemigos-barril.svg",
+  "cat": "Economía de guerra",
+  "dcat": [
+   "economia"
+  ],
+  "claves": "cuando los enemigos cobran del mismo barril cuando los enemigos cobran del mismo barril economia de guerra lockheed petroleo doctrina del shock",
+  "titulo": "Cuando los enemigos cobran del mismo barril",
+  "dek": "Quién factura en cada disparo, y por qué tu Afore es socio silencioso.",
+  "iso": "2026-04-28",
+  "min": "6 min",
+  "audio": "audio-cuando-los-enemigos-cobran-del-mismo-barril.mp3"
  }
 ]

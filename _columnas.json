@@ -1,5 +1,21 @@
 [
  {
+  "href": "por-escrito.html",
+  "img": "por-escrito-portada.jpg",
+  "cat": "Seguridad · Morelos",
+  "dcat": [
+   "seguridad",
+   "morelos",
+   "poder"
+  ],
+  "claves": "por escrito por escrito fiscalia general del estado de morelos fernando blumenkron escobar comparecencia congreso de morelos segundo informe semestral boletin 538 boletin 1207 135 detenidos 52 cateos 103 vinculaciones a proceso extorsion secuestro y extorsion 193 vinculaciones alerta alba 86 96 plan cuautla 31 de julio 6 de agosto seis dias lugar nacional extorsion cuautla mesa de coordinacion 158 67 feminicidio 111 carpetas 18 pregunta ciudadana theodore porter trust in numbers 45 digital noticias",
+  "titulo": "Por escrito",
+  "dek": "Dos semestres distintos, las mismas tres cifras. Y la respuesta, por escrito.",
+  "iso": "2026-12-12",
+  "min": "5 min",
+  "audio": "audio-por-escrito.mp3"
+ },
+ {
   "href": "se-cayo-el-router-subio-la-cuenta.html",
   "img": "se-cayo-el-router-subio-la-cuenta-portada.jpg",
   "cat": "Poder · Contratos públicos",

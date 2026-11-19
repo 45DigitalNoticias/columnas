@@ -1,5 +1,21 @@
 [
  {
+  "href": "la-misma-silla.html",
+  "img": "la-misma-silla-portada.jpg",
+  "cat": "Poder · Estado de derecho",
+  "dcat": [
+   "poder",
+   "morelos",
+   "justicia"
+  ],
+  "claves": "la misma silla la misma silla cuauhtemoc blanco margarita gonzalez saravia reciclados exfuncionarios erick santiago romero benitez direccion general de gobierno margarita maria galeana torres sedagro karla aline herrera alonso edgar antonio maldonado ceballos saul chavelas bahena secretaria anticorrupcion monica boggio tomasaz merino tribunal de justicia administrativa desafuero fuero 291 votos 158 prescripcion leonel diaz rogel fiscalia anticorrupcion kim lane scheppele legalismo autocratico morelos 45 digital noticias",
+  "titulo": "La misma silla",
+  "dek": "Cuatro puertas para llegar a un juicio. En dos hay alguien que trabajó con Blanco.",
+  "iso": "2026-12-13",
+  "min": "5 min",
+  "audio": "audio-la-misma-silla.mp3"
+ },
+ {
   "href": "por-escrito.html",
   "img": "por-escrito-portada.jpg",
   "cat": "Seguridad · Morelos",
